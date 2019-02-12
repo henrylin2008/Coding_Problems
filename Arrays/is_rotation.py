@@ -1,8 +1,12 @@
+# Check if List1 and list2 are rotation of each other, started with a different index
 # Implement your function below.
 def is_rotation(list1, list2):
+    # If length between 2 lists don't match, return False
     if len(list1) != len(list2):
         return False
+    # First element in list1
     key = list1[0]
+    # key index 
     key_loc = -1
     for i in range(len(list2)):
         if list2[i] == key:
