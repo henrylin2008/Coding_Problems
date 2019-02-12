@@ -1,4 +1,5 @@
 # Find common elements in two sorted arrays
+
 # Implement your function below.
 
 def common_elements(list1, list2):
