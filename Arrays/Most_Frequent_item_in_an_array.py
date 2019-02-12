@@ -1,3 +1,4 @@
+# Most Frequent item in an Array
 # Implement your function below.
 def most_frequent(given_list):
     max_count = -1
