@@ -1,5 +1,8 @@
-# Check if List1 and list2 are rotation of each other, started with a different index
-# Implement your function below.
+# 11 essential Coding questions
+# Write a function that returns True if one array is a notation of another
+# ex: [1,2,3,4,5,6,7] is a notation of [4,5,6,7,1,2,3].
+# Note: there are no duplicates in each of these arrays
+# Reminder: We're going to use lists instead of arrays in Python for simplity 
 def is_rotation(list1, list2):
     # If length between 2 lists don't match, return False
     if len(list1) != len(list2):
