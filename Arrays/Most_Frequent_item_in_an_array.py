@@ -1,5 +1,9 @@
-# Most Frequent item in an Array
-# Implement your function below.
+# 11 essential Coding questions
+# Find the most frequently occurring item in an array. 
+# Ex: the most frequently occuring item in [1,3,1,3,2,1] is 1.
+# if you're given an empty array, you should return None
+# Note: we're going to use lists instead of arrays in Python for simplicity 
+
 def most_frequent(given_list):
     max_count = -1
     max_item = None
