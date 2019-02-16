@@ -1,6 +1,8 @@
-# Find common elements in two sorted arrays
-
-# Implement your function below.
+# 11 essential Coding questions
+# Write a function that returns the common elements (as an array) between 
+# 2 sorted arrays of integers (ascending order)
+# Ex: the common elements between [1,3,4,6,7,9] and [1,2,4,5,9,10] are [1,4,9]
+# Note: we're going to use lists instead of arrays in Python for simplicity
 
 def common_elements(list1, list2):
     p1 = 0
