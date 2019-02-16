@@ -6,7 +6,7 @@
 # "a" and "a" are one away (changing the only character 'a' to the equivalent character 'a').
 # "abc" and "bcc" are NOT one away. (2 operations away)
 
-# Implement your function below.
+# Main function 
 def is_one_away(s1, s2):
     if len(s1) - len(s2) >= 2 or len(s2) - len(s1) >= 2:
         return False
@@ -18,6 +18,7 @@ def is_one_away(s1, s2):
         return is_one_away_diff_lengths(s2, s1)
 
 
+# Assumption len(s1) == len(s2)
 def is_one_away_same_length(s1, s2):
     count_diff = 0
     for i in range(len(s1)):
