@@ -19,6 +19,7 @@ def is_one_away(s1, s2):
 
 
 # Assumption len(s1) == len(s2)
+# s1 = "abcde"; s2="abcee"
 def is_one_away_same_length(s1, s2):
     count_diff = 0
     for i in range(len(s1)):
@@ -30,6 +31,7 @@ def is_one_away_same_length(s1, s2):
 
 
 # Assumption: len(s1) == len(s2) + 1
+
 def is_one_away_diff_lengths(s1, s2):
     i = 0
     count_diff = 0
