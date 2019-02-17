@@ -31,7 +31,7 @@ def is_one_away_same_length(s1, s2):
 
 
 # Assumption: len(s1) == len(s2) + 1
-
+# s1="abcde"; s2="abce"
 def is_one_away_diff_lengths(s1, s2):
     i = 0
     count_diff = 0
