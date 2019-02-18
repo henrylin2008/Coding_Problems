@@ -1,3 +1,4 @@
+# https://www.udemy.com/11-essential-coding-interview-questions/learn/v4/t/lecture/7567172?start=0
 # Implement a function that assigns correct numbers in a field of Minesweeper, which is represented as a 2 
 # dimensional array 
 # Ex: The size of the field is 3x4, and there are bombs at the positions [0,0] and [0,1]
@@ -13,10 +14,10 @@ def mine_sweeper(bombs, num_rows, num_cols):
     # NOTE: field = [[0] * num_cols] * num_rows would not work
     # because you need to create a new list for every row,
     # instead of copying the same list.
-    field = [[0 for i in range(num_cols)] for j in range(num_rows)]
+    field = [[0 for i in range(num_cols)] for j in range(num_rows)] # initialize 2D array, num_rows = 0, num_cols = 0
     for bomb in bombs:
-        (row_i, col_i) = bomb
-        field[row_i][col_i] = -1
+        (row_i, col_i) = bomb # bomb[0], bomb[1]
+        field[row_i][col_i] = -1 # if the field is a bomb, assigned to -1 
         for i in range(row_i - 1, row_i + 2):
             for j in range(col_i - 1, col_i + 2):
                 if (0 <= i < num_rows and 0 <= j < num_cols
