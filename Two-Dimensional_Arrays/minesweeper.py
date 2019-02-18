@@ -4,7 +4,10 @@
 # [[-1,-1,1,0],
 #  [2,2,1,0],
 #  [0,0,0,0]]
- 
+# In the resulting fields: 
+# * -1 represents that there is a bomb in that location 
+# * 1,2,3....etc represents that there are 1,2,3...etc bombs int he surrounding cells 
+# * 0 represents that there are no bombs in the surrounds cells 
 
 def mine_sweeper(bombs, num_rows, num_cols):
     # NOTE: field = [[0] * num_cols] * num_rows would not work
