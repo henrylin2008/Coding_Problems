@@ -16,7 +16,7 @@ def mine_sweeper(bombs, num_rows, num_cols):
     # instead of copying the same list.
     field = [[0 for i in range(num_cols)] for j in range(num_rows)] # initialize 2D array, num_rows = 0, num_cols = 0
     for bomb in bombs:
-        (row_i, col_i) = bomb # row i and col i as the bomb 
+        (row_i, col_i) = bomb # row index = first value, column index = second value
         field[row_i][col_i] = -1 # if the index is a bomb, assigned to -1 
         for i in range(row_i - 1, row_i + 2): # from row_i - 1 to row_i + 1
             for j in range(col_i - 1, col_i + 2): # from col_i -1 to col_i + 1
