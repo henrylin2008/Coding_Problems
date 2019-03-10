@@ -64,7 +64,7 @@ def partition(head, pivot):
         h = h.next
 
     return low
-This is a bit cumbersome, however, and we waste some time during concatenation. Note from the problem description that we only need to guarantee that all nodes with values less than k come before all nodes with values greater than k. In other words, k does not have to be in the middle of the list! As a result, we can solve this in a simpler way: as we traverse the input list, we insert elements whose value is less than k into our new linked list, and append everything else:
+# This is a bit cumbersome, however, and we waste some time during concatenation. Note from the problem description that we only need to guarantee that all nodes with values less than k come before all nodes with values greater than k. In other words, k does not have to be in the middle of the list! As a result, we can solve this in a simpler way: as we traverse the input list, we insert elements whose value is less than k into our new linked list, and append everything else:
 
 def partition(head, pivot):
     new = LinkedList()
