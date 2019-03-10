@@ -9,7 +9,8 @@
 # For example, given the linked list 5 -> 1 -> 8 -> 0 -> 3 and k = 3, the solution could be 1 -> 0 -> 5 -> 8 -> 3.
 
 # Solution
-# First let's define some helpful classes. In addition to a simple Node class, we will create a LinkedList class that can both insert elements at the front of the list and append elements at the back. Note that append here is O(1), since we keep track of a tail pointer.
+# First let's define some helpful classes. In addition to a simple Node class, we will create a LinkedList class that can both insert elements at the 
+# front of the list and append elements at the back. Note that append here is O(1), since we keep track of a tail pointer.
 
 class Node:
     def __init__(self, val, next=None):
