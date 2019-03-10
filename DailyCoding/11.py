@@ -20,7 +20,7 @@ def autocomplete(s):
         if word.startswith(s):
             results.add(word)
     return results
-    
+
 # This runs in O(N) time, where N is the number of words in the dictionary. Let's think about making this more efficient. We can preprocess the words, but what data structure would be best for our problem?
 
 # If we pre-sort the list, we could use binary search to find the first word that includes our prefix and then the last, and return everything in between.
@@ -34,9 +34,11 @@ def autocomplete(s):
 #       o
 #        \
 #         g
-# Then, to find all words beginning with 'do', we could start at the root, go into the 'd' child, and then the 'o', child, and gather up all the words under there. We would also some sort of terminal value to mark whether or not 'do' is actually a word in our dictionary or not. This data structure is known as a trie.
+# Then, to find all words beginning with 'do', we could start at the root, go into the 'd' child, and then the 'o', child, and gather up all the words under there. We would also some sort of terminal 
+# value to mark whether or not 'do' is actually a word in our dictionary or not. This data structure is known as a trie.
 
-# So the idea is to preprocess the dictionary into this tree, and then when we search for a prefix, go into the trie and get all the words under that prefix node and return those. While the worst-case runtime would still be O(n) if all the search results have that prefix, if the words are uniformly distributed across the alphabet, it should be much faster on average since we no longer have to evaluate words that don't start with our prefix.
+# So the idea is to preprocess the dictionary into this tree, and then when we search for a prefix, go into the trie and get all the words under that prefix node and return those. While the worst-case runtime would 
+# still be O(n) if all the search results have that prefix, if the words are uniformly distributed across the alphabet, it should be much faster on average since we no longer have to evaluate words that don't start with our prefix.
 
 ENDS_HERE = '__ENDS_HERE'
 
