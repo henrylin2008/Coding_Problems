@@ -36,7 +36,8 @@ class LinkedList:
             tmp = Node(data)
             self.tail.next = tmp
             self.tail = self.tail.next
-Now, one way we could solve this would be to initialize three linked lists to hold elements smaller than, equal to, and larger than the pivot, respectively. Then when we traverse the input list, we add each element to the appropriate linked list. Finally, we return a concatenation of our lists in the order low, middle, high.
+
+# Now, one way we could solve this would be to initialize three linked lists to hold elements smaller than, equal to, and larger than the pivot, respectively. Then when we traverse the input list, we add each element to the appropriate linked list. Finally, we return a concatenation of our lists in the order low, middle, high.
 
 def partition(head, pivot):
     low = LinkedList()
