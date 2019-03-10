@@ -77,7 +77,7 @@ def partition(head, pivot):
         head = head.next
 
     return new
-Both of these algorithms are O(N) in time and space, as we traverse the input once, and transfer the data to (up to three) new linked lists of size <= N.
+# Both of these algorithms are O(N) in time and space, as we traverse the input once, and transfer the data to (up to three) new linked lists of size <= N.
 
 © Daily Coding Problem 2019
 Privacy Policy
