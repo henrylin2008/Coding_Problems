@@ -1,6 +1,6 @@
-Daily Coding Problem #163
-Problem
-This problem was asked by Jane Street.
+# Daily Coding Problem #163
+# Problem
+# This problem was asked by Jane Street.
 
 Given an arithmetic expression in Reverse Polish Notation, write a program to evaluate it.
 
