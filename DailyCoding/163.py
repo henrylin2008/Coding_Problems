@@ -11,7 +11,9 @@
 # You can assume the given expression is always valid.
 
 # Solution
-# The way to implement Reverse Polish Notation is to use a stack. When we encounter a value, then we add it to the stack, and if we encounter an operator such as '+', '-', '*', or '/', then we pop the last two things off the stack, use them as terms on the operator, and then pop the resulting value back on the stack. At the end of the function there should only be one thing remaining on the stack, so we just return that.
+# The way to implement Reverse Polish Notation is to use a stack. When we encounter a value, then we add it to the stack, and if we encounter an operator such as '+', '-', '*', or '/', 
+# then we pop the last two things off the stack, use them as terms on the operator, and then pop the resulting value back on the stack. At the end of the function there should only be 
+# one thing remaining on the stack, so we just return that.
 
 PLUS = '+'
 MINUS = '-'
