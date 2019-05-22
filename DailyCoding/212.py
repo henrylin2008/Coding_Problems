@@ -17,7 +17,9 @@
 # Floor divide n - 1 by 26
 # To get the first letter, map the quotient using our dictionary
 # To get the second letter, map the remainder using our dictionary
-# What if the result of our floor division is greater than 26? In this case, it is impossible to return a two-letter solution. Generalizing the pattern above, we can continue dividing our number by 26 and prepending the remainder to our solution, until we reach 0.
+# What if the result of our floor division is greater than 26? In this case, it is impossible 
+# to return a two-letter solution. Generalizing the pattern above, we can continue dividing our
+# number by 26 and prepending the remainder to our solution, until we reach 0.
 #
 # To give an example, here is how we would deal with the input 1000:
 
