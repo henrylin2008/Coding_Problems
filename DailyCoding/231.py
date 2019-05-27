@@ -1,12 +1,15 @@
 # Problem
 # This problem was asked by IBM.
 #
-# Given a string with repeated characters, rearrange the string so that no two adjacent characters are the same. If this is not possible, return None.
+# Given a string with repeated characters, rearrange the string so that no two adjacent characters are the same.
+# If this is not possible, return None.
 #
 # For example, given "aaabbc", you could return "ababac". Given "aaab", return None.
 #
 # Solution
-# Intuitively, the following greedy algorithm may come to mind: keep popping the most frequent character from the string (that is different from the last one) and adding it to a new list, until there are no more letters left. If we have used all the letters, return the joined list; otherwise, return None.
+# Intuitively, the following greedy algorithm may come to mind: keep popping the most frequent character from the string
+# (that is different from the last one) and adding it to a new list, until there are no more letters left. If we have
+# used all the letters, return the joined list; otherwise, return None.
 #
 # One tricky part is that we must make sure to pop each new letter before adding back the last one, to avoid repeats.
 #
@@ -14,6 +17,7 @@
 
 
 from collections import defaultdict
+
 
 def rearrange(string):
     frequencies = defaultdict(int)
@@ -38,6 +42,8 @@ def rearrange(string):
         return "".join(result)
     else:
         return None
+
+
 # This will take O(N2), where N is the number of letters in the string. This is because finding the maximum value in the dictionary is O(N), and we must do this every time we locate the next letter to add to our result.
 
 
@@ -48,6 +54,7 @@ def rearrange(string):
 
 from collections import defaultdict
 import heapq
+
 
 def rearrange(string):
     frequencies = defaultdict(int)
