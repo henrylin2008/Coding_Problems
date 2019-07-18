@@ -34,12 +34,15 @@
 # divide-and-conquer recurrences), our algorithm will run in O(N log N) time, since we have the same recurrence relationship as merge sort.
 #
 # How can we count the inversions between A and B in linear time? If we expand our count_inversions function to also sort
-# the array as well, we can use a similar technique to merge sort to merge and also count the inversions between A and B. To be specific, assuming A and B are sorted, we can construct a helper function that does the following:
+# the array as well, we can use a similar technique to merge sort to merge and also count the inversions between A and B.
+# To be specific, assuming A and B are sorted, we can construct a helper function that does the following:
 #
 # Scan A and B from left to right, with two pointers i and j
 # Compare A[i] and B[j]
-# If A[i] is smaller than B[j], then A[i] is not inverted with anything from B, since it's expected that everything in A would be smaller than everything in B if A + B was sorted.
-# If A[i] is greater than B[j], then B[j] is inverted with everything from A[i:], since A is sorted. Increment our counter by the number of elements in A[i:].
+# If A[i] is smaller than B[j], then A[i] is not inverted with anything from B, since it's expected that everything in A
+# would be smaller than everything in B if A + B was sorted.
+# If A[i] is greater than B[j], then B[j] is inverted with everything from A[i:], since A is sorted. Increment our
+# counter by the number of elements in A[i:].
 # Append the smaller element between A[i] and B[j] to our sorted list
 # Return the sorted list
 def count_inversions(arr):
