@@ -2,7 +2,8 @@
 # Problem
 # This problem was asked by Microsoft.
 #
-# Suppose an arithmetic expression is given as a binary tree. Each leaf is an integer and each internal node is one of '+', '−', '∗', or '/'.
+# Suppose an arithmetic expression is given as a binary tree. Each leaf is an integer and each internal node is one of
+# '+', '−', '∗', or '/'.
 #
 # Given the root to such a tree, write a function to evaluate it.
 #
@@ -16,7 +17,8 @@
 # You should return 45, as it is (3 + 2) * (4 + 5).
 #
 # Solution
-# This problem should be straightforward from the definition. It will be recursive. We check the value of the root node. If it's one of our arithmetic operators, then we take the evaluated value of our node's children and apply the operator on them.
+# This problem should be straightforward from the definition. It will be recursive. We check the value of the root node.
+# If it's one of our arithmetic operators, then we take the evaluated value of our node's children and apply the operator on them.
 #
 # If it's not an arithmetic operator, it has to be a raw number, so we can just return that.
 
