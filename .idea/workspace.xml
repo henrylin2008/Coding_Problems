@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Arrays/product_of_all_other_elements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Quicksort/quicksort.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Strings/reverse_string.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/Easy/two_sum.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeetCode/Easy/two_sum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strings/reverse_string.py" beforeDir="false" afterPath="$PROJECT_DIR$/Strings/reverse_string.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Strings/reverse_string.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="19">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -157,8 +154,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1426" />
-    <option name="y" value="270" />
+    <option name="x" value="1308" />
+    <option name="y" value="260" />
     <option name="width" value="1460" />
     <option name="height" value="1027" />
   </component>
@@ -206,6 +203,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -370,12 +368,12 @@
       <workItem from="1564750465470" duration="65000" />
       <workItem from="1564752318509" duration="4014000" />
       <workItem from="1564951159954" duration="3059000" />
-      <workItem from="1565096584224" duration="3624000" />
+      <workItem from="1565096584224" duration="3878000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31798000" />
+    <option name="totallyTimeSpent" value="32052000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,7 +385,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1426" y="270" width="1460" height="1027" extended-state="0" />
+    <frame x="1308" y="260" width="1460" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48991355" visible="true" weight="0.19464034" />
@@ -485,7 +483,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565215699546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565272393984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
     <SUITE FILE_PATH="coverage/Coding_Problems$205.coverage" NAME="205 Coverage Results" MODIFIED="1564762757864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
     <SUITE FILE_PATH="coverage/Coding_Problems$2.coverage" NAME="2 Coverage Results" MODIFIED="1565138661949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
     <SUITE FILE_PATH="coverage/Coding_Problems$two_sum.coverage" NAME="two_sum Coverage Results" MODIFIED="1565038071317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
@@ -837,8 +835,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Strings/reverse_string.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

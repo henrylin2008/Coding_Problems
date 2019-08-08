@@ -16,7 +16,7 @@ print(result)
 
 
 # Option 2: using reversed() function
-#
+
 # inputStr = 'Hello'
 #
 # # use inbuilt function reversed()
@@ -27,3 +27,10 @@ print(result)
 #
 # # now join list of characters without space
 # print(''.join(reversedChars))
+
+
+# Option 3: using extended slicing
+#
+# inputStr = 'Hello'
+#
+# print(inputStr[::-1])
