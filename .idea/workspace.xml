@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Strings/reverse_string.py" beforeDir="false" afterPath="$PROJECT_DIR$/Strings/reverse_string.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Coding_Problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Coding_Problems.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,56 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DailyCoding/110.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Arrays/Most_Frequent_item_in_an_array.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DailyCoding/2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quicksort/quicksort.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Strings/reverse_string.py">
+        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Arrays/product_of_all_other_elements.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="352">
+              <caret line="42" column="31" lean-forward="true" selection-start-line="41" selection-end-line="42" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -89,7 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DailyCoding/68.py" />
         <option value="$PROJECT_DIR$/DailyCoding/69.py" />
         <option value="$PROJECT_DIR$/DailyCoding/70.py" />
         <option value="$PROJECT_DIR$/DailyCoding/71.py" />
@@ -140,22 +97,13 @@
         <option value="$PROJECT_DIR$/DailyCoding/2.py" />
         <option value="$PROJECT_DIR$/Quicksort/quicksort.py" />
         <option value="$PROJECT_DIR$/Strings/reverse_string.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/Coding_Problems.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1308" />
-    <option name="y" value="260" />
+    <option name="x" value="1669" />
+    <option name="y" value="258" />
     <option name="width" value="1460" />
     <option name="height" value="1027" />
   </component>
@@ -193,7 +141,13 @@
             <path>
               <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
               <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
-              <item name="Strings" type="462c0819:PsiDirectoryNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="Easy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,7 +163,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -229,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.reverse_string">
+  <component name="RunManager" selected="Python.reverse_integer">
     <configuration name="2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Coding_Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -252,28 +206,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="205" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Coding_Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyCoding" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyCoding/205.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="quicksort" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Coding_Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,6 +220,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Quicksort/quicksort.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="reverse_integer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Coding_Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode/Easy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -342,11 +296,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.reverse_integer" />
         <item itemvalue="Python.reverse_string" />
         <item itemvalue="Python.quicksort" />
         <item itemvalue="Python.2" />
         <item itemvalue="Python.two_sum" />
-        <item itemvalue="Python.205" />
       </list>
     </recent_temporary>
   </component>
@@ -368,12 +322,12 @@
       <workItem from="1564750465470" duration="65000" />
       <workItem from="1564752318509" duration="4014000" />
       <workItem from="1564951159954" duration="3059000" />
-      <workItem from="1565096584224" duration="3878000" />
+      <workItem from="1565096584224" duration="9945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32052000" />
+    <option name="totallyTimeSpent" value="38119000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -385,22 +339,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1308" y="260" width="1460" height="1027" extended-state="0" />
+    <frame x="1669" y="258" width="1460" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48991355" visible="true" weight="0.19464034" />
-      <window_info id="Structure" order="1" sideWeight="0.5100865" side_tool="true" visible="true" weight="0.19464034" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48987108" visible="true" weight="0.19464034" />
+      <window_info id="Structure" order="1" sideWeight="0.5101289" side_tool="true" visible="true" weight="0.19464034" />
       <window_info id="Favorites" order="2" sideWeight="0.50859106" side_tool="true" weight="0.20352113" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" weight="0.32894737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23903508" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40460527" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3114035" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.25814235" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.25767544" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.1768953" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.17653508" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32785088" />
@@ -483,7 +437,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565272393984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_integer.coverage" NAME="reverse_integer Coverage Results" MODIFIED="1565386605484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565376674757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
     <SUITE FILE_PATH="coverage/Coding_Problems$205.coverage" NAME="205 Coverage Results" MODIFIED="1564762757864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
     <SUITE FILE_PATH="coverage/Coding_Problems$2.coverage" NAME="2 Coverage Results" MODIFIED="1565138661949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
     <SUITE FILE_PATH="coverage/Coding_Problems$two_sum.coverage" NAME="two_sum Coverage Results" MODIFIED="1565038071317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
@@ -499,13 +454,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DailyCoding/73.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DailyCoding/74.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -717,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/two_sum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DailyCoding/1012.py" />
     <entry file="file://$PROJECT_DIR$/DailyCoding/105.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -781,17 +722,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/110.py">
+    <entry file="file://$PROJECT_DIR$/Strings/1_away_strings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+        <state relative-caret-position="196">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Arrays/Most_Frequent_item_in_an_array.py">
+    <entry file="file://$PROJECT_DIR$/Strings/non_repeating_char.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="342">
+          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quicksort/quicksort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -802,41 +750,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Arrays/Most_Frequent_item_in_an_array.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DailyCoding/110.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Arrays/product_of_all_other_elements.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="291">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/two_sum.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="1146" selection-start-line="1146" selection-end-line="1146" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Strings/1_away_strings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-539">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Strings/non_repeating_char.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quicksort/quicksort.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="247">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Strings/reverse_string.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="171">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="1758" lean-forward="true" selection-start-line="1758" selection-end-line="1758" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="41" selection-end-line="42" selection-end-column="31" />
         </state>
       </provider>
     </entry>
