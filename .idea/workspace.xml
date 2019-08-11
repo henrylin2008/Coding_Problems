@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Coding_Problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Coding_Problems.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +18,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
+        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="42" column="31" lean-forward="true" selection-start-line="41" selection-end-line="42" selection-end-column="31" />
+            <state>
+              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-line="25" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -47,8 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DailyCoding/69.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/70.py" />
         <option value="$PROJECT_DIR$/DailyCoding/71.py" />
         <option value="$PROJECT_DIR$/DailyCoding/72.py" />
         <option value="$PROJECT_DIR$/DailyCoding/73.py" />
@@ -98,13 +95,15 @@
         <option value="$PROJECT_DIR$/Quicksort/quicksort.py" />
         <option value="$PROJECT_DIR$/Strings/reverse_string.py" />
         <option value="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" />
+        <option value="$PROJECT_DIR$/LeetCode/Easy/palindrome.py" />
+        <option value="$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1669" />
-    <option name="y" value="258" />
-    <option name="width" value="1460" />
+    <option name="x" value="803" />
+    <option name="y" value="479" />
+    <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -183,7 +182,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.reverse_integer">
+  <component name="RunManager" selected="Python.palindrome_num">
     <configuration name="2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Coding_Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -198,6 +197,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyCoding/2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="palindrome_num" type="PythonConfigurationType" factoryName="Python">
+      <module name="Coding_Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode/Easy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -322,12 +343,13 @@
       <workItem from="1564750465470" duration="65000" />
       <workItem from="1564752318509" duration="4014000" />
       <workItem from="1564951159954" duration="3059000" />
-      <workItem from="1565096584224" duration="9945000" />
+      <workItem from="1565096584224" duration="11440000" />
+      <workItem from="1565528677235" duration="288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38119000" />
+    <option name="totallyTimeSpent" value="39902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,16 +361,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1669" y="258" width="1460" height="1027" extended-state="0" />
+    <frame x="2776" y="415" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48987108" visible="true" weight="0.19464034" />
-      <window_info id="Structure" order="1" sideWeight="0.5101289" side_tool="true" visible="true" weight="0.19464034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4877651" visible="true" weight="0.17032968" />
+      <window_info id="Structure" order="1" sideWeight="0.5122349" side_tool="true" visible="true" weight="0.17032968" />
       <window_info id="Favorites" order="2" sideWeight="0.50859106" side_tool="true" weight="0.20352113" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" weight="0.32894737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40460527" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40460527" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3114035" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -357,14 +378,15 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.17653508" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32785088" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32785088" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32894737" />
-      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32936507" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,9 +459,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_integer.coverage" NAME="reverse_integer Coverage Results" MODIFIED="1565386605484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_integer.coverage" NAME="reverse_integer Coverage Results" MODIFIED="1565446578837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
     <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565376674757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
     <SUITE FILE_PATH="coverage/Coding_Problems$205.coverage" NAME="205 Coverage Results" MODIFIED="1564762757864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$palindrome_num.coverage" NAME="palindrome_num Coverage Results" MODIFIED="1565447303236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
     <SUITE FILE_PATH="coverage/Coding_Problems$2.coverage" NAME="2 Coverage Results" MODIFIED="1565138661949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
     <SUITE FILE_PATH="coverage/Coding_Problems$two_sum.coverage" NAME="two_sum Coverage Results" MODIFIED="1565038071317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
     <SUITE FILE_PATH="coverage/Coding_Problems$quicksort.coverage" NAME="quicksort Coverage Results" MODIFIED="1565211531580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Quicksort" />
@@ -454,13 +477,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DailyCoding/74.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DailyCoding/75.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
@@ -794,8 +810,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="42" column="31" lean-forward="true" selection-start-line="41" selection-end-line="42" selection-end-column="31" />
+        <state relative-caret-position="57">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-line="25" selection-end-column="77" />
         </state>
       </provider>
     </entry>
