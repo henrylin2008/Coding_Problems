@@ -28,9 +28,9 @@ def isPalindrome(self, x):
     a = abs(x)
 
     while (a != 0):
-        temp = a % 10
-        num = num * 10 + temp
-        a = a //10
+        temp = a % 10  # last digit value
+        num = num * 10 + temp   # push temp value to the right of num, num = output|result
+        a = a //10     # leftover digits of input x
 
     if x >= 0 and x == num:
         return True
