@@ -22,7 +22,7 @@ def common_elements(list1, list2):
         # if opposite, then increment p1 by 1 (or the next item in list1)
         else:
             p1 += 1
-    # return result list 
+    # return result list
     return result
 
 
