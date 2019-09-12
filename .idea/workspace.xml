@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LeetCode/Easy/climbStairs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arrays/is_rotation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arrays/is_rotation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/Easy/rome_to_integer.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeetCode/Easy/rome_to_integer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,64 +17,28 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DailyCoding/138.py">
+        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state relative-caret-position="361">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DailyCoding/139.py">
+        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/climbStairs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DailyCoding/140.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Arrays/product_of_all_other_elements.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state relative-caret-position="209">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Arrays/Most_Frequent_item_in_an_array.py">
+        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Arrays/common_elements_2_arrays.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Arrays/is_rotation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="-161">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -100,8 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DailyCoding/101.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/1012.py" />
         <option value="$PROJECT_DIR$/DailyCoding/102.py" />
         <option value="$PROJECT_DIR$/DailyCoding/103.py" />
         <option value="$PROJECT_DIR$/DailyCoding/105.py" />
@@ -151,14 +112,16 @@
         <option value="$PROJECT_DIR$/DailyCoding/139.py" />
         <option value="$PROJECT_DIR$/DailyCoding/140.py" />
         <option value="$PROJECT_DIR$/Arrays/is_rotation.py" />
+        <option value="$PROJECT_DIR$/Arrays/common_elements_2_arrays.py" />
+        <option value="$PROJECT_DIR$/LeetCode/Easy/climbStairs.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="906" />
-    <option name="y" value="410" />
+    <option name="x" value="133" />
+    <option name="y" value="33" />
     <option name="width" value="1680" />
-    <option name="height" value="1298" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -195,6 +158,17 @@
               <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
               <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
               <item name="Arrays" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="Easy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -393,12 +367,12 @@
       <workItem from="1564951159954" duration="3059000" />
       <workItem from="1565096584224" duration="11440000" />
       <workItem from="1565528677235" duration="5292000" />
-      <workItem from="1568149418005" duration="1629000" />
+      <workItem from="1568149418005" duration="3768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46535000" />
+    <option name="totallyTimeSpent" value="48674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -410,11 +384,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="906" y="410" width="1680" height="1298" extended-state="0" />
+    <frame x="133" y="33" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48755655" visible="true" weight="0.17216118" />
-      <window_info id="Structure" order="1" sideWeight="0.5124434" side_tool="true" visible="true" weight="0.17216118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48595506" visible="true" weight="0.17216118" />
+      <window_info id="Structure" order="1" sideWeight="0.51404494" side_tool="true" weight="0.20919882" />
       <window_info id="Favorites" order="2" sideWeight="0.50859106" side_tool="true" weight="0.20352113" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -427,7 +401,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.17653508" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25274727" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.45496184" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32894737" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -526,13 +500,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DailyCoding/104.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DailyCoding/106.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -617,13 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DailyCoding/PDF/111.py" />
     <entry file="file://$PROJECT_DIR$/DailyCoding/112.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -657,13 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -831,31 +784,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/138.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/139.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/140.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Arrays/common_elements_2_arrays.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        <state relative-caret-position="551">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Arrays/Most_Frequent_item_in_an_array.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -866,6 +805,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DailyCoding/140.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DailyCoding/139.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DailyCoding/138.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Arrays/is_rotation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -873,10 +833,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Arrays/Most_Frequent_item_in_an_array.py">
+    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="361">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/climbStairs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
