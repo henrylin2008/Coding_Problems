@@ -25,5 +25,5 @@ def max_subarray(A):
         max_current = max(A[i], max_current + A[i])
         if max_current > max_global:
             max_global = max_current
-    return max_global 
+    return max_global
 
