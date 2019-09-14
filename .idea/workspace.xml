@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LeetCode/Easy/climbStairs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-161">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="247">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -118,10 +115,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="133" />
-    <option name="y" value="33" />
+    <option name="x" value="906" />
+    <option name="y" value="410" />
     <option name="width" value="1680" />
-    <option name="height" value="1027" />
+    <option name="height" value="1298" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -157,18 +154,7 @@
             <path>
               <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
               <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
-              <item name="Arrays" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
               <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
-              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
-              <item name="Easy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,12 +353,12 @@
       <workItem from="1564951159954" duration="3059000" />
       <workItem from="1565096584224" duration="11440000" />
       <workItem from="1565528677235" duration="5292000" />
-      <workItem from="1568149418005" duration="3768000" />
+      <workItem from="1568149418005" duration="4267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48674000" />
+    <option name="totallyTimeSpent" value="49173000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,8 +370,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="33" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
+    <frame x="906" y="410" width="1680" height="1298" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48595506" visible="true" weight="0.17216118" />
       <window_info id="Structure" order="1" sideWeight="0.51404494" side_tool="true" weight="0.20919882" />
@@ -849,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="247">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
         </state>
       </provider>
     </entry>
