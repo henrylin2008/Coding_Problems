@@ -27,12 +27,15 @@ def max_Subarray(nums):
     #         max_global = max_current
     # return max_global
 
+    # return max value of nums if it's < 0
     if max(nums) < 0:
         return max(nums)
 
+    # set current max value and global max value to 0
     current_max, global_max = 0, 0
 
     for i in nums:
+        # current max is max between 0 and current_max + i
         current_max = max(0, current_max + i)
         global_max = max(current_max, global_max)
     return global_max
