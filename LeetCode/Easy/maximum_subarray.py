@@ -17,13 +17,23 @@
 # is more subtle.
 # Kadane's Algorithm, run O(n) time
 
-def max_subarray(A):
+def max_Subarray(nums):
     # initial max_current and max_global as first item in the array
-    max_current, max_global = A[0]
-    for i from 1 to length(A)-1:
-        # max value between current index or sum of previous index and current index
-        max_current = max(A[i], max_current + A[i])
-        if max_current > max_global:
-            max_global = max_current
-    return max_global
+    # max_current, max_global = A[0]
+    # for i from 1 to length(A)-1:
+    #     # max value between current index or sum of previous index and current index
+    #     max_current = max(A[i], max_current + A[i])
+    #     if max_current > max_global:
+    #         max_global = max_current
+    # return max_global
+
+    if max(nums) < 0:
+        return max(nums)
+
+    current_max, global_max = 0, 0
+
+    for i in nums:
+        current_max = max(0, current_max + i)
+        global_max = max(current_max, global_max)
+    return global_max
 
