@@ -28,6 +28,7 @@ def max_Subarray(nums):
     # return max_global
 
     # return max value of nums if it's < 0
+    # return max value of nums if it's < 0
     if max(nums) < 0:
         return max(nums)
 
