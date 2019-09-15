@@ -40,3 +40,35 @@ def max_Subarray(nums):
         global_max = max(current_max, global_max)
     return global_max
 
+# Follow-up: what if the elements can wrap around? For ex, given [8, -1, 3, 4], return 15, as we choose the numbers 3, 4,
+# and 8 where teh 8 is obtained from wrapping around
+# We split the follow-up problem into 2 parts. The first part is the same as before: finding the maximum subarray sum
+# that doesn't wrap around. Next, we compute the maximum subarray sum that does wrap around, and take the maximum of the 2.
+# To get the largest wrap-around sum, we can use a little trick. For any subarray that wraps around, there must be some
+# continguous elements that are excluded, and these elements actually form the minimum possible subarray! therefore,
+# we can first find the minimum subarray sum using exactly the method above, and subtract this from the array's total.
+# For ex, in the example above, the minimum subarray is [-1], with a total of -1. we then subtrack this from the array
+# total, 14, to get 15.
+
+def maximum_circular_subarray(arr):
+    max_subarray_sum_wraparound = sum(arr) - min_subarray_sum(arr)
+
+    return max(max_subarray_sum(arr), max_subarray_sum_wraparound)
+
+def max_subarray_sum(arr):
+    max_ending_here = max_so_far = 0
+
+    for x in arr:
+        max_ending_here = max(x, max_ending_here + x)
+        max_so_far = max(max_so_far, max_ending_here)
+
+    return max_so_far
+
+def min_subarray_sum(arr):
+    min_ending_here = min_so_far = 0
+
+    for x in arr:
+        min_ending_here = min(x, min_ending_here + x)
+        min_so_far = min(min_so_far, min_ending_here)
+
+    return min_so_far
