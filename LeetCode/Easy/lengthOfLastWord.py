@@ -29,6 +29,5 @@ def lengthOfLastWord(s):
 
 
 
-
-lengthOfLastWord("sweet dream")
+# lengthOfLastWord("sweet dream")
 
