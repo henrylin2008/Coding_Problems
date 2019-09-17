@@ -17,9 +17,18 @@ def lengthOfLastWord(s):
     local_count = 0
 
     for i in range(len(s)):
-        if s[i] = ' ':
+        # if the letter is blank, then reset local count to 0
+        if s[i] == ' ':
             local_count = 0
+        # increment local count if it is not a letter, and set local count to global count
         else:
             local_count += 1
             count = local_count
+    # return global count
     return count
+
+
+
+
+lengthOfLastWord("sweet dream")
+
