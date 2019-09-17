@@ -23,14 +23,21 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        # Solution #1
+        # Solution #1: runtime 1132ms (too long) s
         # for i in nums:
+        #     # reminder (j) = target - i
         #     j = target - i
-        #     start_index = nums.index()
+        #     # starting index
+        #     start_index = nums.index(i)
+        #     # next index
         #     next_index = start_index + 1
-        #     temp_nums = nums[next_index: ]
-        #     if j in temp_nums:
+        #     # new subarray after start_index; [7, 11, 15]
+        #     subArray = nums[next_index: ]
+        #     # if reminder (j) in new subArray
+        #     if j in subArray:
+        #     # return(index of i, index of j)
         #         return(nums.index(i), next_index + temp_nums.index(j))
+
 
         # Solution #2
         dict = {}
