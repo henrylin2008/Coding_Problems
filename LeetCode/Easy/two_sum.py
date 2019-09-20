@@ -43,9 +43,9 @@ class Solution:
         dict = {}
 
         for i in range(len(nums)):
-            # If the reminder/sum is not in the dictionary
+            # If the reminder/sum is not in the dictionary, store the index of i in the dictionary
             if target - nums[i] not in dict:
                 dict[nums[i]] = i
-            # Otherwise, return the index/position of reminder and i in the dictionary
+            # Otherwise, return the index/position of i and the reminder in the dictionary
             else:
                 return [dict[target-nums[i]], i]
