@@ -49,3 +49,12 @@ class Solution:
             # Otherwise, return the index/position of i and the reminder in the dictionary
             else:
                 return [dict[target-nums[i]], i]
+
+        # Same as Solution #2 
+        # d = {}
+        # for i, n in enumerate(nums):
+        #     m = target - n
+        #     if m in d:
+        #         return [d[m], i]
+        #     else:
+        #         d[n] = i
