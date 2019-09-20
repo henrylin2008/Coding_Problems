@@ -23,7 +23,7 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        # Solution #1: runtime 1132ms (too long) s
+        # Solution #1: runtime 1132ms (too long)
         # for i in nums:
         #     # reminder (j) = target - i
         #     j = target - i
@@ -39,11 +39,13 @@ class Solution:
         #         return(nums.index(i), next_index + temp_nums.index(j))
 
 
-        # Solution #2
+        # Solution #2: two hash tables
         dict = {}
 
         for i in range(len(nums)):
+            # If the reminder/sum is not in the dictionary
             if target - nums[i] not in dict:
                 dict[nums[i]] = i
+            # Otherwise, return the index/position of reminder and i in the dictionary
             else:
                 return [dict[target-nums[i]], i]
