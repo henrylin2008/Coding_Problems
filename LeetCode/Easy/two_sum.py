@@ -50,7 +50,7 @@ class Solution:
             else:
                 return [dict[target-nums[i]], i]
 
-        # Same as Solution #2 
+        # Same as Solution #2
         # d = {}
         # for i, n in enumerate(nums):
         #     m = target - n
