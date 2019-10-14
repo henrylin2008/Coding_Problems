@@ -16,5 +16,5 @@
 
 def findDisappearedNumbers(nums):
     len_array = len(nums) + 1    # total length of array; +1 b/c range() = len() - 1
-    a = set([i for i in range(1, len_array)])  # find all
-    b = set
+    a = set([i for i in range(1, len_array)])  # find all possible elements btwn 1 and n
+    b = set(nums) # 
