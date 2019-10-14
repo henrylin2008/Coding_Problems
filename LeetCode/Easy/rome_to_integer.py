@@ -59,4 +59,16 @@ def romanToInt(s):
 
     return result
 
-romanToInt("MCMXCIV")
+
+# Solutnion #2:
+#
+# def romanToInt2(s):
+#     roman = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+#     z = 0
+#
+#     for i in range(0, len(s) - 1):
+#         if roman[s[i]] < roman[s[i + 1]]:
+#             z -= roman[s[i]]
+#         else:
+#             z += roman[s[i]]
+#     return z + roman[s[-1]]
