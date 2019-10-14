@@ -58,3 +58,5 @@ def romanToInt(s):
             result += numeral_map[s[i]]
 
     return result
+
+romanToInt("MCMXCIV")
