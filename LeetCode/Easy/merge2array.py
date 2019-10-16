@@ -25,6 +25,6 @@ def merge(nums1, m, nums2, n):
             # swap current highest value of nums1 (nums1[m-1]) and last index (nums1[m-1+n])
             nums1[m-1+n], nums1[m-1] = nums1[m-1], nums1[m-1+n]
             m = m -1    # next (highest) value
-    if m == 0 and n > 0: # when n > m, or nums2 is longer than nums1
-        nums1[:n] = nums2[:n] # move everything that's left from nums2 to the beginning of nums1
+    if m == 0 and n > 0: # Edge case, where small values (<nums1[0]) left at the beginning of n;
+        nums1[:n] = nums2[:n] # move smaller values (left from nums2) to the beginning of nums1 (before index 1)
     return nums1
