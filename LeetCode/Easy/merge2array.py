@@ -18,10 +18,11 @@
 #
 def merge(nums1, m, nums2, n):
     while m > 0 and n > 0: # when there's still number in m and n
-        if nums1[m-1] < nums2[n-1]: # if last value of nums1 is less than last value of nums 2
-            nums1[m-1+n] = nums2[n-1] # move highest value of nums2 (nums2[n-1]) to the last value of nums1
-            n = n - 1 # decrease 1 from n 
-        else:
+        if nums1[m-1] < nums2[n-1]: # if highest value of nums1 is less than highest value of nums 2
+            nums1[m-1+n] = nums2[n-1] # move highest value of nums2 (nums2[n-1]) to the last index of nums1
+            n = n - 1 # next highest value after removed n
+        else:   # else if highest value of nums1 > nums2[n-1]
+            # 
             nums1[m-1+n], nums1[m-1] = nums1[m-1], nums1[m-1+n]
             m = m -1
     if m == 0 and n > 0:
