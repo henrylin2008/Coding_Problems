@@ -20,3 +20,14 @@
 # Input: [7,6,4,3,1]
 # Output: 0
 # Explanation: In this case, no transaction is done, i.e. max profit = 0.
+
+def maxProfit(prices):
+
+    max_profit, min_price = 0, float("inf")
+
+    for price in prices:
+        min_price = min(min_price, price)
+        max_profit = max(max_profit, price - min_price)
+
+    return max_profit
+
