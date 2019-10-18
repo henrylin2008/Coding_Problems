@@ -23,7 +23,7 @@
 
 def maxProfit(prices):
 
-    max_profit, min_price = 0, float("inf")
+    max_profit, min_price = 0, float("inf") # min_price 
 
     for price in prices:
         min_price = min(min_price, price)
