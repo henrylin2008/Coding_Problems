@@ -23,11 +23,11 @@
 
 def maxProfit(prices):
 
-    max_profit, min_price = 0, float("inf") # min_price 
+    max_profit, min_price = 0, float("inf") # min_price = infinity
 
     for price in prices:
-        min_price = min(min_price, price)
-        max_profit = max(max_profit, price - min_price)
+        min_price = min(min_price, price) # return min value between min_price and current price
+        max_profit = max(max_profit, price - min_price)  # finding max_profit by comparing current max_profit and the difference between current price and min price
 
     return max_profit
 
