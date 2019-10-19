@@ -36,4 +36,10 @@
 # time: O(n)
 # Space: O(n)
 
-def 
+def isValid(s):
+    lookup = {"(":")", "{":"}", "[":"]"}
+    stack = []
+    for p in s:
+        if p in lookup:
+            stack.append(p)
+        elif len(s)
