@@ -28,3 +28,12 @@
 #
 # Input: "{[]}"
 # Output: true
+
+# case 1: ()[]{}
+# case 2: ([)]
+# case 3: {
+
+# time: O(n)
+# Space: O(n)
+
+def 
