@@ -39,7 +39,10 @@
 def isValid(s):
     lookup = {"(":")", "{":"}", "[":"]"}
     stack = []
-    for p in s:
-        if p in lookup:
-            stack.append(p)
-        elif len(s)
+    for c in s:
+        if c in lookup:
+            stack.append(c)  # add c to stack if it's in lookup table
+        elif len(s) == 0 or lookup[stack.pop()] != c: # 
+            return False
+
+    return len(s) == 0
