@@ -42,7 +42,8 @@ def isValid(s):
     for c in s:
         if c in lookup:
             stack.append(c)  # add c to stack if it's in lookup table
-            elif len(stack) == 0 or lookup[stack.pop()] != c: # compare most top item in the stack, return False if it doesn't match last parenthesis
+        elif len(stack) == 0 or lookup[stack.pop()] != c: # if stack is empty or top of stack does not pair with closing parenthesis
+            # pop will pair matched parenthesis and move it out of stack 
+            #ex: )(; [(])
             return False
-
     return len(s)
