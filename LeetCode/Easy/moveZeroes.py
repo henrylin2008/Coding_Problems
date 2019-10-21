@@ -12,3 +12,13 @@
 #
 # You must do this in-place without making a copy of the array.
 # Minimize the total number of operations.
+
+def moveZeroes(nums):
+    pos = 0
+    for i in range(len(nums)):
+        if nums[i]:
+            nums[pos] = nums[i]
+            pos += 1
+
+    for i in range(pos, len(nums)):
+        nums[i] = 0 
