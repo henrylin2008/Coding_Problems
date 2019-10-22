@@ -14,14 +14,14 @@
 # Minimize the total number of operations.
 
 def moveZeroes(nums):
-    pos = 0
+    pos = 0  # the index after swap integer (and 0)
     # go through the array, and move ordered integers to the front of the array and move zeros to the back
     # Ex: [0,1,0,3,12]
     # Loop1: [1, 1, 0, 3, 12]
     # Loop2: [1, 3, 0, 3, 12]
     # Loop3: [1, 3, 12, 3, 12]
     for i in range(len(nums)):
-        if nums[i]:
+        if nums[i]:   #
             nums[pos] = nums[i]
             pos += 1
 
