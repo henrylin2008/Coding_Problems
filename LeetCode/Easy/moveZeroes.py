@@ -15,12 +15,11 @@
 
 def moveZeroes(nums):
     pos = 0
-    # swap 0s with ordered numbers
+    # go through the array, and move ordered integers to the front of the array and move zeros to the back
     # Ex: [0,1,0,3,12]
     # Loop1: [1, 1, 0, 3, 12]
     # Loop2: [1, 3, 0, 3, 12]
     # Loop3: [1, 3, 12, 3, 12]
-
     for i in range(len(nums)):
         if nums[i]:
             nums[pos] = nums[i]
