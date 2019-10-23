@@ -14,3 +14,11 @@
 #
 # Input: [4,1,2,1,2]
 # Output: 4
+
+def singleNumber(nums):
+    ans = 0
+
+    for num in nums:
+        ans ^= num
+
+    return ans
