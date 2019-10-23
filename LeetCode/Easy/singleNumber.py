@@ -19,13 +19,14 @@ def singleNumber(nums):
     output = 0  # set a output value
 
     for num in nums:
-        output ^= num  # ex: [2,2,1]
-
-    return output
+        output ^= num  # ex: [2,2,1], see below for concept
         # loop 1: output=2
         # loop 2: output=0
         # loop 3: output=1
 
+    return output
+s
+# https://leetcode.com/problems/single-number/solution/
 # Bit Manipulation
 # Concept
 #
@@ -34,8 +35,8 @@ def singleNumber(nums):
 # - If we take XOR of two same bits, it will return 0
 #     * a ^ a = 0
 #
-# -a ^ b ^ a = (a ^ a) ^ b = 0 ^ b = b
+# - a ^ b ^ a = (a ^ a) ^ b = 0 ^ b = b
 
-# Time complexity : O(n)O(n). We only iterate through \text{nums}nums, so the time complexity is the number of elements in \text{nums}nums.
+# Time complexity : O(n). We only iterate through nums, so the time complexity is the number of elements in nums.
 #
-# Space complexity : O(1)O(1).
+# Space complexity : O(1).
