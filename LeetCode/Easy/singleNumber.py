@@ -40,3 +40,33 @@ s
 # Time complexity : O(n). We only iterate through nums, so the time complexity is the number of elements in nums.
 #
 # Space complexity : O(1).
+
+
+# Approach 1: List operation
+# Algorithm
+#
+# Iterate over all the elements in nums
+# If some number in nums is new to array, append it
+# If some number is already in the array, remove it
+
+# class Solution(object):
+#     def singleNumber(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         no_duplicate_list = []
+#         for i in nums:
+#             if i not in no_duplicate_list:
+#                 no_duplicate_list.append(i)
+#             else:
+#                 no_duplicate_list.remove(i)
+#         return no_duplicate_list.pop()
+
+# Complexity Analysis
+#
+# Time complexity : O(n^2). We iterate through nums, taking O(n) time. We search the whole list to find whether
+# there is duplicate number, taking O(n) time. Because search is in the for loop, so we have to multiply both time
+# complexities which is O(n^2).
+#
+# Space complexity : O(n). We need a list of size nn to contain elements in nums.
