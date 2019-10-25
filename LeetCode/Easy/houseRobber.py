@@ -19,4 +19,11 @@
 #              Total amount you can rob = 2 + 9 + 1 = 12.
 
 def rob(nums):
-    
+    last, now = 0, 0
+
+    for i in nums:
+        last, now = now, max(last+i, now)
+        # last = max of last iteration = now
+        # now: max between max value from last iteration and last value + value of current index
+
+    return now
