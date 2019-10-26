@@ -20,7 +20,9 @@
 
 def rob(nums):
     last, now = 0, 0
-
+    # Last: last point max amount of money
+    # now: current max amount of money
+    
     for i in nums:
         last, now = now, max(last+i, now)
         # last = max of last iteration = now
