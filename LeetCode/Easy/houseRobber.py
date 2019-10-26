@@ -22,10 +22,10 @@ def rob(nums):
     last, now = 0, 0
     # Last: last point max amount of money
     # now: current max amount of money
-    
+
     for i in nums:
         last, now = now, max(last+i, now)
-        # last = max of last iteration = now
-        # now: max between max value from last iteration and last value + value of current index
+        # last = max of last iteration = now from last iteration
+        # now: max between max value from last iteration (now) and last value + value of current index
 
     return now
