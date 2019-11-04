@@ -30,17 +30,17 @@
 # For C programmers, try to solve it in-place in O(1) extra space.
 
 def reverseWord(s):
-    if s == "":
-        return s  # return s if it's empty
+    if s == "":   # if s is empty
+        return s  # return s
 
-    ls = s.split() # split evey word in string
+    ls = s.split() # (split) evey word in the string
 
-    if ls == []:   # case: "    ", if it's all space
+    if ls == []:   # case: "    ", if ls is all space
         return ""   # return empty
 
-    result = ""
+    result = ""  # logic: append every word (from right to left) in the string (except last word), then append last word
     for i in range(0, len(ls)-1):  # for word from first to last-1 (second to last)
-        result += ls[len(ls)-1-i] + " "  #
-    result += ls[0]
+        result += ls[len(ls)-1-i] + " "  # adding word from right (second to last) to left and adding a trailing space
+    result += ls[0]  # append first word in ls (last word left) into result
 
     return result
