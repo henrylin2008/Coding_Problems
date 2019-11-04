@@ -29,3 +29,18 @@
 # Follow up:
 # For C programmers, try to solve it in-place in O(1) extra space.
 
+def reverseWord(s):
+    if s == "":
+        return s  # return s if it's empty
+
+    ls = s.split() # split evey word in string
+
+    if ls == []:   # case: "    ", if it's all space
+        return ""   # return empty
+
+    result = ""
+    for i in range(0, len(ls)-1):  # for word from first to last-1 (second to last)
+        result += ls[len(ls)-1-i] + " "  #
+    result += ls[0]
+
+    return result
