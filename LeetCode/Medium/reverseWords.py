@@ -30,7 +30,7 @@
 # For C programmers, try to solve it in-place in O(1) extra space.
 
 def reverseWord(s):
-    if s == "":   # if s is empty
+    if s == "":   # if given string(s) is empty
         return s  # return s
 
     ls = s.split() # (split) evey word in the string
@@ -38,9 +38,10 @@ def reverseWord(s):
     if ls == []:   # case: "    ", if ls is all space
         return ""   # return empty
 
-    result = ""  # logic: append every word (from right to left) in the string (except last word), then append last word
+    result = ""  # logic: append every word in the ls (except last word) from right to left with a trialing space, then
+                 # append last word without any trialing space
     for i in range(0, len(ls)-1):  # for word from first to last-1 (second to last)
-        result += ls[len(ls)-1-i] + " "  # adding word from right (second to last) to left and adding a trailing space
+        result += ls[len(ls)-1-i] + " "  # adding word from right (second to last) to left and add a trailing space
     result += ls[0]  # append first word in ls (last word left) into result
 
     return result
