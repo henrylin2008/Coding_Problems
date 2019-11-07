@@ -18,7 +18,7 @@
 
 def permute(nums):
 
-    if len(nums) <= 1:
+    if len(nums) <= 1: # return nums itself if the length = 1 or 0
         return [nums]
 
     answer = []
