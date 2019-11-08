@@ -23,8 +23,9 @@ def permute(nums):
 
     answer = []
     for i, num in enumerate(nums): # i = index; num = value of current index; enumerate returns current index and its value
-        n = nums[:i] + nums[i+1:] # anything but (value of) current index;  ex: [1,2,3]: index(0) = 1 , n = [2,3]
-        for y in permute(n):  # recursive call, for loop for reminder nums
+        n = nums[:i] + nums[i+1:] # items other than current index (what's left in the array)
+        # ex: [1,2,3]: index(0) = 1 , n = [2,3]
+        for y in permute(n):  # recursive call, for loop for reminder nums (other than current index)
             answer.append([num] + y)  # combine result of reminder nums and result of first for loop
 
     return answer
