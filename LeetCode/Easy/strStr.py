@@ -20,7 +20,10 @@
 
 def strStr(haystack, needle):
 
-    for i in range(len(haystack) - len(needle) + 1):
-        if haystack[i: i + len(needle)] == needle:
-            return i
-    return -1
+    for i in range(len(haystack) - len(needle) + 1): # go through every item in range b/t difference of 2 strings
+        # range = difference b/t len(haysatack) and len(needle)
+        if haystack[i: i + len(needle)] == needle:  # search if there's a match of string of needle in haystack
+            # ex 1 (above): i + len(needle) = 2 + 2 = 4
+            # haystack[i: i + len(needle)] = ll
+            return i # return the index of first matched letter (of needle)
+    return -1  # if no match found 
