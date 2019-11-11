@@ -26,4 +26,4 @@ def strStr(haystack, needle):
             # ex 1 (above): i + len(needle) = 2 + 2 = 4
             # haystack[i: i + len(needle)] = ll
             return i # return the index of first matched letter (of needle)
-    return -1  # if no match found 
+    return -1  # if no match found
