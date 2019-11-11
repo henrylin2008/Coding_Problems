@@ -14,7 +14,7 @@
 # It doesn't matter what you leave beyond the returned length.
 # Example 2:
 #
-# Given nums = [0,0,1,1,1,2,2,3,3,4],
+# Given nums = [0,0,1,1,1,2,2,3,3,4]
 #
 # Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
 #
@@ -35,3 +35,16 @@
 # for (int i = 0; i < len; i++) {
 #     print(nums[i]);
 # }
+
+def removeDuplicates(nums):
+
+    if not nums:
+        return 0
+
+    count = 0
+    for i in range(len(nums)):
+        if nums[count] != nums[i]:
+            count += 1
+            nums[count] = nums[i]
+
+    return count+1
