@@ -38,13 +38,13 @@
 
 def removeDuplicates(nums):
 
-    if not nums:
+    if not nums:  # if empty return 0
         return 0
 
-    count = 0
-    for i in range(len(nums)):
-        if nums[count] != nums[i]:
+    count = 0  # set initial count
+    for i in range(len(nums)):  # read through all numbers in nums
+        if nums[count] != nums[i]: # when 2 numbers (next to each other) are not same, then increment count by 1
             count += 1
-            nums[count] = nums[i]
+            nums[count] = nums[i]  
 
     return count+1
