@@ -45,6 +45,10 @@ def removeDuplicates(nums):
     for i in range(len(nums)):  # read through all numbers in nums
         if nums[count] != nums[i]: # when 2 numbers (next to each other) are not same,
             count += 1  # then increment count by 1
-            nums[count] = nums[i] # update value of nums[count] to match with value of nums[i]
+            nums[count] = nums[i] # update value of nums[count] to match with value of nums[i]，so it compares with
+            # next value with updated count value;
+            # Ex: nums = [1,2,2,3,4,5];
+            # nums[0] != nums[1]: count += 1 ==> 1;
+            # nums[count] ==> nums[1] = 2; this only updated the value of nums[count], but not the value of count
 
-    return count+1 
+    return count+1  # update count (to match with nums[count])
