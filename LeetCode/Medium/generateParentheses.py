@@ -13,11 +13,11 @@
 # ]
 
 def generateParentheses(self, n):
-    if n == 0:
+    if n == 0:  # return empty array if n == 0
         return []
 
-    result = []
-    self.helper(n, n, '', result)
+    result = [] #
+    self.helper(n, n, '', result)  # recursive function, ("left num", "right num", item, result)
     return result
 
 def helper(self, l, r, item, result):
