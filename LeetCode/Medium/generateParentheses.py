@@ -35,16 +35,18 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         if n == 0: # return empty array if n == 0
             return []
-        result = []
-        self.helper(n, n, '', result) #recursive call, ("# of '('", "# of ')'", 'current return value', 'append return value into result')
+        result = [] #
+        self.helper(n, n, '', result) #recursive calls, n = # of '('; n = # of ')'; ''= temp return value, result = final return list 
         return result
 
-    def helper(self, l, r, item, result):
-        if r < l:
+    def helper(self, l, r, item, result): # l = # of "(" left; r = # of ')' left; item = current return value;
+        # result = append (current) returned value
+        if r < l:  # if r left value less than l left value, that mean [')'] has gone before ['('], which is invalid
+            # Ex: ())( : ) [i(2)] put in before (, resulted in invalid, no need to append anything into result
             return
-        if l == 0 and r == 0:
+        if l == 0 and r == 0: # if no ['('] and [')'] parentheses left, append the item into the result list
             result.append(item)
-        if l > 0:
-            self.helper(l - 1, r, item + '(', result)
-        if r > 0:
-            self.helper(l, r - 1, item + ')', result)
+        if l > 0: # if any left ['('] parenthesis left
+            self.helper(l - 1, r, item + '(', result) # decrease l ['('] by 1, and append '(' into temp item list
+        if r > 0: # if any right [')'] parenthesis left
+            self.helper(l, r - 1, item + ')', result) # decrease r [')'] by 1, and append ')' into temp item list
