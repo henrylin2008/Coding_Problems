@@ -17,7 +17,7 @@ def generateParentheses(self, n):
         return []
 
     result = [] #
-    self.helper(n, n, '', result)  # recursive function, ("left num", "right num", item, result)
+    self.helper(n, n, '', result)  # recursive function, ("# of (", "# of )", 'current return value', 'append return value into result')
     return result
 
 def helper(self, l, r, item, result):
