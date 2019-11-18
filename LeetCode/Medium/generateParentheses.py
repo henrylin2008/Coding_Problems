@@ -36,7 +36,8 @@ class Solution:
         if n == 0: # return empty array if n == 0
             return []
         result = [] #
-        self.helper(n, n, '', result) #recursive calls, n = # of '('; n = # of ')'; ''= temp return value, result = final return list 
+        self.helper(n, n, '', result) #recursive calls, n = # of '('; n = # of ')'; ''= temp return value;
+        # result = final return list
         return result
 
     def helper(self, l, r, item, result): # l = # of "(" left; r = # of ')' left; item = current return value;
