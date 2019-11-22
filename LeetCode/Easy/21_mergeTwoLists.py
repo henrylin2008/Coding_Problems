@@ -21,19 +21,20 @@ class solution:
     def mergeTwoLists(self, l1, l2):
         curr = dummy = ListNode(0)
         # curr: current pointer
-        # dummy: a dummy node, the goal is move the pointer from the end (when finished comparing) to the beginning of node
+        # dummy: temp pointer (beginning of the node); the goal of this dummy value is by end of comparsion, this pointer
+        # will be used for return value/result
         # ListNode(0): beginning of the node
 
         while l1 and l2:
             if l1.val < l2.val: # when l1 value is less than l2 value
-                curr.next = l1 # insert the smaller value (l1)
-                l1 = l1.next # move the pointer to next l1 value, since the current value has been inserted into the list
+                curr.next = l1 # insert the smaller value (l1) into current value
+                l1 = l1.next # move the pointer to next value in l1
             else:  # when l1 >= l2
-                curr.next = l2 # insert l2
+                curr.next = l2 # enter l2 value into current
                 l2 = l2.next # move the pointer to next (l2) value
-            curr = curr.next # move the pointer of output to next node
-        curr.next = l1 or l2 # for case: input: l1=[1,2,3,],l2=[4,5,6] or vice versa; as while loop (above) does not cover this case
+            curr = curr.next # move the pointer of output to next value
+        curr.next = l1 or l2 # for case where the entire node is less than the other node
+        # case: input: l1=[1,2,3,],l2=[4,5,6] or vice versa; as while loop (above) does not cover this case
         # append l2 into the end of l1 or vice versa
 
-        return dummy.next
-
+        return dummy.next #dummy: beginning pointer of node; dummy.next = value of first node
