@@ -31,18 +31,19 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
         seq = "1"   # initial sequence (first line)
-        for i in range(n - 1): # locate item in nth line; range from 0 to n-1
-            seq = self.getNext(seq) 
+        for i in range(n - 1): # locate number in nth line; range from 0 (i) to n-1
+            seq = self.getNext(seq) # sequence of each line
         return seq
 
     def getNext(self, seq):
-        i, next_seq = 0, ""
-        while i < len(seq):
-            count = 1
-            while i < len(seq) - 1 and seq[i] == seq[i + 1]:
-                count += 1
-                i += 1
-            next_seq += str(count) + seq[i]
-            i += 1
-        return next_seq
+        i, next_seq = 0, ""  # i = index; next_seq = return result
+        while i < len(seq): # go through every number in sequence; i <= len(seq)-1
+            count = 1 # initial count; first item in sequence, always = 1
+            while i < len(seq) - 1 and seq[i] == seq[i + 1]: # while 2 consecutive numbers are the same, and < len(seq) -1
+                # break when 2 consecutive numbers are different
+                count += 1 # increment count by 1
+                i += 1 # move to next index/number
+            next_seq += str(count) + seq[i] # combine count of current number and current number into the output
+            i += 1 # next number
+        return next_seq # result is provided to getNext(seq) in countAndSay function
 
