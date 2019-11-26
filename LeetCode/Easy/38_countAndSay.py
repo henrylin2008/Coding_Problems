@@ -31,20 +31,20 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
         seq = "1"   # initial sequence (first line)
-        for i in range(n - 1): # locate number in nth line; range(n-1), b/c i starts at 0
-            seq = self.getNext(seq) # sequence of each line
+        for i in range(n - 1): # locate numbers in nth line; range(n-1), b/c i starts at 0
+            seq = self.getNext(seq) # sequence of each line; For each line: read and count its values
         return seq
 
     def getNext(self, seq):
         i, next_seq = 0, ""  # i = index; next_seq = result
-        while i < len(seq): # go through every number in sequence; i <= len(seq)-1
-            count = 1 # initial count; first item in sequence, always = 1
+        while i < len(seq): # go through every number in sequence when i <= len(seq)-1
+            count = 1 # initial count; first number in any sequence/line, always one (count) of any first number
             while i < len(seq) - 1 and seq[i] == seq[i + 1]: # while 2 consecutive numbers are the same
-                # i < len(seq) -1: -1 avoids going out of range
+                # i < len(seq) -1: -1 avoids going out of range, b/c i += 1 in the loop
                 # break when 2 consecutive numbers are different
-                count += 1 # increment count by 1
-                i += 1 # move to next index/number
-            next_seq += str(count) + seq[i] # combine count of current number and current number into the output
-            i += 1 # next number
+                count += 1 # count total of same consecutive numbers
+                i += 1 # read next number
+            next_seq += str(count) + seq[i] # combine total count of consecutive numbers and current number into next sequence
+            i += 1 # next number outside while loop (same number)
         return next_seq # result is provided to getNext(seq) in countAndSay function
 
