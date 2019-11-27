@@ -21,3 +21,12 @@
 #
 # Input: [1,3,5,6], 0
 # Output: 0
+
+def searchInsert(nums, target):
+        if target > nums[len(nums)-1]: # when target is great than (all numbers) in nums
+            return len(nums)  # len(nums) = last index/value
+
+        for i in range(len(nums)): # going through every number in nums
+            if nums[i] >= target: # if the value of index is >= target
+                return i # return the index number
+
