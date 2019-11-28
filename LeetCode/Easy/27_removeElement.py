@@ -50,4 +50,14 @@ def removeElement(nums, val):
     # Initial pointer (i), check first and second number, both are not the value to remove
     # round 3: 2, 2, 3, 3 (nums[0]=2, not the removal value, stay the same)
     # round 4: 2, 2, 3, 3 (nums[1]=2, not the removal value, stay the same, initial pointer (i) at nums[1])
-    # round 5: initial pointer (i: nums[1], last pointer: nums[1]); return last (pointer) + 1 
+    # round 5: initial pointer (i: nums[1], last pointer: nums[1]); return last (pointer) + 1
+
+    i, last = 0, len(nums) -1
+
+    while i <= last:
+        if nums[i] == val:
+            nums[i], nums[last] = nums[last], nums[i]
+            last -= 1
+        else:
+            i += 1
+    return last+1 
