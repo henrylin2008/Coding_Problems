@@ -39,3 +39,15 @@
 # for (int i = 0; i < len; i++) {
 #     print(nums[i]);
 # }
+
+def removeElement(nums, val):
+
+    # logic: create 2 pointers: beginning of nums and last of nums
+    # swap 1st and last
+    # For Ex 1: [3,2,2,3], val = 3
+    # round 1 (after swap): 3, 2, 2, 3 (swapped nums[0] (first) and nums[3] (last); last pointer: nums[2] = 2)
+    # round 2 (after swap): 2, 2, 3, 3 (swapped nums[0] (first) and nums[2] (second to last); last pointer: nums[1] = 2)
+    # Initial pointer (i), check first and second number, both are not the value to remove
+    # round 3: 2, 2, 3, 3 (nums[0]=2, not the removal value, stay the same)
+    # round 4: 2, 2, 3, 3 (nums[1]=2, not the removal value, stay the same, initial pointer (i) at nums[1])
+    # round 5: initial pointer (i: nums[1], last pointer: nums[1]); return last (pointer) + 1 
