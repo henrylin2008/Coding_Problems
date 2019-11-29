@@ -55,9 +55,9 @@ def removeElement(nums, val):
     i, last = 0, len(nums) -1  # set initial pointer and last pointer
 
     while i <= last: # while initial pointer <= last pointer
-        if nums[i] == val: # when value of nums[i] equals (remove) value
-            nums[i], nums[last] = nums[last], nums[i] # swap num[i] with last index
+        if nums[i] == val: # when value of nums[i] equals (removal) value
+            nums[i], nums[last] = nums[last], nums[i] # swap num[i] with last (index) value
             last -= 1 # move last pointer one position to the left
         else:
-            i += 1 # increase the index
+            i += 1 # increase the index (until it meets last pointer)
     return last+1  # adding ones b/c index starts at 0
