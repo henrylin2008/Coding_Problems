@@ -52,12 +52,12 @@ def removeElement(nums, val):
     # round 4: 2, 2, 3, 3 (nums[1]=2, not the removal value, stay the same, initial pointer (i) at nums[1])
     # round 5: initial pointer (i: nums[1], last pointer: nums[1]); return last (pointer) + 1
 
-    i, last = 0, len(nums) -1
+    i, last = 0, len(nums) -1  # set initial pointer and last pointer
 
-    while i <= last:
-        if nums[i] == val:
-            nums[i], nums[last] = nums[last], nums[i]
-            last -= 1
+    while i <= last: # while initial pointer <= last pointer
+        if nums[i] == val: # when value of nums[i] equals (remove) value
+            nums[i], nums[last] = nums[last], nums[i] # swap num[i] with last index
+            last -= 1 # move last pointer one position to the left
         else:
-            i += 1
-    return last+1 
+            i += 1 # increase the index
+    return last+1  # adding ones b/c index starts at 0
