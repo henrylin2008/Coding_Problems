@@ -27,8 +27,8 @@
 #         for string in strs[1:]: # for words after index 0 (first word)
 #             if i >= len(string) or string[i] != strs[0][i]: # when i is greater or equal to length of string (must be first condition)
 #                 # or when string in index i not equal to the string in same position of first word
-#                 return strs[0][:i] #return every string before index i (not including i) in first word
+#                 return strs[0][:i] #return matched string/s before index i (not including i) in first word
 #
-#     return strs[0] # strs[0] == ""; string exist as empty str("")
+#     return strs[0] # strs[0] == [""]; string exist as an empty str([""])
 
 def longestCommonPrefix(strs):
