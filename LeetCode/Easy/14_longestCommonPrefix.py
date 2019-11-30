@@ -20,13 +20,14 @@
 # solution #1
 # def longestCommonPrefix(strs):
 #
-#     if not strs:
-#         return ""
+#     if not strs: # when no string
+#         return "" # return empty string
 #
-#     for i in range(len(strs[0])):
-#         for string in strs[1:]:
-#             if i >= len(string) or string[i] != strs[0][i]:
-#                 return strs[0][:i]
+#     for i in range(len(strs[0])): # for every char in first word
+#         for string in strs[1:]: # for words after index 0 (first word)
+#             if i >= len(string) or string[i] != strs[0][i]: # when i is greater or equal to length of string (must be first condition)
+#                 # or when string in index i not equal to the string in same position of first word
+#                 return strs[0][:i] #return every string before index i (not including i) in first word
 #
 #     return strs[0] # strs[0] == ""; string exist as empty str("")
 
