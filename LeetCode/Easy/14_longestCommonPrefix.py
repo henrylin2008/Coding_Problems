@@ -33,17 +33,21 @@
 
 #Solution #2
 def longestCommonPrefix(strs):
-    result = ""
+    result = "" # set a result variable
     i = 0
 
     while True:
         try:
-            sets = set(string[i] for string in strs)
-            if (len(sets)) == 1:
-                result += sets.pop()
-                i += 1
-            else: break
+            sets = set(string[i] for string in strs) # unique value of each index of each string;
+            # Ex 1: ["flower","flow","flight"]
+            # {'f'}
+            # {'l'}
+            # {'o', 'i'}, etc..
+            if len(sets) == 1: # when only one character is matching through each string
+                result += sets.pop() # append (matched) character into sets
+                i += 1 # move on to next index
+            else: break # break/stop  when no more matching character
         except Exception as e:
             break
 
-    return result 
+    return result
