@@ -31,4 +31,19 @@
 #
 #     return strs[0] # strs[0] == [""]; string exist as an empty str([""])
 
+#Solution #2
 def longestCommonPrefix(strs):
+    result = ""
+    i = 0
+
+    while True:
+        try:
+            sets = set(string[i] for string in strs)
+            if (len(sets)) == 1:
+                result += sets.pop()
+                i += 1
+            else: break
+        except Exception as e:
+            break
+
+    return result 
