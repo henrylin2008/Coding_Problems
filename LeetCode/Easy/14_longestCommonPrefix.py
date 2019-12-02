@@ -50,4 +50,4 @@ def longestCommonPrefix(strs):
         except Exception as e:
             break
 
-    return result
+    return result           
