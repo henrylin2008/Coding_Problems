@@ -14,9 +14,13 @@
 # Output: "10101"
 
 def addBinary(a, b):
+    # adding number from right to left
     result, carry, val = '',0,0
+    # result = string output;
+    # carry = carryover value; if 1 + 1 ==> 1 0
+    # val:
     for i in range(max(len(a), len(b))): # use the longest (length) string for comparsion
-        val = carry # 
+        val = carry #
         if i < len(a):
             val += int(a[-(i+1)])
         if i < len(b):
