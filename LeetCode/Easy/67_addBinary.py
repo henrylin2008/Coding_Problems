@@ -14,17 +14,18 @@
 # Output: "10101"
 
 def addBinary(a, b):
-    # adding numbers from right to left, carryover numbers are added, and
+    # adding numbers from right to left, add carryover numbers
     result, carry, val = '', 0, 0
-    # result = string output;
+    # result = (string) output;
     # carry = carryover value; if 1 + 1 ==> 1 0
     # val: (current) result of addition of 2 values in current index
     print(a,b)
     for i in range(max(len(a), len(b))): # use the longest length as the range, so it goes over each character
-        print("i:", i)
+        # print("i:", i)
+        print("val, carry:", val, carry)
         val = carry # check if there's carry(over) from last loop; if so, add it (in current loop)
         if i < len(a):
-            print(a[-(i+1)])
+            print("a[-(i+1)]:", a[-(i+1)])
             # print("a[-(i+1)]:", a[-(i+1)])
             # print("val before:", val)
             val += int(a[-(i+1)]) # int(): convert given string to int
@@ -33,7 +34,7 @@ def addBinary(a, b):
             # print("")
             # a[-(i+1)]: reverse order, indexing from right to left,
         if i < len(b):
-            print(b[-(i+1)])
+            print("b[-(i+1)]:", b[-(i+1)])
             # print("(b[-(i+1)]):", (b[-(i+1)]))
             val += int(b[-(i+1)])
             print("val after b:", val)
@@ -41,7 +42,7 @@ def addBinary(a, b):
         print("carry, val:", carry, val)
         carry, val = val//2, val%2
         # carry: when val is greater than 2, there's a carryover; otherwise (if val < 2), then no carry
-        # val: % (mod) 2, reminder after carryover
+        # val: % (mod) 2, reminder (after carryover)
         print("carry, val after:", carry, val)
         print("result before:", result)
         result += str(val) # append val (as string) into result
