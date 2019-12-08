@@ -23,22 +23,19 @@ def addBinary(a, b):
     for i in range(max(len(a), len(b))): # use the longest length as the range, so it goes over each character
         # print("i:", i)
         print("carry, val:", carry, val)
-        # val = carry # check if there's carry(over) from last loop; if so, add it (in current loop)
+        val = carry # check if there's carry(over) from last loop; if so, add it (in current loop)
         if i < len(a):
             print("a[-(i+1)]:", a[-(i+1)])
             # print("a[-(i+1)]:", a[-(i+1)])
             # print("val before:", val)
             val += int(a[-(i+1)]) # int(): convert given string to int
-            # a[-(i+1)]: move index from right to left
+            # a[-(i+1)]: move index from right to left; adding bits from right to the left
             print("val after a:", val)
-            # print("")
-            # a[-(i+1)]: reverse order, indexing from right to left,
         if i < len(b):
             print("b[-(i+1)]:", b[-(i+1)])
             # print("(b[-(i+1)]):", (b[-(i+1)]))
-            val += int(b[-(i+1)])
+            val += int(b[-(i+1)]) # moving index from right to the left.
             print("val after b:", val)
-            # print("")
         print("carry, val:", carry, val)
         carry, val = val//2, val%2
         # carry: when val is greater than 2, there's a carryover; otherwise (if val < 2), then no carry
@@ -55,5 +52,5 @@ def addBinary(a, b):
     print(result[::-1])
     return result[::-1] # reverse order
 
-addBinary("1110", "1111")
+addBinary("1010", "1111")
 
