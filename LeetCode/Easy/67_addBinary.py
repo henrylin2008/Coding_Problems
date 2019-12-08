@@ -22,8 +22,8 @@ def addBinary(a, b):
     print(a,b)
     for i in range(max(len(a), len(b))): # use the longest length as the range, so it goes over each character
         # print("i:", i)
-        print("val, carry:", val, carry)
-        val = carry # check if there's carry(over) from last loop; if so, add it (in current loop)
+        print("carry, val:", carry, val)
+        # val = carry # check if there's carry(over) from last loop; if so, add it (in current loop)
         if i < len(a):
             print("a[-(i+1)]:", a[-(i+1)])
             # print("a[-(i+1)]:", a[-(i+1)])
@@ -53,8 +53,7 @@ def addBinary(a, b):
         result += str(1) # add one into the result
         print("result in carry after:", result)
     print(result[::-1])
-    print()
     return result[::-1] # reverse order
 
-addBinary("1010", "1111")
+addBinary("1110", "1111")
 
