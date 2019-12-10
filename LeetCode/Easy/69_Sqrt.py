@@ -19,20 +19,28 @@
 #              the decimal part is truncated, 2 is returned.
 
 def sqrt(x):
-    if x < 2:
+    print(x)
+    if x < 2: # anything less than 2, return its own value
         return x
 
-    left, right = 1, x//2
+    left, right = 1, x//2 # right = (for sure) less than middle value of x
+    # while loop: move left pointer to the right, and right pointer to the left, until both pointers meet
     while left <= right:
-        mid = left + (right-left)//2
+        print("left, right:", left, right)
+        mid = left + (right-left)//2  # locate middle value again
+        print("(right-left)//2:", (right-left)//2)
         print("mid:", mid)
-        if mid > x/mid:
+        print("x/mid:", x/mid)
+        if mid > x/mid: # if mid > x/mid, the right (value) is too large, then mid-1
             right = mid - 1
             print('right:', right)
-        else:
+        else: # otherwise (if) left <= x/mid, the left value is too small, then mid+1
             left = mid + 1
             print('left:', left)
-    print("left -1:", left-1)
+        print("")
+    print("final:", left-1)
+    print('')
     return left - 1
 
-sqrt(8)
+# sqrt(1)
+sqrt(18)
