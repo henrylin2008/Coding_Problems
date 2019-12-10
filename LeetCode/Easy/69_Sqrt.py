@@ -26,21 +26,16 @@ def sqrt(x):
     left, right = 1, x//2 # right = (for sure) less than middle value of x
     # while loop: move left pointer to the right, and right pointer to the left, until both pointers meet
     while left <= right:
-        print("left, right:", left, right)
         mid = left + (right-left)//2  # locate middle value again
-        print("(right-left)//2:", (right-left)//2)
-        print("mid:", mid)
-        print("x/mid:", x/mid)
-        if mid > x/mid: # if mid > x/mid, the right (value) is too large, then mid-1
+        if mid > x/mid: # if mid > x/mid, then right (value) is too large, mid-1 as the new value of right
+            # relationship b/t x and mid: mid^2 <= x
             right = mid - 1
-            print('right:', right)
         else: # otherwise (if) left <= x/mid, the left value is too small, then mid+1
             left = mid + 1
-            print('left:', left)
-        print("")
     print("final:", left-1)
-    print('')
     return left - 1
 
 # sqrt(1)
 sqrt(18)
+print(18/5)
+# print(18/)
