@@ -20,15 +20,15 @@ def addTwoNumbers(l1, l2):
         return l1
 
     carry = 0 # carry = carryover number (ex: 9+2 ==> carry 1)
-    dummy = ListNode(0) # set a pointer (staying) at the beginning of the list, and set to use for returning result
+    dummy = ListNode(0) # set a pointer (staying) at the beginning of the list, and use it to return the result
     p = dummy # pointer will be moving from left to the right (when adding values)
 
     while l1 and l2: # when l1 and l2 have same length and have value in each digit
-        p.next = ListNode((l1.val+l2.val+carry) % 10) # return the reminder (ones digit)
-        carry = (l1.val + l2.val + carry) // 10 # return the value in tens digit
-        l1 = l1.next
-        l2 = l2.next
-        p = p.next
+        p.next = ListNode((l1.val+l2.val+carry) % 10) # return the value in ones (digit)
+        carry = (l1.val + l2.val + carry) // 10 # return the value in tens digit = carry value
+        l1 = l1.next # move (pointer of) l1 to the next
+        l2 = l2.next # move (pointer of) l2 to the next
+        p = p.next # move pointer of p to the next
 
     # l1: 2 -> 4 -> 3
     # l2: 5 -> 6 -> 4 -> 1 (length of l2 is longer than l1; or vice versa)
@@ -39,7 +39,7 @@ def addTwoNumbers(l1, l2):
             l2 = l2.next
             p = p.next
 
-    if l1: # if l1 still has value (and l2 has no more value)
+    if l1: # if l1 still have value (and l2 has no more value)
         while l1:
             p.next = ListNode((l1.val + carry) % 10)
             carry = (l1.val + carry) // 10
@@ -50,3 +50,13 @@ def addTwoNumbers(l1, l2):
         p.next = ListNode(1)
 
     return dummy.next
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+# if __name__ == '__main__':
+#     main()
+
+addTwoNumbers([2,4,3], [5,6,4])
