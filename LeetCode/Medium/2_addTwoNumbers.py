@@ -24,32 +24,38 @@ def addTwoNumbers(l1, l2):
     p = dummy # pointer will be moving from left to the right (when adding values)
 
     while l1 and l2: # when l1 and l2 have same length and have value in each digit
-        p.next = ListNode((l1.val+l2.val+carry) % 10) # return the value in ones (digit)
-        carry = (l1.val + l2.val + carry) // 10 # return the value in tens digit = carry value
+        p.next = ListNode((l1.val+l2.val+carry) % 10) # move pointer to next node (ones digit)
+        # l1.val+l2.val+carry) % 10 = value in ones digit = reminder
+        carry = (l1.val + l2.val + carry) // 10 # calculate carry value = value in tens digit
         l1 = l1.next # move (pointer of) l1 to the next
         l2 = l2.next # move (pointer of) l2 to the next
-        p = p.next # move pointer of p to the next
+        p = p.next # move pointer to the next
 
+    # case where len(l2) > len(l1)
     # l1: 2 -> 4 -> 3
     # l2: 5 -> 6 -> 4 -> 1 (length of l2 is longer than l1; or vice versa)
-    if l2: # if l2 still have extra value (while no more value at l1)
+    if l2: # if l2 still has (next) value (while l1 has no more)
         while l2:
-            p.next = ListNode((l2.val + carry) % 10)
+            p.next = ListNode((l2.val + carry) % 10) # move pointer to next node
             carry = (l2.val + carry) // 10
-            l2 = l2.next
-            p = p.next
+            l2 = l2.next # move (pointer of) l2 to the next
+            p = p.next # move pointer to the next
 
+    # case where len(l1) > len(l2)
+    # l1: 2 -> 4 -> 3 -> 5
+    # l2: 5 -> 6 -> 4
     if l1: # if l1 still have value (and l2 has no more value)
         while l1:
             p.next = ListNode((l1.val + carry) % 10)
             carry = (l1.val + carry) // 10
-            l1 = l1.next
+            l1 = l1.nexts
             p = p.next
 
-    if carry == 1: # if there's still carry value in last digit (ex: 358, 234 ==> rev(5821))
+    # case where (last) carry value needs to be added to the ListNode
+    if carry == 1: # ex: 358, 234 ==> rev(5821)
         p.next = ListNode(1)
 
-    return dummy.next
+    return dummy.next # return the value from the beginning, where dummy (pointer) is sitting at
 
 class ListNode:
     def __init__(self, x):
@@ -59,4 +65,4 @@ class ListNode:
 # if __name__ == '__main__':
 #     main()
 
-addTwoNumbers([2,4,3], [5,6,4])
+# addTwoNumbers([2,4,3], [5,6,4])
