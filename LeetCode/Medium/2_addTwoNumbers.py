@@ -27,9 +27,9 @@ def addTwoNumbers(l1, l2):
         p.next = ListNode((l1.val+l2.val+carry) % 10) # move pointer to next node (ones digit)
         # l1.val+l2.val+carry) % 10 = value in ones digit = reminder
         carry = (l1.val + l2.val + carry) // 10 # calculate carry value = value in tens digit
-        l1 = l1.next # move (pointer of) l1 to the next
-        l2 = l2.next # move (pointer of) l2 to the next
-        p = p.next # move pointer to the next
+        l1 = l1.next # move (pointer of) l1 to the next (for next loop)
+        l2 = l2.next # move (pointer of) l2 to the next (for next loop)
+        p = p.next # move pointer to the next (for next loop) 
 
     # case where len(l2) > len(l1)
     # l1: 2 -> 4 -> 3
