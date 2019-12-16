@@ -7,8 +7,8 @@
 # Note: You may not slant the container and n is at least 2.
 
 def maxArea(height):
-    left = 0
-    right = len(height) -1
+    left = 0 # left pointer
+    right = len(height) -1 # right pointer
     result = 0
 
     while left < right:
@@ -16,12 +16,12 @@ def maxArea(height):
         # calculate temporary area; By using lowest height b/t 2 pointers (=highest of water can be contained), then
         # multiply it with the length (right-left)
 
-        if area > result: # if area is > result, then set the area as new result
+        if area > result: # if area > result, then set the area as new result
             result = area
 
-        if height[left] < height[right]: # determine which pointer to move (left or right)
-            # if the value of current (left) pionter is less than the right pointer
-            left += 1 # move left pointer one position to the right
+        # determine which pointer to move (left or right)
+        if height[left] < height[right]: # if the value of current (left) pointer is less than the right pointer
+            left += 1 # move left pointer one position to the right, to keep pointer with a higher height
         else:
             right -= 1 # move right pointer one position to the left
     # print(result)
