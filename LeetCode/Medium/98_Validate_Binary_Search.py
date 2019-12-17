@@ -31,11 +31,18 @@
 
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
+        # return valid function; min = -inf; max = inf
         return self.valid(root, float('-inf'), float('inf'))
 
     def valid(self, root, min, max):
-        if not root:
+        if not root: # empty BST = BST
             return True
-        if root.val >= max or root.val <= min:
+        if root.val >= max or root.val <= min: #if root.val <= min or root.val >= max (out of range), return False
             return False
+        #self.valid(root.left,min,root.val): left subtree;
+        # root.left: root of left subtree; min=-inf (lower bound); root.val= right node (upper bound<root.val)
+        #self.valid(root.right,root.val,max): right subtree;
+        # root.right: root of right subtree; root.val: left node(lower bound>root.val), max=inf (upper bound, right node)
         return self.valid(root.left, min, root.val) and self.valid(root.right, root.val, max)
+
+Solution.isValidBST([2,1,3])
