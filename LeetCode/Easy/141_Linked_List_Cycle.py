@@ -22,3 +22,12 @@
 #
 # Follow up:
 # Can you solve it using O(1) (i.e. constant) memory?
+
+def hasCycle(head):
+    fast, slow = head, head # fast = 2x node (jump every other node); slow = 1x node
+    # Idea: fast and slow will eventually meet at some point if it has a cycle
+    while fast and fast.next:
+        fast, slow = fast.next.next, slow.next # fast = 2 steps; slow = 1 step
+        if fast == slow: # when fast and slow met at some point, then return True (it has a cycle) 
+            return True
+    return False
