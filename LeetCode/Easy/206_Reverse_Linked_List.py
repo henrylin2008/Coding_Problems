@@ -13,7 +13,7 @@
 # A linked list can be reversed either iteratively or recursively. Could you implement both?
 
 def reverseList(head):
-    dummy = ListNode(float("-inf"))
-    while head:
+    dummy = ListNode(float("-inf")) # setting up a dummy value
+    while head: 
         dummy.next, head.next, head = head, dummy.next, head.next
     return dummy.next
