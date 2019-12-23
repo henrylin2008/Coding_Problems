@@ -14,6 +14,6 @@
 
 def reverseList(head):
     dummy = ListNode(float("-inf")) # setting up a dummy value
-    while head: 
+    while head: # when there's a head
         dummy.next, head.next, head = head, dummy.next, head.next
     return dummy.next
