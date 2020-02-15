@@ -25,7 +25,7 @@ visited = [] # Array to keep track of visited nodes.
 
 def dfs(visited, graph, node): #graph in the form of a dictionary, and A, which is the starting node.
     if node not in visited: #It first checks if the current node is unvisited - if yes,
-        print node,
+        print(node)
         visited.append(node) # it is appended in the visited array.
         for neighbour in graph[node]: # for each neighbor of the current node,
             dfs(visited, graph, neighbour) #the dfs function is invoked again
