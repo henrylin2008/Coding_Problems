@@ -33,7 +33,7 @@ def twoNumberSum(array, targetSum):
 # Ex: [3,5,-4,8,11,1,-1,6], 10
 # use hash table to store seem values; traverse each value in the array, and store the value into the hash table(Key:
 # value); when match is found, print matched value and the value of the current index; else just set the value of current
-# index to True 
+# index to True
 def twoNumberSum(array, targetSum):
     nums = {}
     for num in array:
@@ -48,7 +48,10 @@ def twoNumberSum(array, targetSum):
 # Method 3:
 # Time: O(nlog(n))
 # Space: O(1)
-#
+# sort the array then set a left pointer and a right pointer; create a currentSum by adding values at left and right pointer
+# compare currentSum to targetSum, if currentSum is equal to targetSum, return the value at left and right pointer;
+# elif currentSum < targetSum, move left pointer to a position to the right; b/c moving left pointer is going to get a
+# bigger value than currentSum; elif currentSum > targetSum, move the right pointer to a position to the left
 def twoNumberSum(array, targetSum):
     array.sort()
     left = 0
