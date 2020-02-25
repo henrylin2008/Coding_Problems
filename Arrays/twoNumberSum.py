@@ -14,11 +14,14 @@
 # Time: O(n^2)
 # Space: O(1)
 def twoNumberSum(array, targetSum):
-    for i in range(len(array)-1):
+    for i in range(len(array)-1): # go all the way before the last value
         firstNum = array[i]
-        for j in range(i+1, len(array)):
+        print("first num:", firstNum)
+        for j in range(i+1, len(array)): # j goes all the way to the last value
             secondNum = array[j]
+            print("second num: ", secondNum)
             if firstNum + secondNum == targetSum:
+                print("firstNum + secondNum == targetSum:", firstNum, ",", secondNum)
                 return[firstNum, secondNum]
     return[]
 
@@ -26,6 +29,9 @@ def twoNumberSum(array, targetSum):
 # Method 2:
 # Time: O(n)
 # Space: O(n)
+# Ex: [3,5,-4,8,11,1,-1,6], 10
+# use hash table to store seem values; traverse each value in the array, and store the value into the hash table(Key:
+# value); y = targetSum - currentNum
 def twoNumberSum(array, targetSum):
     nums = {}
     for num in array:
@@ -40,6 +46,7 @@ def twoNumberSum(array, targetSum):
 # Method 3:
 # Time: O(nlog(n))
 # Space: O(1)
+# 
 def twoNumberSum(array, targetSum):
     array.sort()
     left = 0
@@ -54,3 +61,4 @@ def twoNumberSum(array, targetSum):
             right -=1
     return []
 
+# twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10)
