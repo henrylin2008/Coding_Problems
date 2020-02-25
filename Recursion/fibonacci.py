@@ -28,4 +28,12 @@ def fib(n,  memoize={1:0, 2:1}):
 # Time: O(n)
 # Space: O(1)
 #
-def fib()
+def fib(n):
+    lastTwo = [0, 1] # initialize base case, store last 2 Fib values in the array
+    counter = 3
+    while counter <= n:
+        nextFib = lastTwo[0] + lastTwo[1]  # calculate next Fib
+        lastTwo[0] = lastTwo[1]  # throw away value at lastTwo[0], replace it with lastTwo[1]
+        lastTwo[1] = nextFib # replace lastTwo[1] with next value lastTwo[2] (nextFib) 
+        counter +=1
+    return lastTwo[1] if n > 1 else lastTwo[0] # edge case: n = 1, return lastTow[0]
