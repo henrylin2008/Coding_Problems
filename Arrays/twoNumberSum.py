@@ -13,6 +13,7 @@
 # Method 1:
 # Time: O(n^2)
 # Space: O(1)
+# Traverse all numbers twice, if sum of first Num and second num equal to targetSum, then return first num, sec num
 def twoNumberSum(array, targetSum):
     for i in range(len(array)-1): # go all the way before the last value
         firstNum = array[i]
@@ -31,7 +32,8 @@ def twoNumberSum(array, targetSum):
 # Space: O(n)
 # Ex: [3,5,-4,8,11,1,-1,6], 10
 # use hash table to store seem values; traverse each value in the array, and store the value into the hash table(Key:
-# value); y = targetSum - currentNum
+# value); when match is found, print matched value and the value of the current index; else just set the value of current
+# index to True 
 def twoNumberSum(array, targetSum):
     nums = {}
     for num in array:
@@ -46,7 +48,7 @@ def twoNumberSum(array, targetSum):
 # Method 3:
 # Time: O(nlog(n))
 # Space: O(1)
-# 
+#
 def twoNumberSum(array, targetSum):
     array.sort()
     left = 0
