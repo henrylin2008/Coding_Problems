@@ -18,6 +18,7 @@
 # e: edge (lines connect between nodes)
 # Time: O(v + e): vertices + edges
 # Space: O(v): level of depth/height of the tree
+# Recursive call, get
 class Node:
     def __init__(self, name):
         self.children = []
@@ -28,8 +29,8 @@ class Node:
         return self
 
     def depthFirstSearch(self, array):
-        array.append(self.name)
-        for child in self.children:
-            child.depthFirstSearch(array)
-        return array
+        array.append(self.name)  # append the name to the array
+        for child in self.children: # for each child in children
+            child.depthFirstSearch(array) # call depthFirstSearch() function
+        return array # useful on first row
 
