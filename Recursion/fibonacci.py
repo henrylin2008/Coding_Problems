@@ -13,8 +13,8 @@ def fibonacci(n):
 
 
 # Method 2: recursive, Memorization/Caching
-# Time: O(n)
-# Space: O(n)
+# Time: O(n): calculate every fib once
+# Space: O(n): stores n answers
 # set the base cases (1 & 2) in the hash table (memoize), calculate each fib once and stores it in the hash table,
 # retriving the value from hash table is a constant operation [O(1)]
 def fib(n,  memoize={1:0, 2:1}):
@@ -41,4 +41,4 @@ def fib(n):
         counter +=1 # increment the counter
     return lastTwo[1] if n > 1 else lastTwo[0] # edge case: n = 1, return lastTow[0]
 
-# fib(30s
+# fib(30)
