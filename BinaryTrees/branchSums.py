@@ -14,6 +14,9 @@
 #         8  9  10
 # Sample output: [15,16,18,10,11]
 
+# Time: O(N)
+# Space: O(N)
+# n = # of nodes in Binary tree
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -21,17 +24,16 @@ class BinaryTree:
         self.right = None
 
     def branchSums(root):
-        sums = []
-        calculateBranchSums(root, 0, sums)
+        sums = []   # to store all sums
+        calculateBranchSums(root, 0, sums) # recursive call
         return sums
 
     def calculateBranchSums(node, runningSum, sums):
-        if node is None:
+        if node is None: # edge case: nothing to return
             return
-        newRunningSum = runningSum + node.value
+        newRunningSum = runningSum + node.value # new Running sum
         if node.left is None and node.right is None:
-            sums.append(newRunningSum)
-            return
+            return sums.append(newRunningSum) # add newRunningSum to sums array
 
-        calculateBranchSums(node.left, newRunningSum, sums)
-        calculateBranchSums(node.right, newRunningSum, sums)
+        calculateBranchSums(node.left, newRunningSum, sums) # Calculate left node
+        calculateBranchSums(node.right, newRunningSum, sums) # calculate right node
