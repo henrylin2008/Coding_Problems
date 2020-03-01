@@ -7,15 +7,16 @@
 # Sample input: [5,2,[7, - 1],3,[6,[-13,8],4]]
 # Sample output: 12 (calculated as: (5 + 2 + 2 * (7 - 1) + 3 + 2 * (6 + 3 * (-13 + 8) + 4)))
 
-
+# Time: O(n), n is total number of elements in the array, including sub-elements
+# Space: O(d), d is the greatest depth of "special" arrays in the array
 def productSum(array, multiplier=1):
     sum = 0
     for element in array:
-        if type(element) is list:
-            sum += productSum(element, multiplier+1)
+        if type(element) is list:  # if element is a type of list
+            sum += productSum(element, multiplier+1)  # recursive call of productSum, add 1 to multiplier and add to element
         else:
             sum += element
-    print(sum*multiplier)
+    # print(sum*multiplier)
     return sum * multiplier
 
-productSum([5,2,[7, - 1],3,[6,[-13,8],4],[10]])
+# productSum([5,2,[7, - 1],3,[6,[-13,8],4],[10]])
