@@ -24,6 +24,6 @@ def insertionSort(array):
     return array
 
 def swap(i, j, array):
-    array[i], array[j] = array[j], array[i]  # swap values in 2 indexes 
+    array[i], array[j] = array[j], array[i]  # swap values in 2 indexes
 
-insertionSort([8, 5, 2, 9, 5, 6, 3, 15, 20, -3])
+# insertionSort([8, 5, 2, 9, 5, 6, 3, 15, 20, -3])
