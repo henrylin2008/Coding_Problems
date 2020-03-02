@@ -12,13 +12,14 @@
 # Space: O(1)
 def bubbleSort(array):
     isSorted = False   # assuming array is not sorted
-    counter = 0  # use it to skip last num in each loop, since we know last num is always sorted
+    counter = 0  # use it to skip last (sorted) num in each loop, since we know last num is always sorted
     while not isSorted:  # while array is not sorted
         isSorted = True  # assuming array is sorted
-        for i in range(len(array) -1-counter): # len(array)-1: b/c it'd be comparing i and i+1; -counter: - last num
+        for i in range(len(array) -1-counter): # len(array)-1: b/c i is comparing with i+1, last item would not be
+                                               # compared; -counter: - last num
             if array[i] > array[i+1]: # if current num > next num
                 swap(i, i+1, array)   # helper function to swap i and i+1
-                isSorted = False    # array is not sorted if running in this loop
+                isSorted = False    # array is not sorted in this if loop
         counter += 1
     # print(array)
     return array
