@@ -8,8 +8,8 @@
 # Sample input: [8, 5, 2, 9, 5, 6, 3]
 # Sample output: [2, 3, 5, 5, 6, 8, 9]
 
-# Time: O(n^2), average/worst case
-# Space: O(1)
+# Time: O(n^2), average/worst case, it runs n times each loop
+# Space: O(1), constant space, since no extra space added
 def bubbleSort(array):
     isSorted = False   # assuming array is not sorted
     counter = 0  # use it to skip last (sorted) num in each loop, since we know last num is always sorted
