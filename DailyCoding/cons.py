@@ -20,4 +20,4 @@ def car(pair):
 
 def cdr(pair):
     return pair(lambda a, b: b)
-Fun fact: cdr is pronounced "cudder"!
+# Fun fact: cdr is pronounced "cudder"!
