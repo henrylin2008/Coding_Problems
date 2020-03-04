@@ -30,10 +30,29 @@ def isPalindrome(string):
 
 
 # Method 3: recursion
-# Time: O(n)
-# Space: O(n)
+# Time: O(n): iterate only half of string: O(n/2) = O(n)
+# Space: O(n): using call stack, abcdcba --> bcdcb --> cdc --> d: O(n/2) = O(n)
 # is first letter == last letter the same? or is the letters/strings in between/middle Palindrome?
 def isPalindrome(string, i=0):
-    j = len(string) - 1 - i
+    j = len(string) - 1 - i # first letter compares to last letter, and so on
     return True if i >= j else string[i] == string[j] and isPalindrome(string, i+1)
-    # return True if fist == last AND isPalindrome(mid) 
+    # if i >= j: # Get to middle of strings
+    #   return True
+    # else string[i] != string[j]:
+    #   return False
+    # return isPalindrome(string, i+1):
+    #
+
+# Method 4: iterative (best time complexity)
+# Time: O(n)
+# Space: O(1)
+# using pointers, compare first letter and last later, then increase the left pointer and decrease the right pointer
+def isPalindrome(string):
+    leftIndex = 0
+    rightIndex = len(string) - 1
+    while leftIndex < rightIndex: # before hitting middle value 
+        if string[leftIndex] != string[rightIndex]: # if string at leftIdx != string at rightIdx
+            return False
+        leftIndex += 1
+        rightIndex -= 1
+    return True
