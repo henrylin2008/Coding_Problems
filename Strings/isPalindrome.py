@@ -50,8 +50,8 @@ def isPalindrome(string, i=0):
 def isPalindrome(string):
     leftIndex = 0
     rightIndex = len(string) - 1
-    while leftIndex < rightIndex: # before hitting middle value 
-        if string[leftIndex] != string[rightIndex]: # if string at leftIdx != string at rightIdx
+    while leftIndex < rightIndex: # before hitting middle value
+        if string[leftIndex] != string[rightIndex]: # if string at leftIdx != string at rightIdx, return False
             return False
         leftIndex += 1
         rightIndex -= 1
