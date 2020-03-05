@@ -17,19 +17,20 @@
 # Sample output: 13
 
 # Method #1: recursively
-# Average: O(log(n)) time | O(log(n) space
-# Worst: O(n) time | O(n) space
+# Average: O(log(n)) time | O(log(n) space; n in time: number of nodes in BST; n in Space: frames used for call stack
+# Worst: O(n) time | O(n) space; tree only have one branch (15 -> 13 -> 10 -> 8 -> 7 -> 5 -> 3 -> 1)
+# closest value for comparing with the target value,
 def findClosestValueInBST(tree, target):
-    return findClosestValueInBSTHelper(tree, target, float("inf"))
+    return findClosestValueInBSTHelper(tree, target, float("inf")) # call helper method 
 
 def findClosestValueInBSTHelper(tree, target, closest):
-    if tree is None:
+    if tree is None:  # base case: reach bottom of BST
         return closest
-    if abs(target - closest) > abs(target - tree.value):
-        closest = tree.value
-    if target < tree.value:
-        return findClosestValueInBSTHelper(tree.left, target, closest)
-    elif target > tree.value:
-        return findClosestValueInBSTHelper(tree.right, target, closest)
-    else:
+    if abs(target - closest) > abs(target - tree.value): # if closest value is greater than tree.value
+        closest = tree.value # set tree.value as the closest value
+    if target < tree.value: # if target is < current node value, only explore left side of BST (eliminate right side)
+        return findClosestValueInBSTHelper(tree.left, target, closest) # recursive call to left side of the tree
+    elif target > tree.value: # if target value is > current node, then explore right side of BST
+        return findClosestValueInBSTHelper(tree.right, target, closest) # recursive call to right side of the tree
+    else:   # if target = closest, then return closest value
         return closest
