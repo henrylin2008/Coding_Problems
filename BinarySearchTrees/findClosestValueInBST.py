@@ -17,11 +17,11 @@
 # Sample output: 13
 
 # Method #1: recursively
-# Average: O(log(n)) time | O(log(n) space; n in time: number of nodes in BST; n in Space: frames used for call stack
-# Worst: O(n) time | O(n) space; tree only have one branch (15 -> 13 -> 10 -> 8 -> 7 -> 5 -> 3 -> 1)
+# Average: O(log(n)) time | O(log(n)) space; n in time: number of nodes in BST; n in Space: frames used for call stack
+# Worst: O(n) time | O(n) space; if tree only have one branch (15 -> 13 -> 10 -> 8 -> 7 -> 5 -> 3 -> 1)
 # closest value for comparing with the target value,
 def findClosestValueInBST(tree, target):
-    return findClosestValueInBSTHelper(tree, target, float("inf")) # call helper method 
+    return findClosestValueInBSTHelper(tree, target, float("inf")) # call helper method
 
 def findClosestValueInBSTHelper(tree, target, closest):
     if tree is None:  # base case: reach bottom of BST
@@ -34,3 +34,24 @@ def findClosestValueInBSTHelper(tree, target, closest):
         return findClosestValueInBSTHelper(tree.right, target, closest) # recursive call to right side of the tree
     else:   # if target = closest, then return closest value
         return closest
+
+
+# Method 2: iterative (best solution)
+# Average: O(log(n)) time | O(1) space; O(1), b/c no extra memory used, only store closest and currentNode
+# Worst: O(n) time | O(1) space; O(1), b/c no extra memory used, only store closest and currentNode
+def findClosestValueInBST(tree, target):
+    return findClosestValueInBSTHelper(tree, target, float("inf")) # call helper method
+
+def findClosestValueInBSTHelper(tree, target, closest):
+    currentNode = tree # value point to currentNode
+    while currentNode is not None: # while not at the bottom of the tree
+        if abs(target - closest) > abs(target - currentNode.value):  # find closest value by comparing difference between
+                                    # target and closest and currentNode;
+            closest = currentNode.value # update closest value
+        if target < currentNode.value:
+            currentNode = currentNode.left
+        elif target > currentNode.value:
+            currentNode = currentNode.right
+        else: # in case of currentNode = target, then break out the while loop
+            break
+    return closest
