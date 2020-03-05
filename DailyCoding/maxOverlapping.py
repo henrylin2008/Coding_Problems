@@ -9,7 +9,8 @@
 # Solution
 # First, notice that the minimum number of classroom halls is the maximum number of overlapping intervals.
 #
-# Now let's consider the naive approach. We could go through each interval and check every other interval and see if it overlaps, keeping track of the largest number of overlapping intervals.
+# Now let's consider the naive approach. We could go through each interval and check every other interval and see if it
+# overlaps, keeping track of the largest number of overlapping intervals.
 
 def overlaps(a, b):
     start_a, end_a = a
@@ -31,7 +32,8 @@ def max_overlapping(intervals):
     return current_max
 # This would take O(n^2) time, since we're checking each interval pairwise. Can we do any better?
 #
-# One solution is to extract the start times and end times of all the intervals and sort them. Then we can start two pointers on each list, and consider the following:
+# One solution is to extract the start times and end times of all the intervals and sort them. Then we can start two
+# pointers on each list, and consider the following:
 #
 # If the current start is before the current end, then we have a new overlap. Increment the start pointer.
 # If the current start is after the current end, then our overlap closes. Increment the end pointer.

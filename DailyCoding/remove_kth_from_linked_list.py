@@ -2,16 +2,20 @@
 # Problem
 # This problem was asked by Google.
 #
-# Given a singly linked list and an integer k, remove the kth last element from the list. k is guaranteed to be smaller than the length of the list.
+# Given a singly linked list and an integer k, remove the kth last element from the list. k is guaranteed to be smaller
+# than the length of the list.
 #
 # The list is very long, so making more than one pass is prohibitively expensive.
 #
 # Do this in constant space and in one pass.
 #
 # Solution
-# If we didn't have the constraint of needing only to make one pass, this problem would be trivial to implement. We could simply iterate over the whole list to find out the total length N of the list, and then restart from the beginning and iterate N - k steps and remove the node there. That would take constant space as well.
+# If we didn't have the constraint of needing only to make one pass, this problem would be trivial to implement. We could
+# simply iterate over the whole list to find out the total length N of the list, and then restart from the beginning and
+# iterate N - k steps and remove the node there. That would take constant space as well.
 #
-# However, given that we have the constraint of needing to make only one pass, we have to find some way of getting the N - kth node in the list in one shot.
+# However, given that we have the constraint of needing to make only one pass, we have to find some way of getting the
+# N - kth node in the list in one shot.
 #
 # What we can do, then, is this:
 #
