@@ -8,15 +8,18 @@
 # Sample output: [1, 3, 4, 2, 2, 2, 2, 2] (the numbers 1, 3, and 4 could be ordered differently)
 
 # Time: O(n); n = length of the array
-# Space O(1)
-# 
+# Space O(1); constant time, b/c all the operations happening at the same array
+#
 def moveElementToEnd(array, toMove):
-    i = 0
-    j = len(array) - 1
+    i = 0 # left pointer
+    j = len(array) - 1 # right pointer
     while i < j:
-        while i < j and array[j] = toMove:
-            j -= 1
-        if array[i] = toMove:
-            array[i], array[j] = array[j], array[i]
-        i += 1
+        while i < j and array[j] == toMove: # when i < j and value at j == toMove
+            j -= 1  # move right pointer to a position to the left
+        if array[i] == toMove: # when value at i == toMove:
+            array[i], array[j] = array[j], array[i] # swap value in i and j
+        i += 1  # move left pointer to a position to the right
+    # print(array)
     return array
+
+# moveElementToEnd([2, 1, 2, 2, 2, 3, 4, 2], 1)
