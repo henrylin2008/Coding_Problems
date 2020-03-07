@@ -2,7 +2,8 @@
 # Problem
 # This problem was asked by Dropbox.
 #
-# Conway's Game of Life takes place on an infinite two-dimensional board of square cells. Each cell is either dead or alive, and at each tick, the following rules apply:
+# Conway's Game of Life takes place on an infinite two-dimensional board of square cells. Each cell is either dead or
+# alive, and at each tick, the following rules apply:
 #
 # Any live cell with less than two live neighbours dies.
 # Any live cell with two or three live neighbours remains living.
@@ -10,20 +11,29 @@
 # Any dead cell with exactly three live neighbours becomes a live cell.
 # A cell neighbours another cell if it is horizontally, vertically, or diagonally adjacent.
 #
-# Implement Conway's Game of Life. It should be able to be initialized with a starting list of live cell coordinates and the number of steps it should run for. Once initialized, it should print out the board state at each step. Since it's an infinite board, print out only the relevant coordinates, i.e. from the top-leftmost live cell to bottom-rightmost live cell.
+# Implement Conway's Game of Life. It should be able to be initialized with a starting list of live cell coordinates and
+# the number of steps it should run for. Once initialized, it should print out the board state at each step. Since it's
+# an infinite board, print out only the relevant coordinates, i.e. from the top-leftmost live cell to bottom-rightmost
+# live cell.
 #
 # You can represent a live cell with an asterisk (*) and a dead cell with a dot (.).
 #
 # Solution
-# This is a straightforward implementation problem, so your solution may differ. Since our board is infinite, we can't create a matrix that represents our whole board.
+# This is a straightforward implementation problem, so your solution may differ. Since our board is infinite, we can't
+# create a matrix that represents our whole board.
 #
-# Instead, we'll represent each cell simply as a pair of cartesian coordinates (row, col). In this solution, we keep the set of cells as a property on our class. Each tick, we create a new set of cells that represents the next generation. We pretty much have to do this so that changing the board doesn't affect the future cells we process from the current generation.
+# Instead, we'll represent each cell simply as a pair of cartesian coordinates (row, col). In this solution, we keep the
+# set of cells as a property on our class. Each tick, we create a new set of cells that represents the next generation.
+# We pretty much have to do this so that changing the board doesn't affect the future cells we process from the current
+# generation.
 #
 # We look at each live cell, compute the number of neighbours for each one, and preserve it according to the rules.
 #
-# Similarly, we look at all the neighbouring cells of all the live cells, since any of them could potentially become alive due to rule #4. If any of them have exactly 3 neighbours, then we should add them to the set of new cells.
+# Similarly, we look at all the neighbouring cells of all the live cells, since any of them could potentially become
+# alive due to rule #4. If any of them have exactly 3 neighbours, then we should add them to the set of new cells.
 #
-# For printing the board, we need to find the top-leftmost cell and the bottom-rightmost cell. These are our boundaries for the board. Then we can print out each row and cell one by one and checking if the current spot is in our set of cells.
+# For printing the board, we need to find the top-leftmost cell and the bottom-rightmost cell. These are our boundaries
+# for the board. Then we can print out each row and cell one by one and checking if the current spot is in our set of cells.
 #
 # It's useful to create some helper functions here. In our case, we have:
 #
