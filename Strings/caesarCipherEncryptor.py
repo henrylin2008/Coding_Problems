@@ -40,4 +40,4 @@ def caesarCipherEncryptor(string, key):
 def getNewLetter(letter, key, alphabet):
     newLetterCode = alphabet.index(letter) + key # getting the index of letter's new location
     return alphabet[newLetterCode] if newLetterCode <= 25 else alphabet[-1 + newLetterCode % 25]
-    # newLetterCode <= 25 if that's within index of alphabet or before the wrapper; other calculate its new index 
+    # newLetterCode <= 25 if that's within index of alphabet or before the wrapper; other calculate its new index
