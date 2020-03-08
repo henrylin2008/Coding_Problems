@@ -64,7 +64,8 @@
 # This gives us an idea for how to solve the problem:
 #
 # Find the root by looking at the first element in the preorder traversal
-# Find out how many elements are in the left subtree and right subtree by searching for the index of the root in the inorder traversal
+# Find out how many elements are in the left subtree and right subtree by searching for the index of the root in the
+# inorder traversal
 # Recursively reconstruct the left subtree and right subtree
 # The code for this problem would look like this:
 
