@@ -2,16 +2,20 @@
 # Problem
 # This problem was asked by Dropbox.
 #
-# Sudoku is a puzzle where you're given a partially-filled 9 by 9 grid with digits. The objective is to fill the grid with the constraint that every row, column, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
+# Sudoku is a puzzle where you're given a partially-filled 9 by 9 grid with digits. The objective is to fill the grid
+# with the constraint that every row, column, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
 #
 # Implement an efficient sudoku solver.
 #
 # Solution
-# Trying brute force on a sudoku board will take a really long time: we will need to try every permutation of the numbers 1-9 for all the non-empty squares.
+# Trying brute force on a sudoku board will take a really long time: we will need to try every permutation of the
+# numbers 1-9 for all the non-empty squares.
 #
-# Let's try using backtracking to solve this problem instead. What we can do is try filling each empty cell one by one, and backtrack once we hit an invalid state.
+# Let's try using backtracking to solve this problem instead. What we can do is try filling each empty cell one by one,
+# and backtrack once we hit an invalid state.
 #
-# To do this, we'll need an valid_so_far function that tests the board for its validity by checking all the rows, columns, and squares. Then we'll backtrack as usual:
+# To do this, we'll need an valid_so_far function that tests the board for its validity by checking all the rows,
+# columns, and squares. Then we'll backtrack as usual:
 #
 # X = None # Placeholder empty value
 

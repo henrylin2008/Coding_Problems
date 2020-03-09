@@ -2,21 +2,29 @@
 # Problem
 # This problem was asked by Google.
 #
-# Implement an LRU (Least Recently Used) cache. It should be able to be initialized with a cache size n, and contain the following methods:
+# Implement an LRU (Least Recently Used) cache. It should be able to be initialized with a cache size n, and contain
+# the following methods:
 #
-# set(key, value): sets key to value. If there are already n items in the cache and we are adding a new item, then it should also remove the least recently used item.
+# set(key, value): sets key to value. If there are already n items in the cache and we are adding a new item, then it
+# should also remove the least recently used item.
 # get(key): gets the value at key. If no such key exists, return null.
 # Each operation should run in O(1) time.
 #
 # Solution
-# To implement both these methods in constant time, we'll need to use a hash table along with a linked list. The hash table will map keys to nodes in the linked list, and the linked list will be ordered from least recently used to most recently used. Then, for set:
+# To implement both these methods in constant time, we'll need to use a hash table along with a linked list. The hash
+# table will map keys to nodes in the linked list, and the linked list will be ordered from least recently used to most
+# recently used. Then, for set:
 #
-# First look at our current capacity. If it's < n, then create a node with the val, set it as the head, and add it as an entry in the dictionary.
-# If it's equal to n, then add our node as usual, but also evict the least frequently used node by deleting the tail of our linked list and also removing the entry from our dictionary. We'll need to keep track of the key in each node so that we know which entry to evict.
+# First look at our current capacity. If it's < n, then create a node with the val, set it as the head, and add it as an
+# entry in the dictionary.
+# If it's equal to n, then add our node as usual, but also evict the least frequently used node by deleting the tail of
+# our linked list and also removing the entry from our dictionary. We'll need to keep track of the key in each node so
+# that we know which entry to evict.
 # For get:
 #
 # If the key doesn't exist in our dictionary, then return null.
-# Otherwise, look up the relevant node through the dictionary. Before returning it, update the linked list by moving the node to the front of the list.
+# Otherwise, look up the relevant node through the dictionary. Before returning it, update the linked list by moving
+# the node to the front of the list.
 # To help us out, we can use the following tricks:
 #
 # Using dummy nodes for the head and tail of our list, which will simplify creating the list when nothing's initialized.
