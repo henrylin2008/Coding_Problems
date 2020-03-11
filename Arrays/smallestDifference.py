@@ -8,15 +8,15 @@
 # Sample input: [-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]
 # Sample Output: [28, 26]
 
-# Time:
-# Space:
+# Time: O(nlog(n) + O(mlog(m)); n: length of arrayOne, m: length of arrayTwo; log(n): sorting each array
+# Space: O(1): no extra spaced used
 
 def smallestDifference(arrayOne, arrayTwo):
     arrayOne.sort()
     arrayTwo.sort()
     ptr1 = 0  # pointer 1, set at arrayOne[0]
     ptr2 = 0   # pointer 2, set at arrayTwo[0]
-    smallestDiff = float('inf')  # smallest difference every time
+    smallestDiff = float('inf')  # smallest difference (keep track of)
     currentDiff = float('inf') # current difference
     smallestPair = []
     while ptr1 < len(arrayOne) and ptr2 < len(arrayTwo): # while both pointers are valid (within the length)
@@ -28,12 +28,12 @@ def smallestDifference(arrayOne, arrayTwo):
         elif numOne < numTwo:
             currentDiff = numTwo - numOne
             ptr1 += 1
-        else:
-            return [numOne, numTwo] # return 
-        if smallestDiff > currentDiff:
+        else:   # if numOne == numTwo:
+            return [numOne, numTwo] # return numOne, numTwo in SmallestPair array/list
+        if smallestDiff > currentDiff: # check smallestDiff, smallestDiff originally set as inf, thus it is > current diff
             smallestDiff = currentDiff
             smallestPair = [numOne, numTwo]
-    print(smallestPair)
+    # print(smallestPair)
     return smallestPair
 
 smallestDifference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17])
