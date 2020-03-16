@@ -8,7 +8,18 @@
 # than or equal to the values of every node to its right; and both of its children nodes are either BST nodes themselves
 # or None (null) values.
 
-# Time: 
+# hint #1:
+# Every node in the BST has a maximum possible value and a minimum possible value. In other words, the value of any
+# given node in the BST must be strictly smaller than some value (the value of its closest right parent) and must be
+# greater than or equal to some other value (the value of its closest left parent).
+#
+# Hint #2:
+# Validate the BST by recursively calling the validateBst function on every node, passing in the correct maximum and
+# minimum possible values to each. Initialize those values to be -Infinity and +Infinity.
+
+# Use recursive calls
+# Time: O(n), n = number of nodes
+# Space: O(d), d = depth of the tree
 
 class BST:
     def __init__(self, value):
@@ -16,14 +27,13 @@ class BST:
         self.left = None
         self.right = None
 
-
     def validateBst(tree):
-        return validateBSTHelper(tree, float('-inf'), float('inf'))
+        return validateBSTHelper(tree, float('-inf'), float('inf')) # recursive call
 
     def validateBSTHelper(tree, minValue, maxValue):
-        if tree is None:
-		    return True
-        if tree.value < minValue or tree.value >= maxValue:
+        if tree is None: # check if we're at leave node, return true if we are
+            return True
+        if tree.value < minValue or tree.value >= maxValue: # return false if value is out of the range
             return False
         leftNodeValidate = validateBSTHelper(tree.left, minValue, tree.value)
         return leftNodeValidate and validateBSTHelper(tree.right, tree.value, maxValue)
