@@ -35,5 +35,7 @@ class BST:
             return True
         if tree.value < minValue or tree.value >= maxValue: # return false if value is out of the range
             return False
-        leftNodeValidate = validateBSTHelper(tree.left, minValue, tree.value)
-        return leftNodeValidate and validateBSTHelper(tree.right, tree.value, maxValue)
+        leftIsValid = validateBSTHelper(tree.left, minValue, tree.value) # check left subtree is valid;
+                                        #  maxValue = value of current node
+        return leftIsValid and validateBSTHelper(tree.right, tree.value, maxValue) # return True if left and right nodes are valid
+
