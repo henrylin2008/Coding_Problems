@@ -17,8 +17,8 @@
 # Validate the BST by recursively calling the validateBst function on every node, passing in the correct maximum and
 # minimum possible values to each. Initialize those values to be -Infinity and +Infinity.
 
-# Use recursive calls
-# Time: O(n), n = number of nodes
+# Use recursive calls; in-order traversal
+# Time: O(n) worst case; O(log(n)) for a balanced tree; n = number of nodes
 # Space: O(d), d = depth of the tree
 
 class BST:
