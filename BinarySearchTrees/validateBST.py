@@ -39,3 +39,5 @@ class BST:
                                         #  maxValue = value of current node
         return leftIsValid and validateBSTHelper(tree.right, tree.value, maxValue) # return True if left and right nodes are valid
 
+
+# https://www.educative.io/courses/coderust-hacking-the-coding-interview/jqBDy
