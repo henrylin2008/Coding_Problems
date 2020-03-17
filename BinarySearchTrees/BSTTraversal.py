@@ -18,3 +18,18 @@
 # Sample output (inOrderTraverse): [1, 2, 5, 5, 10, 15, 22]
 # Sample output (preOrderTraverse): [10, 5, 2, 1, 5, 15, 22]
 # Sample output (postOrderTraverse): [1, 2, 5, 5, 22, 15, 10]
+
+# Inorder(tree)
+#    1. Traverse the left subtree, i.e., call Inorder(left-subtree)
+#    2. Visit the root.
+#    3. Traverse the right subtree, i.e., call Inorder(right-subtree)
+
+# Preorder(tree)
+#    1. Visit the root.
+#    2. Traverse the left subtree, i.e., call Preorder(left-subtree)
+#    3. Traverse the right subtree, i.e., call Preorder(right-subtree)
+
+# Postorder(tree)
+#    1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+#    2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+#    3. Visit the root.
