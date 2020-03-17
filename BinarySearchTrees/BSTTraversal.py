@@ -19,17 +19,40 @@
 # Sample output (preOrderTraverse): [10, 5, 2, 1, 5, 15, 22]
 # Sample output (postOrderTraverse): [1, 2, 5, 5, 22, 15, 10]
 
+# Time: O(n); n = number of nodes
+# Space: O(n); n is b/c array is used to store values
 # Inorder(tree)
 #    1. Traverse the left subtree, i.e., call Inorder(left-subtree)
 #    2. Visit the root.
 #    3. Traverse the right subtree, i.e., call Inorder(right-subtree)
+
+def inOrderTraverse(tree, array):
+    if tree is not None:
+		inOrderTraverse(tree.left, array)
+		array.append(tree.value)
+		inOrderTraverse(tree.right, array)
+	return array
 
 # Preorder(tree)
 #    1. Visit the root.
 #    2. Traverse the left subtree, i.e., call Preorder(left-subtree)
 #    3. Traverse the right subtree, i.e., call Preorder(right-subtree)
 
+def preOrderTraverse(tree, array):
+    if tree is not None:
+		array.append(tree.value)
+		preOrderTraverse(tree.left, array)
+		preOrderTraverse(tree.right, array)
+	return array
+
 # Postorder(tree)
 #    1. Traverse the left subtree, i.e., call Postorder(left-subtree)
 #    2. Traverse the right subtree, i.e., call Postorder(right-subtree)
 #    3. Visit the root.
+
+def postOrderTraverse(tree, array):
+    if tree is not None:
+		postOrderTraverse(tree.left, array)
+		postOrderTraverse(tree.right, array)
+		array.append(tree.value)
+	return array
