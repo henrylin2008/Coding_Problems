@@ -8,9 +8,9 @@
 # than or equal to the values of every node to its right; and both of its children nodes are either BST nodes themselves
 # or None (null) values.
 
-# Method #1: recursive
-# Time: O(n^2)
-# Space: O(n^2)
+# Method #1: recursive; easiness on reading the code
+# Time: O(n^2); n is the number of nodes in each array
+# Space: O(n^2); n is the number of nodes in each array
 def sameBsts(arrayOne, arrayTwo):
     if len(arrayOne) != len(arrayTwo): # False if both arrays don't have same length
         return False
@@ -30,7 +30,7 @@ def sameBsts(arrayOne, arrayTwo):
     return sameBsts(leftOne, leftTwo) and sameBsts(rightOne, rightTwo) # return True only if subtrees of left and right
                                             # are the same
 
-def getSmaller(array): # array to store every value less than array[0]
+def getSmaller(array): # array to store every value < array[0]
     smaller = []  # new array
     for i in range(1, len(array)):
         if array[i] < array[0]:
@@ -43,3 +43,46 @@ def getBiggerOrEqual(array): # array to store every value >= array[0]
         if array[i] >= array[0]:
             biggerOrEqual.append(array[i])
     return biggerOrEqual
+
+
+
+
+
+
+# Method 2: (Efficient on space), using pointers (instead of array)
+# Time: O(n^2); n is number of the nodes in each array;
+# Space: O(d); d is the depth of BST tree;
+
+def sameBsts(arrayOne, arrayTwo):
+    return areSameBSTs(arrayOne, arrayTwo, rootIdxOne, rootIdxTwo, float('-inf'), float('inf'))
+
+def areSameBSTs(arrayOne, arrayTwo, rootIdxOne, rootIdxTwo, minVal, maxVal):
+    if arrayOne[rootIdxOne] != arrayTwo[rootIdxTwo]:
+        return False
+
+    if rootIdxOne == -1 or rootIdxTwo == -1:
+        return rootIdxOne == rootIdxTwo
+
+    leftRootIdxOne = getIdxOfFirstSmaller(arrayOne, rootIdxOne, minVal)
+    leftRootIdxTwo = getIdxOfFirstSmaller(arrayTwo, rootIdxTwo, minVal)
+    rightRootIdxOne = getIdxOfFirstBiggerOrEqual(arrayOne, rootIdxOne, maxVal)
+    rightRootIdxTwo = getIdxOfFirstBiggerOrEqual(arrayTwo, rootIdxOne, maxVal)
+
+    currentValue = arrayOne[rootIdxOne]
+    leftAreSame = areSameBSTs(arrayOne, arrayTwo, leftRootIdxOne, leftRootIdxTwo, minVal, currentValue)
+    rightAreSame = areSameBSTs(arrayOne, arrayTwo, rightRootIdxOne, rightRootIdxTwo, currentValue, maxVal)
+
+    return leftAreSame and rightAreSame
+
+
+def getIdxOfFirstSmaller(array, startingIndx, minVal):
+    for i in range(startingIndx+1, len(array)):
+        if array[i] < array[startingIndx] and array[i] >= minVal:
+            return i
+    return -1
+
+def getIdxOfFirstBiggerOrEqual(array, startingIdx, maxVal):
+    for i in range(startingIdx+1, len(array)):
+        if array[i] >= array[startingIdx] and array[i] < maxVal:
+            return i
+    return -1
