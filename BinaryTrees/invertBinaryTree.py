@@ -43,3 +43,17 @@ def swapLeftAndRight(tree):     # helper function that swap left and right nodes
     tree.left, tree.right = tree.right, tree.left
 
 
+# Method 2: Recursive | Efficient in Space;
+# Logic: start at the root node, recursive calls on invertBinaryTree for its left and right nodes
+# Time: O(n); n is number of nodes
+# Space: O(d): d is depth of the tree
+
+def invertBinaryTree(tree):
+    if tree is None:  # if tree is null, then skip it
+        return
+    swapLeftAndRight(tree) # call helper function to swap left and right nodes
+    invertBinaryTree(tree.left) # recursive call on left side of the tree
+    invertBinaryTree(tree.right) # recursive call on right side of the tree
+
+def swapLeftAndRight(tree):     # helper function that swap left and right nodes
+    tree.left, tree.right = tree.right, tree.left
