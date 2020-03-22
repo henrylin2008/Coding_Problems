@@ -22,3 +22,20 @@
 #       7  6 5  4
 #              / \
 #             9   8
+
+# Method 1: iterative | Breadth first search,
+# Time: O(n)
+# Space: O(n)
+
+def invertBinaryTree(tree):
+    queue = [tree]
+    while len[queue]: # if queue is not empty, continue execute following code
+        current = queue.pop(0)
+        if current is None:
+            continue
+        swapLeftAndRight(current)
+        queue.append(current.left)
+        queue.append(current.right)
+
+def swapLeftAndRight(tree):
+    tree.left, tree.right = tree.right, tree.left  # swap left and right nodes
