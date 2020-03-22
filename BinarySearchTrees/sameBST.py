@@ -1,5 +1,5 @@
 # https://www.algoexpert.io/questions/Same%20BSTs
-# Same BST
+# Same BST (Hard)
 # An array of integers is said to represent the Binary Search Tree (BST) obtained by inserting each integer in the array
 # (from left to right) into the BST. Write a function that takes in two arrays of integers and returns a boolean
 # representing whether or not these arrays represent the same BST. Note that you are not allowed to construct any BSTs in
@@ -8,7 +8,7 @@
 # than or equal to the values of every node to its right; and both of its children nodes are either BST nodes themselves
 # or None (null) values.
 
-# Method #1: recursive; easiness on reading the code; using array to store
+# Method #1: recursive; easiness on reading the code; using arrays to store values
 # Time: O(n^2); n is the number of nodes in each array
 # Space: O(n^2); n is the number of nodes in each array
 def sameBsts(arrayOne, arrayTwo):
@@ -49,7 +49,7 @@ def getBiggerOrEqual(array): # array to store every value >= array[0]
 
 
 
-# Method 2: (Efficient on space), using pointers (instead of array)
+# Method 2: (Efficient in space), using pointers (instead of array)
 # Time: O(n^2); n is number of the nodes in each array;
 # Space: O(d); d is the depth of BST tree;
 
