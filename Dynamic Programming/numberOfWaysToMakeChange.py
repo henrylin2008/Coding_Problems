@@ -6,7 +6,7 @@
 # using the given coin denominations. Note that an unlimited amount of coins is at your disposal.
 
 # Sample input: 6, [1, 5]
-# Sample output: 2 (1x1 + 1x5 and 6x1)
+# Sample output:  2 (1x1 + 1x5 and 6x1)
 
 
 # Time: O(nd); d is number of denomination
