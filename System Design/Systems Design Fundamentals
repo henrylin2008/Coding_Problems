@@ -98,83 +98,84 @@ Caching:
          *Disadvantage: There is data availability risk because the cache could fail (and so suffer from data loss) before the data is persisted to the backing store. This results in the data being lost.
          *What is it good for?
                The write-back policy is the best performer for mixed workloads as both read and write I/O have similar response time levels. In reality, you can add resiliency (e.g. by duplicating writes) to reduce the likelihood of data loss.
+
 Proxies:
-Forward Proxy: a server that sits between a client and servers and acts on behalf of the client, typically used to mask the client’s identity (IP address). Not that forward proxies are often referred to as just proxies
-Reverse Proxy: a server that sits between clients and servers and acts on behalf of the servers, typically used for logging, load balancing, or caching.
-Nginx: a popular web server that’s often used as a reverse proxy and load balancer.
+    -Forward Proxy: a server that sits between a client and servers and acts on behalf of the client, typically used to mask the client’s identity (IP address). Not that forward proxies are often referred to as just proxies
+    -Reverse Proxy: a server that sits between clients and servers and acts on behalf of the servers, typically used for logging, load balancing, or caching.
+    -Nginx: a popular web server that’s often used as a reverse proxy and load balancer.
 
 Load Balancers:
-Load Balancer: a type of reverse proxy that distributes traffic across server. Load balancers can be found in many parts of a system, from the DNS layer all the way to the database layer.
-Server-Selection Strategy: How a load balancer chooses servers when distributing traffic amongst multiple servers. Commonly used strategies include round-robin, random selection, performance-based selection (choosing the server with the best performance metrics, like the fastest response time or the least amount of traffic), and IP-based routing.
-Hot Spot: When distributing a workload across a set of servers, that workload might be spread unevenly. This can happen if your sharding key or your hashing function are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot".
-Nginx: a popular web server that’s often used as a reverse proxy and load balancer.
+    -Load Balancer: a type of reverse proxy that distributes traffic across server. Load balancers can be found in many parts of a system, from the DNS layer all the way to the database layer.
+    -Server-Selection Strategy: How a load balancer chooses servers when distributing traffic amongst multiple servers. Commonly used strategies include round-robin, random selection, performance-based selection (choosing the server with the best performance metrics, like the fastest response time or the least amount of traffic), and IP-based routing.
+    -Hot Spot: When distributing a workload across a set of servers, that workload might be spread unevenly. This can happen if your sharding key or your hashing function are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot".
+    -Nginx: a popular web server that’s often used as a reverse proxy and load balancer.
 
 Hashing:
-Consistent Hashing: A type of hashing that minimizes the number of keys that need to be remapped when a hash table gets resized. It's often used by load balancers to distribute traffic to servers; it minimizes the number of requests that get forwarded to different servers when new servers are added or when existing servers are brought down.
-Rendezvous Hashing: a type of hashing also coined highest random weight hashing. Allows for minimal re-distribution of mappings when a server goes down.
-SHA: Short for "Secure Hash Algorithms", the SHA is a collection of cryptographic hash functions used in the industry. These days, SHA-3 is a popular choice to use in a system.
+    -Consistent Hashing: A type of hashing that minimizes the number of keys that need to be remapped when a hash table gets resized. It's often used by load balancers to distribute traffic to servers; it minimizes the number of requests that get forwarded to different servers when new servers are added or when existing servers are brought down.
+    -Rendezvous Hashing: a type of hashing also coined highest random weight hashing. Allows for minimal re-distribution of mappings when a server goes down.
+    -SHA: Short for "Secure Hash Algorithms", the SHA is a collection of cryptographic hash functions used in the industry. These days, SHA-3 is a popular choice to use in a system.
 
 Relational Databases:
-Relational Database: A type of structured database in which data is stored following a tabular format; often supports powerful querying using SQL.
-Non-Relational Database: In contrast with relational database (SQL databases), a type of database that is free of imposed, tabular-like structure. Non-relational databases are often referred to as NoSQL databases.
-SQL: Structured Query Language. Relational databases can be used using a derivative of SQL such as PostgreSQL in the case of Postgres.
-SQL Database: Any database that supports SQL. This term is often used synonymously with "Relational Database", though in practice, not every relational database supports SQL.
-NoSQL Database: Any database that is not SQL compatible is called NoSQL.
-ACID Transaction: A type of database transaction that has four important properties:
-Atomicity: The operations that constitute the transaction will either all succeed or all fail. There is no in-between state.
-Consistency: The transaction cannot bring the database to an invalid state. After the transaction is committed or rolled back, the rules for each record will still apply, and all future transactions will see the effect of the transaction. Also named Strong Consistency
-Isolation: The execution of multiple transactions concurrently will have the same effect as if they had been executed sequentially.
-Durability: Any committed transaction is written to non-volatile storage. It will not be undone by a crash, power loss, or network partition.
-Database Index: A special auxiliary data structure that allows your database to perform certain queries much faster. Indexes can typically only exist to reference structured data, like data stored in relational databases. In practice, you create an index on one or multiple columns in your database to greatly speed up read queries that you run very often, with the downside of slightly longer writes to your database, since writes have to also take place in the relevant index.
-Strong Consistency: Strong Consistency usually refers to the consistency of ACID transactions, as opposed to Eventual Consistency
-Eventual Consistency: A consistency model which is unlike Strong Consistency. In this model, reads might return a view of the system that is stale. An eventually consistency datastore will give guarantees that the state of the database will eventually reflect writes within a time period (could be 10 seconds, or minutes).
-Postgres: A relational database that uses a dialect of SQL called PostgreSQL. Provides ACID transactions. https://www.postgresql.org/
+    -Relational Database: A type of structured database in which data is stored following a tabular format; often supports powerful querying using SQL.
+    -Non-Relational Database: In contrast with relational database (SQL databases), a type of database that is free of imposed, tabular-like structure. Non-relational databases are often referred to as NoSQL databases.
+    -SQL: Structured Query Language. Relational databases can be used using a derivative of SQL such as PostgreSQL in the case of Postgres.
+    -SQL Database: Any database that supports SQL. This term is often used synonymously with "Relational Database", though in practice, not every relational database supports SQL.
+    -NoSQL Database: Any database that is not SQL compatible is called NoSQL.
+    -ACID Transaction: A type of database transaction that has four important properties:
+        *Atomicity: The operations that constitute the transaction will either all succeed or all fail. There is no in-between state.
+        *Consistency: The transaction cannot bring the database to an invalid state. After the transaction is committed or rolled back, the rules for each record will still apply, and all future transactions will see the effect of the transaction. Also named Strong Consistency
+        *Isolation: The execution of multiple transactions concurrently will have the same effect as if they had been executed sequentially.
+        *Durability: Any committed transaction is written to non-volatile storage. It will not be undone by a crash, power loss, or network partition.
+    -Database Index: A special auxiliary data structure that allows your database to perform certain queries much faster. Indexes can typically only exist to reference structured data, like data stored in relational databases. In practice, you create an index on one or multiple columns in your database to greatly speed up read queries that you run very often, with the downside of slightly longer writes to your database, since writes have to also take place in the relevant index.
+    -Strong Consistency: Strong Consistency usually refers to the consistency of ACID transactions, as opposed to Eventual Consistency
+    -Eventual Consistency: A consistency model which is unlike Strong Consistency. In this model, reads might return a view of the system that is stale. An eventually consistency datastore will give guarantees that the state of the database will eventually reflect writes within a time period (could be 10 seconds, or minutes).
+    -Postgres: A relational database that uses a dialect of SQL called PostgreSQL. Provides ACID transactions. https://www.postgresql.org/
 
 Key-Value Stores:
-Key-Value Store: a flexible NoSQL database that’s often used for caching and dynamic configuration. Popular options include DynamoDB, Etcd, Redis, and ZooKeepr
-Etcd: a strongly consistent and highly available key-value store that’s often used to implement leader election in a system.
-https://etcd.io/
-Redis: An in-memory key-value store. Does offer some persistent storage options but is typically used as a really fast, best-effort caching solution. Redis is also often used to implement rate limiting.
-https://redis.io/
-ZooKeeper: ZooKeeper is a strongly consistent, highly available key-value store. It's often used to store important configuration or to perform leader election.
-https://zookeeper.apache.org/
+    -Key-Value Store: a flexible NoSQL database that’s often used for caching and dynamic configuration. Popular options include DynamoDB, Etcd, Redis, and ZooKeepr
+    -Etcd: a strongly consistent and highly available key-value store that’s often used to implement leader election in a system.
+        *https://etcd.io/
+    -Redis: An in-memory key-value store. Does offer some persistent storage options but is typically used as a really fast, best-effort caching solution. Redis is also often used to implement rate limiting.
+        *https://redis.io/
+    -ZooKeeper: ZooKeeper is a strongly consistent, highly available key-value store. It's often used to store important configuration or to perform leader election.
+        *https://zookeeper.apache.org/
 
 Replication and Sharding:
-Replication: The act of duplicating the data from one database server to others. This is sometimes used to increase the redundancy of your system and tolerate regional failures for instance. Other times you can use replication to move data closer to your clients, thus decreasing the latency of accessing specific data.
-Sharding: Sometimes called data partitioning, sharding is the act of splitting a database into two or more pieces called shards and is typically done to increase the throughput of your database. Popular sharding strategies include:
-Sharding based on a client's region
-Sharding based on the type of data (e.g: user data gets stored in one shard, payments data gets stored in another shard)
-Sharding based on the hash of a column (only for structured data)
-Hot Spot: When distributing a workload across a set of servers, that workload might be spread unevenly. This can happen if your sharding key or your hashing function are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot".
+    -Replication: The act of duplicating the data from one database server to others. This is sometimes used to increase the redundancy of your system and tolerate regional failures for instance. Other times you can use replication to move data closer to your clients, thus decreasing the latency of accessing specific data.
+    -Sharding: Sometimes called data partitioning, sharding is the act of splitting a database into two or more pieces called shards and is typically done to increase the throughput of your database. Popular sharding strategies include:
+        *Sharding based on a client's region
+        *Sharding based on the type of data (e.g: user data gets stored in one shard, payments data gets stored in another shard)
+        *Sharding based on the hash of a column (only for structured data)
+    -Hot Spot: When distributing a workload across a set of servers, that workload might be spread unevenly. This can happen if your sharding key or your hashing function are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot".
 
 Leader Election
-Leader Election: the process by which nodes in a cluster (for instance, servers in a set of servers) elect a so-called “leader” amongst them, responsible for the primary operations of the service that these nodes support. When correctly implemented, leader election guarantees that all nodes in the cluster know which one is the leader at any given time and can elect a new leader if the leader dies for whatever reason.
-Consensus Algorithm: A type of complex algorithms used to have multiple entities agree on a single data value, like who the "leader" is amongst a group of machines. Two popular consensus algorithms are Paxos and Raft.
-Paxos & Raft: Two consensus algorithms that, when implemented correctly, allow for the synchronization of certain operations, even in a distributed setting.
-Etcd: Etcd is a strongly consistent and highly available key-value store that’s often used to implement leader election in a system
-Zookeeper: a strongly consistent, highly available key-value store. It’s often used to store important configuration or to perform leader election.
+    -Leader Election: the process by which nodes in a cluster (for instance, servers in a set of servers) elect a so-called “leader” amongst them, responsible for the primary operations of the service that these nodes support. When correctly implemented, leader election guarantees that all nodes in the cluster know which one is the leader at any given time and can elect a new leader if the leader dies for whatever reason.
+    -Consensus Algorithm: A type of complex algorithms used to have multiple entities agree on a single data value, like who the "leader" is amongst a group of machines. Two popular consensus algorithms are Paxos and Raft.
+    -Paxos & Raft: Two consensus algorithms that, when implemented correctly, allow for the synchronization of certain operations, even in a distributed setting.
+    -Etcd: Etcd is a strongly consistent and highly available key-value store that’s often used to implement leader election in a system
+    -Zookeeper: a strongly consistent, highly available key-value store. It’s often used to store important configuration or to perform leader election.
 
 Peer-to-Peer Networks:
-Peer-to-Peer Network: A collection of machines referred to as peers that divide a workload between themselves to presumably complete the workload faster than would otherwise be possible. Peer-to-peer networks are often used in file-distribution systems.
-Gossip Protocol: When a set of machines talk to each other in a uncoordinated manner in a cluster to spread information through a system without requiring a central source of data.
+    -Peer-to-Peer Network: A collection of machines referred to as peers that divide a workload between themselves to presumably complete the workload faster than would otherwise be possible. Peer-to-peer networks are often used in file-distribution systems.
+    -Gossip Protocol: When a set of machines talk to each other in a uncoordinated manner in a cluster to spread information through a system without requiring a central source of data.
 
 Polling and Streaming:
-Polling: The act of fetching a resource or piece of data regularly at an interval to make sure your data is not too stale.
-Streaming: In networking, it usually refers to the act of continuously getting a feed of information from a server by keeping an open connection between the two machines or processes.
+    -Polling: The act of fetching a resource or piece of data regularly at an interval to make sure your data is not too stale.
+    -Streaming: In networking, it usually refers to the act of continuously getting a feed of information from a server by keeping an open connection between the two machines or processes.
 
 Configuration:
-Configuration: A set of parameters or constants that are critical to a system. Configuration is typically written in Jason or Yaml and can be either static, meaning that it's hard-coded in and shipped with your system's application code (like frontend  code, for instance), or dynamic, meaning that it lives outside of your system's application code.
+    -Configuration: A set of parameters or constants that are critical to a system. Configuration is typically written in Jason or Yaml and can be either static, meaning that it's hard-coded in and shipped with your system's application code (like frontend  code, for instance), or dynamic, meaning that it lives outside of your system's application code.
 
 Rate Limiting:
-Rate Limiting: The act of limiting the number of requests sent to or from a system. Rate limiting is most often used to limit the number of incoming requests in order to prevent DoS attacks and can be enforced at the IP-address level, at the user-account level, or at the region level, for example. Rate limiting can also be implemented in tiers; for instance, a type of network request could be limited to 1 per second, 5 per 10 seconds, and 10 per minute.
-DoS Attack: Short for "denial-of-service attack", a DoS attack is an attack in which a malicious user tries to bring down or damage a system in order to render it unavailable to users. Much of the time, it consists of flooding it with traffic. Some DoS attacks are easily preventable with rate limiting, while others can be far trickier to defend against.
-DDoS Attack: short for “distributed denial-of-service attack”, a DDoS attack is a DoS attack in which the traffic flooding the target system comes from many different sources (like thousands of machines), making it much harder to defend against.
-Redis: An in-memory key-value store. Does offer some persistent storage options but is typically used as a really fast, best-effort caching solution. Redis is also often used to implement
+    -Rate Limiting: The act of limiting the number of requests sent to or from a system. Rate limiting is most often used to limit the number of incoming requests in order to prevent DoS attacks and can be enforced at the IP-address level, at the user-account level, or at the region level, for example. Rate limiting can also be implemented in tiers; for instance, a type of network request could be limited to 1 per second, 5 per 10 seconds, and 10 per minute.
+    -DoS Attack: Short for "denial-of-service attack", a DoS attack is an attack in which a malicious user tries to bring down or damage a system in order to render it unavailable to users. Much of the time, it consists of flooding it with traffic. Some DoS attacks are easily preventable with rate limiting, while others can be far trickier to defend against.
+    -DDoS Attack: short for “distributed denial-of-service attack”, a DDoS attack is a DoS attack in which the traffic flooding the target system comes from many different sources (like thousands of machines), making it much harder to defend against.
+    -Redis: An in-memory key-value store. Does offer some persistent storage options but is typically used as a really fast, best-effort caching solution. Redis is also often used to implement
 
 Logging and Monitoring:
-Logging:  The act of collecting and storing logs--useful information about events in your system. Typically your programs will output log messages to its STDOUT or STDERR pipes, which will automatically get aggregated into a centralized logging solution
-Monitoring: The process of having visibility into a system's key metrics, monitoring is typically implemented by collecting important events in a system and aggregating them in human-readable charts.
-Alerting: The process through which system administrators get notified when critical system issues occur. Alerting can be set up by defining specific thresholds on monitoring charts, past which alerts are sent to a communication channel like Slack.
+    -Logging:  The act of collecting and storing logs--useful information about events in your system. Typically your programs will output log messages to its STDOUT or STDERR pipes, which will automatically get aggregated into a centralized logging solution
+    -Monitoring: The process of having visibility into a system's key metrics, monitoring is typically implemented by collecting important events in a system and aggregating them in human-readable charts.
+    -Alerting: The process through which system administrators get notified when critical system issues occur. Alerting can be set up by defining specific thresholds on monitoring charts, past which alerts are sent to a communication channel like Slack.
 
 
 
