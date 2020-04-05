@@ -1,0 +1,180 @@
+Load Balancer
+SQL
+Availability
+Nginx
+HTTP
+Cache
+Polling
+Proxies
+Client
+Replication
+Hashing
+MapReduce
+Database
+Leader Election
+Peer-to-peer
+
+
+Client-Server:
+    -Client: A machine or process that requests data or service from a server
+    Note that a single machine or piece of software can be both a client and a server at the same time. For instance, a single machine could act as a server for end users and as a client for a database.
+    -Server: A machine or process that provides data or service for a client, usually by listening for incoming network calls.
+    Note that a single machine or piece of software can be both a client and a server at the same time. For instance, a single machine could act as a server for end users and as a client for a database.
+    Client-Server Model: The paradigm by which modern systems are designed, which consists of clients requesting data or service from servers and servers providing data or service to clients.
+    -IP Address: An address given to each machine connected to the public internet. IPv4 addresses consist of four numbers separated by dots: a.b.c.d where all four numbers are between 0 and 255. Special values include:
+        *127.0.0.1: Your own local machine. Also referred to as localhost
+        *192.168.x.y: Your private network. For instance, your machine and all machines on your private wifi network will usually have the 192.168 prefix
+    -DNS: Short for Domain Name System, it describes the entities and protocols involved in the translation from domain names to IP Addresses. Typically, machines make a DNS query to a well known entity which is responsible for returning the IP address (or multiple ones) of the requested domain name in the response.
+
+Network Protocols:
+    -IP: Internet Protocol, this network protocol outlines how almost all machine-to-machine communications should happen in the world. Other protocol like TCP, UDP and HTTP are built on top of IP.
+    -TCP: Network protocol built on top of the Internet Protocol (IP). Allows for ordered, reliable data delivery between machines over the public internet by creating a connection.
+        TCP is usually implemented in the kernel, which exposes sockets to applications that they can use to stream data through an open connection
+    -HTTP: HyperText Transfer Protocol, very common network protocol implemented on top of TCP. Clients make HTTP requests, and servers respond with a response.
+    -Requests typically have the following schema:
+            host: string (example: algoexpert.io)
+            port: integer (example: 80 or 443)
+            method: string (example: GET, PUT, POST, DELETE, OPTIONS or PATCH)
+            headers: pair list (example: "Content-Type" => "application/json")
+            body: opaque sequence of bytes
+
+    -Responses typically have the following schema:
+	        status code: integer (example: 200, 401)
+            headers: pair list (example: "Content-Length" => 1238)
+            body: opaque sequence of bytes
+    -IP Packet: sometimes more broadly referred to as just a (network) packet, an IP packet is effectively the smallest unit used to describe data being sent over IP, aside from bytes. An IP packet consists of:
+        *An IP header, which contains the source and destination IP addresses as well as other information related to the network
+        *A payload, which is just the data being sent over the network
+
+Storage:
+    -Databases: Databases are programs that either use disk or memory to do 2 core things: record data and query data. In general, they are themselves servers that are long lived and interact with the rest of your application through network calls, with protocols on top of TCP or even HTTP.
+       Some databases only keep records in memory, and the users of such databases are aware of the fact that those records may be lost forever if the machine or process dies.
+       For the most part though, databases need persistence of those records, and thus cannot use memory. This means that you have to write your data to disk. Anything written to disk will remain through power loss or network partitions, so that’s what is used to keep permanent records.
+       Since machines die often in a large scale system, special disk partitions or volumes are used by the database processes, and those volumes can get recovered even if the machine were to go down permanently.
+    -Disk: Usually refers to either HDD (hard-disk drive) or SSD (solid-state drive). Data written to disk will persist through power failures and general machine crashes. Disk is also referred to as non-volatile storage.
+        SSD is far faster than HDD (see latencies of accessing data from SSD and HDD) but also far more expensive from a financial point of view. Because of that, HDD will typically be used for data that's rarely accessed or updated, but that's stored for a long time, and SSD will be used for data that's frequently accessed and updated.
+    -Memory: Random Access Memory (RAM), Data stored in memory will be lost when the process that has written that data dies.
+    -Persistent Storage: Usually refers to disk, but in general it is any form of storage that persists if the process in charge of managing it dies.
+
+Latency and Throughput:
+    -Latency: The time it takes for a certain operation to complete in a system. Most often this measure is a time duration, like milliseconds or seconds. You should know these orders of magnitude:
+        *Reading 1 MB from RAM: 250 microseconds
+        *Reading 1 MB from SSD: 1000 microseconds
+        *Transfer 1 MB over Network: 10 milliseconds
+        *Reading 1 MB from HDD: 20 milliseconds
+        *Inter-Continental Round Trip: 150 milliseconds
+    -Throughput: The number of operations that a system can handle properly per time unit. For instance the throughput of a server can often be measured in requests per second (RPS or QPS).
+
+
+Availability:
+    -Availability: The odds of a particular server or service being up and running at any point in time, usually measured in percentages. A server that has 99% availability will be operational 99% of the time (this would be described as having two nines> of availability)
+    -High Availability: used to describe systems that have particularly high levels of availability, typically 5 nines or more; sometimes abbreviated “HA”
+    -Nines: typically refers to percentages of uptime. For ex, 5 nines of availability means an uptime of 99.999% of the time. Below are the downtimes expected per year depending on those 9s:
+        *99% (two 9s): 97 hours
+        *99.9% (three 9s): 8.7 hours
+        *99.99%: 52 minutes
+        *99.999%: 5 minutes
+    -Redundancy: the process of replicating parts of a system in an effort to make it more reliable
+    -SLA: “service-level agreement”, a collection of guarantees given to a customer by a service provider. SLAs typically make guarantees on a system availability, amongst other things. SLAs are made up of one or multiple SLOs
+    -SLO: “service-level objective”, a guarantee given to a customer by a service provider. SLOs typically make guarantees on a system’s availability, amongst other things. SLOs constitute an SLA
+
+Caching:
+    -Cache: A piece of hardware or software that stores data, typically meant to retrieve that data faster than otherwise.
+        Caches are often used to store responses to network requests as well as
+        results of computationally-long operations.
+        Note that data in a cache can become stale if the main source of truth for that data (i.e., the main database behind the cache) gets updated and the cache doesn't.
+    -Cache Hit: When requested data is found in a cache.
+    -Cache Miss: When requested data could have been found in a cache but isn't. This is typically used to refer to a negative consequence of a system failure or of a poor design choice. For example:
+        If a server goes down, our load balancer will have to forward requests to a new server, which will result in cache misses.
+    -Cache Eviction Policy: The policy by which values get evicted or removed from a cache. Popular cache eviction policies include LRU (least-recently used), FIFO (first in first out), and LFU (least-frequently used).
+    -Content Delivery Network: a third-party service that acts like a cache for your servers. Sometimes, web applications can be slow for users in a particular region if your servers are located only in another region. A CDN has servers all around the world, meaning that the latency to a CDN's servers will almost always be far better than the latency to your servers. Two of the most popular CDNs are Cloudflare and Google Cloud CDN.
+    -Write-through: data is written to the cache and the backing store location at the same time
+        *Advantage: Ensures fast retrieval while making sure the data is in the backing store and is not lost in case the cache is disrupted.
+        *Disadvantage: Writing data will experience latency as you have to write to two places every time.
+        *What is it good for?
+                The write-through policy is good for applications that write and then re-read data frequently. This will result in slightly higher write latency but low read latency. So, it’s ok to spend a bit longer writing once, but then benefit from reading frequently with low latency.
+    -Write-back: data is written to the cache and Then I/O completion is confirmed. The data is then typically also written to the backing store in the background but the completion confirmation is not blocked on that.
+         *Advantage: Low latency and high throughput for write-intensive applications.
+         *Disadvantage: There is data availability risk because the cache could fail (and so suffer from data loss) before the data is persisted to the backing store. This results in the data being lost.
+         *What is it good for?
+               The write-back policy is the best performer for mixed workloads as both read and write I/O have similar response time levels. In reality, you can add resiliency (e.g. by duplicating writes) to reduce the likelihood of data loss.
+Proxies:
+Forward Proxy: a server that sits between a client and servers and acts on behalf of the client, typically used to mask the client’s identity (IP address). Not that forward proxies are often referred to as just proxies
+Reverse Proxy: a server that sits between clients and servers and acts on behalf of the servers, typically used for logging, load balancing, or caching.
+Nginx: a popular web server that’s often used as a reverse proxy and load balancer.
+
+Load Balancers:
+Load Balancer: a type of reverse proxy that distributes traffic across server. Load balancers can be found in many parts of a system, from the DNS layer all the way to the database layer.
+Server-Selection Strategy: How a load balancer chooses servers when distributing traffic amongst multiple servers. Commonly used strategies include round-robin, random selection, performance-based selection (choosing the server with the best performance metrics, like the fastest response time or the least amount of traffic), and IP-based routing.
+Hot Spot: When distributing a workload across a set of servers, that workload might be spread unevenly. This can happen if your sharding key or your hashing function are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot".
+Nginx: a popular web server that’s often used as a reverse proxy and load balancer.
+
+Hashing:
+Consistent Hashing: A type of hashing that minimizes the number of keys that need to be remapped when a hash table gets resized. It's often used by load balancers to distribute traffic to servers; it minimizes the number of requests that get forwarded to different servers when new servers are added or when existing servers are brought down.
+Rendezvous Hashing: a type of hashing also coined highest random weight hashing. Allows for minimal re-distribution of mappings when a server goes down.
+SHA: Short for "Secure Hash Algorithms", the SHA is a collection of cryptographic hash functions used in the industry. These days, SHA-3 is a popular choice to use in a system.
+
+Relational Databases:
+Relational Database: A type of structured database in which data is stored following a tabular format; often supports powerful querying using SQL.
+Non-Relational Database: In contrast with relational database (SQL databases), a type of database that is free of imposed, tabular-like structure. Non-relational databases are often referred to as NoSQL databases.
+SQL: Structured Query Language. Relational databases can be used using a derivative of SQL such as PostgreSQL in the case of Postgres.
+SQL Database: Any database that supports SQL. This term is often used synonymously with "Relational Database", though in practice, not every relational database supports SQL.
+NoSQL Database: Any database that is not SQL compatible is called NoSQL.
+ACID Transaction: A type of database transaction that has four important properties:
+Atomicity: The operations that constitute the transaction will either all succeed or all fail. There is no in-between state.
+Consistency: The transaction cannot bring the database to an invalid state. After the transaction is committed or rolled back, the rules for each record will still apply, and all future transactions will see the effect of the transaction. Also named Strong Consistency
+Isolation: The execution of multiple transactions concurrently will have the same effect as if they had been executed sequentially.
+Durability: Any committed transaction is written to non-volatile storage. It will not be undone by a crash, power loss, or network partition.
+Database Index: A special auxiliary data structure that allows your database to perform certain queries much faster. Indexes can typically only exist to reference structured data, like data stored in relational databases. In practice, you create an index on one or multiple columns in your database to greatly speed up read queries that you run very often, with the downside of slightly longer writes to your database, since writes have to also take place in the relevant index.
+Strong Consistency: Strong Consistency usually refers to the consistency of ACID transactions, as opposed to Eventual Consistency
+Eventual Consistency: A consistency model which is unlike Strong Consistency. In this model, reads might return a view of the system that is stale. An eventually consistency datastore will give guarantees that the state of the database will eventually reflect writes within a time period (could be 10 seconds, or minutes).
+Postgres: A relational database that uses a dialect of SQL called PostgreSQL. Provides ACID transactions. https://www.postgresql.org/
+
+Key-Value Stores:
+Key-Value Store: a flexible NoSQL database that’s often used for caching and dynamic configuration. Popular options include DynamoDB, Etcd, Redis, and ZooKeepr
+Etcd: a strongly consistent and highly available key-value store that’s often used to implement leader election in a system.
+https://etcd.io/
+Redis: An in-memory key-value store. Does offer some persistent storage options but is typically used as a really fast, best-effort caching solution. Redis is also often used to implement rate limiting.
+https://redis.io/
+ZooKeeper: ZooKeeper is a strongly consistent, highly available key-value store. It's often used to store important configuration or to perform leader election.
+https://zookeeper.apache.org/
+
+Replication and Sharding:
+Replication: The act of duplicating the data from one database server to others. This is sometimes used to increase the redundancy of your system and tolerate regional failures for instance. Other times you can use replication to move data closer to your clients, thus decreasing the latency of accessing specific data.
+Sharding: Sometimes called data partitioning, sharding is the act of splitting a database into two or more pieces called shards and is typically done to increase the throughput of your database. Popular sharding strategies include:
+Sharding based on a client's region
+Sharding based on the type of data (e.g: user data gets stored in one shard, payments data gets stored in another shard)
+Sharding based on the hash of a column (only for structured data)
+Hot Spot: When distributing a workload across a set of servers, that workload might be spread unevenly. This can happen if your sharding key or your hashing function are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot".
+
+Leader Election
+Leader Election: the process by which nodes in a cluster (for instance, servers in a set of servers) elect a so-called “leader” amongst them, responsible for the primary operations of the service that these nodes support. When correctly implemented, leader election guarantees that all nodes in the cluster know which one is the leader at any given time and can elect a new leader if the leader dies for whatever reason.
+Consensus Algorithm: A type of complex algorithms used to have multiple entities agree on a single data value, like who the "leader" is amongst a group of machines. Two popular consensus algorithms are Paxos and Raft.
+Paxos & Raft: Two consensus algorithms that, when implemented correctly, allow for the synchronization of certain operations, even in a distributed setting.
+Etcd: Etcd is a strongly consistent and highly available key-value store that’s often used to implement leader election in a system
+Zookeeper: a strongly consistent, highly available key-value store. It’s often used to store important configuration or to perform leader election.
+
+Peer-to-Peer Networks:
+Peer-to-Peer Network: A collection of machines referred to as peers that divide a workload between themselves to presumably complete the workload faster than would otherwise be possible. Peer-to-peer networks are often used in file-distribution systems.
+Gossip Protocol: When a set of machines talk to each other in a uncoordinated manner in a cluster to spread information through a system without requiring a central source of data.
+
+Polling and Streaming:
+Polling: The act of fetching a resource or piece of data regularly at an interval to make sure your data is not too stale.
+Streaming: In networking, it usually refers to the act of continuously getting a feed of information from a server by keeping an open connection between the two machines or processes.
+
+Configuration:
+Configuration: A set of parameters or constants that are critical to a system. Configuration is typically written in Jason or Yaml and can be either static, meaning that it's hard-coded in and shipped with your system's application code (like frontend  code, for instance), or dynamic, meaning that it lives outside of your system's application code.
+
+Rate Limiting:
+Rate Limiting: The act of limiting the number of requests sent to or from a system. Rate limiting is most often used to limit the number of incoming requests in order to prevent DoS attacks and can be enforced at the IP-address level, at the user-account level, or at the region level, for example. Rate limiting can also be implemented in tiers; for instance, a type of network request could be limited to 1 per second, 5 per 10 seconds, and 10 per minute.
+DoS Attack: Short for "denial-of-service attack", a DoS attack is an attack in which a malicious user tries to bring down or damage a system in order to render it unavailable to users. Much of the time, it consists of flooding it with traffic. Some DoS attacks are easily preventable with rate limiting, while others can be far trickier to defend against.
+DDoS Attack: short for “distributed denial-of-service attack”, a DDoS attack is a DoS attack in which the traffic flooding the target system comes from many different sources (like thousands of machines), making it much harder to defend against.
+Redis: An in-memory key-value store. Does offer some persistent storage options but is typically used as a really fast, best-effort caching solution. Redis is also often used to implement
+
+Logging and Monitoring:
+Logging:  The act of collecting and storing logs--useful information about events in your system. Typically your programs will output log messages to its STDOUT or STDERR pipes, which will automatically get aggregated into a centralized logging solution
+Monitoring: The process of having visibility into a system's key metrics, monitoring is typically implemented by collecting important events in a system and aggregating them in human-readable charts.
+Alerting: The process through which system administrators get notified when critical system issues occur. Alerting can be set up by defining specific thresholds on monitoring charts, past which alerts are sent to a communication channel like Slack.
+
+
+
