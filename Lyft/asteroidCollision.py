@@ -47,25 +47,26 @@
 # Time: O(N); N is number of asteroid
 # Space: O(N); where stack (ans) space
 # Idea: if new item is > 0, push it to stack, b/c it will always going to the right and not gonna collide with last item
-# if abs(new) < abs(last): remove new item
-# if abs(new) == abs(last), remove both items
-# if abs(new) > abs(last), remove last item (run in while loop to go through rest of values in the stack)
+# if abs(new) < res[last]: remove new item
+# if abs(new) == res[last], remove both items
+# if abs(new) > res[last], remove last item (in while loop to go through rest of values in the stack)
+# append anything except abs(new) >= res[-1]
 
 class Solution(object):
     def asteroidCollision(self, asteroids):
-        ans = []
+        res = []
         for new in asteroids: # for each new item
-            while ans and new < 0 < ans[-1]: # while there's ans stack, and new item is < 0 and last item > 0
-                if ans[-1] < abs(new):   # if last item in stack < abs(new)
-                    ans.pop() # remove last item in stack
+            while res and new < 0 < res[-1]: # while there's res stack, and new item is < 0 and last item > 0
+                if res[-1] < abs(new):   # if last item in stack < abs(new)
+                    res.pop() # remove last item in stack
                     continue
-                elif ans[-1] == abs(new): # if last item in stack == abs(new):
-                    ans.pop() # remove new and last item (as they collided in same size, ex: 5, -5)
+                elif res[-1] == abs(new): # if last item in stack == abs(new):
+                    res.pop() # remove new and last item (as they collided in same size, ex: 5, -5)
                 break
             else:
-                ans.append(new) # add new item to the stack
-        # print(ans)
-        return ans
+                res.append(new) # add new item to the stack
+        # print(res)
+        return res
 
 Solution.asteroidCollision(1, [5, 6, 7, -8])
 
