@@ -1,6 +1,7 @@
 # Asteroid Collision
 # LeetCode 735: https://leetcode.com/problems/asteroid-collision/
 # https://leetcode-cn.com/problems/asteroid-collision/
+# Difficulty: Medium
 # We are given an array asteroids of integers representing asteroids in a row.
 #
 # For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning
