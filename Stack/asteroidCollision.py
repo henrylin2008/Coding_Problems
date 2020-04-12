@@ -53,18 +53,28 @@
 class Solution(object):
     def asteroidCollision(self, asteroids):
         ans = []
-        for new in asteroids:
-            while ans and new < 0 < ans[-1]:
-                if ans[-1] < -new:   # if last item in stack < abs(new): remove last item in stack
-                    ans.pop()
+        for new in asteroids: # for each new item
+            while ans and new < 0 < ans[-1]: # while there's ans stack, and new item is < 0 and last item > 0
+                if ans[-1] < abs(new):   # if last item in stack < abs(new)
+                    ans.pop() # remove last item in stack
                     continue
-                elif ans[-1] == -new: # if last item in stack == abs(new): remove last item and new item
-                    ans.pop()
+                elif ans[-1] == abs(new): # if last item in stack == abs(new):
+                    ans.pop() # remove new and last item (as they collided in same size, ex: 5, -5)
                 break
             else:
                 ans.append(new) # add new item to the stack
-        print(ans)
+        # print(ans)
         return ans
 
+Solution.asteroidCollision(1, [5, 6, 7, -8])
 
-Solution.asteroidCollision(1, [5, 1, -15])
+
+
+
+
+
+
+
+
+
+
