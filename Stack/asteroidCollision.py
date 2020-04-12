@@ -43,5 +43,28 @@
 # Each asteroid will be a non-zero integer in the range [-1000, 1000]..
 #
 
-class Solution:
-    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+# Time: O(N); N is number of asteroid
+# Space: O(N); where stack (ans) space
+# Idea: if new item is > 0, push it to stack, b/c it will always going to the right and not gonna collide with last item
+# if abs(new) < abs(last): remove new item
+# if abs(new) == abs(last), remove both items
+# if abs(new) > abs(last), remove last item (run in while loop to go through rest of values in the stack)
+
+class Solution(object):
+    def asteroidCollision(self, asteroids):
+        ans = []
+        for new in asteroids:
+            while ans and new < 0 < ans[-1]:
+                if ans[-1] < -new:   # if last item in stack < abs(new): remove last item in stack
+                    ans.pop()
+                    continue
+                elif ans[-1] == -new: # if last item in stack == abs(new): remove last item and new item
+                    ans.pop()
+                break
+            else:
+                ans.append(new) # add new item to the stack
+        print(ans)
+        return ans
+
+
+Solution.asteroidCollision(1, [5, 1, -15])
