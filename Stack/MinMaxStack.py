@@ -46,13 +46,13 @@ class MinMaxStack:
 
     # O(1) time | O(1) space
     def pop(self): # remove last item from the stack
-        self.minMaxStack.pop()
+        self.minMaxStack.pop() # pop last value from minMaxStack to be in sync with the main stack
         return self.stack.pop()
 
     # O(1) time | O(1) space
     def push(self, number): # adding new item to the stack
-        newMinMax = {"min": number, "max": number} # use a directory/Hash table to store min and max values; it's true
-                    # only if it's pushing first number to the stack, or number is first number pushing into the stack
+        newMinMax = {"min": number, "max": number} # use a directory/Hash table to store min and max values; This is only
+                    # true if the first number is pushing to the stack, or number is first item pushing into the stack
         if len(self.minMaxStack): # if minMaxStack is not empty or there're values in the stack
             lastMinMax = self.minMaxStack[len(self.minMaxStack) - 1] # peeking last value of minMaxStack
             newMinMax["min"] = min(lastMinMax["min"], number) # find min by comparing min of lastMinMax value and the number
