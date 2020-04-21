@@ -37,9 +37,9 @@ def balancedBrackets(string):
             elif stack[-1] == matchingBrackets[char]: # if top item in stack matches corresponding closing bracket
                 stack.pop() # pop top item from the stack
             else:  # otherwise, it's a unbalanced stack, then return False
-                print("False")
+                # print("False")
                 return False
-    print("true")
+    # print("true")
     return len(stack) == 0 # return True if the stack is empty; otherwise there's unmatched bracket/s
 
 
