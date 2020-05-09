@@ -52,7 +52,7 @@
 # picked pivot. There are many different versions of quickSort that pick pivot in different ways.
 #
 # Always pick first element as pivot.
-# Always pick last element as pivot (implemented below)
+# Always pick last element as pivot.
 # Pick a random element as pivot.
 # Pick median as pivot.
 # The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as
