@@ -35,7 +35,8 @@
 #             # Handle the edge case when there's a single row in the middle
 #             # of the matrix. In this case, we don't want to double-count the values
 #             # in this row, which we've already counted in the first for loop above.
-#             if startRow == endRow: # avoid double-counting single row
+#             if startRow == endRow: #
+#             avoid double-counting single row
 #                 break
 #             result.append(array[endRow][col])
 #
@@ -57,7 +58,7 @@
 
 
 # Solution #2: Recursive
-# O(n) time | O(n) space
+# O(n) time | O(n) space - where n is the total number of elements in the array
 def spiralTraverse2(array):
     result = []
     spiralFill(array, 0, len(array) - 1, 0, len(array[0])-1, result)
