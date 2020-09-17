@@ -34,7 +34,7 @@ def toss_fair():
         return False
     else:
         return toss_fair()
-Testing this seems to bear it out:
+# Testing this seems to bear it out:
 
 from collections import defaultdict
 c = defaultdict(int)

@@ -2,7 +2,8 @@
 # Problem
 # This problem was asked by Facebook.
 #
-# There is an N by M matrix of zeroes. Given N and M, write a function to count the number of ways of starting at the top-left corner and getting to the bottom-right corner. You can only move right or down.
+# There is an N by M matrix of zeroes. Given N and M, write a function to count the number of ways of starting at the
+# top-left corner and getting to the bottom-right corner. You can only move right or down.
 #
 # For example, given a 2 by 2 matrix, you should return 2, since there are two ways to get to the bottom-right:
 #
@@ -11,7 +12,8 @@
 # Given a 5 by 5 matrix, there are 70 ways to get to the bottom-right.
 #
 # Solution
-# Notice that, to get to any cell, we only have two ways: either directly from above, or from the left, unless we can't go up or left anymore, in which case there's only one way. This leads to the following recurrence:
+# Notice that, to get to any cell, we only have two ways: either directly from above, or from the left, unless we can't
+# go up or left anymore, in which case there's only one way. This leads to the following recurrence:
 #
 # If either N or M is 1, then return 1
 # Otherwise, f(n, m) = f(n - 1, m) + f(n, m - 1)
