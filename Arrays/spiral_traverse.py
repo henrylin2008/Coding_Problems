@@ -25,9 +25,9 @@ def spiralTraverse(array):
     startCol, endCol = 0, len(array[0]) - 1 # 0, inner array
 
     while startRow <= endRow and startCol <= endCol:
-        print("row:", startRow, endRow)
-        print("col:", startCol, endCol)
-        print()
+        # print("row:", startRow, endRow)
+        # print("col:", startCol, endCol)
+        # print()
         for col in range(startCol, endCol + 1): # first row from the left to the right
             result.append(array[startRow][col])
 
