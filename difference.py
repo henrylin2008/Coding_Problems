@@ -54,12 +54,12 @@ class Difference:
         self.maximumDifference = 0
 
     def computeDifference(self):
-        min_element = 101
-        max_element = 0
+        min_element = 101   # constrain lower bond
+        max_element = 0 # constrain upper bond
         for element in self.__elements:
-            if element < min_element:
+            if element < min_element: # set new min element if it's < current min_element
                 min_element = element
-            elif element > max_element:
+            elif element > max_element: # set new max element
                 max_element = element
 
         self.maximumDifference = max_element - min_element
