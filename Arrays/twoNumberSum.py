@@ -1,6 +1,6 @@
 # link: https://www.algoexpert.io/questions/Two%20Number%20Sum
 #
-# ​Two Number Sum
+# ​>Two Number Sum
 #
 # Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum.
 # If any two numbers in the input array sum up to the target sum, the function should return them in an array.
@@ -17,12 +17,12 @@
 def twoNumberSum(array, targetSum):
     for i in range(len(array)-1): # go all the way before the last value
         firstNum = array[i]
-        print("first num:", firstNum)
+        # print("first num:", firstNum)
         for j in range(i+1, len(array)): # j goes all the way to the last value
             secondNum = array[j]
-            print("second num: ", secondNum)
+            # print("second num: ", secondNum)
             if firstNum + secondNum == targetSum:
-                print("firstNum + secondNum == targetSum:", firstNum, ",", secondNum)
+                # print("firstNum + secondNum == targetSum:", firstNum, ",", secondNum)
                 return[firstNum, secondNum]
     return[]
 
