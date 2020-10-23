@@ -15,23 +15,25 @@
 # Sample output:
 # True
 
-# Solution #1:
-#
+# Solution #1: compare 2 consecutive values and determine if it break the direction
+# Time: O(n)
+# Space: O(1)
 def isMonotonic(array):
-    if len(array) <= 2:
+    if len(array) <= 2: # True for length is <= 2
         return True
 
-    direction = array[1] - array[0]
+    direction = array[1] - array[0] # determine the direction (upward or downward)
     for i in range(2, len(array)):
-        if direction == 0:
-            direction = array[i] - array[i-1]
-            continue
-        if breaksDirection(direction, array[i - 1], array[i]):
+        if direction == 0:  # if 2 consecutive numbers are the same
+            direction = array[i] - array[i-1]   # finding the "new" direction
+            continue    # keep going
+        if breaksDirection(direction, array[i - 1], array[i]): # if breaks the direction
             return False
     return True
 
-def breaksDirection(direction, previousInt, currentInt):
-    difference = currentInt - previousInt
-    if direction > 0:
-        return difference < 0
-    return difference > 0
+
+def breaksDirection(direction, previousInt, currentInt): # check if direction is going the same way
+    difference = currentInt - previousInt   #
+    if direction > 0: # if direction is upward
+        return difference < 0 # break direction only if it is going downward
+    return difference > 0   # if direction is going downward, it breaks direction only if it is going upward
