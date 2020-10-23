@@ -40,16 +40,16 @@
 #
 
 
-# Solution #2: 2 checks: whether the array is entirely non-decreasing, or entirely non-increasing
+# Solution #2: 2 checks: whether the array is entirely non-decreasing (upward), or entirely non-increasing (downward)
 # Time: O(n)
 # Space: O(1)
 def isMonotonic(array):
-    isNonDecreasing = True  # trending upward
-    isNonInCreasing = True  # trending downward
+    isUpward = True  # trending upward
+    isDownward = True  # trending downward
     for i in range(1, len(array)):
         if array[i] < array[i-1]:  # if current value < previous value: then the array is decreasing
-            isNonDecreasing = False
+            isUpward = False
         if array[i] > array[i-1]:  # if current value > previous value, then the array is increasing
-            isNonInCreasing = False
+            isDownward = False
 
-    return isNonDecreasing or isNonInCreasing
+    return isUpward or isDownward
