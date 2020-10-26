@@ -14,23 +14,23 @@
 # Sample Output
 # [[7, 6, 4, -1], [7, 6, 1, 2]] // the quadruplets could be ordered differently
 
-# Time: O(n^2)
-# Space: O(n^2)
+# Average: O(n^2) time | O(n^2) space
+# Worst: O(n^3) time | O(n^2) space
 
 def fourNumberSum(array, targetSum):
-    allPairSums = {}
-    quadruplets = []
-    for i in range(1, len(array) - 1):
-        for j in range(i+1, len(array)):
-            currentSum = array[i] + array[j]
-            difference = targetSum - currentSum
-            if difference in allPairSums:
-                for pair in allPairSums[difference]:
-                    quadruplets.append(pair + [array[i], array[j]])
-        for k in range(0, i):
-            currentSum = array[i] + array[k]
+    allPairSums = {}  # hash table, store sums of every pair
+    quadruplets = []  # array, holds every value sums the quadruplet
+    for i in range(1, len(array) - 1):  # skip 1st and last value, no value before 1st or after last
+        for j in range(i + 1, len(array)):  # loop through values after current number
+            currentSum = array[i] + array[j]  # current sum
+            difference = targetSum - currentSum  # difference
+            if difference in allPairSums:  # if difference in the hash table
+                for pair in allPairSums[difference]:  # iterate through all sums in the hash table
+                    quadruplets.append(pair + [array[i], array[j]])  # pair = array of 2 values
+        for k in range(0, i):  # loop through values before current number
+            currentSum = array[i] + array[k]  # current sum
             if currentSum not in allPairSums:
-                allPairSums[currentSum] = [[array[k], array[i]]]
+                allPairSums[currentSum] = [[array[k], array[i]]]  # new pair keys
             else:
-                allPairSums[currentSum].append([array[k], array[i]])
+                allPairSums[currentSum].append([array[k], array[i]])  #
     return quadruplets
