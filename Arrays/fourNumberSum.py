@@ -14,13 +14,22 @@
 # Sample Output
 # [[7, 6, 4, -1], [7, 6, 1, 2]] // the quadruplets could be ordered differently
 
-# Average: O(n^2) time | O(n^2) space
+# Average: O(n^2) time | O(n^2) space: 2 for loops=2O(n^2)=> O(n^2)
 # Worst: O(n^3) time | O(n^2) space
 
+# Solution: create a hash table to store sum of every pair (for pair of numbers ),
+# To avoid duplicate count of quadruplets,f
+#
+# Sample Input: [7, 6, 4, -1, 1, 2]
+# allPairSums: (sum of current/main number and previous numbers, avoid duplication)
+# main #  6   ,     4     ,     4     ,    -1     ,      -1  ,  1    ,     -1    ,     1    ,      1   ,       1
+# { 13:[[7,6]], 11:[[7,4]], 10:[[6,4]], 6:[[7,-1]], 5:[[6,-1], [4,1]], 3:[[4,-1]], 8:[[7,1]], 7:[[6,1]], 0:[[-1,1]]}
+
 def fourNumberSum(array, targetSum):
-    allPairSums = {}  # hash table, store sums of every pair
-    quadruplets = []  # array, holds every value sums the quadruplet
-    for i in range(1, len(array) - 1):  # skip 1st and last value, no value before 1st or after last
+    allPairSums = {}  # hash table, store sum of every pair (for values before current number and current number) as
+    # the difference b/t targetSum and currentSum; pairing numbers (before current number) to avoid duplicates
+    quadruplets = []  # array, holds sums of the quadruplet, the value to return
+    for i in range(1, len(array) - 1):  # skip 1st and last value, since no value before 1st or after last
         for j in range(i + 1, len(array)):  # loop through values after current number
             currentSum = array[i] + array[j]  # current sum
             difference = targetSum - currentSum  # difference
