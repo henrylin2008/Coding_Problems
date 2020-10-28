@@ -25,10 +25,19 @@
 def isValidSubsequence(array, sequence):
     arrIdx = 0
     seqIdx = 0
-    while arrIdx < len(array) and seqIdx < len(sequence):   # while both pointers are still within the length
-        if array[arrIdx] == sequence[seqIdx]:   # when 2 pointers are matched
-            seqIdx += 1     # move the seqIdx pointer to the next
-        arrIdx += 1     # move the arrIdx pointer to the next
-    return seqIdx == len(sequence)  # return True if reached to the end of the sequence
+    while arrIdx < len(array) and seqIdx < len(sequence):  # while both pointers are still within the length
+        if array[arrIdx] == sequence[seqIdx]:  # when 2 pointers are matched
+            seqIdx += 1  # move the seqIdx pointer to the next
+        arrIdx += 1  # move the arrIdx pointer to the next
+    return seqIdx == len(sequence)  # return True if it reaches to the end of the sequence
 
 
+# Solution 2
+def isValidSubsequence(array, sequence):
+    seqIdx = 0
+    for value in array:  # for every value in the (main) array
+        if seqIdx == len(sequence):  # break if it reaches to the end of the sequence
+            break
+        if sequence[seqIdx] == value:  # if value in array matches the value in seqIdx
+            seqIdx += 1  # move seqIdx to the right
+    return seqIdx == len(sequence)  # return true if it reaches to the end of the sequence
