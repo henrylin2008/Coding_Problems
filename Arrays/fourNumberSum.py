@@ -17,8 +17,10 @@
 # Average: O(n^2) time | O(n^2) space: 2 for loops=2O(n^2)=> O(n^2)
 # Worst: O(n^3) time | O(n^2) space
 
-# Solution: create a hash table to store sum of every pair (for pair of numbers ),
-# To avoid duplicate count of quadruplets,f
+# Solution: create a hash table to store sum of every pair (for pair of numbers ), and quadruplets to store all
+# possible quadruplets. Two for loops: first loop = current value + every value after current number, append current
+# number and new number to the quadruplets array; second loop = current value + every value before current number, if
+# currentSum not in allPairSums, then create a new key, value pair,
 #
 # Sample Input: [7, 6, 4, -1, 1, 2]
 # allPairSums: (sum of current/main number and previous numbers, avoid duplication)
@@ -31,15 +33,16 @@ def fourNumberSum(array, targetSum):
     quadruplets = []  # array, holds sums of the quadruplet, the value to return
     for i in range(1, len(array) - 1):  # skip 1st and last value, since no value before 1st or after last
         for j in range(i + 1, len(array)):  # loop through values after current number
-            currentSum = array[i] + array[j]  # current sum
-            difference = targetSum - currentSum  # difference
-            if difference in allPairSums:  # if difference in the hash table
-                for pair in allPairSums[difference]:  # iterate through all sums in the hash table
-                    quadruplets.append(pair + [array[i], array[j]])  # pair = array of 2 values
-        for k in range(0, i):  # loop through values before current number
-            currentSum = array[i] + array[k]  # current sum
-            if currentSum not in allPairSums:
-                allPairSums[currentSum] = [[array[k], array[i]]]  # new pair keys
-            else:
-                allPairSums[currentSum].append([array[k], array[i]])  #
+            currentSum = array[i] + array[j]  # current sum = current value + value after current number
+            difference = targetSum - currentSum  # difference b/t current sum and target sum
+            if difference in allPairSums:  # if difference is in the hash table
+                for pair in allPairSums[difference]:  # if so, iterate through all pairs in the hash table
+                    quadruplets.append(pair + [array[i], array[j]])  # add the original pair and new points to
+                    # quadruplets
+        for k in range(0, i):  # loop through values before current number (excluded i)
+            currentSum = array[i] + array[k]  # currentSum = current number + number k (before current value)
+            if currentSum not in allPairSums:   # if currentSum not in allPairSums
+                allPairSums[currentSum] = [[array[k], array[i]]]  # create new key, value pair (array) in allPairSums
+            else:   # else if currentSum is in allPairSums
+                allPairSums[currentSum].append([array[k], array[i]])  # added it to allPairSums
     return quadruplets
