@@ -16,6 +16,19 @@
 # Sample output
 # true
 
-# Time:
-# Space:
+# Time: O(N), iterate through the main array
+# Space: O(1), not storing anything but the 2 pointers
+# Solution: set 2 pointers, one on the main array and one on the sequence, starting from the beginning, then iterate
+# through the array and the sequence to find matched and ordered items from the sequence
+
+# Solution 1
 def isValidSubsequence(array, sequence):
+    arrIdx = 0
+    seqIdx = 0
+    while arrIdx < len(array) and seqIdx < len(sequence):
+        if array[arrIdx] == sequence[seqIdx]:
+            seqIdx += 1
+        arrIdx += 1
+    return seqIdx == len(sequence) - 1
+
+
