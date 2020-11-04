@@ -15,16 +15,17 @@
 
 # Time: O(n)
 # Space: O(1)
-
+# Compare current number with adjacent numbers to determine if it's out of order (ex: 10, 7, 12)
 def subarraySort(array):
-    minOutOfOrder = float("inf")
-    maxOutOfOrder = float("-inf")
-    for i in range(len(array)):
-        num = array[i]
-        if isOutOfOrder(i, num, array):
-            minOutOfOrder = min(minOutOfOrder, num)
-            maxOutOfOrder = max(maxOutOfOrder, num)
-    if minOutOfOrder == float("inf"):
+    minOutOfOrder = float("inf")    # smallest num in unsorted subarray
+    maxOutOfOrder = float("-inf")   # greatest num in unsorted subarray
+    for i in range(len(array)):  # Go through the entire array
+        num = array[i]  # num = current number
+        if isOutOfOrder(i, num, array):  # helper function to check if current num is out of order,
+            # previous num <= current num <= next num
+            minOutOfOrder = min(minOutOfOrder, num)  # update minOutOfOrder, min(float('inf'), num) => num
+            maxOutOfOrder = max(maxOutOfOrder, num)  # update maxOutOfOrder, max(float('-inf'), num) => num
+    if minOutOfOrder == float("inf"):  # Edge case (already sorted) from the instruction; can use either values
         return [-1, -1]
     subarrayLeftIdx = 0
     while minOutOfOrder >= array[subarrayLeftIdx]:
@@ -35,9 +36,9 @@ def subarraySort(array):
     return [subarrayLeftIdx, subarrayRightIdx]
 
 
-def isOutOfOrder(i, num, array):
-    if i == 0:
-        return num > array[i + 1]
-    if i == len(array) - 1:
-        return num < array[i - 1]
-    return num > array[i + 1] or num < array[i - 1]
+def isOutOfOrder(i, num, array):  # helper function to determine out of order
+    if i == 0:  # first num in the array
+        return num > array[i + 1]  # num > next num ==> out of order
+    if i == len(array) - 1:  # last num in the array
+        return num < array[i - 1]  # num < previous num ==> out of order
+    return num > array[i + 1] or num < array[i - 1]  # return True if current num > next num or current num < pre num
