@@ -15,28 +15,31 @@
 
 # Time: O(n)
 # Space: O(1)
-# Compare current number with adjacent numbers to determine if it's out of order (ex: 10, 7, 12)
+# Compare current number with adjacent numbers to determine if it's out of order (ex: 10, 7, 12 is out of order)
 def subarraySort(array):
-    minOutOfOrder = float("inf")    # smallest num in unsorted subarray
-    maxOutOfOrder = float("-inf")   # greatest num in unsorted subarray
-    for i in range(len(array)):  # Go through the entire array
-        num = array[i]  # num = current number
-        if isOutOfOrder(i, num, array):  # helper function to check if current num is out of order,
-            # previous num <= current num <= next num
-            minOutOfOrder = min(minOutOfOrder, num)  # update minOutOfOrder, min(float('inf'), num) => num
-            maxOutOfOrder = max(maxOutOfOrder, num)  # update maxOutOfOrder, max(float('-inf'), num) => num
-    if minOutOfOrder == float("inf"):  # Edge case (already sorted) from the instruction; can use either values
+    minOutOfOrder = float("inf")  # smallest num in unsorted subarray
+    maxOutOfOrder = float("-inf")  # greatest num in unsorted subarray
+    for i in range(len(array)):  # Loop through the entire array
+        num = array[i]  # initializing num = current number
+        if isOutOfOrder(i, num, array):  # helper function to check if current num is out of order
+            # Out of order if: previous num > current num > next num
+            # reason for setting minOOO, maxOOO = float("inf"), float("-inf"): first loop comparison as below:
+            # min(float("inf"), num) ==> num
+            # max(float("-inf"), num) ==> num
+            minOutOfOrder = min(minOutOfOrder, num)  # compare current num and existing min to get the new min value
+            maxOutOfOrder = max(maxOutOfOrder, num)  # compare current num and existing max to get the new max value
+    if minOutOfOrder == float("inf"):  # Edge case (already sorted) from the instruction; it can be either values
         return [-1, -1]
     subarrayLeftIdx = 0
-    while minOutOfOrder >= array[subarrayLeftIdx]:
-        subarrayLeftIdx += 1
-    subarrayRightIdx = len(array) - 1
-    while maxOutOfOrder <= array[subarrayRightIdx]:
-        subarrayRightIdx -= 1
-    return [subarrayLeftIdx, subarrayRightIdx]
+    while minOutOfOrder >= array[subarrayLeftIdx]:  # when the (current OOO) min value >= current (array left) num
+        subarrayLeftIdx += 1  # move the left index one to the right
+    subarrayRightIdx = len(array) - 1  # right index value
+    while maxOutOfOrder <= array[subarrayRightIdx]:  # when the (current OOO) max value <= current (array right) num
+        subarrayRightIdx -= 1   # move the (right) index one to the left
+    return [subarrayLeftIdx, subarrayRightIdx]  # return out of order [left index, right index]
 
 
-def isOutOfOrder(i, num, array):  # helper function to determine out of order
+def isOutOfOrder(i, num, array):  # helper function to verify out of order
     if i == 0:  # first num in the array
         return num > array[i + 1]  # num > next num ==> out of order
     if i == len(array) - 1:  # last num in the array
