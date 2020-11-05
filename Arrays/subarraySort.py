@@ -15,7 +15,11 @@
 
 # Time: O(n)
 # Space: O(1)
-# Compare current number with adjacent numbers to determine if it's out of order (ex: 10, 7, 12 is out of order)
+# Compare current number with adjacent numbers to determine if it's out of order (ex: 10, 7, 12 is out of order),
+# set a value = min in Out of order subarray, and a value = the max in Out of order subarray
+# compares the minOOO value from the left of the given array, until the current value <= minOOO;
+# compares the maxOOO value from the right of the given array, until the current value >= maxOOO,
+# return the index of minOOO and index of maxOOO
 def subarraySort(array):
     minOutOfOrder = float("inf")  # smallest num in unsorted subarray
     maxOutOfOrder = float("-inf")  # greatest num in unsorted subarray
