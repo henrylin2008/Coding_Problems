@@ -20,6 +20,10 @@
 
 # Time: O(n), where n is the total number of elements in the two-dimensional array
 # Space: O(n), where n is the total number of elements in the two-dimensional array
+# Solution: set boundaries: if the direction is going down, boundaries: first column and last row;
+# if the direction is going up, boundaries: first row and last column; create an result array and append items in
+# the passing path into the (result) array
+
 def zigzagTraverse(array):
     height = len(array) - 1
     width = len(array[0]) - 1   # length of first subarray - 1
@@ -31,20 +35,20 @@ def zigzagTraverse(array):
         if goingDown:   # if it's going down
             if col == 0 or row == height:   # if first column or last row
                 goingDown = False   # changing direction, going up
-                if row == height:   # if we're at the bottom of the array
-                    col += 1    # moves to the right
-                else:   #
-                    row += 1    # keeps going down
+                if row == height:   # if at the bottom row of the array
+                    col += 1    # moves to the right by 1
+                else:   # else if at the first column but not last row
+                    row += 1    # going down by 1
             else:   # not first column or last row, but going down
                 row += 1    # down 1
                 col -= 1    # left 1
         else:   # if going up
             if row == 0 or col == width:    # if top row or last column
                 goingDown = True    # going down
-                if col == width:    # if in final column
+                if col == width:    # if in the final column
                     row += 1    # going down by 1
-                else:   # if col != width: first row but not on the top right corner
-                    col += 1    # going right by 1
+                else:   # first row but not on the top right corner
+                    col += 1    # move to right by 1
             else:   # in middle of the array, not on
                 row -= 1    # going up by 1
                 col += 1    # going right by 1
