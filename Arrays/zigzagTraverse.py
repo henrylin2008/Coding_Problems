@@ -20,9 +20,12 @@
 
 # Time: O(n), where n is the total number of elements in the two-dimensional array
 # Space: O(n), where n is the total number of elements in the two-dimensional array
-# Solution: set boundaries: if the direction is going down, boundaries: first column and last row;
-# if the direction is going up, boundaries: first row and last column; create an result array and append items in
-# the passing path into the (result) array
+# Solution: set boundaries:
+# If the direction is going down; boundaries: first column and last row; If it's the first column, move direction
+# straight down; elif it's last row, move straight right by 1; else move down 1 row and 1 to the left;
+# If the direction is going up, boundaries: first row and last column; if is the final column, moving straight down 1;
+# elif is the first row, move to the right by 1; else: move one row up and one column right
+# append everything in the passing path into the result array
 
 def zigzagTraverse(array):
     height = len(array) - 1
