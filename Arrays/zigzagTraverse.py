@@ -35,17 +35,17 @@ def zigzagTraverse(array):
     goingDown = True    # goingDown direction
     while not isOutOfBounds(row, col, height, width):   # while is not out of bounds
         result.append(array[row][col])  # append current value to the result array (since it's inbound)
-        if goingDown:   # if it's going down
+        if goingDown:   # if going down
             if col == 0 or row == height:   # if first column or last row
                 goingDown = False   # changing direction, going up
                 if row == height:   # if at the bottom row of the array
                     col += 1    # moves to the right by 1
-                else:   # else if at the first column but not last row
+                else:   # else if at the first column (but not last row)
                     row += 1    # going down by 1
             else:   # not first column or last row, but going down
                 row += 1    # down 1
                 col -= 1    # left 1
-        else:   # if going up
+        else:   # else if going up
             if row == 0 or col == width:    # if top row or last column
                 goingDown = True    # going down
                 if col == width:    # if in the final column
