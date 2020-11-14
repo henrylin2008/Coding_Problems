@@ -10,13 +10,14 @@
 # Time: O(n), n is total number of elements in the array, including sub-elements
 # Space: O(d), d is the greatest depth of "special" arrays in the array
 def productSum(array, multiplier=1):
-    sum = 0
+    sums = 0
     for element in array:
         if type(element) is list:  # if element is a type of list
-            sum += productSum(element, multiplier+1)  # recursive call of productSum, add 1 to multiplier and add to element
+            sums += productSum(element, multiplier + 1)  # recursive call of productSum, add 1 to multiplier and add
+            # to element
         else:
-            sum += element
+            sums += element
     # print(sum*multiplier)
-    return sum * multiplier
+    return sums * multiplier
 
 # productSum([5,2,[7, - 1],3,[6,[-13,8],4],[10]])
