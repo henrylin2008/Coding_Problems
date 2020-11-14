@@ -37,22 +37,22 @@ def zigzagTraverse(array):
         result.append(array[row][col])  # append current value to the result array (since it's inbound)
         if goingDown:   # if going down
             if col == 0 or row == height:   # if first column or last row
-                goingDown = False   # changing direction, going up
+                goingDown = False   # changing direction (going up), as it hits the left/bottom boundaries
                 if row == height:   # if at the bottom row of the array
                     col += 1    # moves to the right by 1
                 else:   # else if at the first column (but not last row)
-                    row += 1    # going down by 1
-            else:   # not first column or last row, but going down
+                    row += 1    # going directly down by 1
+            else:   # not first column or last row, but going diagonal down
                 row += 1    # down 1
                 col -= 1    # left 1
         else:   # else if going up
-            if row == 0 or col == width:    # if top row or last column
-                goingDown = True    # going down
+            if row == 0 or col == width:    # if top row or last column, the boundaries
+                goingDown = True    # going down, since else (outer loop) is going up,
                 if col == width:    # if in the final column
-                    row += 1    # going down by 1
+                    row += 1    # going directly down by 1
                 else:   # first row but not on the top right corner
                     col += 1    # move to right by 1
-            else:   # in middle of the array, not on
+            else:   # in middle of the array, going (diagonal) up
                 row -= 1    # going up by 1
                 col += 1    # going right by 1
     return result
