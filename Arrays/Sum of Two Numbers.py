@@ -56,10 +56,10 @@
 # The easiest way is to keep track of what you have seen previously. If you have some value x, and you've seen k-x
 # before, then it must be True. Otherwise, its False.
 class Solution:
-    def solve(self, nums, k):
-        seen = set()
+    def sumTwoNums(self, nums, k):
+        seen = set()    # using set for seen values
         for i in nums:
-            if k - i in seen:
+            if k - i in seen:   # if subtraction is in the seen set, return True
                 return True
-            seen.add(i)
-        return False
+            seen.add(i)     # add current value into the set
+        return False    # False if not in the seen set
