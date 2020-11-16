@@ -28,29 +28,32 @@ def productsExceptSelf(nums):
     # Generate prefix products
     prefix_products = []
     for n in nums:
-        if prefix_products:
+        if prefix_products:  # new num = current num * last num, and append it to the prefix_products list
             prefix_products.append(prefix_products[-1] * n)
-        else:
+        else:   # append first item in nums list to prefix_products list
             prefix_products.append(n)
 
     # Generate suffix products
     suffix_products = []
     for n in reversed(nums):
-        if suffix_products:
+        if suffix_products:  # new num = current num * last num, and append it to the suffix_products list
             suffix_products.append(suffix_products[-1] * n)
-        else:
+        else:   # append reversed first item/last item into suffix_products list
             suffix_products.append(n)
-    suffix_products = list(reversed(suffix_products))
+    suffix_products = list(reversed(suffix_products))   # converted it to a list
 
     # Generate result
     result = []
     for i in range(len(nums)):
-        if i == 0:
-            result.append(suffix_products[i + 1])
-        elif i == len(nums) - 1:
-            result.append(prefix_products[i - 1])
+        if i == 0:  # first num in nums
+            result.append(suffix_products[i + 1])   # second value: [120]
+        elif i == len(nums) - 1:    # last num in nums
+            result.append(prefix_products[i - 1])   # second to last value: [24]
         else:
             result.append(prefix_products[i - 1] * suffix_products[i + 1])
+            # prefix_products: [1,2,6,24,120] ==> [1,2,6]
+            # suffix_products: [120,120,60,20,5] ==> [60,20,5]
+            # result = [1st in if, 1*60=60, 2*20=40, 6*5=30, last in elif]
     return result
 
 
