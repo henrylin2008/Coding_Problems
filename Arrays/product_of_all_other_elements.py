@@ -1,7 +1,8 @@
 # Daily Coding Problem #2
 # Problem
 # This problem was asked by Uber.
-#
+# Link: https://binarysearch.com/problems/Special-Product-Array
+
 # Given an array of integers, return a new array such that each element at index i of the new array is the product of
 # all the numbers in the original array except the one at i.
 #
@@ -23,37 +24,45 @@
 
 # Time: O(n)
 # Space: O(n)
-# since iterating over the input arrays takes O(N) time and creating the prefix and suffix arrays take up O(N) space.
+# Iterating over the input arrays takes O(N) time and creating the prefix and suffix arrays take up O(N) space.
 def productsExceptSelf(nums):
     # Generate prefix products
+    # if nums = [1,2,3,4,5]
     prefix_products = []
     for n in nums:
-        if prefix_products:  # new num = current num * last num, and append it to the prefix_products list
-            prefix_products.append(prefix_products[-1] * n)
+        if prefix_products:  # new num = current num * previous num, and append it to the prefix_products list
+            prefix_products.append(prefix_products[-1] * n)  # i=2,3,4,5: [2*1=2, 3*2=6, 4*6=24, 5*24=120]
         else:  # append first item in nums list to prefix_products list
-            prefix_products.append(n)
+            prefix_products.append(n)   # i=1: [1]
+    # prefix_products: [1,2,6,24,120]
 
     # Generate suffix products
     suffix_products = []
     for n in reversed(nums):
-        if suffix_products:  # new num = current num * last num, and append it to the suffix_products list
-            suffix_products.append(suffix_products[-1] * n)
-        else:  # append reversed first item/last item into suffix_products list
-            suffix_products.append(n)
-    suffix_products = list(reversed(suffix_products))  # converted it to a list
+        # n= 5,4,3,2,1
+        if suffix_products:  # new num = current num * previous num, and append it to the suffix_products list
+            suffix_products.append(suffix_products[-1] * n)     # n=4,3,2,1 [5, 4*5=20, 3*20=60, 2*60=120, 1*120=120]
+        else:  # append reversed first item/previous item into suffix_products list
+            suffix_products.append(n)   # n=5
+        # suffix_products: [5,20,60,120,120]
+    suffix_products = list(reversed(suffix_products))  # convert it to a list
+    # suffix_products after reversed: [120,120,60,20,5]
 
     # Generate result
     result = []
     for i in range(len(nums)):
         if i == 0:  # first num in nums
-            result.append(suffix_products[i + 1])  # second value: [120]
+            result.append(suffix_products[i + 1])  # suffix_products[1]: [120]
         elif i == len(nums) - 1:  # last num in nums
-            result.append(prefix_products[i - 1])  # second to last value: [24]
+            result.append(prefix_products[i - 1])  # prefix_products[3]: [24]
         else:
             result.append(prefix_products[i - 1] * suffix_products[i + 1])
-            # prefix_products: [1,2,6,24,120] ==> [1,2,6]
-            # suffix_products: [120,120,60,20,5] ==> [60,20,5]
-            # result = [1st in if, 1*60=60, 2*20=40, 6*5=30, last in elif]
+            # prefix_products: [1,2,6,24,120];   suffix_products: [120,120,60,20,5]
+            # index: prefix_products  *  suffix_products   =    result
+            # 1    : [1-1]=0 => 1        [1+1]=2 => 60     ==> [120(above), 60]
+            # 2    : [2-1]=1 => 2        [2+1]=3 => 20     ==> [120, 60, 40]
+            # 3    : [3-1]=2 => 6        [3+1]=4 => 5      ==> [120, 60, 40, 30]
+            # 4    : (above)                               ==> [120, 60, 40, 30, 24]
     return result
 
 # Solution 2:
