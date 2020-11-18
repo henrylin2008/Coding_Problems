@@ -33,7 +33,7 @@ def productsExceptSelf(nums):
         if prefix_products:  # new num = current num * previous num, and append it to the prefix_products list
             prefix_products.append(prefix_products[-1] * n)  # i=2,3,4,5: [2*1=2, 3*2=6, 4*6=24, 5*24=120]
         else:  # append first item in nums list to prefix_products list
-            prefix_products.append(n)   # i=1: [1]
+            prefix_products.append(n)  # i=1: [1]
     # prefix_products: [1,2,6,24,120]
 
     # Generate suffix products
@@ -41,9 +41,9 @@ def productsExceptSelf(nums):
     for n in reversed(nums):
         # n= 5,4,3,2,1
         if suffix_products:  # new num = current num * previous num, and append it to the suffix_products list
-            suffix_products.append(suffix_products[-1] * n)     # n=4,3,2,1 => [4*5=20, 3*20=60, 2*60=120, 1*120=120]
+            suffix_products.append(suffix_products[-1] * n)  # n=4,3,2,1 => [4*5=20, 3*20=60, 2*60=120, 1*120=120]
         else:  # append reversed first item/previous item into suffix_products list
-            suffix_products.append(n)   # n=5 => [5]
+            suffix_products.append(n)  # n=5 => [5]
         # suffix_products: [5,20,60,120,120]
     suffix_products = list(reversed(suffix_products))  # reverse suffix_products and convert it to a list
     # suffix_products after reversed: [120,120,60,20,5]
@@ -82,3 +82,52 @@ def productsExceptSelf(nums):
 #         right_product *= nums[i]      # 1*5=5, 5*4=20, 20*3=60, 60*2=120, 120*1=120
 #
 #     return products
+
+
+# Approach 2: O(1) space approach Although the above solution is good enough to solve the problem since we are not
+# using division anymore, there's a follow-up component as well which asks us to solve this using constant space.
+# Understandably so, the output array does not count towards the space complexity. This approach is essentially an
+# extension of the approach above. Basically, we will be using the output array as one of L or R and we will be
+# constructing the other one on the fly. Let's look at the algorithm based on this idea.
+#
+# Algorithm
+#
+# Initialize the empty answer array where for a given index i, answer[i] would contain the product of all the numbers
+# to the left of i. We construct the answer array the same way we constructed the L array in the previous approach.
+# These two algorithms are exactly the same except that we are trying to save up on space. The only change in this
+# approach is that we don't explicitly build the R array from before. Instead, we simply use a variable to keep track
+# of the running product of elements to the right and we keep updating the answer array by doing answer[i] = answer[
+# i] * R answer[i]=answer[i]∗R. For a given index i, answer[i] contains the product of all the elements to the left
+# and R would contain product of all the elements to the right. We then update R as R = R * nums[i]R=R∗nums[i]
+# Time: O(n)
+# Space: O(1)
+# class Solution:
+#     def productExceptSelf(self, nums: List[int]) -> List[int]:
+#
+#         # The length of the input array
+#         length = len(nums)
+#
+#         # The answer array to be returned
+#         answer = [0] * length
+#
+#         # answer[i] contains the product of all the elements to the left
+#         # Note: for the element at index '0', there are no elements to the left,
+#         # so the answer[0] would be 1
+#         answer[0] = 1
+#         for i in range(1, length):
+#             # answer[i - 1] already contains the product of elements to the left of 'i - 1'
+#             # Simply multiplying it with nums[i - 1] would give the product of all
+#             # elements to the left of index 'i'
+#             answer[i] = nums[i - 1] * answer[i - 1]
+#
+#         # R contains the product of all the elements to the right
+#         # Note: for the element at index 'length - 1', there are no elements to the right,
+#         # so the R would be 1
+#         R = 1;
+#         for i in reversed(range(length)):
+#             # For the index 'i', R would contain the
+#             # product of all elements to the right. We update R accordingly
+#             answer[i] = answer[i] * R
+#             R *= nums[i]
+#
+#         return answer
