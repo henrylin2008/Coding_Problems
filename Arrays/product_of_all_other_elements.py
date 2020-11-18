@@ -41,11 +41,11 @@ def productsExceptSelf(nums):
     for n in reversed(nums):
         # n= 5,4,3,2,1
         if suffix_products:  # new num = current num * previous num, and append it to the suffix_products list
-            suffix_products.append(suffix_products[-1] * n)     # n=4,3,2,1 [5, 4*5=20, 3*20=60, 2*60=120, 1*120=120]
+            suffix_products.append(suffix_products[-1] * n)     # n=4,3,2,1 => [4*5=20, 3*20=60, 2*60=120, 1*120=120]
         else:  # append reversed first item/previous item into suffix_products list
-            suffix_products.append(n)   # n=5
+            suffix_products.append(n)   # n=5 => [5]
         # suffix_products: [5,20,60,120,120]
-    suffix_products = list(reversed(suffix_products))  # convert it to a list
+    suffix_products = list(reversed(suffix_products))  # reverse suffix_products and convert it to a list
     # suffix_products after reversed: [120,120,60,20,5]
 
     # Generate result
@@ -71,16 +71,14 @@ def productsExceptSelf(nums):
 # zeros apart from that entry.
 # Time: O(n)
 # Space: O(1)
-#
 # def productsExceptSelf(nums):
-#
 #     products = [1]    # product of all to left of nums[0] is set to 1
-#     for i in range(1, len(nums)):
-#         products.append(nums[i - 1] * products[-1])
+#     for i in range(1, len(nums)): # products from left to right
+#         products.append(nums[i - 1] * products[-1])   # products: [1,1,2,6,24]
 #
 #     right_product = 1
-#     for i in range(len(nums) - 1, -1, -1):
-#         products[i] *= right_product
-#         right_product *= nums[i]
+#     for i in range(len(nums) - 1, -1, -1):    # products from right to left
+#         products[i] *= right_product      # 24*1=24, 6*5=30, 2*20=40, 1*60=60, 1*120=120
+#         right_product *= nums[i]      # 1*5=5, 5*4=20, 20*3=60, 60*2=120, 120*1=120
 #
 #     return products
