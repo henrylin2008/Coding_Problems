@@ -1,7 +1,8 @@
-# Daily Coding Problem #2
-# Problem
+# Array of Products
+# difficulty: Medium
 # This problem was asked by Uber.
 # Link: https://binarysearch.com/problems/Special-Product-Array
+# Link: https://www.algoexpert.io/questions/Array%20Of%20Products
 
 # Given an array of integers, return a new array such that each element at index i of the new array is the product of
 # all the numbers in the original array except the one at i.
@@ -131,3 +132,43 @@ def productsExceptSelf(nums):
 #             R *= nums[i]
 #
 #         return answer
+
+# AlgoExpert Solutions:
+# Time: O(n^2)
+# Space: O(n); n is the length of the input array
+# def arrayOfProducts(array):
+#     products = [1 for _ in range(len(array))]
+#
+#     for i in range(len(array)):
+#         runningProduct = 1
+#         for j in range(len(array)):
+#             if i != j:
+#                 runningProduct *= array[j]
+#         products[i] = runningProduct
+#
+#     return products
+#
+#
+# Time: O(n)
+# Space: O(n): n is the length of the input array
+# def arrayOfProducts(array):
+#     products = [1 for _ in range(len(array))]
+#     leftProducts = [1 for _ in range(len(array))]
+#     rightProducts = [1 for _ in range(len(array))]
+#
+#     leftRunningProduct = 1
+#     for i in range(len(array)):
+#         leftProducts[i] = leftRunningProduct
+#         leftRunningProduct *= array[i]
+#
+#     rightRunningProduct = 1
+#     for i in reversed(range(len(array))):
+#         rightProducts[i] = rightRunningProduct
+#         rightRunningProduct *= array[i]
+#
+#     for i in range(len(array)):
+#         products[i] = leftProducts[i] * rightProducts[i]
+#
+#     return products
+
+
