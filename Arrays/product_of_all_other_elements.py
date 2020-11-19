@@ -134,6 +134,7 @@ def productsExceptSelf(nums):
 #         return answer
 
 # AlgoExpert Solutions:
+# Solution #1:
 # Time: O(n^2)
 # Space: O(n); n is the length of the input array
 # def arrayOfProducts(array):
@@ -148,7 +149,7 @@ def productsExceptSelf(nums):
 #
 #     return products
 #
-#
+# Solution #2:
 # Time: O(n)
 # Space: O(n): n is the length of the input array
 # def arrayOfProducts(array):
@@ -170,5 +171,21 @@ def productsExceptSelf(nums):
 #         products[i] = leftProducts[i] * rightProducts[i]
 #
 #     return products
-
-
+#
+# Solution #3:
+# Time: O(n)
+# Space: O(n); n is the length of the input array
+# def arrayOfProducts(array):
+#     products = [1 for _ in range(len(array))]
+#
+#     leftRunningProduct = 1
+#     for i in range(len(array)):
+#         products[i] = leftRunningProduct
+#         leftRunningProduct *= array[i]
+#
+#     rightRunningProduct = 1
+#     for i in reversed(range(len(array))):
+#         products[i] *= rightRunningProduct
+#         rightRunningProduct *= array[i]
+#
+#     return products
