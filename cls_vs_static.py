@@ -26,7 +26,7 @@ class Employee:
         first, last, pay = emp_str.split('-')
         return cls(first, last, pay)
 
-    @staticmethod
+    @staticmethod   # no access to class or object instance at all, isolated from everything else
     def is_workday(day):
         if day.weekday() == 5 or day.weekday() == 6:
             return False
