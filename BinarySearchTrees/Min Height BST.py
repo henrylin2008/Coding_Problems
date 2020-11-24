@@ -37,20 +37,22 @@
 # Time: O(nlog(n))
 # Space: O(n)
 def minHeightBst(array):
-    return constructMinHeightBst(array, None, 0, len(array)-1)
+    return constructMinHeightBst(array, None, 0, len(array) - 1)
+
 
 def constructMinHeightBST(array, bst, startIdx, endIdx):
     if endIdx < startIdx:
         return
     midIdx = (startIdx + endIdx) // 2
-    valueToAdd =  array[midIdx]
+    valueToAdd = array[midIdx]
     if bst is None:
         bst = BST(valueToAdd)
     else:
         bst.insert(valueToAdd)
-    constructMinHeightBST(array, bst, startIdx, midIdx -1)
-    constructMinHeightBST(array, bst, midIdx+1, endIdx)
+    constructMinHeightBST(array, bst, startIdx, midIdx - 1)
+    constructMinHeightBST(array, bst, midIdx + 1, endIdx)
     return bst
+
 
 class BST:
     def __init__(self, value):
