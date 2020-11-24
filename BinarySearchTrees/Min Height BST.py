@@ -40,7 +40,7 @@ def minHeightBst(array):
     return constructMinHeightBst(array, None, 0, len(array) - 1)
 
 
-def constructMinHeightBST(array, bst, startIdx, endIdx):
+def constructMinHeightBst(array, bst, startIdx, endIdx):
     if endIdx < startIdx:
         return
     midIdx = (startIdx + endIdx) // 2
@@ -49,8 +49,8 @@ def constructMinHeightBST(array, bst, startIdx, endIdx):
         bst = BST(valueToAdd)
     else:
         bst.insert(valueToAdd)
-    constructMinHeightBST(array, bst, startIdx, midIdx - 1)
-    constructMinHeightBST(array, bst, midIdx + 1, endIdx)
+    constructMinHeightBst(array, bst, startIdx, midIdx - 1)
+    constructMinHeightBst(array, bst, midIdx + 1, endIdx)
     return bst
 
 
