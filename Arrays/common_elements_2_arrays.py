@@ -7,22 +7,22 @@
 def common_elements(list1, list2):
     p1 = 0
     p2 = 0
-    # an empty list
-    result = []
+    result = []     # list to store the result
     while p1 < len(list1) and p2 < len(list2):
-        # if first item in list1 and list2 are the same
-        # then add the item to the (result) list, and increment p1 and p2
+        # if the item in list1 and list2 are the same
+        # then add the item to the (result) list, and increment p1 and p2 to move on next item
         if list1[p1] == list2[p2]:
             result.append(list1[p1])
-            p1 += 1
-            p2 += 1
-        # if p1 in list1 is > p2 in list 2, then increment p2 by 1 (or to next item in list2)
+            p1 += 1     # next p1 item
+            p2 += 1     # next p2 item
+        # if p1 in list1 > p2 in list 2, then increment p2 by 1 (next larger item)
         elif list1[p1] > list2[p2]:
             p2 += 1
-        # if opposite, then increment p1 by 1 (or the next item in list1)
+        # else if opposite, then increment p1 by 1 (next larger item)
         else:
             p1 += 1
     # return result list
+    print(result)
     return result
 
 
@@ -38,3 +38,7 @@ list_b2 = [0, 1, 2, 3, 4, 5, 8, 9, 10, 12, 14, 15]
 list_c1 = [0, 1, 2, 3, 4, 5]
 list_c2 = [6, 7, 8, 9, 10, 11]
 # common_elements(list_b1, list_b2) should return [] (an empty list).
+
+common_elements(list_a1, list_a2)
+common_elements(list_b1, list_b2)
+common_elements(list_c1, list_c2)
