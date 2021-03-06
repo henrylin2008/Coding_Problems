@@ -12,21 +12,24 @@
 
 def mine_sweeper(bombs, num_rows, num_cols):
     # NOTE: field = [[0] * num_cols] * num_rows would not work
-    # because you need to create a new list for every row,
-    # instead of copying the same list.
-    field = [[0 for i in range(num_cols)] for j in range(num_rows)] # initialize 2D array, num_rows = 0, num_cols = 0
+    # because you need to create a new list for every row, instead of copying the same list.
+    field = [[0 for i in range(num_cols)] for j in range(num_rows)]     # initialize 2D array, num_rows=0, num_cols=0
+    print("Init field:", field)
     for bomb in bombs:
-        (row_i, col_i) = bomb # row index = first value, column index = second value
-        field[row_i][col_i] = -1 # if the index is a bomb, assigned to -1 
-        for i in range(row_i - 1, row_i + 2): # from row_i - 1 to row_i + 1
-            for j in range(col_i - 1, col_i + 2): # from col_i -1 to col_i + 1
-                if (0 <= i < num_rows and 0 <= j < num_cols
-                        and field[i][j] != -1):
-                    field[i][j] += 1
+        (row_i, col_i) = bomb       # set bomb location, (row index, column index); (bomb[0], bomb[1])
+        field[row_i][col_i] = -1    # if the index is a bomb, assign to -1
+        # loop through 9 surrounding cells around the bomb cell
+        for i in range(row_i - 1, row_i + 2):       # from row_i - 1 to row_i + 1
+            for j in range(col_i - 1, col_i + 2):   # from col_i - 1 to col_i + 1
+                # if i and j are not out of range and [i][j] != -1
+                if 0 <= i < num_rows and 0 <= j < num_cols and field[i][j] != -1:
+                    print("i, j:", i, j)
+                    field[i][j] += 1                # increment by 1
+                    print("field:", field)
+    print("final field: ", field)
     return field
 
 
-# NOTE: Feel free to use the following function for testing.
 # It converts a 2-dimensional array (a list of lists) into
 # an easy-to-read string format.
 def to_string(given_array):
@@ -37,17 +40,17 @@ def to_string(given_array):
 
 
 # NOTE: The following input values will be used for testing your solution.
-# mine_sweeper([[0, 2], [2, 0]], 3, 3) should return:
+# mine_sweeper([[0, 2], [2, 0]], 3, 3)  # should return:
 # [[0, 1, -1],
 #  [1, 2, 1],
 #  [-1, 1, 0]]
 
-# mine_sweeper([[0, 0], [0, 1], [1, 2]], 3, 4) should return:
+mine_sweeper([[0, 0], [0, 1], [1, 2]], 3, 4)  # should return:
 # [[-1, -1, 2, 1],
 #  [2, 3, -1, 1],
 #  [0, 1, 1, 1]]
 
-# mine_sweeper([[1, 1], [1, 2], [2, 2], [4, 3]], 5, 5) should return:
+# mine_sweeper([[1, 1], [1, 2], [2, 2], [4, 3]], 5, 5)    # should return:
 # [[1, 2, 2, 1, 0],
 #  [1, -1, -1, 2, 0],
 #  [1, 3, -1, 2, 0],
