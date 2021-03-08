@@ -1,10 +1,19 @@
 # https://www.udemy.com/11-essential-coding-interview-questions/learn/v4/t/lecture/7567172?start=0
 # Implement a function that assigns correct numbers in a field of Minesweeper, which is represented as a 2 
 # dimensional array 
-# Ex: The size of the field is 3x4, and there are bombs at the positions [0,0] and [0,1]
-# [[-1,-1,1,0],
-#  [2,2,1,0],
-#  [0,0,0,0]]
+# Ex: The size of the field is 3x4, and there are bombs at the positions [0,0] (row index=0, column index = 0) and
+# [0,1] (row index=0, column index= 1).
+# The resulting fields:
+# [[-1, -1, 1, 0],
+#  [2, 2, 1, 0],
+#  [0, 0, 0, 0]]
+
+# Your function should return the resulting 2D array after taking the following three arguments:
+# 1. bombs: a list of bomb locations. Given as an array of arrays. Ex: [[0,0],[0,1]]. Assume that three are no
+# duplicates
+# 2. num_rows: the number of rows in the resulting field.
+# 3. num_columns: the number of columns in the resulting field.
+
 # In the resulting fields: 
 # * -1 represents that there is a bomb in that location 
 # * 1,2,3....etc represents that there are 1,2,3...etc bombs int he surrounding cells 
