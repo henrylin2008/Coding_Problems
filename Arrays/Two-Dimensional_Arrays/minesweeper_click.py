@@ -1,10 +1,15 @@
-# Implement your function below.
+# Breadth-First search
+# Auxiliary Space: 2(n+m) ==> O(n+m); n=rows, m=columns
+# Time: O(n*m)
+# Solution: using Breadth-First search; when a cell is clicked (given_i, given_j), check surrounding 8 cells, and use -2
+# as a marker for reviewed cells, put the cell in a to_check queue; then use a while loop to repeat the process for the
+# surrounding 8 cells, until there's no more cells with 0.
 def click(field, num_rows, num_cols, given_i, given_j):
     import queue
-    to_check = queue.Queue()  # new queue: cells surrounding clicked cell
+    to_check = queue.Queue()  # new queue: check 8 cells surrounding clicked cell
     if field[given_i][given_j] == 0:  # if clicked cell is 0
-        field[given_i][given_j] = -2  # set the cell (0) to -2
-        to_check.put((given_i, given_j))  # store it to the to_check queue
+        field[given_i][given_j] = -2  # set the cell (0) to -2; -2 as has been reviewed
+        to_check.put((given_i, given_j))  # store clicked cell (w/ updated value -2) to the to_check queue
     else:  # else if clicked cell is not 0
         print("Field: ", field)
         return field  # return the field
@@ -40,13 +45,13 @@ field2 = [[-1, 1, 0, 0],
           [0, 0, 1, 1],
           [0, 0, 1, -1]]
 
-# click(field2, 4, 4, 0, 1) should return:
+click(field2, 4, 4, 0, 1)  # should return:
 # [[-1, 1, 0, 0],
 #  [1, 1, 0, 0],
 #  [0, 0, 1, 1],
 #  [0, 0, 1, -1]]
 
-# click(field2, 4, 4, 1, 3) should return:
+click(field2, 4, 4, 1, 3) # should return:
 # [[-1, 1, -2, -2],
 #  [1, 1, -2, -2],
 #  [-2, -2, 1, 1],
