@@ -20,13 +20,14 @@ def rotate_sub(i, j, n):    # i: original row index, j: original column index; n
     return j, n - 1 - i     # new_i = j (new row index), new_j = n-1-i (new column index)
 
 
+# Space: O(1); in-place: using existing array
 # main function, create a tmp array, and utilize the rotate_sub function to set each value in tmp array, then use the
 # values in tmp array to set given_array's values (ex: tmp[3] = given_array[0], tmp[0] = given_array[1])
-def rotate(given_array, n):
-    for i in range(math.ceil(n/2)):             # rows; math.ceil covers odd and even rows
-        for j in range(math.floor(n/2)):        # columns
+def rotate(given_array, n):                     # n: number of rows/columns
+    for i in range(math.ceil(n/2)):             # columns; math.ceil covers odd and even rows
+        for j in range(math.floor(n/2)):        # rows
             tmp = [-1] * 4                      # initialize temp array of 4 values that to be shuffle around
-            (current_i, current_j) = (i, j)     # current i, j points to the item is examing
+            (current_i, current_j) = (i, j)     # current_i, current_j points to the item is currently examing
             for k in range(4):      # This loop sets new values (from given_array) for the temp array
                 tmp[k] = given_array[current_i][current_j]  # store current (i, j) to temp array's current position
                 (current_i, current_j) = rotate_sub(current_i, current_j, n)    # get next position
