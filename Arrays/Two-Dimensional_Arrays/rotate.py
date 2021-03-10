@@ -15,21 +15,24 @@
 import math
 
 
+# find and return the new position's coordinates: (new_i, new_j)
 def rotate_sub(i, j, n):    # i: original row index, j: original column index; n = number of rows/columns
     return j, n - 1 - i     # new_i = j (new row index), new_j = n-1-i (new column index)
 
 
+# main function, create a tmp array, and utilize the rotate_sub function to set each value in tmp array, then use the
+# values in tmp array to set given_array's values (ex: tmp[3] = given_array[0], tmp[0] = given_array[1])
 def rotate(given_array, n):
     for i in range(math.ceil(n/2)):             # rows; math.ceil covers odd and even rows
         for j in range(math.floor(n/2)):        # columns
             tmp = [-1] * 4                      # initialize temp array of 4 values that to be shuffle around
             (current_i, current_j) = (i, j)     # current i, j points to the item is examing
-            for k in range(4):      # This loop sets the values in temp array
+            for k in range(4):      # This loop sets new values (from given_array) for the temp array
                 tmp[k] = given_array[current_i][current_j]  # store current (i, j) to temp array's current position
                 (current_i, current_j) = rotate_sub(current_i, current_j, n)    # get next position
-            for k in range(4):      # this loop uses values from the temp array to set given_array's values
-                # current position of given array = previous position of temp array;
-                given_array[current_i][current_j] = tmp[(k - 1) % 4]  # tmp[(k-1)%4]:get temp array's previous position
+            for v in range(4):      # this loop uses values from the temp array to rotate & set given_array's values
+                # current position of given array = previous position of temp array; tmp[(0-1)%4] = tmp[3] (last value)
+                given_array[current_i][current_j] = tmp[(v - 1) % 4]  # tmp[(k-1)%4]: temp array's previous position
                 (current_i, current_j) = rotate_sub(current_i, current_j, n)    # next position
     # print("array:", given_array)
     return given_array
@@ -54,18 +57,19 @@ def rotate(given_array, n):
 #     return j, n - 1 - i     # new_i = j (new row index), new_j = n-1-i (new column index)
 
 
+#
 a1 = [[1, 2, 3],
       [4, 5, 6],
       [7, 8, 9]]
-rotate(a1, 3)   # should return:
+# rotate(a1, 3)   # should return:
 # [[7, 4, 1],
 #  [8, 5, 2],
 #  [9, 6, 3]]
 
-# a2 = [[1, 2, 3, 4],
-#       [5, 6, 7, 8],
-#       [9, 10, 11, 12],
-#       [13, 14, 15, 16]]
+a2 = [[1, 2, 3, 4],
+      [5, 6, 7, 8],
+      [9, 10, 11, 12],
+      [13, 14, 15, 16]]
 # rotate(a2, 4)  # should return:
 # [[13, 9, 5, 1],
 #  [14, 10, 6, 2],
