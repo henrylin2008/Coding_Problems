@@ -27,18 +27,18 @@ class Node:
 # null, then return null; else move left and right pointer with given nth distance at the same time, until the right
 # pointer reaches the null, then return the left pointer
 def nth_from_last(head, n):
-    left = head
-    right = head
-    for i in range(n):
-        if right is None:
+    left = head                 # left pointer
+    right = head                # right pointer
+    for i in range(n):          # set a range with given distance n
+        if right is None:       # if right pointer reaches null/none
             # print("None")
             return None
-        right = right.child
-    while right:
-        left = left.child
-        right = right.child
+        right = right.child     # set right pointer
+    while right:                # move left and right pointer at the same time, until it reaches null
+        left = left.child       # set left pointer
+        right = right.child     # set right pointer
     # print("left:", left)
-    return left
+    return left                 # return left pointer
 
 
 # It converts the given linked list into an easy-to-read string format.
