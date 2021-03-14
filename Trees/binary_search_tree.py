@@ -41,9 +41,23 @@ class Node:
         return str(self.value)
 
 
-# Implement your function below.
-def is_bst(node, lower_lim=None, upper_lim=None):
-    return False
+# Main function to validate a BST
+def is_bst(node, lower_limit=None, upper_limit=None):
+    # base case: lower_limit < current_node.value < upper_limit
+    if lower_limit is not None and node.value < lower_limit:  # if lower_limit exist and current node < lower_limit
+        return False
+    if upper_limit is not None and upper_limit < node.value:  # if upper_limit exist and upper_limit < current node
+        return False
+
+    is_left_bst = True      # check left sub-tree
+    is_right_bst = True     # check right sub-tree
+    if node.left:           # if left subtree node exist, recursive call is_bst on subtree left node
+        # node.left: left subtree node; lower_limit same as current lower_limit; node.value: upper limit
+        is_left_bst = is_bst(node.left, lower_limit, node.value)    # recursive call to check left subtree node
+    if is_left_bst and node.right:  # if left bst is true and node.right exist; recursive call is_bst on sub right node
+        is_right_bst = is_bst(node.right, node.value, upper_limit)  # recursive call to check right subtree node
+    # print("bst:", is_left_bst and is_right_bst)
+    return is_left_bst and is_right_bst
 
 
 # A function for creating a tree.
@@ -108,8 +122,8 @@ head4 = create_tree(mapping4, 3)
 #      /\
 #     0  4
 
-# is_bst(head0) should return False
-# is_bst(head1) should return False
-# is_bst(head2) should return False
-# is_bst(head3) should return True
-# is_bst(head4) should return False
+# is_bst(head0)  # should return False
+# is_bst(head1)  # should return False
+# is_bst(head2)  # should return False
+is_bst(head3)  # should return True
+# is_bst(head4)  # should return False
