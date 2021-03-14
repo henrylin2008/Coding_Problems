@@ -49,8 +49,8 @@ def is_bst(node, lower_limit=None, upper_limit=None):
     if upper_limit is not None and upper_limit < node.value:  # if upper_limit exist and upper_limit < current node
         return False
 
-    is_left_bst = True      # check left sub-tree
-    is_right_bst = True     # check right sub-tree
+    is_left_bst = True      # True if left sub-tree is a BST
+    is_right_bst = True     # True if right sub-tree is a BST
     if node.left:           # if left subtree node exist, recursive call is_bst on subtree left node
         # node.left: left subtree node; lower_limit same as current lower_limit; node.value: upper limit
         is_left_bst = is_bst(node.left, lower_limit, node.value)    # recursive call to check left subtree node
