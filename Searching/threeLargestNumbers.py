@@ -14,24 +14,25 @@ def findThreeLargestNumbers(array):
     print(threeLargest)
     return threeLargest
 
+
 def calThreeLargest(threeLargest, num):
-    if threeLargest[2] is None or num > threeLargest[2]: # calculate last index value if it's None or num > [2]
+    if threeLargest[2] is None or num > threeLargest[2]:  # calculate last index value if it's None or num > [2]
         shiftUpdate(threeLargest, num, 2)
-    elif threeLargest[1] is None or num > threeLargest[1]: # calculate 2nd index value if it's None or num > [1]
+    elif threeLargest[1] is None or num > threeLargest[1]:  # calculate 2nd index value if it's None or num > [1]
         shiftUpdate(threeLargest, num, 1)
-    elif threeLargest[0] is None or num > threeLargest[0]: # calculate first index value if it's None or num > [0]
+    elif threeLargest[0] is None or num > threeLargest[0]:  # calculate first index value if it's None or num > [0]
         shiftUpdate(threeLargest, num, 0)
+
 
 def shiftUpdate(array, num, index):
     # Objective: if i == (last) index , then set the num = array[i] (array[2] in this case)
     # else: shift index one position to the left
     # [0, 1, 2]    ==>      [0, 1, 2]
     # [x, y, z]    ==>      [y, z, num]
-    for i in range(index+1):
+    for i in range(index + 1):
         if i == index:
             array[i] = num
         else:
-            array[i] = array[i+1]
-
+            array[i] = array[i + 1]
 
 # findThreeLargestNumbers([141, 1, 17, -7, -17, -27, 183, 541, 98, 7, 7])
