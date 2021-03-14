@@ -31,15 +31,16 @@
 
 def invertBinaryTree(tree):
     queue = [tree]  # using queue to store nodes
-    while len[queue]:   # if there's still node/s in the queue
+    while len[queue]:  # if there's still node/s in the queue
         current = queue.pop(0)  # current is first node in the queue
-        if current is None:     # skip if the node is null node
+        if current is None:  # skip if the node is null node
             continue
-        swapLeftAndRight(current)   # call helper function to swap left and right nodes
+        swapLeftAndRight(current)  # call helper function to swap left and right nodes
         queue.append(current.left)  # add left node to the queue
-        queue.append(current.right) # add right node to the queue
+        queue.append(current.right)  # add right node to the queue
 
-def swapLeftAndRight(tree):     # helper function that swap left and right nodes
+
+def swapLeftAndRight(tree):  # helper function that swap left and right nodes
     tree.left, tree.right = tree.right, tree.left
 
 
@@ -51,9 +52,10 @@ def swapLeftAndRight(tree):     # helper function that swap left and right nodes
 def invertBinaryTree(tree):
     if tree is None:  # if tree is null, then skip it
         return
-    swapLeftAndRight(tree) # call helper function to swap left and right nodes
-    invertBinaryTree(tree.left) # recursive call on left side of the tree
-    invertBinaryTree(tree.right) # recursive call on right side of the tree
+    swapLeftAndRight(tree)  # call helper function to swap left and right nodes
+    invertBinaryTree(tree.left)  # recursive call on left side of the tree
+    invertBinaryTree(tree.right)  # recursive call on right side of the tree
 
-def swapLeftAndRight(tree):     # helper function that swap left and right nodes
+
+def swapLeftAndRight(tree):  # helper function that swap left and right nodes
     tree.left, tree.right = tree.right, tree.left
