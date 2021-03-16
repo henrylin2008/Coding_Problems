@@ -35,9 +35,42 @@ class Node:
         return False
 
 
-# Implement your function below.
-def lca(root, j, k):
-    return None
+# Time: O(n)
+# Space: O(log n)
+def lca(root, j, k):    # root=head, j, k=nodes to find lowest common ancestor
+    path_to_j = path_to_x(root, j)      # path to j
+    path_to_k = path_to_x(root, k)      # path to k
+
+    lca_to_return = None
+    while path_to_j and path_to_k:      # while path_to_j and path_to_K are not empty
+        j_pop = path_to_j.pop()         # remove item from left of the path_to_j stack
+        k_pop = path_to_k.pop()         # remove item from left of the path_to_k stack
+        if j_pop == k_pop:              # if popped item from path_to_j and path_to_k are the same
+            lca_to_return = j_pop       # store (same) popped items into lca_to_return stack
+        else:
+            break
+    print("lca_to_return:", lca_to_return)
+    return lca_to_return                # return the common items in the stack
+
+
+# find the path from the root to x
+def path_to_x(root, x):     # path from root to x
+    # Base case
+    if root is None:        # when reaching a node is null
+        return None
+    if root.value == x:     # if value is equal to x, then return stack[root]
+        return [root]
+    # path to x from the left child, recursive
+    left_path = path_to_x(root.left, x)  # path to x from the left child
+    if left_path is not None:   # if x is in the left subtree
+        left_path.append(root)  # add current root to the left_path
+        return left_path
+    # path to x from the right child, recursive
+    right_path = path_to_x(root.right, x)  # path to x from the right child
+    if right_path is not None:   # if x is in the right subtree
+        right_path.append(root)  # add current root to the right_path
+        return right_path
+    return None     # if x is not in left or right subtree
 
 
 # A function for creating a tree.
@@ -85,8 +118,8 @@ head2 = create_tree(mapping2, 5)
 #   6  7
 
 
-# lca(head1, 1, 5) should return 0
-# lca(head1, 3, 1) should return 1
+# lca(head1, 1, 5)  # should return 0
+# lca(head1, 3, 1)  # should return 1
 # lca(head1, 1, 4) should return 1
 # lca(head1, 0, 5) should return 0
 # lca(head2, 4, 7) should return 5
