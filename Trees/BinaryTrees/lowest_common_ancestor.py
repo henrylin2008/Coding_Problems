@@ -38,17 +38,17 @@ class Node:
 # Time: O(n)
 # Space: O(log n)
 def lca(root, j, k):    # root=head, j, k=nodes to find lowest common ancestor
-    path_to_j = path_to_x(root, j)      # path to j
-    path_to_k = path_to_x(root, k)      # path to k
+    path_to_j = path_to_x(root, j)      # path to j, store path nodes in a stack
+    path_to_k = path_to_x(root, k)      # path to k, store path nodes in a stack
 
-    lca_to_return = None
+    lca_to_return = None                # lowest common ancestor stack to return
     while path_to_j and path_to_k:      # while path_to_j and path_to_K are not empty
-        j_pop = path_to_j.pop()         # remove item from left of the path_to_j stack
-        k_pop = path_to_k.pop()         # remove item from left of the path_to_k stack
-        if j_pop == k_pop:              # if popped item from path_to_j and path_to_k are the same
-            lca_to_return = j_pop       # store (same) popped items into lca_to_return stack
+        j_pop = path_to_j.pop()         # remove first item (root) from the path_to_j stack
+        k_pop = path_to_k.pop()         # remove first item (root) from the path_to_k stack
+        if j_pop == k_pop:              # if next item from path_to_j and path_to_k are the same
+            lca_to_return = j_pop       # store (same) popped items into lca_to_return
         else:
-            break
+            break                       # break if the value of same index are not the same
     print("lca_to_return:", lca_to_return)
     return lca_to_return                # return the common items in the stack
 
@@ -120,9 +120,9 @@ head2 = create_tree(mapping2, 5)
 
 # lca(head1, 1, 5)  # should return 0
 # lca(head1, 3, 1)  # should return 1
-# lca(head1, 1, 4) should return 1
-# lca(head1, 0, 5) should return 0
-# lca(head2, 4, 7) should return 5
-# lca(head2, 3, 3) should return 3
-# lca(head2, 8, 7) should return 1
-# lca(head2, 3, 0) should return None (0 does not exist in the tree)
+# lca(head1, 1, 4)  # should return 1
+# lca(head1, 0, 5)  # should return 0
+# lca(head2, 4, 7)  # should return 5
+# lca(head2, 3, 3)  # should return 3
+# lca(head2, 8, 7)  # should return 1
+# lca(head2, 3, 0)  # should return None (0 does not exist in the tree)
