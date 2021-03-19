@@ -16,17 +16,33 @@
 # Sample Output #2: 3   // 3 is the first integer that appears more than once.
 # // 2 also appears more than once, but the second 2 appears after the second 3
 
+
+# Solution #1: loop through the array, and use the constrain of the values in the array are all positive; use the
+# value at current index to mark the new index for seen values (ex: abs(5) - 1 = 4 (as index)), then set the value
+# of new index to negative (array[abs(value) - 1] *= -1); if negative value seen in the for loop, return it; otherwise
+# return -1
+# Time: O(n)
+# Space: O(1)
+def firstDuplicateValue(array):
+    for value in array:
+        # abs(value) - 1 is using for index mapping to; and negative value indicates value has marked as seen
+        if array[abs(value) - 1] < 0:
+            return abs(value)
+        array[abs(value) - 1] *= -1  # convert seen value as negative
+    return -1
+
+
 # Solution #2: store seen values in a set, if a value matches any value from the seen set, return the value; if it's a
 # new value, store it in the set; otherwise return -1
 # Time: O(n); linear time
 # Space: O(n)
-def firstDuplicateValue(array):
-    seen = set()
-    for value in array:
-        if value in seen:
-            return value
-        seen.add(value)
-    return -1
+# def firstDuplicateValue(array):
+#     seen = set()
+#     for value in array:
+#         if value in seen:
+#             return value
+#         seen.add(value)
+#     return -1
 
 
 # Solution #3:
@@ -34,17 +50,17 @@ def firstDuplicateValue(array):
 # array and find any matching value
 # Time: O(n^2)
 # Space: O(1)
-def firstDuplicateValue(array):
-    minimumSecondIndex = len(array)     # set minSecIdx = length of the array
-    for i in range(len(array)):   # Outer loop
-        value = array[i]
-        for j in range(i+1, len(array)):  # rest of array: look for second occurrence of the value
-            valueToCompare = array[j]
-            if value == valueToCompare:
-                minimumSecondIndex = min(minimumSecondIndex, j)
-
-    if minimumSecondIndex == len(array):
-        return -1
-
-    return array[minimumSecondIndex]
+# def firstDuplicateValue(array):
+#     minimumSecondIndex = len(array)     # set minSecIdx = length of the array
+#     for i in range(len(array)):   # Outer loop
+#         value = array[i]
+#         for j in range(i+1, len(array)):  # rest of array: look for second occurrence of the value
+#             valueToCompare = array[j]
+#             if value == valueToCompare:
+#                 minimumSecondIndex = min(minimumSecondIndex, j)
+#
+#     if minimumSecondIndex == len(array):
+#         return -1
+#
+#     return array[minimumSecondIndex]
 
