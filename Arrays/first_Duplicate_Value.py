@@ -15,3 +15,23 @@
 # array = [2, 1, 5, 3, 3, 2, 4]
 # Sample Output #2: 3   // 3 is the first integer that appears more than once.
 # // 2 also appears more than once, but the second 2 appears after the second 3
+
+
+# Brute-force solution: using 2 loops, first loop sets the pointer, while second loop loops through the rest of the
+# array and find any matching value
+# Time: O(n^2)
+# Space: O(1)
+def firstDuplicateValue(array):
+    minimumSecondIndex = len(array)     # set minSecIdx = length of the array
+    for i in range(len(array)):   # Outer loop
+        value = array[i]
+        for j in range(i+1, len(array)):  # rest of array: look for second occurrence of the value
+            valueToCompare = array[j]
+            if value == valueToCompare:
+                minimumSecondIndex = min(minimumSecondIndex, j)
+
+    if minimumSecondIndex == len(array):
+        return -1
+
+    return array[minimumSecondIndex]
+
