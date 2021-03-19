@@ -16,7 +16,20 @@
 # Sample Output #2: 3   // 3 is the first integer that appears more than once.
 # // 2 also appears more than once, but the second 2 appears after the second 3
 
+# Solution #2: store seen values in a set, if a value matches any value from the seen set, return the value; if it's a
+# new value, store it in the set; otherwise return -1
+# Time: O(n); linear time
+# Space: O(n)
+def firstDuplicateValue(array):
+    seen = set()
+    for value in array:
+        if value in seen:
+            return value
+        seen.add(value)
+    return -1
 
+
+# Solution #3:
 # Brute-force solution: using 2 loops, first loop sets the pointer, while second loop loops through the rest of the
 # array and find any matching value
 # Time: O(n^2)
