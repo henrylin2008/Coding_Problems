@@ -18,15 +18,44 @@
 # exactly once. It's also guaranteed that the tournament will always have at least two teams.
 
 # Sample Input:
-# competitions = [
-#   ["HTML", "C#"],
-#   ["C#", "Python"],
-#   ["Python", "HTML"],
-# ]
-# results = [0, 0, 1]
+competitions = [
+  ["HTML", "C#"],   # [homeTeam, awayTeam]
+  ["C#", "Python"],
+  ["Python", "HTML"],
+]
+results = [0, 0, 1]  # 0: awayTeam won; 1: homeTeam won
+
 # Sample Output:
 # "Python"
 # // C# beats HTML, Python Beats C#, and Python Beats HTML.
 # // HTML - 0 points
 # // C# - 3 points
 # // Python - 6 points
+
+
+# Time: O(n); n is the number of competitions
+# Space: O(k); k is the number of teams
+def tournamentWinner(competitions, results):
+    Home_Team_Won = 1
+    currentBestTeam = ""    # current Best team (string)
+    scores = {currentBestTeam: 0}   # hash table/map to store score of current best team
+
+    for idx, competition in enumerate(competitions):    # ex: idx: 0; competition: ['HTML','C#']
+        result = results[idx]   # result of competition between homeTeam/awayTeam at current index
+        homeTeam, awayTeam = competition    # ['HTML', 'C#'] = competition
+
+        winningTeam = homeTeam if result == Home_Team_Won else awayTeam
+        updateScores(winningTeam, 3, scores)
+        if scores[winningTeam] > scores[currentBestTeam]:
+            currentBestTeam = winningTeam
+    return currentBestTeam
+
+
+def updateScores(team, points, scores):
+    if team not in scores:      # if team is not in scores hash table
+        scores[team] = 0        # store it to scores table
+
+    scores[team] += points
+
+
+tournamentWinner(competitions, results)
