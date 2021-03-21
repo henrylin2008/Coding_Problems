@@ -18,12 +18,13 @@
 # exactly once. It's also guaranteed that the tournament will always have at least two teams.
 
 # Sample Input:
-competitions = [
-  ["HTML", "C#"],   # [homeTeam, awayTeam]
-  ["C#", "Python"],
-  ["Python", "HTML"],
-]
-results = [0, 0, 1]  # 0: awayTeam won; 1: homeTeam won
+# competitions = [
+#     ["HTML", "C#"],  # [homeTeam, awayTeam]
+#     ["C#", "Python"],
+#     ["Python", "HTML"],
+# ]
+# results = [0, 0, 1]  # 0: awayTeam won; 1: homeTeam won
+
 
 # Sample Output:
 # "Python"
@@ -37,25 +38,27 @@ results = [0, 0, 1]  # 0: awayTeam won; 1: homeTeam won
 # Space: O(k); k is the number of teams
 def tournamentWinner(competitions, results):
     Home_Team_Won = 1
-    currentBestTeam = ""    # current Best team (string)
-    scores = {currentBestTeam: 0}   # hash table/map to store score of current best team
+    currentBestTeam = ""  # current Best team (empty string)
+    scores = {currentBestTeam: 0}  # Hash table to keep track of scores
 
-    for idx, competition in enumerate(competitions):    # ex: idx: 0; competition: ['HTML','C#']
-        result = results[idx]   # result of competition between homeTeam/awayTeam at current index
-        homeTeam, awayTeam = competition    # ['HTML', 'C#'] = competition
-
-        winningTeam = homeTeam if result == Home_Team_Won else awayTeam
-        updateScores(winningTeam, 3, scores)
-        if scores[winningTeam] > scores[currentBestTeam]:
-            currentBestTeam = winningTeam
+    for idx, competition in enumerate(competitions):  # loop through entire competitions array
+        # ex: idx: 0; competition: ['HTML', 'C#']
+        result = results[idx]  # result of competition between homeTeam/awayTeam at current index
+        homeTeam, awayTeam = competition  # decompose competition into homeTeam and awayTeam;
+        # ex: homeTeam:'HTML', awayTeam:'C#'
+        # check the winning team (homeTeam or awayTeam)
+        winningTeam = homeTeam if result == Home_Team_Won else awayTeam  # return winningTeam if result==1 else awayTeam
+        updateScores(winningTeam, 3, scores)  # update score by adding 3 to the score of the winning Team
+        if scores[winningTeam] > scores[currentBestTeam]:  # if score of winning team > score of current best team:
+            currentBestTeam = winningTeam  # update the current best team
     return currentBestTeam
 
 
 def updateScores(team, points, scores):
-    if team not in scores:      # if team is not in scores hash table
-        scores[team] = 0        # store it to scores table
+    if team not in scores:  # if team is not in scores hash table
+        scores[team] = 0  # store it to scores table
 
-    scores[team] += points
+    scores[team] += points  # add points to the (winning) team
 
 
-tournamentWinner(competitions, results)
+# tournamentWinner(competitions, results)
