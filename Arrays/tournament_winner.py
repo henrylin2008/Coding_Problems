@@ -36,6 +36,9 @@
 
 # Time: O(n); n is the number of competitions
 # Space: O(k); k is the number of teams
+# Solution: loop through competitions array, get the result of each competition (index) fro the results array (match
+# index of competition and index of results), then store the score in a hash table(scores); when a better score is
+# presented, update the currentBestTeam and the best score in hash table (scores). Last return the currentBestTeam
 def tournamentWinner(competitions, results):
     Home_Team_Won = 1
     currentBestTeam = ""  # current Best team (empty string)
