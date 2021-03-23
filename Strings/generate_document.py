@@ -17,3 +17,24 @@
 
 # Sample Output:
 # true
+
+# Solution 3: Least optimal
+# Time: O(m * (n + m)); m: length of document; n: length of characters,
+# Space: O(1); constant space
+# Count the number of appearance for each character from characters and document, then compare the count result
+def generateDocument(characters, document):
+    for character in document:   # Time: initial m in O(m * (n+m))
+        # loop through the character frequency in characters/document
+        documentFrequency = countCharacterFrequency(character, document)    # m time from O(n+m)
+        charactersFrequency = countCharacterFrequency(character, characters)    # n time from O(n+m)
+        if documentFrequency > charactersFrequency:
+            return False
+    return True
+
+
+def countCharacterFrequency(character, target):     # same as document.count(character), O(n)
+    frequency = 0
+    for char in target:
+        if char == character:
+            frequency += 1
+    return frequency
