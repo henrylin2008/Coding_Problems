@@ -18,6 +18,35 @@
 # Sample Output:
 # true
 
+
+# Solution 2
+# Time: O(c * (n + m))  # c: unique character in document,
+# Space: O(c)
+# Similar to solution # 3, but only add character once in the alreadyCounted set
+def generateDocument(characters, document):
+    alreadyCounted = set()      # create a set to add new character
+
+    for character in document:   # Time: initial m in O(m * (n+m))
+        if character in alreadyCounted:     # skip the character if it's already counted
+            continue
+
+        documentFrequency = countCharacterFrequency(character, document)    # m time from O(n+m)
+        charactersFrequency = countCharacterFrequency(character, characters)    # n time from O(n+m)
+        if documentFrequency > charactersFrequency:
+            return False
+
+        alreadyCounted.add(character)       # add new character to the set
+    return True
+
+
+def countCharacterFrequency(character, target):     # same as document.count(character), O(n)
+    frequency = 0
+    for char in target:
+        if char == character:
+            frequency += 1
+    return frequency
+
+
 # Solution 3: Least optimal
 # Time: O(m * (n + m)); m: length of document; n: length of characters,
 # Space: O(1); constant space
