@@ -22,8 +22,9 @@
 # solution 1: optimal
 # Time: O(n + m);   n: length of characters; m: length of document
 # Space: O(c);  c: unique character
-# Loop through the characters in characters and add each character to the hash map; then loop through document, and
-# remove 1 of the character count from the hash map
+# Loop through the characters in characters and add each character to the hash map; then loop through document, if
+# character not in the hash map or the hash value of the character, return False; else remove 1 count of the character
+# from the hash map.
 def generateDocument(characters, document):
     characterCounts = {}    # hash map
 
