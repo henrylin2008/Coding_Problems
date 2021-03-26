@@ -20,21 +20,25 @@
 # Time: O(n)
 # Space: O(n): n is the length of the input string
 def runLineEncoding(string):
-    encodedStringCharacters = []
-    currentRunLength = 1
+    encodedStringCharacters = []    # list for better time complexity, O(n) (vs time complexity of string is O(n^2))
+    currentRunLength = 1    # index starts 1, so we can compare current letter and previous letter
 
     for i in range(1, len(string)):
         currentCharacter = string[i]
         previousCharacter = string[i - 1]
-
+        # when current character != previous character or when current run length is 9 (reach the limit)
         if currentCharacter != previousCharacter or currentRunLength == 9:
+            # convert current run length to a string and added the (return) list
             encodedStringCharacters.append(str(currentRunLength))
-            encodedStringCharacters.append(previousCharacter)
-            currentRunLength = 0
+            encodedStringCharacters.append(previousCharacter)   # add the previous character to the list
+            currentRunLength = 0   # reset current run length count
 
-        currentRunLength += 1
+        currentRunLength += 1     # add one to the current run length if current character == previous character
 
     encodedStringCharacters.append(str(currentRunLength))
-    encodedStringCharacters.append(string[len(string) - 1])
+    encodedStringCharacters.append(string[len(string) - 1])   # last item in the given string
 
     return "".join(encodedStringCharacters)
+
+
+# runLineEncoding(string)
