@@ -8,7 +8,7 @@
 # You can assume that there will only be one longest palindromic substring.
 
 # Sample Input:
-# string = abaxyzzyxf"
+string = "abaxyzzyxf"
 
 # Sample Output:
 # "xyzzyx"
@@ -41,3 +41,5 @@ def getLongestPalindromeFrom(string, leftIdx, rightIdx):
     return [leftIdx + 1, rightIdx]  # leftIdx+1: after while loop, current left idx is one too far from leftIdx; idx=-1
     # rightIdx: not rightIdx-1, b/c currentLongest has 1 on index 1
     # if rightIdx + 1, then return string[currentLongest[0]:currentLongest[1]+1] (main function)
+
+# longestPalindromicSubstring(string)
