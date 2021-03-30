@@ -30,3 +30,36 @@
 #   "192.16.8.0"
 # ]
 #
+
+# Time: O(1)
+# Space: O(1)
+def validIPAddresses(string):
+    ipAddressesFound = []   # array to store final result
+
+    for i in range(1, min(len(string), 4)):     # first period; min(len(string)): ensure the length of string > 1
+        currentIPAddressParts = ['', '', '', '']
+        currentIPAddressParts[0] = string[:i]   # first part of the IP address (anything before first period)
+        if not isValidPart(currentIPAddressParts[0]):
+            continue
+
+        for j in range(i + 1, i + min(len(string) - i, 4)):  # second period
+            currentIPAddressParts[1] = string[i: j]
+            if not isValidPart(currentIPAddressParts[1]):
+                continue
+
+            for k in range(j + 1, j + min(len(string) - j, 4)):   # third period
+                currentIPAddressParts[2] = string[j:k]
+                currentIPAddressParts[3] = string[k:]
+
+                if isValidPart(currentIPAddressParts[2]) and isValidPart(currentIPAddressParts[3]):
+                    ipAddressesFound.append(".".join(currentIPAddressParts))
+
+    return ipAddressesFound
+
+
+def isValidPart(string):    # Check if input string is valid
+    stringAsInt = int(string)
+    if stringAsInt > 255:
+        return False
+
+    return len(string) == len(str(stringAsInt))    # remove any leading 0
