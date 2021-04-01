@@ -29,37 +29,44 @@
 #   "192.1.68.0",
 #   "192.16.8.0"
 # ]
-#
 
-# Time: O(1)
-# Space: O(1)
+
+# Time: O(1); ip address is 32 (8*4) bits, at most 2^32 addresses to check, constant upper bound, O(2^32) -> O(1)
+# Space: O(1); list at most 2^32 ip addresses, absolute upper bound, thus constant upper bound
+# Solution: check the location of each period (3 periods), loop through different combinations of numbers, then validate
+# each combination is <255; last to append all valid octets and joins it with a '.' in between octets.
 def validIPAddresses(string):
-    ipAddressesFound = []   # array to store final result
+    ipAddressesFound = []   # array to store all the valid IP addresses that have been found
 
-    for i in range(1, min(len(string), 4)):     # first period; min(len(string)): ensure the length of string > 1
-        currentIPAddressParts = ['', '', '', '']
-        currentIPAddressParts[0] = string[:i]   # first part of the IP address (anything before first period)
-        if not isValidPart(currentIPAddressParts[0]):
-            continue
+    for i in range(1, min(len(string), 4)):     # first period; min(len(string)): length of 1, 2, 3
+        currentIPAddressParts = ['', '', '', '']  # a list of strings to represent 4 parts of IP address
 
-        for j in range(i + 1, i + min(len(string) - i, 4)):  # second period
-            currentIPAddressParts[1] = string[i: j]
-            if not isValidPart(currentIPAddressParts[1]):
+        currentIPAddressParts[0] = string[:i]   # first octet = everything up to i
+        if not isValidPart(currentIPAddressParts[0]):   # validate first octet; if it's not valid, move to the next loop
+            continue    # move to next octet
+
+        for j in range(i + 1, i + min(len(string) - i, 4)):  # second octet; starting from i+1, at most 3 digits
+            currentIPAddressParts[1] = string[i: j]     # second octet of IP address (not including j)
+            if not isValidPart(currentIPAddressParts[1]): # validate second octet
                 continue
 
-            for k in range(j + 1, j + min(len(string) - j, 4)):   # third period
-                currentIPAddressParts[2] = string[j:k]
-                currentIPAddressParts[3] = string[k:]
+            for k in range(j + 1, j + min(len(string) - j, 4)):   # third octet
+                currentIPAddressParts[2] = string[j:k]  # third octet
+                currentIPAddressParts[3] = string[k:]   # fourth octet
 
+                # if third and fourth octet are valid, then join all octets with a '.'
                 if isValidPart(currentIPAddressParts[2]) and isValidPart(currentIPAddressParts[3]):
                     ipAddressesFound.append(".".join(currentIPAddressParts))
 
     return ipAddressesFound
 
 
-def isValidPart(string):    # Check if input string is valid
-    stringAsInt = int(string)
-    if stringAsInt > 255:
+def isValidPart(string):    # Check if input string is valid, in between 0 and 255
+    stringAsInt = int(string)   # int(string) removes leading 0; ex: 00 -> 0, 01 -> 1
+    if stringAsInt > 255:   # return False if number is > 255
         return False
 
-    return len(string) == len(str(stringAsInt))    # remove any leading 0
+    return len(string) == len(str(stringAsInt))    # check for leading 0, remove any leading 0s
+
+
+# validIPAddresses(string)
