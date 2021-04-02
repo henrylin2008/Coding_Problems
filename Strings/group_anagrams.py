@@ -14,40 +14,44 @@ words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
 
 
 # Solution #2
-# Time: O(w * n * log(n) + n * w* log(w)); best sorting time: nlog(n); wnlog(n): w(ord) * n * log(n)
+# Time: O(w * n * log(n) + n * w * log(w)); best sorting time: nlog(n); wnlog(n): w(ord) * n * log(n)
 # Space: O(wn); wn + w = w*(n + 1) ==> wn
 # w: # of word/strings; n: length of longest word
-# solution: 2 loops; first loop sorts words with alphabetic order; second loop sorts the index of anagram word together.
-#  index: [ 0 ,  1 ,  2 ,   3 ,  4  , 5 ,  6]
-# loop 1: [oy, act, flop, act, act, oy, flop]
-#  index: [ 1 ,  3 ,  4 ,  2  ,  6  , 0 , 5 ]
-# loop 2: [act, act, act, flop, flop, oy, oy]
+# solution: 2 loops; first loop sorts each string with alphabetic order; second loop sorts the index of same
+# word in alphabetic order; then sort original string in alphabetic order and compare to sorted word, if they are the
+# same, append to currentAnagramGroup, else append it to the result.
+#  index: [ 0 ,  1 ,  2 ,  3 ,  4 ,  5 ,  6,  7 ]
+# loop 1: [oy, act, flop, act, foo, act, oy, flop]
+#  index: [ 1 ,  3 ,  5 ,  2 ,  7  ,  4 ,  0 ,  6]
+# loop 2: [act, act, act, flop, flop, foo, oy, oy]
 def groupAnagrams(words):
     if len(words) == 0:     # edge case; return [] if given words is empty
         return []
 
-    sortedWords = ["".join(sorted(w)) for w in words]   # sort words in alphabetic order
-    indices = [i for i in range(len(words))]
-    indices.sort(key=lambda x: sortedWords[x])  # sorting index by comparing words; group same word together
+    sortedWords = ["".join(sorted(w)) for w in words]   # sort each string in alphabetic order
+    # sortedWords: ['oy', 'act', 'flop', 'act', 'foo', 'act', 'oy', 'flop']
+    indices = [i for i in range(len(words))]    # indices represent total index in given words
+    indices.sort(key=lambda x: sortedWords[x])  # compare and sort strings that have same value in alphabetic order
+    # indices: [ 1 ,  3 ,  5 ,  2 ,  7  ,  4 ,  0 ,  6] (sample data)
+    #    word: [act, act, act, flop, flop, foo, oy, oy]
+    result = []   # result array, append all grouped anagrams in this array
+    currentAnagramGroup = []    # current anagram group
+    currentAnagram = sortedWords[indices[0]]   # current Anagram starting index
+    for index in indices:   # for each index
+        word = words[index]  # original word at current index
+        sortedWord = sortedWords[index]   # sorted word at the current index
 
-    result = []
-    currentAnagramGroup = []
-    currentAnagram = sortedWords[indices[0]]
-    for index in indices:
-        word = words[index]
-        sortedWord = sortedWords[index]
+        if sortedWord == currentAnagram:        # if sorted word is same as current anagram group
+            currentAnagramGroup.append(word)    # append sorted word into the group
+            continue                            # exit the loop
 
-        if sortedWord == currentAnagram:
-            currentAnagramGroup.append(word)    # append same word into a group
-            continue
-
-        result.append(currentAnagramGroup)
-        currentAnagramGroup = [word]    # create a new group
-        currentAnagram = sortedWord
+        result.append(currentAnagramGroup)   # add current anagram group into the result
+        currentAnagramGroup = [word]    # create a new (anagram) group from the word after last group
+        currentAnagram = sortedWord     # set the new anagram
 
     result.append(currentAnagramGroup)
 
     return result
 
 
-# groupAnagrams(words)
+groupAnagrams(words)
