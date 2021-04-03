@@ -11,7 +11,7 @@
 # Also note that the input string isn't guaranteed to always contain words.
 
 # Sample Input:
-# string = "AlgoExpert is the best!"
+string = "AlgoExpert is the best!"
 
 # Sample Output:
 # "best! the is AlgoExpert"
@@ -52,7 +52,7 @@
 
 # Solution #2
 # Time: O(n); loop through all characters in the given string
-# Space: O(n); space stores all the words in the given string
+# Space: O(n); requires same length/space of given string to store reverse string
 # Logic: reverse all characters in the string, then loop through it; Set 2 variables, startOfWord (tracks start of the
 # word) and endOfWord (tracks end of the word), place startOfWord pointer at the beginning of each word, then moving the
 # endOfWord pointer, as long as it is still within the range and the character is not a " ", move endOfWord pointer to
@@ -70,7 +70,9 @@ def reverseWordsInString(string):
         while endOfWord < len(characters) and characters[endOfWord] != " ":
             endOfWord += 1  # move to next character
 
-        reverseListRange(characters, startOfWord, endOfWord - 1)  # reverse characters at current word
+        # reverse characters at current word; endOfWord-1, b/c endOfWord is currently at an emtpy string (" "),
+        # so -1 moves a position back to be at end of the last word
+        reverseListRange(characters, startOfWord, endOfWord - 1)
         startOfWord = endOfWord + 1  # place startOfWord right after endOfWord, as beginning of a new word
 
     return "".join(characters)  # join all characters together
