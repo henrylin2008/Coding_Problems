@@ -17,18 +17,21 @@
 # "best! the is AlgoExpert"
 
 
-# Time: O(n)
-# Space: O(n); n: length of the string
+# Solution 1:
+# Time: O(n); loop through words in the given string is O(n); loop through words/result list is also takes O(n) time
+# Space: O(n); n: length of the string; keep track of length of words list, at most of length of given string
+# Solution: find each word in the given string, including an empty string, then append each word into the words list;
+# use a helper function to reverse each word by swapping first and last item in the list, then continue going inward
 def reverseWords(string):
     words = []  # list to store all words from string, including ' '
-    startOfWord = 0  # starting index of a new word
+    startOfWord = 0  # start of a word
     for idx in range(len(string)):
         character = string[idx]     # character at current index
 
         if character == " ":    # if current character is an empty string " "
-            words.append(string[startOfWord:idx])   # add last word to the words list
+            words.append(string[startOfWord:idx])   # add characters up to this point as a word into the words list
             startOfWord = idx   # reset starting index
-        elif string[startOfWord] == " ":    # if start of word is an empty string " "
+        elif string[startOfWord] == " ":    # if start of word is an empty string (" ")
             words.append(" ")   # add an empty string to the words list
             startOfWord = idx   # reset starting index
 
@@ -36,6 +39,7 @@ def reverseWords(string):
 
     reverseList(words)   # reverse the words in words list
     return "".join(words)   # join all the words together
+
 
 # function to reverse the words in a list
 def reverseList(list):
