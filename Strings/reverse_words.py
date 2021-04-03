@@ -22,29 +22,56 @@
 # Space: O(n); n: length of the string; keep track of length of words list, at most of length of given string
 # Solution: find each word in the given string, including an empty string, then append each word into the words list;
 # use a helper function to reverse each word by swapping first and last item in the list, then continue going inward
-def reverseWords(string):
-    words = []  # list to store all words from string, including ' '
-    startOfWord = 0  # start of a word
-    for idx in range(len(string)):
-        character = string[idx]     # character at current index
+# def reverseWords(string):
+#     words = []  # list to store all words from string, including ' '
+#     startOfWord = 0  # start of a word
+#     for idx in range(len(string)):
+#         character = string[idx]     # character at current index
+#
+#         if character == " ":    # if current character is an empty string " "
+#             words.append(string[startOfWord:idx])   # add characters up to this point as a word into the words list
+#             startOfWord = idx   # reset starting index
+#         elif string[startOfWord] == " ":    # if start of word is an empty string (" ")
+#             words.append(" ")   # add an empty string to the words list
+#             startOfWord = idx   # reset starting index
+#
+#     words.append(string[startOfWord:])  # add last word into the words list
+#
+#     reverseList(words)   # reverse the words in words list
+#     return "".join(words)   # join all the words together
+#
+#
+# # function to reverse the words in a list
+# def reverseList(list):
+#     start, end = 0, len(list) - 1
+#     while start < end:
+#         list[start], list[end] = list[end], list[start]
+#         start += 1
+#         end -= 1
 
-        if character == " ":    # if current character is an empty string " "
-            words.append(string[startOfWord:idx])   # add characters up to this point as a word into the words list
-            startOfWord = idx   # reset starting index
-        elif string[startOfWord] == " ":    # if start of word is an empty string (" ")
-            words.append(" ")   # add an empty string to the words list
-            startOfWord = idx   # reset starting index
 
-    words.append(string[startOfWord:])  # add last word into the words list
+# Solution #2
+def reverseWordsInString(string):
+    characters = [char for char in string]
+    reverseListRange(characters, 0, len(characters) - 1)
 
-    reverseList(words)   # reverse the words in words list
-    return "".join(words)   # join all the words together
+    startOfWord = 0
+    while startOfWord < len(characters):
+        endOfWord = startOfWord
+        while endOfWord < len(characters) and characters[endOfWord] != " ":
+            endOfWord += 1
+
+        reverseListRange(characters, startOfWord, endOfWord - 1)
+        startOfWord = endOfWord + 1
+
+    return "".join(characters)
 
 
-# function to reverse the words in a list
-def reverseList(list):
-    start, end = 0, len(list) - 1
+def reverseListRange(list, start, end):
     while start < end:
         list[start], list[end] = list[end], list[start]
         start += 1
         end -= 1
+
+
+# reverseWordsInString(string)
