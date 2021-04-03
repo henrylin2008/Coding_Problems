@@ -28,16 +28,16 @@
 #     for idx in range(len(string)):
 #         character = string[idx]     # character at current index
 #
-#         if character == " ":    # if current character is an empty string " "
+#         if character == " ":    # if current character is an empty string " ", which mean a word is found
 #             words.append(string[startOfWord:idx])   # add characters up to this point as a word into the words list
 #             startOfWord = idx   # reset starting index
-#         elif string[startOfWord] == " ":    # if start of word is an empty string (" ")
+#         elif string[startOfWord] == " ":    # if start of word is an empty string (" "), including starting string
 #             words.append(" ")   # add an empty string to the words list
 #             startOfWord = idx   # reset starting index
 #
-#     words.append(string[startOfWord:])  # add last word into the words list
+#     words.append(string[startOfWord:])  # add last word into the words list, b/c no space after last word (for loop)
 #
-#     reverseList(words)   # reverse the words in words list
+#     reverseList(words)   # reverse the words in the words list
 #     return "".join(words)   # join all the words together
 #
 #
@@ -51,22 +51,32 @@
 
 
 # Solution #2
+# Time: O(n); loop through all characters in the given string
+# Space: O(n); space stores all the words in the given string
+# Logic: reverse all characters in the string, then loop through it; Set 2 variables, startOfWord (tracks start of the
+# word) and endOfWord (tracks end of the word), place startOfWord pointer at the beginning of each word, then moving the
+# endOfWord pointer, as long as it is still within the range and the character is not a " ", move endOfWord pointer to
+# the next position; otherwise reverse the characters within current word with a helper function; place startOfWord at
+# the position after endOfWord; repeat the process until it reaches the end of the string. Then join all characters
+# with .join function.
 def reverseWordsInString(string):
-    characters = [char for char in string]
-    reverseListRange(characters, 0, len(characters) - 1)
+    characters = [char for char in string]  # all characters in string, and use list to manipulate the characters
+    reverseListRange(characters, 0, len(characters) - 1)  # reverse all characters in the string
 
     startOfWord = 0
     while startOfWord < len(characters):
-        endOfWord = startOfWord
+        endOfWord = startOfWord  # end of word pointer
+        # while end of word is within characters and endOfWord is not an empty string
         while endOfWord < len(characters) and characters[endOfWord] != " ":
-            endOfWord += 1
+            endOfWord += 1  # move to next character
 
-        reverseListRange(characters, startOfWord, endOfWord - 1)
-        startOfWord = endOfWord + 1
+        reverseListRange(characters, startOfWord, endOfWord - 1)  # reverse characters at current word
+        startOfWord = endOfWord + 1  # place startOfWord right after endOfWord, as beginning of a new word
 
-    return "".join(characters)
+    return "".join(characters)  # join all characters together
 
 
+# function to reverse a list
 def reverseListRange(list, start, end):
     while start < end:
         list[start], list[end] = list[end], list[start]
@@ -74,4 +84,4 @@ def reverseListRange(list, start, end):
         end -= 1
 
 
-# reverseWordsInString(string)
+reverseWordsInString(string)
