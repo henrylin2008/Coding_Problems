@@ -21,16 +21,16 @@ class LinkedList:
         self.next = None
 
 
-# Time: O(n); looping through all nodes in linked list
+# Time: O(n); one pass through all nodes in linked list
 # Space: O(1)
 def removeDuplicatesFromLinkedList(linkedList):
-    currentNode = linkedList
-    while currentNode is not None:
-        nextDistinctNode = currentNode.next
+    currentNode = linkedList    # first/current node
+    while currentNode is not None:  # while current node has a value; None is the end of linked list
+        nextDistinctNode = currentNode.next  # next distinct node is next node after current node
         while nextDistinctNode is not None and nextDistinctNode.value == currentNode.value:
             nextDistinctNode = nextDistinctNode.next
 
-        currentNode.next = nextDistinctNode
-        currentNode = nextDistinctNode
+        currentNode.next = nextDistinctNode  # point to next node after current node
+        currentNode = nextDistinctNode  # update currentNode
 
     return linkedList
