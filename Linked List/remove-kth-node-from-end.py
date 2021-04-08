@@ -29,6 +29,8 @@ class LinkedList:
         self.next = None
 
 
+# Time: O(n)
+# Space: O(1)
 def removeKthNodeFromEnd(head, k):
     counter = 1
     first = head
