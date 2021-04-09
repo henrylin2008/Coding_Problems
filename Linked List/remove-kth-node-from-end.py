@@ -29,20 +29,29 @@ class LinkedList:
         self.next = None
 
 
-# Time: O(n)
+# Time: O(n); n: length of the linked list
 # Space: O(1)
+# Logic: set 2 pointers; second pointer is k nodes ahead of first pointer; 2 cases for the second node; first case, when
+# second pointer reaches the end node, the first pointer is the node to be removed, update the first node value to the
+# value of next node, then point head.next to the head.next.next (the following node). second case is second node is
+# somewhere in the linked list, then just have to move both pointers simultaneously.
 def removeKthNodeFromEnd(head, k):
     counter = 1
-    first = head
-    second = head
-    while counter <= k:
-        second = second.next
-        counter += 1
-    if second is None:
-        head.value = head.next.value
-        head.next = head.next.next
-        return
-    while second.next is not None:
-        second = second.next
-        first = first.next
+    first = head    # first pointer
+    second = head   # second pointer
+    while counter <= k:     # set the second pointer
+        second = second.next    # move second pointer to the next
+        counter += 1            # increment the counter
+    # second pointer: 2 cases; first is at end of linked list, or somewhere in middle of the linked list
+    if second is None:  # when second pointer reaches the null/end node; first pointer is kth node to be removed
+        head.value = head.next.value   # update head node value to the next node
+        head.next = head.next.next     # move head.next point to the following node
+        return  # do nothing
+    while second.next is not None:  # when second pointer is middle of linked list, then move both pointers
+        second = second.next  # move second pointer to the next
+        first = first.next    # move first pointer to the next
+    # first is pointing to the node right before the node we want to remove (bc while loop (above) is at second.next)
+    # which mean it is the node before the null node
+    # first.next = Node_To_Remove
+    # first.next = Node_To_Remove.next
     first.next = first.next.next
