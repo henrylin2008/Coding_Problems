@@ -43,15 +43,15 @@ def removeKthNodeFromEnd(head, k):
         second = second.next    # move second pointer to the next
         counter += 1            # increment the counter
     # second pointer: 2 cases; first is at end of linked list, or somewhere in middle of the linked list
-    if second is None:  # when second pointer reaches the null/end node; first pointer is kth node to be removed
-        head.value = head.next.value   # update head node value to the next node
-        head.next = head.next.next     # move head.next point to the following node
-        return  # do nothing
+    if second is None:  # edge case: when second pointer reaches the null node; first pointer is kth node to be removed
+        head.value = head.next.value   # update head node's value to the value of next node
+        head.next = head.next.next     # update head's pointer to the following node
+        return  # do nothing after
     while second.next is not None:  # when second pointer is middle of linked list, then move both pointers
         second = second.next  # move second pointer to the next
         first = first.next    # move first pointer to the next
-    # first is pointing to the node right before the node we want to remove (bc while loop (above) is at second.next)
-    # which mean it is the node before the null node
+    # first is pointing to the node right before the node we want to remove (bc while loop (above), and second is the
+    # node right before null node), which mean it is the node before the null node
     # first.next = Node_To_Remove
-    # first.next = Node_To_Remove.next
+    # first.next = Node_To_Remove.next  # update the pointer to the node after the node to be removed
     first.next = first.next.next
