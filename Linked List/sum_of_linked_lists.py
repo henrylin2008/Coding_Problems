@@ -29,8 +29,12 @@ class LinkedList:
 
 # Time: O(max(n, m)); n, m: length of 2 nodes; max(n, m): longest length between 2 nodes
 # Space: O(max(n, m))
+# Logic: set a dummy node and currentNode points to the dummy node; then calculate the sum of nodes at same position
+# from 2 lists (plus carry over value), carry over value if sum of 2 nodes > 10; set the sum as the value of the
+# new node, then update pointer to the next node (currentNode.next = new Node), and move current node to the new node;
+# next, check if the next node reaches the end of the linked list, return None if it's at the end of the linked list.
 def sumOfLinkedLists(linkedListOne, linkedListTwo):
-    newLinkedListHead = LinkedList(0)   # new linked list head pointer
+    newLinkedListHead = LinkedList(0)   # new linked list head pointer (dummy node)
     currentNode = newLinkedListHead     # current node
     carry = 0       # carry over value
 
@@ -43,14 +47,14 @@ def sumOfLinkedLists(linkedListOne, linkedListTwo):
         sumOfValues = valueOne + valueTwo + carry   # sum of nodes at same positions
 
         # work on current node
-        newValue = sumOfValues % 10  # value to be added into the node
+        newValue = sumOfValues % 10     # value to be added into the node
         newNode = LinkedList(newValue)  # create new linked list node
         currentNode.next = newNode      # set pointer of currentNode to the new node
         currentNode = newNode           # set current node to new node
 
         # next node
         carry = sumOfValues // 10  # carry over value, if sum of 2 nodes > 10
-        nodeOne = nodeOne.next if nodeOne is not None else None  # next linked list node
-        nodeTwo = nodeTwo.next if nodeTwo is not None else None  # next linked list node
+        nodeOne = nodeOne.next if nodeOne is not None else None  # next node, if/else takes care of None node
+        nodeTwo = nodeTwo.next if nodeTwo is not None else None  # next node, if/else takes care of None node
 
-    return newLinkedListHead.next   # return next node after new linked list
+    return newLinkedListHead.next   # return head of the new linked list (dummyNode.next)
