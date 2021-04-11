@@ -34,20 +34,22 @@ def sumOfLinkedLists(linkedListOne, linkedListTwo):
     currentNode = newLinkedListHead     # current node
     carry = 0       # carry over value
 
-    nodeOne = linkedListOne  # pointer 1, loop through Linked list one, keep track of node that's currently on
-    nodeTwo = linkedListTwo  # pointer 2, loop through linked list Two, keep track of node that's currently on
+    nodeOne = linkedListOne  # head of linkedListOne, loop through LinkedListOne, keep track of current node
+    nodeTwo = linkedListTwo  # head of linkedListTwo, loop through linkedListTwo, keep track of current node
     # keep looping if we have a nodeOne, or a nodeTwo, or some carry is not equal 0
     while nodeOne is not None or nodeTwo is not None or carry != 0:
         valueOne = nodeOne.value if nodeOne is not None else 0  # get nodeOne value, return 0 if it's a None node
         valueTwo = nodeTwo.value if nodeTwo is not None else 0  # get nodeTwo value, return 0 if it's a None node
         sumOfValues = valueOne + valueTwo + carry   # sum of nodes at same positions
 
-        newValue = sumOfValues % 10  # reminder, get the value on one's position
+        # work on current node
+        newValue = sumOfValues % 10  # value to be added into the node
         newNode = LinkedList(newValue)  # create new linked list node
-        currentNode.next = newNode  # set pointer of currentNode to the new node
-        currentNode = newNode   # set current node to new node
+        currentNode.next = newNode      # set pointer of currentNode to the new node
+        currentNode = newNode           # set current node to new node
 
-        carry = sumOfValues // 10   # carry over value;  if sum of 2 nodes > 10
+        # next node
+        carry = sumOfValues // 10  # carry over value, if sum of 2 nodes > 10
         nodeOne = nodeOne.next if nodeOne is not None else None  # next linked list node
         nodeTwo = nodeTwo.next if nodeTwo is not None else None  # next linked list node
 
