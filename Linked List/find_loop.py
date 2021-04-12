@@ -16,3 +16,18 @@
 # 4 -> 5 -> 6   // the node with value 4
 # ^         v
 # 9 <- 8 <- 7
+
+
+# Time: O(n)
+# Space: O(1); since we are using 2 pointers, and not storing anything.
+def findLoop(head):
+    first = head.next
+    second = head.next.next   # To
+    while first != second:
+        first = first.next
+        second = second.next.next
+    first = head        # reset first pointer
+    while first != second:
+        first = first.next
+        second = second.next
+    return first    # either first or second (when 2 nodes meet)
