@@ -14,3 +14,20 @@
 
 # Sample Output:
 # 5 -> 4 -> 3 -> 2 -> 1 -> 0  // the new head node with value 5
+
+
+# Time: O(n); n is the length of the linked list
+# Space: O(1); 3 pointers = O(3) -> O(1)
+# Logic: set 3 pointers, place P2 at the beginning of the list.
+# P3 = P2.next
+# P2.next = P1  # reverse the P2 Pointer
+# P1 = P2   # move P1 to P2
+# P2 = P3   # move P2 to P3
+def reverseLinkedList(head):
+    p1, p2 = None, head  # p2 as the head of the list
+    while p2 is not None:
+        p3 = p2.next    
+        p2.next = p1    # reverse the p2 pointer
+        p1 = p2         # shift p1 to p2
+        p2 = p3         # shift p2 to p3
+    return p1           # return first pointer
