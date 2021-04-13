@@ -18,16 +18,17 @@
 
 # Time: O(n); n is the length of the linked list
 # Space: O(1); 3 pointers = O(3) -> O(1)
-# Logic: set 3 pointers, place P2 at the beginning of the list.
+# Logic: set 3 pointers, place P2 at the beginning of the list, and P3 as P2.next; then reverse p2 pointer to P1
+# (previous node), then shift all pointers to next node (P1, P2, P3 => P2, P3, P3.next)
 # P3 = P2.next
 # P2.next = P1  # reverse the P2 Pointer
 # P1 = P2   # move P1 to P2
 # P2 = P3   # move P2 to P3
 def reverseLinkedList(head):
-    p1, p2 = None, head  # p2 as the head of the list
-    while p2 is not None:
-        p3 = p2.next    
-        p2.next = p1    # reverse the p2 pointer
-        p1 = p2         # shift p1 to p2
-        p2 = p3         # shift p2 to p3
-    return p1           # return first pointer
+    previousNode, currentNode = None, head  # currentNode as the head of the list
+    while currentNode is not None:
+        nextNode = currentNode.next        # 3rd pointer, cleaner code with variable setup inside this loop
+        currentNode.next = previousNode    # reverse the currentNode pointer
+        previousNode = currentNode         # shift previousNode to currentNode
+        currentNode = nextNode             # shift currentNode to nextNode
+    return previousNode                    # return first pointer
