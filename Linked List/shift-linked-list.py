@@ -19,3 +19,33 @@
 
 # Sample Output:
 # 4 -> 5 -> 0 -> 1 -> 2 -> 3  // the new head node with value 4
+
+
+# Time: O(n); n is the length of the linked list
+# Space: O(1); b/c we are just updating the (next) pointer/s
+# position of tail = length - k  # k: given value
+# edge cases:
+# 1. k = 0; return the original linked list
+# 2. k is a large positive number: length % k = number of node/s to shift (forward)
+# 3. k is negative; move kth position of node/s from the beginning of the linked list to the end; use % to get the
+#    number of the nodes to shift
+def shiftLinkedList(head, k):
+    listLength = 1
+    listTail = head
+    while listTail is not None:
+        listTail = listTail.next
+        listLength += 1
+
+    offset = abs(k) % listLength
+    if offset == 0:
+        return head
+
+    newTailPosition = listLength - offset if k > 0 else offset
+    newTail = head
+    for i in range(1, newTailPosition):
+        newTail = newTail.next
+
+    newHead = newTail.next
+    newTail.next = None
+    listTail.next = head
+    return newHead
