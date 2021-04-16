@@ -22,13 +22,21 @@
 
 
 # Time: O(n); n is the length of the linked list
-# Space: O(1); b/c we are just updating the (next) pointer/s
+# Space: O(1); b/c we are just updating the pointer/s
 # position of tail = length - k  # k: given value
+# 4 nodes that we care about:
+#   - original tail node: traverse the entire linked list
+#   - original head node: given
+#   - new tail node: kth position from the original tail (length - k)
+#   - new head node: new_tail.next
+# 2 operations:
+#   1. point tail node to the head node; tail.next = head
+#   2. point new tail node to null node (tail); new_tail.next = None
 # edge cases:
-# 1. k = 0; return the original linked list
-# 2. k is a large positive number: length % k = number of node/s to shift (forward)
-# 3. k is negative; move kth position of node/s from the beginning of the linked list to the end; use % to get the
-#    number of the nodes to shift
+#   1. k = 0; return the original head
+#   2. k is a large positive number: length % k = number of node/s to shift (forward)
+#   3. k is negative; move kth position of node/s from the beginning of the linked list to the end; use % to get the
+#      number of the nodes to shift
 def shiftLinkedList(head, k):
     listLength = 1
     listTail = head
