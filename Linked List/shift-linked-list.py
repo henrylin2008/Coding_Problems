@@ -34,15 +34,17 @@
 #   2. point new tail node to null node (tail); new_tail.next = None
 # edge cases:
 #   1. k = 0; return the original head
-#   2. k is a large positive number: length % k = number of node/s to shift (forward)
+#   2. k is a large positive number: k % length = reminder = number of node/s to shift forward
+#         ex: 0 -> 1 -> 2 -> 3 -> 4 -> 5    8 % 6 = 2 (shift 2 nodes forward)
+#     result: 4 -> 5 -> 0 -> 1 -> 2 -> 3
 #   3. k is negative; move kth position of node/s from the beginning of the linked list to the end; use % to get the
-#      number of the nodes to shift
+#      number of the nodes to shift; position of new tail = abs(k)
 def shiftLinkedList(head, k):
-    listLength = 1
-    listTail = head
-    while listTail is not None:
-        listTail = listTail.next
-        listLength += 1
+    listLength = 1     # initialize the length of the list
+    listTail = head    # use to increment the tail
+    while listTail.next is not None:  # not at the tail of the list
+        listTail = listTail.next      # move to the next pointer
+        listLength += 1               # increment the length of the linked list
 
     offset = abs(k) % listLength
     if offset == 0:
@@ -52,7 +54,7 @@ def shiftLinkedList(head, k):
     newTail = head
     for i in range(1, newTailPosition):
         newTail = newTail.next
-
+ <<
     newHead = newTail.next
     newTail.next = None
     listTail.next = head
