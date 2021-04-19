@@ -23,11 +23,11 @@
 
 # Time: O(n); n is the length of the linked list
 # Space: O(1); b/c we are just updating the pointer/s
-# position of tail = length - k  # k: given value
+# position of new tail = length - k  # k: given value
 # 4 nodes that we care about:
 #   - original tail node: traverse the entire linked list
 #   - original head node: given
-#   - new tail node: kth position from the original tail (length - k)
+#   - new tail node: kth position from the original tail; length - k if k > 0, else k position
 #   - new head node: new_tail.next
 # 2 operations:
 #   1. point tail node to the head node; tail.next = head
@@ -39,24 +39,30 @@
 #     result: 4 -> 5 -> 0 -> 1 -> 2 -> 3
 #   3. k is negative; move kth position of node/s from the beginning of the linked list to the end; use % to get the
 #      number of the nodes to shift; position of new tail = abs(k)
+# Logic: four nodes that we care about: the original head, original tail, new head, and new tail; Using a While loop
+#        to get the original list tail and the length, then Use a formula (offset = abs(k) % listLength) to find out
+#        the new tail position; then update/get the positions of the following nodes: new head, new tail.next (None),
+#        the original tail points to the original head, then return the new head
 def shiftLinkedList(head, k):
     # Iterate through entire linked list to get its tail and its length
     listLength = 1     # initialize the length of the list
-    listTail = head    # use to increment the tail
-    while listTail.next is not None:  # not at the tail of the list
-        listTail = listTail.next      # move to the next pointer
-        listLength += 1               # increment the length of the linked list
-
-    offset = abs(k) % listLength      # offset from the beginning or end of the list
+    listTail = head    # to get the tail of the list
+    while listTail.next is not None:  # while not at the tail
+        listTail = listTail.next      # get the new tail
+        listLength += 1               # increment the length
+    # formula to get the number of offset nodes from the beginning (k<0) or the end of the linked list (k>0)
+    offset = abs(k) % listLength
     if offset == 0:     # either k == 0 or abs(k) % length == 0: return the head of the list
         return head
 
-    newTailPosition = listLength - offset if k > 0 else offset  # if k > 0: end of list; if k < 0: beginning of list
-    newTail = head
-    for i in range(1, newTailPosition):
-        newTail = newTail.next
-
-    newHead = newTail.next
-    newTail.next = None
-    listTail.next = head
-    return newHead
+    newTailPosition = listLength - offset if k > 0 else offset  # if k > 0: newTail = length-offset (from the tail)
+    # elif k < 0: newTail = offset (from beginning of list)
+    newTail = head      # start from the head
+    for i in range(1, newTailPosition):  # To get the new tail
+        newTail = newTail.next  # move newTail to the next node
+    # set new head, remove reference of newTail.next, then points the originalTail
+    # to the original head, then return new head; sequence must be as follow
+    newHead = newTail.next      # reference to the new head
+    newTail.next = None         # set new tail next node; safely remove reference of newTail.next
+    listTail.next = head        # original tail links to the original head
+    return newHead              # return new head list
