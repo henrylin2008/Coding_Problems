@@ -21,6 +21,11 @@
 # 4 -> 5 -> 0 -> 1 -> 2 -> 3  // the new head node with value 4
 
 
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
 # Time: O(n); n is the length of the linked list
 # Space: O(1); b/c we are just updating the pointer/s
 # position of new tail = length - k  # k: given value
