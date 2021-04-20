@@ -23,6 +23,7 @@ class LinkedList:
         self.value = value
         self.next = None
 
+
 # Time: O(n); first pointers travers n + 1 nodes, drop constant, so is O(n)
 # Space: O(1); since we are using 2 pointers, and not storing anything.
 # Logic: set 2 pointers, first pointer (F) walks one node each time, while second pointer (S) walks two nodes each time;
@@ -41,7 +42,6 @@ class LinkedList:
 # Total = 2D + P
 # Reminder = Total - P - D
 # Reminder = 2D + P - P - D = D  (node where 2 pointers overlap)
-
 def findLoop(head):
     first = head.next   # first node (after head)
     second = head.next.next  # To ensure it enters the following While loop
