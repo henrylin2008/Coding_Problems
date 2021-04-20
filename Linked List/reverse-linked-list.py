@@ -16,6 +16,12 @@
 # 5 -> 4 -> 3 -> 2 -> 1 -> 0  // the new head node with value 5
 
 
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
 # Time: O(n); n is the length of the linked list
 # Space: O(1); 3 pointers = O(3) -> O(1)
 # Logic: set 3 pointers, place P2 at the beginning of the list, and P3 as P2.next; then reverse p2 pointer to P1
