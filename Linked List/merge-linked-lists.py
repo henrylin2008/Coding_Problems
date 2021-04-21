@@ -44,3 +44,28 @@ def mergeLinkedLists(headOne, headTwo):
         p1Prev.next = p2    # point next node to p2
     return headOne if headOne.value < headTwo.value else headTwo
 
+
+# Recursive Solution:
+# Time: O(n + m); n, m: length of the both linked list
+# Space: O(n + m);
+def mergeLinkedList(headOne, headTwo):
+    recursiveMerge(headOne, headTwo, None)
+    return headOne if headOne.value < headTwo.value else headTwo
+
+
+def recursiveMerge(p1, p2, p1Prev):
+    # base cases
+    if p1 is None:
+        p1Prev.next = p2
+        return
+    if p2 is None:
+        return
+
+    if p1.value < p2.value:
+        recursiveMerge(p1.next, p2, p1)
+    else:
+        if p1Prev is not None:
+            p1Prev.next = p2
+        newP2 = p2.next
+        p2.next = p1
+        recursiveMerge(p1, newP2, p2)
