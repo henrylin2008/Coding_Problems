@@ -22,3 +22,20 @@
 # Sample Output:
 # ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
 
+
+# Time: O(v+e); v: number of vertices|(nodes); e: number of edges connecting nodes
+# Space: O(v); v: vertices (nodes)
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def addChild(self, name):
+        self.children.append(Node(name))
+        return self
+
+    def depthFirstSearch(self, array):
+        array.append(self.name)
+        for child in self.children:
+            child.depthFirstSearch(array)
+        return array
