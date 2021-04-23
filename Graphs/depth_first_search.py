@@ -7,23 +7,21 @@
 # traverses the tree using the Depth-first Search approach (specifically navigating the tree from left to right), stores
 # all the of the Nodes' names in the input array, and returns it.
 #
-# sample input:
-#             A
-#            /|\
-#           B C D
-#          /\   /\
-#         E  F G  H
-#            /\ \
-#           I J  K
+# Sample Input:
+#  graph =      A
+#            /  |  \
+#          B    C    D
+#         / \       /  \
+#        E   F     G    H
+#           / \     \
+#          I   J     K
 #
-# Sample output: ["A","B","E","F","I","J","C","D","G","K","H"]
-# v: vertice (node)
-# e: edge (lines connect between nodes)
+# Sample output:
+# ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
 
 
-# Time: O(v + e): vertices + edges
-# Space: O(v): level of depth/height of the tree
-# Recursive call, get
+# Time: O(v+e); v: number of vertices/(nodes); e: number of edges connecting nodes
+# Space: O(v); v: vertices (nodes), because of return array has length of V; or tree has one recursive branches
 class Node:
     def __init__(self, name):
         self.children = []
@@ -33,11 +31,13 @@ class Node:
         self.children.append(Node(name))
         return self
 
+    # Grab current node's name and add it to the final array; then run a for loop which runs depthFirstSearch function,
+    # which it repeats the same process; lastly return the final array
     def depthFirstSearch(self, array):
-        array.append(self.name)  # append the name to the array
-        for child in self.children:  # for each child in children
-            child.depthFirstSearch(array)  # call depthFirstSearch() function
-        return array  # useful on first row
+        array.append(self.name)   # append node's name
+        for child in self.children:  # for every child
+            child.depthFirstSearch(array)  # recursive call on its children
+        return array
 
 
 #########################################################################################################
