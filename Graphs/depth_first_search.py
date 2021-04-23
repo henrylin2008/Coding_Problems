@@ -17,7 +17,7 @@
 #          I   J     K
 #
 # Sample output:
-# ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+# ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
 
 
 # Time: O(v+e); v: number of vertices/(nodes); e: number of edges connecting nodes
