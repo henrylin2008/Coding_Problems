@@ -23,8 +23,8 @@
 # ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
 
 
-# Time: O(v+e); v: number of vertices|(nodes); e: number of edges connecting nodes
-# Space: O(v); v: vertices (nodes)
+# Time: O(v+e); v: number of vertices/(nodes); e: number of edges connecting nodes
+# Space: O(v); v: vertices (nodes), because of return array has length of V; or tree has one recursive branches
 class Node:
     def __init__(self, name):
         self.children = []
@@ -34,8 +34,10 @@ class Node:
         self.children.append(Node(name))
         return self
 
+    # Grab current node's name and add it to the final array; then run a for loop which runs depthFirstSearch function,
+    # which it repeats the same process; lastly return the final array
     def depthFirstSearch(self, array):
-        array.append(self.name)
-        for child in self.children:
-            child.depthFirstSearch(array)
+        array.append(self.name)   # append node's name
+        for child in self.children:  # for every child
+            child.depthFirstSearch(array)  # recursive call on children
         return array
