@@ -33,11 +33,17 @@ class Node:
     # Time: O(v+e); v: number of vertices/(nodes); e: number of edges connecting nodes
     # Space: O(v); v: vertices (nodes); we're storing nodes in the array; or worse case when all children nodes are
     #              under one root node
+    # Logic: setup a queue (to grab nods), variable current (store current node's name), and an array to store the final
+    #        result. First, grab the current node and add it to the queue, set a variable current to store the current
+    #        node's name, then add it into the final array; next, get all current children node/s and store them in the
+    #        queue; then repeat the same process, get current node's name (pop first item in the queue) and store it to
+    #        the current variable, add current node to the final array; repeat the same process as long as the queue is
+    #        not empty.
     def breadthFirstSearch(self, array):
-        queue = [self]  # self node
-        while len(queue) > 0:   # while there's node/s in the queue
-            current = queue.pop(0)  # pop first item from the queue and set it to current node
+        queue = [self]  # queue to store nodes (current and its children)
+        while len(queue) > 0:   # while the queue is not empty
+            current = queue.pop(0)  # pop first item from the queue and set it to current variable
             array.append(current.name)   # append current node's name into the final array
             for child in current.children:  # for every child
                 queue.append(child)   # append the child to the end of the queue
-        return array
+        return array    # return final array
