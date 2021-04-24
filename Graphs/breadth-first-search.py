@@ -7,8 +7,6 @@
 # Implement the breadthFirstSearch method on the Node class, which takes in an empty array, traverses the tree using the
 # Breadth-first Search approach (specifically navigating the tree from left to right), stores all of the nodes' names in
 # the input array, and returns it.
-# If you're unfamiliar with Breadth-first Search, we recommend watching the Conceptual Overview section of this
-# question's video explanation before starting to code.
 
 # Sample Input:
 #  graph =      A
@@ -23,8 +21,6 @@
 # ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
 
 
-# Time: O(v+e); v: number of vertices/(nodes); e: number of edges connecting nodes
-# Space: O(v); v: vertices (nodes), because of return array has length of V; or tree has one recursive branches
 class Node:
     def __init__(self, name):
         self.children = []
@@ -34,10 +30,14 @@ class Node:
         self.children.append(Node(name))
         return self
 
-    # Grab current node's name and add it to the final array; then run a for loop which runs depthFirstSearch function,
-    # which it repeats the same process; lastly return the final array
-    def depthFirstSearch(self, array):
-        array.append(self.name)   # append node's name
-        for child in self.children:  # for every child
-            child.depthFirstSearch(array)  # recursive call on children
+    # Time: O(v+e); v: number of vertices/(nodes); e: number of edges connecting nodes
+    # Space: O(v); v: vertices (nodes); we're storing nodes in the array; or worse case when all children nodes are
+    #              under one root node
+    def breadthFirstSearch(self, array):
+        queue = [self]  # self node
+        while len(queue) > 0:   # while there's node/s in the queue
+            current = queue.pop(0)  # pop first item from the queue and set it to current node
+            array.append(current.name)   # append current node's name into the final array
+            for child in current.children:  # for every child
+                queue.append(child)   # append the child to the end of the queue
         return array
