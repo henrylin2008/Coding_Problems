@@ -17,3 +17,21 @@
 # Sample Output:
 # true
 
+
+# Time: O(n)
+# Space: O(1)
+def hasSingleCycle(array):
+    numElementsVisited = 0  # number of elements have visited
+    currentIdx = 0  # starting index
+    while numElementsVisited < len(array):  
+        if numElementsVisited > 0 and currentIdx == 0:
+            return False
+        numElementsVisited += 1
+        currentIdx = getNextIdx(currentIdx, array)
+    return currentIdx == 0
+
+
+def getNextIdx(currentIdx, array):
+    jump = array[currentIdx]
+    nextIdx = (currentIdx + jump) % len(array)
+    return nextIdx if nextIdx >= 0 else nextIdx + len(array)
