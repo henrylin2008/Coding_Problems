@@ -20,18 +20,23 @@
 
 # Time: O(n)
 # Space: O(1)
+# Logic:
+# conditions:
+#       * number of elements visited = len(array),
+#       * last Index is back to the initial index (0)
+#       * next index wrap around cases
 def hasSingleCycle(array):
     numElementsVisited = 0  # number of elements have visited
     currentIdx = 0  # starting index
-    while numElementsVisited < len(array):  
-        if numElementsVisited > 0 and currentIdx == 0:
+    while numElementsVisited < len(array):  # when total number of elements visited < len(array)
+        if numElementsVisited > 0 and currentIdx == 0:  # in case a repeated loop/s happened
             return False
-        numElementsVisited += 1
-        currentIdx = getNextIdx(currentIdx, array)
-    return currentIdx == 0
+        numElementsVisited += 1  # increment elements visited
+        currentIdx = getNextIdx(currentIdx, array)  # next index
+    return currentIdx == 0  # back to the starting index
 
 
 def getNextIdx(currentIdx, array):
-    jump = array[currentIdx]
-    nextIdx = (currentIdx + jump) % len(array)
-    return nextIdx if nextIdx >= 0 else nextIdx + len(array)
+    jump = array[currentIdx]    # how many index have to jump
+    nextIdx = (currentIdx + jump) % len(array)  # next index, it covers wrap around cases
+    return nextIdx if nextIdx >= 0 else nextIdx + len(array)  # nextIdx + len(array) covers negative case
