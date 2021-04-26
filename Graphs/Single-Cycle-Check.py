@@ -20,16 +20,21 @@
 
 # Time: O(n)
 # Space: O(1)
-# Logic:
+# Logic: set a variable numElementsVisited to keep track number of elements have visited, and a variable currentIdx to
+#        keep track of current index; the goal is while moving around the array, it should return to the first index
+#        last. Edge case to check is when there's a loop that it returns to first index before reaching all elements in
+#        the array. Calculating wrap around case for moving forward (currentIdx + jump) % len(array), else if moving
+#        backward: nextIdx + len(array). Lastly the function returns true if currentIdx is 0 (first index).
 # conditions:
-#       * number of elements visited = len(array),
+#       * number of elements visited == len(array)
 #       * last Index is back to the initial index (0)
-#       * next index wrap around cases
+#       * edge case: loop/s that returns to initial index before reaches all elements
+#       * next index wrap around cases: moving forward and moving backward
 def hasSingleCycle(array):
     numElementsVisited = 0  # number of elements have visited
     currentIdx = 0  # starting index
     while numElementsVisited < len(array):  # when total number of elements visited < len(array)
-        if numElementsVisited > 0 and currentIdx == 0:  # in case a repeated loop/s happened
+        if numElementsVisited > 0 and currentIdx == 0:  # in case a repeated loop/s happens before reach all elements
             return False
         numElementsVisited += 1  # increment elements visited
         currentIdx = getNextIdx(currentIdx, array)  # next index
