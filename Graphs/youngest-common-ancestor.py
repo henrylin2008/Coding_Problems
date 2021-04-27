@@ -16,7 +16,7 @@
 #     B
 
 # Sample Input
-# // The nodes are from the ancestral tree below.
+# The nodes are from the ancestral tree below.
 # topAncestor = node A
 # descendantOne = node E
 # descendantTwo = node I
@@ -30,3 +30,35 @@
 
 # Sample Output
 # node B
+
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
+
+
+def getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo):
+    depthOne = getDescendantDepth(descendantOne, descendantTwo)
+    depthTwo = getDescendantDepth(descendantTwo, descendantOne)
+    if depthOne > depthTwo:
+        return backtrackAncestralTree(descendantOne, descendantTwo, depthOne - depthTwo)
+    else:
+        return backtrackAncestralTree(descendantTwo, descendantOne, depthTwo - depthOne)
+
+
+def getDescendantDepth(descendant, topAncestor):
+    depth = 0
+    while descendant != topAncestor:
+        depth += 1
+        descendant = descendant.ancestor
+    return depth
+
+
+def backtrackAncestralTree(lowerDescendant, higherDescendant, diff):
+    while diff > 0:
+        lowerDescendant = lowerDescendant.ancestor
+        diff -= 1
+    while lowerDescendant != higherDescendant:
+        lowerDescendant = lowerDescendant.ancestor
+        higherDescendant = higherDescendant.ancestor
+    return lowerDescendant
