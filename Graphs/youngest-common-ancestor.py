@@ -37,28 +37,36 @@ class AncestralTree:
         self.ancestor = None
 
 
+# Time: O(d); d: depth of lowest/deepest descendant
+# Space: O(1); not storing anything
+# Logic: Get the depth of both descendants, comparing the depth of 2 descendants, move the lowest descendant to the same
+#        level as the higher descendant; when both descendants are not the same, move the descendant a level above, then
+#        return either lower or higher descendant
 def getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo):
-    depthOne = getDescendantDepth(descendantOne, descendantTwo)
-    depthTwo = getDescendantDepth(descendantTwo, descendantOne)
-    if depthOne > depthTwo:
+    depthOne = getDescendantDepth(descendantOne, topAncestor)
+    depthTwo = getDescendantDepth(descendantTwo, topAncestor)
+    if depthOne > depthTwo:        # (lowerDescendant, higherDescendant, difference)
         return backtrackAncestralTree(descendantOne, descendantTwo, depthOne - depthTwo)
-    else:
+    else:   # depthTwo >= depthOne
         return backtrackAncestralTree(descendantTwo, descendantOne, depthTwo - depthOne)
 
 
+# get the depth of descendant; the greater value == greater descendant
 def getDescendantDepth(descendant, topAncestor):
-    depth = 0
+    depth = 0   # keep track of the depth
     while descendant != topAncestor:
-        depth += 1
-        descendant = descendant.ancestor
+        depth += 1  # increment the depth
+        descendant = descendant.ancestor  # going up to the ancestor
     return depth
 
 
 def backtrackAncestralTree(lowerDescendant, higherDescendant, diff):
-    while diff > 0:
-        lowerDescendant = lowerDescendant.ancestor
-        diff -= 1
-    while lowerDescendant != higherDescendant:
-        lowerDescendant = lowerDescendant.ancestor
-        higherDescendant = higherDescendant.ancestor
-    return lowerDescendant
+    # move the lowerDescendant to the same level as the higher descendant
+    while diff > 0:  # until lower descendant at the same level as higher descendant
+        lowerDescendant = lowerDescendant.ancestor  # move up the descendant
+        diff -= 1    # decrement the diff
+    # move up until both descendants are at the same level
+    while lowerDescendant != higherDescendant:  # when 2 descendants are not the same, move up until both are the same
+        lowerDescendant = lowerDescendant.ancestor  # move up to the ancestor
+        higherDescendant = higherDescendant.ancestor    # move up to the ancestor
+    return lowerDescendant  # either lowerDescendant or higherDescendant, since both descendants are at the same level
