@@ -31,3 +31,50 @@
 # //    [1,  , 1,  , 1],
 # //    [1,  , 1, 1,  ],
 # // ]
+
+
+# Time: O(wh); w: width, h: height
+# Space: O(wh); w: width, h: height
+def riverSizes(matrix):
+    sizes = []   # array to return
+    visited = [[False for value in row] for row in matrix]  # set every node to False
+    for i in range(len(matrix)):  # iterate through every element in the matrix
+        for j in range(len(matrix[i])):
+            if visited[i][j]:   # if it's a visited node
+                continue    # skip
+            traverseNode(i, j, matrix, visited, sizes)
+    return sizes
+
+
+def traverseNode(i, j, matrix, visited, sizes):
+    currentRiverSize = 0
+    nodesToExplore = [[i, j]]   # stack for DFS
+    # apply DFS
+    while len(nodesToExplore):
+        currentNode = nodesToExplore.pop()
+        i = currentNode[0]
+        j = currentNode[1]
+        if visited[i][j]:   # if visited node
+            continue        # skip
+        visited[i][j] = True
+        if matrix[i][j] == 0:   # if it's land, then skip
+            continue
+        currentRiverSize += 1
+        unvisitedNeighbors = getUnvisitedNeighbors(i, j, matrix, visited)   # get all unvisited neighbor nodes
+        for neighbor in unvisitedNeighbors:
+            nodesToExplore.append(neighbor)   # add unvisited nodes to nodesToExplore
+    if currentRiverSize > 0:
+        sizes.append(currentRiverSize)
+
+
+def getUnvisitedNeighbors(i, j, matrix, visited):
+    unvisitedNeighbors = []
+    if i > 0 and not visited[i - 1][j]:  # neighbor above current row
+        unvisitedNeighbors.append([i - 1, j])
+    if i < len(matrix) - 1 and not visited[i + 1][j]:   # not at bottom row and neighbor below current row
+        unvisitedNeighbors.append([i + 1, j])
+    if j > 0 and not visited[i][j - 1]:     # if not at left most column and not visited neighbor
+        unvisitedNeighbors.append([i, j - 1])
+    if j < len(matrix[0]) - 1 and not visited[i][j + 1]:  # if at right most column and not visited neighbor
+        unvisitedNeighbors.append([i, j + 1])
+    return unvisitedNeighbors
