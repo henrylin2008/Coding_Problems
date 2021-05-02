@@ -62,14 +62,14 @@ def traverseNode(i, j, matrix, visited, sizes):
     # apply DFS, using stack (LIFO) to explore neighbor nodes
     while len(nodesToExplore):  # while there are still nodes to explore
         currentNode = nodesToExplore.pop()  # pop out the last item and set it as currentNode
-        i = currentNode[0]
-        j = currentNode[1]
-        if visited[i][j]:   # if it's visited node, then skip it
+        i = currentNode[0]  # current i index
+        j = currentNode[1]  # current j index
+        if visited[i][j]:   # if it's a visited node, then skip it
             continue
         visited[i][j] = True    # set current node as visited (True)
         if matrix[i][j] == 0:   # if it's land, then skip it
             continue
-        currentRiverSize += 1   # update river size
+        currentRiverSize += 1   # dealing with a node that's a river (1) and has not visited, then update river size
         unvisitedNeighbors = getUnvisitedNeighbors(i, j, matrix, visited)   # get all unvisited neighbor nodes
         for neighbor in unvisitedNeighbors:     # add unvisited nodes to nodesToExplore
             nodesToExplore.append(neighbor)
@@ -79,11 +79,11 @@ def traverseNode(i, j, matrix, visited, sizes):
 
 def getUnvisitedNeighbors(i, j, matrix, visited):
     unvisitedNeighbors = []
-    if i > 0 and not visited[i - 1][j]:  # neighbor above and above node is not visited
+    if i > 0 and not visited[i - 1][j]:  # not at top-most row and not visited the node above
         unvisitedNeighbors.append([i - 1, j])   # add it to unvisited neighbors array
-    if i < len(matrix) - 1 and not visited[i + 1][j]:   # not at bottom row and below node is not visited
+    if i < len(matrix) - 1 and not visited[i + 1][j]:   # not at the bottom row and not visited node below
         unvisitedNeighbors.append([i + 1, j])       # add it to unvisited neighbors array
-    if j > 0 and not visited[i][j - 1]:     # if not at left most column and left node is not visited
+    if j > 0 and not visited[i][j - 1]:     # not at left most column and left node is not visited
         unvisitedNeighbors.append([i, j - 1])   # add it to unvisited neighbors array
     if j < len(matrix[0]) - 1 and not visited[i][j + 1]:  # if at right most column and right node is not visited
         unvisitedNeighbors.append([i, j + 1])   # add it to unvisited neighbors array
