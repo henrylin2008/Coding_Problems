@@ -1,0 +1,78 @@
+Linked List: 
+Pros:
+	* adding new items: O(1)
+	* deleting items: O(1)
+Cons:
+	* No Direct Access; Only Sequential Access
+	* retrieval: because each node only knows nodes next to it
+	* searching: O(N)
+	* Sorting: O(NLogN)
+
+
+Arrays:
+Pros:
+	* Easy to create, easy to use
+	* Direct indexing: O(1)
+	* Sequential access: O(n)
+	* retrieving items
+Cons:
+	* Sorting: O(NLogN)
+	* Searching: O(N), and O(LogN) if sorted
+	* Inserting and deleting: O(N) because of shifting items.
+	* adding items sometimes; due to changing of size, might need to move array to another location
+
+
+Hash Table: 
+Pros:
+	* adding: O(1)
+	* remove: O(1)
+	* Direct Access: O(1) + Hashing & Indexing
+	* retrieving
+Cons:
+	* Some overhead as require a little more space in memory than arrays.
+    * Retrieval of elements doesn’t guarantee a specific order.
+    * Searching for a value (without knowing it’s key).
+	* key collisions
+
+Sets:
+Pro:
+    * Checking membership; value existence
+    * Avoid duplicates
+Cons:
+    * Intentionally limited; There aren’t much you can do with them. So, they’re are terrible at almost everything else.
+
+Stack (DFS) and Queue (BFS)
+Pros:
+	* Push/Add: O(1)
+	* Pop/Remove: O(1)
+	* Peek: O(1)
+Cons:
+	* limited use cases 
+
+
+Binary Search Trees (BST):
+Pros:
+    * Inserting and deleting
+    * Speed of Access
+    * Maintains sorted order; retrieval of elements is in order.
+Cons
+    * Some overhead because of their creation and management.
+
+
+Heaps:
+Pros
+    * Find Min/Find Max: O(1)
+    * Inserting: O(LogN)
+    * Delete Min/Delete Max: O(LogN)
+Cons
+    * Searching and deleting: O(N)
+
+
+Graphs
+Pros:
+	* Great for representing links and relationships
+	* Removing an edge takes O(1) time
+Cons:
+	* Most graph algorithms scale poorly. Big O time complexity of O(n log n).
+	* Consumes more spaces: O(V^2)
+	* adding a vertex is O(V^2)
