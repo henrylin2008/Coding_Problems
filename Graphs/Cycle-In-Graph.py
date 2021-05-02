@@ -35,3 +35,38 @@
 # // 2) 0 -> 1 -> 4 -> 2 -> 0
 # // 3) 1 -> 2 -> 0 -> 1
 # There are just 3 examples; there are more.
+
+
+# Time: O(v + e); v: number of vertices; e: number of edges
+# Space: O(v)
+def cycleInGraph(edges):
+    numOfNodes = len(edges)
+    visited = [False for _ in range(numOfNodes)]
+    currentlyInStack = [False for _ in range(numOfNodes)]
+
+    for node in range(numOfNodes):
+        if visited[node]:
+            continue
+
+        containsCycle = isNodeInCycle(node, edges, visited, currentlyInStack)
+        if containsCycle:
+            return True
+
+    return False
+
+
+def isNodeInCycle(node, edges, visited, currentlyInStack):
+    visited[node] = True
+    currentlyInStack[node] = True
+
+    neighbors = edges[node]
+    for neighbor in neighbors:
+        if not visited[neighbor]:
+            containsCycle = isNodeInCycle(neighbor, edges, visited, currentlyInStack)
+            if containsCycle:
+                return True
+        elif currentlyInStack[neighbor]:
+            return True
+
+    currentlyInStack[node] = False
+    return True
