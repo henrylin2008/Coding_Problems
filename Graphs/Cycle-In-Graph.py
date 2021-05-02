@@ -39,34 +39,48 @@
 
 # Time: O(v + e); v: number of vertices; e: number of edges
 # Space: O(v)
+# Idea: Traverse a graph with BFS, if a back edge (edge from a node to one of its ancestors) in the DFS tree, then it
+#       denotes the presence of a cycle
+# Logic: use 2 lists: one is to keep track of visited nodes (started as False); another one to keep track of which
+#        nodes have been visited in the current recursive stack; Loop through nodes in the graph, if the node has been
+#        visited, then skip it; otherwise, run DFS to check if its children contains a cycle; if its children contains a
+#        cycle, then return True, else return False. The helper method (isNodeInCycle) runs DFS on child nodes, first,
+#        set current node as True in visited and currentlyInStack, then get current node's outbound neighbors, and loop
+#        through neighbor nodes, if it's not a visited node, run recursive calls to check if the neighbor contains a
+#        cycle, if it contains a cycle, then return True; if outbound neighbor node is in the currentlyInStack, then
+#        it's a cycle, return True. Reset current node in currentlyInStack list to False, and return False if no cycles
+#        is found.
 def cycleInGraph(edges):
     numOfNodes = len(edges)
-    visited = [False for _ in range(numOfNodes)]
-    currentlyInStack = [False for _ in range(numOfNodes)]
+    visited = [False for _ in range(numOfNodes)]    # set all values to False (not visited)
+    currentlyInStack = [False for _ in range(numOfNodes)]   # non of nodes in stack
 
-    for node in range(numOfNodes):
-        if visited[node]:
+    for node in range(numOfNodes):  # loop through nodes in the graph
+        if visited[node]:   # if the node has been visited, skip it
             continue
 
-        containsCycle = isNodeInCycle(node, edges, visited, currentlyInStack)
-        if containsCycle:
+        # Run DFS on unvisited node to find any cycles in the nodes/graph, it returns True or False
+        containsCycle = isNodeInCycle(edges, node, visited, currentlyInStack)   # edges, current node, 2 lists
+        if containsCycle:   # if a cycle exists, return True
             return True
 
-    return False
+    return False   # If no cycles found in the graph, return False
 
 
-def isNodeInCycle(node, edges, visited, currentlyInStack):
-    visited[node] = True
-    currentlyInStack[node] = True
+# Run DFS on child nodes
+def isNodeInCycle(edges, node, visited, currentlyInStack):
+    visited[node] = True    # mark current node as visited
+    currentlyInStack[node] = True   # mark current node in the recursive stack
 
-    neighbors = edges[node]
-    for neighbor in neighbors:
-        if not visited[neighbor]:
-            containsCycle = isNodeInCycle(neighbor, edges, visited, currentlyInStack)
-            if containsCycle:
+    neighbors = edges[node]  # get outbound edges and what nodes it goes out to
+    for neighbor in neighbors:  # loop through all neighbors
+        if not visited[neighbor]:   # if node is not visited,
+            # run DFS on the neighbor
+            containsCycle = isNodeInCycle(edges, neighbor, visited, currentlyInStack)
+            if containsCycle:   # if a cycle exist, return True
                 return True
-        elif currentlyInStack[neighbor]:
+        elif currentlyInStack[neighbor]:  # if descendant node edge is connected to its ancestor, then a cycle exists
             return True
 
-    currentlyInStack[node] = False
-    return True
+    currentlyInStack[node] = False  # current node is no longer in the recursive stack
+    return False    # after all possible checks for a cycle have been done
