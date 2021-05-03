@@ -39,8 +39,8 @@
 
 # Time: O(v + e); v: number of vertices; e: number of edges
 # Space: O(v)
-# Idea: Traverse a graph with BFS, if a back edge (edge from a node to one of its ancestors) in the DFS tree, then it
-#       denotes the presence of a cycle
+# Idea: Traverse a graph with BFS recursively, if a back edge (edge from a node to one of its ancestors) in the DFS
+#       tree, then it denotes the presence of a cycle
 # Logic: use 2 lists: one is to keep track of visited nodes (started as False); another one to keep track of which
 #        nodes have been visited in the current recursive stack; Loop through nodes in the graph, if the node has been
 #        visited, then skip it; otherwise, run DFS to check if its children contains a cycle; if its children contains a
@@ -82,5 +82,5 @@ def isNodeInCycle(edges, node, visited, currentlyInStack):
         elif currentlyInStack[neighbor]:  # if descendant node edge is connected to its ancestor, then a cycle exists
             return True
 
-    currentlyInStack[node] = False  # current node is no longer in the recursive stack
+    currentlyInStack[node] = False  # current node has no more edges, remove it from the recursive stack
     return False    # after all possible checks for a cycle have been done
