@@ -37,8 +37,9 @@
 # There are just 3 examples; there are more.
 
 
-# Time: O(v + e); v: number of vertices; e: number of edges
-# Space: O(v)
+# Solution #1
+# Time: O(v + e); v: number of vertices; e: number of edges; running DFS requires v+e time in worse case
+# Space: O(v);  2 lists (visited, currentlyInStack) -> 2v -> O(v)
 # Idea: Traverse a graph with BFS recursively, if a back edge (edge from a node to one of its ancestors) in the DFS
 #       tree, then it denotes the presence of a cycle
 # Logic: use 2 lists: one is to keep track of visited nodes (started as False); another one to keep track of which
@@ -87,3 +88,48 @@ def isNodeInCycle(edges, node, visited, currentlyInStack):
 
     currentlyInStack[node] = False  # current node has no more outbound edges, remove it from the recursive stack
     return False    # after all possible checks for a cycle have been done
+
+
+# Solution #2
+# Time: O(v + e)
+# Space: O(v)
+# same as Solution 1, but using 3 colors to represent status of the current node
+# 0 White: unvisited
+# 1 Grey: in stack (in process)
+# 2 Black: finished
+# WHITE, GREY, BLACK = 0, 1, 2
+#
+#
+# def cycleInGraph(edges):
+#     numOfNodes = len(edges)
+#     colors = [WHITE for _ in range(numOfNodes)]
+#
+#     for node in range(numOfNodes):
+#         if colors[node] != WHITE:
+#             continue
+#
+#         containsCycle = traverseAndColorNodes(node, edges, colors)
+#         if containsCycle:
+#             return True
+#
+#     return False
+#
+#
+# def traverseAndColorNodes(node, edges, colors):
+#     colors[node] = GREY
+#     neighbors = edges[node]
+#     for neighbor in neighbors:
+#         neighborColor = colors[neighbor]
+#
+#         if neighborColor == GREY:
+#             return True
+#
+#         if neighborColor != WHITE:  # color is BLACK
+#             continue
+#
+#         containsCycle = traverseAndColorNodes(neighbor, edges, colors)
+#         if containsCycle:
+#             return True
+#
+#     colors[node] = BLACK
+#     return False
