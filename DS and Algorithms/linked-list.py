@@ -1,3 +1,9 @@
+# Time Complexity (average/worst):
+# Access: O(n)
+# Search: O(n)
+# Insertion: O(1)
+# Deletion: O(1)
+
 class Element(object):
     """Single unit in a linked list"""
     def __init__(self, value):
@@ -48,8 +54,8 @@ class LinkedList(object):
                 current = current.next  # move to next position
                 counter += 1
         elif position == 1:   # if position at first element
-            new_element.next = self.head
-            self.head = new_element
+            new_element.next = self.head    # point new_element.next pointer to the head
+            self.head = new_element     # set the new_element as the head
 
     def delete(self, value):
         """Delete the first node with a given value."""
