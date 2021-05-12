@@ -19,24 +19,25 @@ def mergeSort(alist):
         i = 0
         j = 0
         k = 0
+        # merging sorted list
         while i < len(leftHalf) and j < len(rightHalf):
-            if leftHalf[i] <= rightHalf[j]:
-                alist[k] = leftHalf[i]
-                i = i + 1
+            if leftHalf[i] <= rightHalf[j]:  # first item on leftHalf <= first item on rightHalf
+                alist[k] = leftHalf[i]  # store smaller value (leftHalf) on the alist
+                i = i + 1   # move to next index
             else:
-                alist[k] = rightHalf[j]
+                alist[k] = rightHalf[j]  # store smaller value (rightHalf) on the alist
                 j = j + 1
-            k = k + 1
+            k = k + 1   # move alist to next index
 
-        while i < len(leftHalf):
-            alist[k] = leftHalf[i]
-            i = i + 1
-            k = k + 1
+        while i < len(leftHalf):  # if only leftHalf left (no rightHalf)
+            alist[k] = leftHalf[i]  # store next value in leftHalf in the alist
+            i = i + 1   # move to next value in leftHalf list
+            k = k + 1   # move to next index of alist
 
-        while j < len(rightHalf):
-            alist[k] = rightHalf[j]
-            j = j + 1
-            k = k + 1
+        while j < len(rightHalf):   # if only rightHalf left (no leftHalf)
+            alist[k] = rightHalf[j]  # store next value in rightHalf in the alist
+            j = j + 1   # move to next value in rightHalf list
+            k = k + 1   # move to next index of alist
     print("Merging ", alist)
 
 
