@@ -10,16 +10,16 @@
 # Best complexity: O(n)
 # Space complexity: O(1)
 def insertionSort(alist):
-    for index in range(1, len(alist)):
+    for index in range(1, len(alist)):  # start from index 1 to the end of the list
 
-        currentValue = alist[index]
-        position = index
+        currentValue = alist[index]  # set current value at current index
+        position = index   # current index
 
-        while position > 0 and alist[position - 1] > currentValue:
-            alist[position] = alist[position - 1]
-            position = position - 1
+        while position > 0 and alist[position - 1] > currentValue:  # while previous value > current value
+            alist[position] = alist[position - 1]   # set last value at current position
+            position = position - 1     # move a position back
 
-        alist[position] = currentValue
+        alist[position] = currentValue  # move current value to last position
 
 
 alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
