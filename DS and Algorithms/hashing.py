@@ -47,7 +47,7 @@ def strToNum(s):
     return strSum
 
 
-def h_str(s):   # add all the character numeric values up and modulo 11 to get the slot number
+def h_str(s):  # add all the character numeric values up and modulo 11 to get the slot number
     strToNum(s) % 11
 
 
@@ -58,6 +58,7 @@ def strToWeightNum(s):
     for i in range(len(s)):
         sum += (i + 1) * ord(s[i])
     return strSum
+
 
 # Collision & resolution: put 2 items in the same slot
 # Collision Resolutions:
@@ -70,6 +71,82 @@ def strToWeightNum(s):
 #               1. go to the slot for the hash function and check
 #               2. if it is not in that slot, then check each slot to right, if a slot is empty return false, if a slot
 #                  has the item then return true
-#       * Rehashing
-#       * Quadratic probing
-#   -Chaining
+#       * Rehashing: go to a certain distance to the right (skip distance)
+#           ** rehash(pos) = (pos + skip) % sizeOfTable
+#       * Quadratic probing: add a constant to skip  every time
+#           ** rehash(pos) = pos + skip, skip = i^2
+#              ex: H, H+1^2, H+2^2, H+3^2, H+4^2, H+5^2 => h+0, h+1, h+4, h+9, h+16, h+25
+#   -Chaining: create a list when insert a item; if conflict at the same slot, add the new item to the end of the list.
+#       * Use single linked nodes to chain
+
+
+# Implementing the Map Abstract Data type:
+#   The structure is an unordered collection of associations between a key and a data value. The
+#   keys in a map are all unique so that there is a one-to-one relationship between a key and a value. The operations
+#   are given below.
+#   * Map(): Create a new, empty map. It returns an empty map collection.
+#   * put(key,val): Add a new key-value pair to the map. If the key is already in the map then replace the old value
+#                   with the new value
+#   * get(key): Given a key, return the value stored in the map or None otherwise
+#   * del: Delete the key-value pair from the map using a statement of the form del map[key].
+#   * len() Return the number of key-value pairs stored in the map.
+#   * in: Return True for a statement of the form key in map, if the given key is in the map, False otherwise.
+#   * [] operator will do get and put using __getitem__, and __putitem__
+class HashTable:
+    def __init__(self):
+        """Initialize table size, two lists:one for key items, one for its data values"""
+        self.size = 11
+        self.slots = [None] * self.size  # hashtable
+        self.data = [None] * self.size  # values
+
+    def put(self, key, data):
+        """assumes that there will eventually be an empty slot unless the key is already present in the self.slots."""
+        hashValue = self.hashfunction(key, len(self.slots))
+
+        if self.slots[hashValue] is None:
+            self.slots[hashValue] = key
+            self.data[hashValue] = data
+        else:
+            if self.slots[hashValue] == key:  # non-empty slot
+                self.data[hashValue] = data  # replace
+            else:
+                nextSlot = self.rehash(hashValue, len(self.slots))
+                while self.slots[nextSlot] is not None and self.slots[nextSlot] != key:
+                    nextSlot = self.rehash(nextSlot, len(self.slots))
+
+                if self.slots[nextSlot] is None:
+                    self.slots[nextSlot] = key
+                    self.data[nextSlot] = data
+                else:
+                    self.data[nextSlot] = data  # replace the data
+
+    def hashFunction(self, key, size):
+        """simple remainder method"""
+        return key % size
+
+    def rehash(self, oldHash, size):
+        """linear probing with a plus 1 rehash function"""
+        return (oldHash + 1) % size
+
+    def get(self, key):
+        startSlot = self.hashfunction(key, len(self.slots))
+
+        data = None
+        stop = False
+        found = False
+        position = startSlot
+        while self.slots[position] is not None and not found and not stop:
+            if self.slots[position] == key:
+                found = True
+                data = self.data[position]
+            else:
+                position = self.rehash(position, len(self.slots))
+                if position == startSlot:
+                    stop = True
+        return data
+
+    def __getitem__(self, key):
+        return self.get(key)
+
+    def __setitem__(self, key, data):
+        self.put(key, data)
