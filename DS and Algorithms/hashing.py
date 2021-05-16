@@ -93,6 +93,7 @@ def strToWeightNum(s):
 #   * in: Return True for a statement of the form key in map, if the given key is in the map, False otherwise.
 #   * [] operator will do get and put using __getitem__, and __putitem__
 class HashTable:
+    """Implement Hash table with 2 lists: one for keys, another one for its data value"""
     def __init__(self):
         """Initialize table size, two lists:one for key items, one for its data values"""
         self.size = 11
@@ -150,3 +151,31 @@ class HashTable:
 
     def __setitem__(self, key, data):
         self.put(key, data)
+
+
+# H=HashTable()
+# H[54]="cat"
+# H[26]="dog"
+# H[93]="lion"
+# H[17]="tiger"
+# H[77]="bird"
+# H[31]="cow"
+# H[44]="goat"
+# H[55]="pig"
+# H[20]="chicken"
+# H.slots
+# [77, 44, 55, 20, 26, 93, 17, None, None, 31, 54]
+# H.data
+# ['bird', 'goat', 'pig', 'chicken', 'dog', 'lion', 'tiger', None, None, 'cow', 'cat']
+# H[20]
+# 'chicken'
+# H[17]
+# 'tiger'
+# H[20]='duck'
+# H[20]
+# 'duck'
+# H.data
+# ['bird', 'goat', 'pig', 'duck', 'dog', 'lion',
+#        'tiger', None, None, 'cow', 'cat']
+# print(H[99])
+# None
