@@ -4,6 +4,10 @@
 # pointer one position left to the mid pointer, and update the mid pointer (middle in between old low pointer and new
 # high pointer). repeat the process until finding the value or return -1 if the searching value is not in the
 # input_array.
+# Time Complexity: O(log n)
+# Best Time: O(1); when the middle index is the value that we are looking for.
+# Space Complexity: O(1) (for iterative)
+#        O(log n) (for recursive)
 def binary_search(input_array, value):
     low = 0
     high = len(input_array) - 1
