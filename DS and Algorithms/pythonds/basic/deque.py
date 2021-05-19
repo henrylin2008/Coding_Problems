@@ -1,4 +1,3 @@
-#deque.py
 
 
 class Deque:

@@ -1,9 +1,3 @@
-#
-#  adjGraph
-#
-#  Created by Brad Miller on 2005-02-24.
-#  Copyright (c) 2005 Brad Miller, David Ranum, Luther College. All rights reserved.
-#
 
 import sys
 import os
