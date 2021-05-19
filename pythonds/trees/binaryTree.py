@@ -46,10 +46,10 @@ class BinaryTree:
 
     def inorder(self):
         if self.leftChild:
-            self.leftChild.inorder()
+            self.leftChild.inOrder()
         print(self.key)
         if self.rightChild:
-            self.rightChild.inorder()
+            self.rightChild.inOrder()
 
     def postorder(self):
         if self.leftChild:
@@ -69,10 +69,10 @@ class BinaryTree:
     def printexp(self):
         if self.leftChild:
             print('(', end=' ')
-            self.leftChild.printexp()
+            self.leftChild.printExp()
         print(self.key, end=' ')
         if self.rightChild:
-            self.rightChild.printexp()
+            self.rightChild.printExp()
             print(')', end=' ')
 
     def postordereval(self):
@@ -80,9 +80,9 @@ class BinaryTree:
         res1 = None
         res2 = None
         if self.leftChild:
-            res1 = self.leftChild.postordereval()  #// \label{peleft}
+            res1 = self.leftChild.postOrderEval()  #// \label{peleft}
         if self.rightChild:
-            res2 = self.rightChild.postordereval() #// \label{peright}
+            res2 = self.rightChild.postOrderEval() #// \label{peright}
         if res1 and res2:
             return opers[self.key](res1,res2) #// \label{peeval}
         else:
