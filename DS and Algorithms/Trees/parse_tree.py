@@ -18,24 +18,24 @@ def buildParseTree(fpexp):
 
     for i in fplist:
         if i == '(':    # if '(': push it down to the left of the tree
-            currentTree.insertLeft('')
+            currentTree.insertLeft('')  # insert a left child
             pStack.push(currentTree)
-            currentTree = currentTree.getLeftChild()
+            currentTree = currentTree.getLeftChild()    # put it down to the left of the tree
 
-        elif i in ['+', '-', '*', '/']:  # if it's a operator
-            currentTree.setRootVal(i)   #
-            currentTree.insertRight('')
-            pStack.push(currentTree)
-            currentTree = currentTree.getRightChild()
+        elif i in ['+', '-', '*', '/']:  # if it's a operator,
+            currentTree.setRootVal(i)   # set the root value of the current node to the operator
+            currentTree.insertRight('')  # add a new right child
+            pStack.push(currentTree)    # add currentTree to the stack
+            currentTree = currentTree.getRightChild()   # move to the right child node
 
         elif i == ')':
             currentTree = pStack.pop()  # go up a level
 
         elif i not in ['+', '-', '*', '/', ')']:  # if it's a number
             try:
-                currentTree.setRootVal(int(i))  #
-                parent = pStack.pop()
-                currentTree = parent
+                currentTree.setRootVal(int(i))  # set root value of current node
+                parent = pStack.pop()   # set the parent
+                currentTree = parent    # set currentTree as the parent
 
             except ValueError:
                 raise ValueError("token '{}' is not a valid integer".format(i))
