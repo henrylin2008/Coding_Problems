@@ -23,6 +23,34 @@ class BinarySearchTree:
     def __iter__(self):  # provide iteration over nodes
         return self.root.__iter__()
 
+    # _put to search the tree according to the following algorithm:
+    # -Starting at the root of the tree, search the binary tree comparing the new key to the key in the current node.
+    #  If the new key is less than the current node, search the left subtree. If the new key is greater than the current
+    #  node,search the right subtree.
+    # -When there is no left (or right) child to search, we have found the position in the tree where the new node
+    #  should be installed.
+    # -To add a node to the tree, create a new TreeNode object and insert the object at the point discovered in the
+    #  previous step.
+    # Note: following code does not work correctly if you put a key value that is already in the tree
+    def put(self, key, val):
+        if self.root:  # if root exist
+            self._put(key, val, self.root)  # recursive method _put(key, value, node) to insert the key in the subtree
+        else:  # else if the tree does not have a root
+            self.root = TreeNode(key, val)  # just add TreeNode(key, value) as root
+        self.size = self.size + 1  # increment size
+
+    def _put(self, key, val, currentNode):
+        if key < currentNode.key:
+            if currentNode.hasLeftChild():  # if it has left child, recursive call _put() method to insert the key/value
+                self._put(key, val, currentNode.leftChild)
+            else:  # if no left child, just add the new node with (key, value) as the left child
+                currentNode.leftChild = TreeNode(key, val, parent=currentNode)
+        else:
+            if currentNode.hasRightChild():  # if it has right child,
+                self._put(key, val, currentNode.rightChild)  # recursive call _put() method to insert the key/value
+            else:  # if no right child, just add the new node with (key, value) as the right child
+                currentNode.rightChild = TreeNode(key, val, parent=currentNode)
+
 
 class TreeNode:
     def __init__(self, key, val, left=None, right=None, parent=None):
@@ -65,4 +93,5 @@ class TreeNode:
             self.leftChild.parent = self
         if self.hasRightChild():
             self.rightChild.parent = self
+
 
