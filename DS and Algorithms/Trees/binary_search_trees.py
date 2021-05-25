@@ -51,6 +51,38 @@ class BinarySearchTree:
             else:  # if no right child, just add the new node with (key, value) as the right child
                 currentNode.rightChild = TreeNode(key, val, parent=currentNode)
 
+    def get(self, key):
+        if self.root:
+            res = self._get(key, self.root)  # find node with key, resource
+            if res:
+                return res.payload
+            else:
+                return None
+        else:   # no root, empty tree
+            return None
+
+    def _get(self, key, currentNode):
+        """ recursive find key from currentNode or return None"""
+        if not currentNode:  # return None if it's None
+            return None
+        elif currentNode.key == key:  # found the key
+            return currentNode      # return current node
+        elif key < currentNode.key:
+            return self._get(key, currentNode.leftChild)    # recursive call on left child
+        else:
+            return self._get(key, currentNode.rightChild)   # recursive call on right child
+
+    def __getitem__(self, key):
+        """ define [] operator i.e. g['key']"""
+        return self.get(key)
+
+    def __contains__(self, key):
+        """define in operator; simply call get and return True if get returns a value, or False if it returns None. """
+        if self._get(key, self.root):
+            return True
+        else:
+            return False
+
 
 class TreeNode:
     def __init__(self, key, val, left=None, right=None, parent=None):
