@@ -58,7 +58,7 @@ class BinarySearchTree:
                 return res.payload
             else:
                 return None
-        else:   # no root, empty tree
+        else:  # no root, empty tree
             return None
 
     def _get(self, key, currentNode):
@@ -66,11 +66,11 @@ class BinarySearchTree:
         if not currentNode:  # return None if it's None
             return None
         elif currentNode.key == key:  # found the key
-            return currentNode      # return current node
+            return currentNode  # return current node
         elif key < currentNode.key:
-            return self._get(key, currentNode.leftChild)    # recursive call on left child
+            return self._get(key, currentNode.leftChild)  # recursive call on left child
         else:
-            return self._get(key, currentNode.rightChild)   # recursive call on right child
+            return self._get(key, currentNode.rightChild)  # recursive call on right child
 
     def __getitem__(self, key):
         """ define [] operator i.e. g['key']"""
@@ -82,6 +82,23 @@ class BinarySearchTree:
             return True
         else:
             return False
+
+    def delete(self, key):
+        if self.size > 1:
+            nodeToRemove = self._get(key, self.root)
+            if nodeToRemove:
+                self.remove(nodeToRemove)
+                self.size = self.size - 1
+            else:
+                raise KeyError('Error, key not in tree')
+        elif self.size == 1 and self.root.key == key:
+            self.root = None
+            self.size = self.size - 1
+        else:
+            raise KeyError('Error, key not in tree')
+
+    def __delitem__(self, key):
+        self.delete(key)
 
 
 class TreeNode:
@@ -125,5 +142,3 @@ class TreeNode:
             self.leftChild.parent = self
         if self.hasRightChild():
             self.rightChild.parent = self
-
-
