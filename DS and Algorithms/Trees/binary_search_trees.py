@@ -220,3 +220,13 @@ class TreeNode:
             self.leftChild.parent = self
         if self.hasRightChild():
             self.rightChild.parent = self
+
+
+myTree = BinarySearchTree()
+myTree[3] = "red"
+myTree[4] = "blue"
+myTree[6] = "yellow"
+myTree[2] = "at"
+
+print(myTree[6])
+print(myTree[2])
