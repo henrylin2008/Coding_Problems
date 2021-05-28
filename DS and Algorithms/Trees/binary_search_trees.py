@@ -171,6 +171,46 @@ class TreeNode:
     def hasBothChildren(self):
         return self.rightChild and self.leftChild
 
+    def spliceOut(self):
+        if self.isLeaf():
+            if self.isLeftChild():
+                self.parent.leftChild = None
+            else:
+                self.parent.rightChild = None
+        elif self.hasAnyChildren():
+            if self.hasLeftChild():
+                if self.isLeftChild():
+                    self.parent.leftChild = self.leftChild
+                else:
+                    self.parent.rightChild = self.leftChild
+                self.leftChild.parent = self.parent
+            else:
+                if self.isLeftChild():
+                    self.parent.leftChild = self.rightChild
+                else:
+                    self.parent.rightChild = self.rightChild
+                self.rightChild.parent = self.parent
+
+    def findSuccessor(self):
+        successor = None
+        if self.hasRightChild():
+            successor = self.rightChild.findMin()
+        else:
+            if self.parent:
+                if self.isLeftChild():
+                    successor = self.parent
+                else:
+                    self.parent.rightChild = None
+                    successor = self.parent.findSuccessor()
+                    self.parent.rightChild = self
+        return successor
+
+    def findMin(self):
+        current = self
+        while current.hasLeftChild():
+            current = current.leftChild
+        return current
+
     def replaceNodeData(self, key, value, lc, rc):
         self.key = key
         self.payload = value
