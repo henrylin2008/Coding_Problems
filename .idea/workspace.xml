@@ -1,197 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="Priority Queue with Binary Heaps">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="added the logic" />
+    <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph">
+      <change beforePath="$PROJECT_DIR$/Graphs/remove-islands.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphs/remove-islands.py" afterDir="false" />
+    </list>
+    <list id="84d007dd-07b8-4731-a1a5-ede9cd778e70" name="Implementing tree with linked list" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Coding_Problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Coding_Problems.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="Coding_Problems" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/climbStairs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/DailyCoding/102.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/103.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/105.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/104.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/106.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/107.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/108.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/109.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/110.py" />
-        <option value="$PROJECT_DIR$/Arrays/product_of_all_other_elements.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/2.py" />
-        <option value="$PROJECT_DIR$/Quicksort/quicksort.py" />
-        <option value="$PROJECT_DIR$/Strings/reverse_string.py" />
-        <option value="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" />
-        <option value="$PROJECT_DIR$/LeetCode/Easy/palindrome.py" />
-        <option value="$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py" />
-        <option value="$PROJECT_DIR$/LeetCode/Easy/rome_to_integer.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/PDF/111.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/111.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/112.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/113.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/114.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/115.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/116.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/117.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/118.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/119.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/120.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/121.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/122.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/123.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/124.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/125.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/126.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/127.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/128.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/129.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/130.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/131.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/132.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/133.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/134.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/135.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/136.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/137.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/138.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/139.py" />
-        <option value="$PROJECT_DIR$/DailyCoding/140.py" />
-        <option value="$PROJECT_DIR$/Arrays/is_rotation.py" />
-        <option value="$PROJECT_DIR$/Arrays/common_elements_2_arrays.py" />
-        <option value="$PROJECT_DIR$/LeetCode/Easy/climbStairs.py" />
-      </list>
-    </option>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="906" />
-    <option name="y" value="410" />
-    <option name="width" value="1680" />
-    <option name="height" value="1298" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
+  <component name="JupyterTrust" id="beca0b31-04aa-4380-9721-2e7f0d5387be" />
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="29" changelist="84d007dd-07b8-4731-a1a5-ede9cd778e70" />
+        <range start1="3" end1="5" start2="30" end2="44" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="10" end1="43" start2="49" end2="62" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="47" end1="47" start2="66" end2="67" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="51" end1="55" start2="71" end2="81" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="59" end1="115" start2="85" end2="92" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="116" end1="121" start2="93" end2="152" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="122" end1="122" start2="153" end2="154" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="125" end1="163" start2="157" end2="160" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="165" end1="165" start2="162" end2="163" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="166" end1="166" start2="164" end2="165" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="167" end1="167" start2="166" end2="167" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="172" end1="172" start2="172" end2="173" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="175" end1="175" start2="176" end2="181" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="176" end1="178" start2="182" end2="187" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="180" end1="194" start2="189" end2="191" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="201" end1="202" start2="198" end2="199" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="206" end1="207" start2="203" end2="204" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="215" end1="216" start2="212" end2="213" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="223" end1="224" start2="220" end2="221" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="228" end1="229" start2="225" end2="226" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="237" end1="238" start2="234" end2="235" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="245" end1="246" start2="242" end2="243" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="250" end1="251" start2="247" end2="248" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="259" end1="260" start2="256" end2="257" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="272" end1="273" start2="269" end2="270" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="281" end1="282" start2="278" end2="279" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="289" end1="290" start2="286" end2="287" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="294" end1="295" start2="291" end2="292" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="303" end1="304" start2="300" end2="301" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="311" end1="312" start2="308" end2="309" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="316" end1="317" start2="313" end2="314" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="327" end1="332" start2="324" end2="329" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="335" end1="335" start2="332" end2="333" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="341" end1="341" start2="339" end2="342" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="356" end1="356" start2="357" end2="512" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="357" end1="357" start2="513" end2="738" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="359" end1="398" start2="740" end2="742" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="399" end1="401" start2="743" end2="752" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="408" end1="421" start2="759" end2="763" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="441" end1="441" start2="783" end2="812" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="444" end1="466" start2="815" end2="822" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="469" end1="469" start2="825" end2="830" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="470" end1="471" start2="831" end2="855" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="472" end1="473" start2="856" end2="862" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="474" end1="476" start2="863" end2="888" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
+        <range start1="485" end1="841" start2="897" end2="897" changelist="84d007dd-07b8-4731-a1a5-ede9cd778e70" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProjectId" id="1aJLHHhq69kV5sDaRJHDIgjxsbV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Coding_Problems" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Documents/GitHub/Coding_Problems" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Coding_Problems" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Documents/GitHub/Coding_Problems" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="DailyCoding" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Coding_Problems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Coding_Problems" type="462c0819:PsiDirectoryNode" />
-              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Dynamic Programming" />
+      <recent name="$PROJECT_DIR$/Stack" />
+      <recent name="$PROJECT_DIR$/Lyft" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/LeetCode/Easy" />
-      <recent name="$PROJECT_DIR$/DailyCoding" />
+      <recent name="$PROJECT_DIR$/DS and Algorithms" />
+      <recent name="$PROJECT_DIR$/DS and Algorithms/Search" />
+      <recent name="$PROJECT_DIR$/DS and Algorithms/Sorting" />
+      <recent name="$PROJECT_DIR$/Graphs" />
+      <recent name="$PROJECT_DIR$/Trees/BinarySearchTrees" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.palindrome_num">
-    <configuration name="2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Priority_Queues_Binary_Heaps">
+    <configuration name="Priority_Queues_Binary_Heaps" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coding_Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,12 +196,56 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DailyCoding" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms/Trees" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DailyCoding/2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/Trees/Priority_Queues_Binary_Heaps.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="binaryTree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coding_Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms/pythonds/trees" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/pythonds/trees/binaryTree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hashing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coding_Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/hashing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -235,7 +276,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="quicksort" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="parse_tree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coding_Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -243,12 +284,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Quicksort" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms/Trees" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Quicksort/quicksort.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/Trees/parse_tree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,7 +298,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="reverse_integer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tree_linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coding_Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -265,56 +306,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode/Easy" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms/Trees" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="reverse_string" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Coding_Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Strings" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Strings/reverse_string.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="two_sum" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Coding_Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode/Easy" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Easy/two_sum.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/Trees/tree_linked_list.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -325,20 +322,24 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.reverse_integer" />
-        <item itemvalue="Python.reverse_string" />
-        <item itemvalue="Python.quicksort" />
-        <item itemvalue="Python.2" />
-        <item itemvalue="Python.two_sum" />
+        <item itemvalue="Python.Priority_Queues_Binary_Heaps" />
+        <item itemvalue="Python.parse_tree" />
+        <item itemvalue="Python.binaryTree" />
+        <item itemvalue="Python.tree_linked_list" />
+        <item itemvalue="Python.hashing" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="" />
+      <changelist id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="" />
+      <changelist id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="" />
+      <changelist id="84d007dd-07b8-4731-a1a5-ede9cd778e70" name="Implementing tree with linked list" comment="" />
       <created>1558551837628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -354,51 +355,401 @@
       <workItem from="1565096584224" duration="11440000" />
       <workItem from="1565528677235" duration="5292000" />
       <workItem from="1568149418005" duration="4267000" />
+      <workItem from="1583018263210" duration="21152000" />
+      <workItem from="1583337076313" duration="32945000" />
+      <workItem from="1584374434907" duration="43932000" />
+      <workItem from="1586448675961" duration="6024000" />
+      <workItem from="1586621682186" duration="37496000" />
+      <workItem from="1588830447625" duration="9838000" />
+      <workItem from="1589061354612" duration="258000" />
+      <workItem from="1589131722349" duration="882000" />
+      <workItem from="1598829812773" duration="11089000" />
+      <workItem from="1598981187453" duration="1897000" />
+      <workItem from="1599026597020" duration="661000" />
+      <workItem from="1599782055024" duration="19943000" />
+      <workItem from="1600444304744" duration="53783000" />
+      <workItem from="1602015522979" duration="163000" />
+      <workItem from="1602087475434" duration="820000" />
+      <workItem from="1602479018310" duration="17000" />
+      <workItem from="1603165898826" duration="7199000" />
+      <workItem from="1603426344300" duration="43113000" />
+      <workItem from="1604037489805" duration="77219000" />
+      <workItem from="1605546790292" duration="26189000" />
+      <workItem from="1611815925141" duration="1011000" />
+      <workItem from="1611903815480" duration="1263000" />
+      <workItem from="1613664590758" duration="674000" />
+      <workItem from="1614666289896" duration="6446000" />
+      <workItem from="1614839836852" duration="71810000" />
+      <workItem from="1615495661617" duration="29166000" />
+      <workItem from="1616080182571" duration="5370000" />
+      <workItem from="1616166257263" duration="177766000" />
+      <workItem from="1618379120417" duration="86000" />
+      <workItem from="1618379272210" duration="56483000" />
+      <workItem from="1619278266813" duration="5872000" />
+      <workItem from="1619329292807" duration="70634000" />
+      <workItem from="1620241873543" duration="51377000" />
+      <workItem from="1621265750382" duration="24065000" />
+      <workItem from="1621789665532" duration="156000" />
+      <workItem from="1621830946332" duration="24920000" />
     </task>
+    <task id="LOCAL-00285" summary="binary search">
+      <created>1620666762144</created>
+      <option name="number" value="00285" />
+      <option name="presentableId" value="LOCAL-00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1620666762145</updated>
+    </task>
+    <task id="LOCAL-00286" summary="recursion">
+      <created>1620711909699</created>
+      <option name="number" value="00286" />
+      <option name="presentableId" value="LOCAL-00286" />
+      <option name="project" value="LOCAL" />
+      <updated>1620711909699</updated>
+    </task>
+    <task id="LOCAL-00287" summary="bubble sort">
+      <created>1620712787244</created>
+      <option name="number" value="00287" />
+      <option name="presentableId" value="LOCAL-00287" />
+      <option name="project" value="LOCAL" />
+      <updated>1620712787244</updated>
+    </task>
+    <task id="LOCAL-00288" summary="updated comment">
+      <created>1620713769921</created>
+      <option name="number" value="00288" />
+      <option name="presentableId" value="LOCAL-00288" />
+      <option name="project" value="LOCAL" />
+      <updated>1620713769921</updated>
+    </task>
+    <task id="LOCAL-00289" summary="Merge Sort">
+      <created>1620798420233</created>
+      <option name="number" value="00289" />
+      <option name="presentableId" value="LOCAL-00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1620798420233</updated>
+    </task>
+    <task id="LOCAL-00290" summary="added comments">
+      <created>1620800947379</created>
+      <option name="number" value="00290" />
+      <option name="presentableId" value="LOCAL-00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1620800947380</updated>
+    </task>
+    <task id="LOCAL-00291" summary="folder structure">
+      <created>1620829818066</created>
+      <option name="number" value="00291" />
+      <option name="presentableId" value="LOCAL-00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1620829818067</updated>
+    </task>
+    <task id="LOCAL-00292" summary="quick sort">
+      <created>1620831883906</created>
+      <option name="number" value="00292" />
+      <option name="presentableId" value="LOCAL-00292" />
+      <option name="project" value="LOCAL" />
+      <updated>1620831883906</updated>
+    </task>
+    <task id="LOCAL-00293" summary="added another solution">
+      <created>1620888597269</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1620888597270</updated>
+    </task>
+    <task id="LOCAL-00294" summary="Shell sort">
+      <created>1620973718704</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1620973718706</updated>
+    </task>
+    <task id="LOCAL-00295" summary="Insertion Sort">
+      <created>1621010849729</created>
+      <option name="number" value="00295" />
+      <option name="presentableId" value="LOCAL-00295" />
+      <option name="project" value="LOCAL" />
+      <updated>1621010849729</updated>
+    </task>
+    <task id="LOCAL-00296" summary="added time and space complexity">
+      <created>1621011085741</created>
+      <option name="number" value="00296" />
+      <option name="presentableId" value="LOCAL-00296" />
+      <option name="project" value="LOCAL" />
+      <updated>1621011085741</updated>
+    </task>
+    <task id="LOCAL-00297" summary="added comments">
+      <created>1621012975647</created>
+      <option name="number" value="00297" />
+      <option name="presentableId" value="LOCAL-00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1621012975647</updated>
+    </task>
+    <task id="LOCAL-00298" summary="Hashing">
+      <created>1621106694815</created>
+      <option name="number" value="00298" />
+      <option name="presentableId" value="LOCAL-00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1621106694819</updated>
+    </task>
+    <task id="LOCAL-00299" summary="Implementing the Map Abstract Data type, 2 lists">
+      <created>1621120900809</created>
+      <option name="number" value="00299" />
+      <option name="presentableId" value="LOCAL-00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1621120900809</updated>
+    </task>
+    <task id="LOCAL-00300" summary="added sample data">
+      <created>1621145617004</created>
+      <option name="number" value="00300" />
+      <option name="presentableId" value="LOCAL-00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1621145617004</updated>
+    </task>
+    <task id="LOCAL-00301" summary="Sequential Search and re-org directories">
+      <created>1621147649537</created>
+      <option name="number" value="00301" />
+      <option name="presentableId" value="LOCAL-00301" />
+      <option name="project" value="LOCAL" />
+      <updated>1621147649537</updated>
+    </task>
+    <task id="LOCAL-00302" summary="added comments">
+      <created>1621148023420</created>
+      <option name="number" value="00302" />
+      <option name="presentableId" value="LOCAL-00302" />
+      <option name="project" value="LOCAL" />
+      <updated>1621148023420</updated>
+    </task>
+    <task id="LOCAL-00303" summary="added short bubble implementation">
+      <created>1621177735381</created>
+      <option name="number" value="00303" />
+      <option name="presentableId" value="LOCAL-00303" />
+      <option name="project" value="LOCAL" />
+      <updated>1621177735382</updated>
+    </task>
+    <task id="LOCAL-00304" summary="Selection sort">
+      <created>1621180811917</created>
+      <option name="number" value="00304" />
+      <option name="presentableId" value="LOCAL-00304" />
+      <option name="project" value="LOCAL" />
+      <updated>1621180811917</updated>
+    </task>
+    <task id="LOCAL-00305" summary="added code, runtime, space complexity">
+      <created>1621231563600</created>
+      <option name="number" value="00305" />
+      <option name="presentableId" value="LOCAL-00305" />
+      <option name="project" value="LOCAL" />
+      <updated>1621231563600</updated>
+    </task>
+    <task id="LOCAL-00306" summary="added comments">
+      <created>1621272432249</created>
+      <option name="number" value="00306" />
+      <option name="presentableId" value="LOCAL-00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1621272432250</updated>
+    </task>
+    <task id="LOCAL-00307" summary="added time and space Complexity">
+      <created>1621314837608</created>
+      <option name="number" value="00307" />
+      <option name="presentableId" value="LOCAL-00307" />
+      <option name="project" value="LOCAL" />
+      <updated>1621314837608</updated>
+    </task>
+    <task id="LOCAL-00308" summary="List implementation of a tree">
+      <created>1621319081933</created>
+      <option name="number" value="00308" />
+      <option name="presentableId" value="LOCAL-00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1621319081933</updated>
+    </task>
+    <task id="LOCAL-00309" summary="renamed the file">
+      <created>1621319604844</created>
+      <option name="number" value="00309" />
+      <option name="presentableId" value="LOCAL-00309" />
+      <option name="project" value="LOCAL" />
+      <updated>1621319604844</updated>
+    </task>
+    <task id="LOCAL-00310" summary="Implementing tree with linked list">
+      <created>1621351188635</created>
+      <option name="number" value="00310" />
+      <option name="presentableId" value="LOCAL-00310" />
+      <option name="project" value="LOCAL" />
+      <updated>1621351188635</updated>
+    </task>
+    <task id="LOCAL-00311" summary="Implementing tree with a linked list">
+      <created>1621351964826</created>
+      <option name="number" value="00311" />
+      <option name="presentableId" value="LOCAL-00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1621351964826</updated>
+    </task>
+    <task id="LOCAL-00312" summary="added methods to print a tree diagram">
+      <created>1621357251090</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1621357251090</updated>
+    </task>
+    <task id="LOCAL-00313" summary="added basic support files">
+      <created>1621437559013</created>
+      <option name="number" value="00313" />
+      <option name="presentableId" value="LOCAL-00313" />
+      <option name="project" value="LOCAL" />
+      <updated>1621437559013</updated>
+    </task>
+    <task id="LOCAL-00314" summary="added basic support files">
+      <created>1621437821318</created>
+      <option name="number" value="00314" />
+      <option name="presentableId" value="LOCAL-00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1621437821318</updated>
+    </task>
+    <task id="LOCAL-00315" summary="remove comments">
+      <created>1621438094940</created>
+      <option name="number" value="00315" />
+      <option name="presentableId" value="LOCAL-00315" />
+      <option name="project" value="LOCAL" />
+      <updated>1621438094941</updated>
+    </task>
+    <task id="LOCAL-00316" summary="format update">
+      <created>1621446332103</created>
+      <option name="number" value="00316" />
+      <option name="presentableId" value="LOCAL-00316" />
+      <option name="project" value="LOCAL" />
+      <updated>1621446332103</updated>
+    </task>
+    <task id="LOCAL-00317" summary="parse_tree">
+      <created>1621446358087</created>
+      <option name="number" value="00317" />
+      <option name="presentableId" value="LOCAL-00317" />
+      <option name="project" value="LOCAL" />
+      <updated>1621446358087</updated>
+    </task>
+    <task id="LOCAL-00318" summary="format updates">
+      <created>1621532607931</created>
+      <option name="number" value="00318" />
+      <option name="presentableId" value="LOCAL-00318" />
+      <option name="project" value="LOCAL" />
+      <updated>1621532607931</updated>
+    </task>
+    <task id="LOCAL-00319" summary="added comments">
+      <created>1621752539893</created>
+      <option name="number" value="00319" />
+      <option name="presentableId" value="LOCAL-00319" />
+      <option name="project" value="LOCAL" />
+      <updated>1621752539894</updated>
+    </task>
+    <task id="LOCAL-00320" summary="added evaluate method to perform calculation on the nodes">
+      <created>1621835618153</created>
+      <option name="number" value="00320" />
+      <option name="presentableId" value="LOCAL-00320" />
+      <option name="project" value="LOCAL" />
+      <updated>1621835618154</updated>
+    </task>
+    <task id="LOCAL-00321" summary="Tree Traversals">
+      <created>1621838289318</created>
+      <option name="number" value="00321" />
+      <option name="presentableId" value="LOCAL-00321" />
+      <option name="project" value="LOCAL" />
+      <updated>1621838289318</updated>
+    </task>
+    <task id="LOCAL-00322" summary="Priority Queue with Binary Heaps">
+      <created>1621839301824</created>
+      <option name="number" value="00322" />
+      <option name="presentableId" value="LOCAL-00322" />
+      <option name="project" value="LOCAL" />
+      <updated>1621839301824</updated>
+    </task>
+    <task id="LOCAL-00323" summary="Binary Heap constructor and insert">
+      <created>1621921370611</created>
+      <option name="number" value="00323" />
+      <option name="presentableId" value="LOCAL-00323" />
+      <option name="project" value="LOCAL" />
+      <updated>1621921370613</updated>
+    </task>
+    <task id="LOCAL-00324" summary="Delete min value">
+      <created>1621923252817</created>
+      <option name="number" value="00324" />
+      <option name="presentableId" value="LOCAL-00324" />
+      <option name="project" value="LOCAL" />
+      <updated>1621923252817</updated>
+    </task>
+    <task id="LOCAL-00325" summary="added buildHeap method">
+      <created>1621924672974</created>
+      <option name="number" value="00325" />
+      <option name="presentableId" value="LOCAL-00325" />
+      <option name="project" value="LOCAL" />
+      <updated>1621924672974</updated>
+    </task>
+    <task id="LOCAL-00326" summary="# Binary Search Trees">
+      <created>1621955177253</created>
+      <option name="number" value="00326" />
+      <option name="presentableId" value="LOCAL-00326" />
+      <option name="project" value="LOCAL" />
+      <updated>1621955177254</updated>
+    </task>
+    <task id="LOCAL-00327" summary="added TreeNode class">
+      <created>1621958847259</created>
+      <option name="number" value="00327" />
+      <option name="presentableId" value="LOCAL-00327" />
+      <option name="project" value="LOCAL" />
+      <updated>1621958847259</updated>
+    </task>
+    <task id="LOCAL-00328" summary="added put method">
+      <created>1621962449419</created>
+      <option name="number" value="00328" />
+      <option name="presentableId" value="LOCAL-00328" />
+      <option name="project" value="LOCAL" />
+      <updated>1621962449419</updated>
+    </task>
+    <task id="LOCAL-00329" summary="added get method">
+      <created>1621964146718</created>
+      <option name="number" value="00329" />
+      <option name="presentableId" value="LOCAL-00329" />
+      <option name="project" value="LOCAL" />
+      <updated>1621964146721</updated>
+    </task>
+    <task id="LOCAL-00330" summary="added delete method">
+      <created>1622094270044</created>
+      <option name="number" value="00330" />
+      <option name="presentableId" value="LOCAL-00330" />
+      <option name="project" value="LOCAL" />
+      <updated>1622094270046</updated>
+    </task>
+    <task id="LOCAL-00331" summary="added remove method">
+      <created>1622094398324</created>
+      <option name="number" value="00331" />
+      <option name="presentableId" value="LOCAL-00331" />
+      <option name="project" value="LOCAL" />
+      <updated>1622094398324</updated>
+    </task>
+    <task id="LOCAL-00332" summary="added spliceOut, findSuccessor, findMin methods">
+      <created>1622184279144</created>
+      <option name="number" value="00332" />
+      <option name="presentableId" value="LOCAL-00332" />
+      <option name="project" value="LOCAL" />
+      <updated>1622184279145</updated>
+    </task>
+    <task id="LOCAL-00333" summary="added test code">
+      <created>1622184390363</created>
+      <option name="number" value="00333" />
+      <option name="presentableId" value="LOCAL-00333" />
+      <option name="project" value="LOCAL" />
+      <updated>1622184390363</updated>
+    </task>
+    <option name="localTasksCounter" value="334" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49173000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="906" y="410" width="1680" height="1298" extended-state="0" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48595506" visible="true" weight="0.17216118" />
-      <window_info id="Structure" order="1" sideWeight="0.51404494" side_tool="true" weight="0.20919882" />
-      <window_info id="Favorites" order="2" sideWeight="0.50859106" side_tool="true" weight="0.20352113" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40460527" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3114035" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.25767544" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.17653508" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.45496184" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32894737" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32894737" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32936507" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -406,19 +757,10 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
               </option>
             </State>
           </value>
@@ -439,41 +781,111 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="List implementation of a tree" />
+    <MESSAGE value="renamed the file" />
+    <MESSAGE value="Implementing tree with linked list" />
+    <MESSAGE value="Implementing tree with a linked list" />
+    <MESSAGE value="added methods to print a tree diagram" />
+    <MESSAGE value="added basic support files" />
+    <MESSAGE value="remove comments" />
+    <MESSAGE value="format update" />
+    <MESSAGE value="parse_tree" />
+    <MESSAGE value="format updates" />
+    <MESSAGE value="added comments" />
+    <MESSAGE value="added evaluate method to perform calculation on the nodes" />
+    <MESSAGE value="Tree Traversals" />
+    <MESSAGE value="Priority Queue with Binary Heaps" />
+    <MESSAGE value="Binary Heap constructor and insert" />
+    <MESSAGE value="Delete min value" />
+    <MESSAGE value="added buildHeap method" />
+    <MESSAGE value="# Binary Search Trees" />
+    <MESSAGE value="added TreeNode class" />
+    <MESSAGE value="added put method" />
+    <MESSAGE value="added get method" />
+    <MESSAGE value="added delete method" />
+    <MESSAGE value="added remove method" />
+    <MESSAGE value="added spliceOut, findSuccessor, findMin methods" />
+    <MESSAGE value="added test code" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DailyCoding/2.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Quicksort/quicksort.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Quicksort/quicksort.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Quicksort/quicksort.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_integer.coverage" NAME="reverse_integer Coverage Results" MODIFIED="1565446578837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565376674757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$205.coverage" NAME="205 Coverage Results" MODIFIED="1564762757864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$testMinMaxPeek.coverage" NAME="testMinMaxPeek Coverage Results" MODIFIED="1587323302290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$productSum.coverage" NAME="productSum Coverage Results" MODIFIED="1583041232825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Recursion" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$insertion_sort.coverage" NAME="insertion_sort Coverage Results" MODIFIED="1621012552075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Sorting" />
     <SUITE FILE_PATH="coverage/Coding_Problems$palindrome_num.coverage" NAME="palindrome_num Coverage Results" MODIFIED="1565447303236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$2.coverage" NAME="2 Coverage Results" MODIFIED="1565138661949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$two_sum.coverage" NAME="two_sum Coverage Results" MODIFIED="1565038071317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$run_length_encoding.coverage" NAME="run-length_encoding Coverage Results" MODIFIED="1616910476386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_integer.coverage" NAME="reverse_integer Coverage Results" MODIFIED="1565446578837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$maxSubarraySum.coverage" NAME="maxSubarraySum Coverage Results" MODIFIED="1588978394154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FamousAlgorithms" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$group_anagrams.coverage" NAME="group_anagrams Coverage Results" MODIFIED="1617383119363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$lowest_common_ancestor.coverage" NAME="lowest_common_ancestor Coverage Results" MODIFIED="1616172403868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Trees/BinaryTrees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$Unittests_in_testMinMaxPeek_py.coverage" NAME="Unittests in testMinMaxPeek.py Coverage Results" MODIFIED="1587322815305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$test_rotation.coverage" NAME="test_rotation Coverage Results" MODIFIED="1614875564457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$longest_substring_no_duplication.coverage" NAME="longest-substring-no-duplication Coverage Results" MODIFIED="1617731029215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$threeLargestNumbers.coverage" NAME="threeLargestNumbers Coverage Results" MODIFIED="1583094697903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Searching" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$common_elements.coverage" NAME="common_elements Coverage Results" MODIFIED="1614841251425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$one_away_test.coverage" NAME="one_away_test Coverage Results" MODIFIED="1614964194467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$sorted_squared_array.coverage" NAME="sorted_squared_array Coverage Results" MODIFIED="1616734895103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$threeNumberSum.coverage" NAME="threeNumberSum Coverage Results" MODIFIED="1583865338930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$nth_element.coverage" NAME="nth_element Coverage Results" MODIFIED="1615481813894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Linked List" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$valid_ip_addresses.coverage" NAME="valid_ip_addresses Coverage Results" MODIFIED="1617302828195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$asteroidCollision.coverage" NAME="asteroidCollision Coverage Results" MODIFIED="1586709734165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$binaryTree.coverage" NAME="binaryTree Coverage Results" MODIFIED="1621532417300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/pythonds/trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$Most_Frequent_item_in_an_array.coverage" NAME="Most_Frequent_item_in_an_array Coverage Results" MODIFIED="1604083012879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$quickSort.coverage" NAME="quickSort Coverage Results" MODIFIED="1598833995926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
     <SUITE FILE_PATH="coverage/Coding_Problems$quicksort.coverage" NAME="quicksort Coverage Results" MODIFIED="1565211531580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Quicksort" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_words.coverage" NAME="reverse_words Coverage Results" MODIFIED="1617467243981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$two_sum.coverage" NAME="two_sum Coverage Results" MODIFIED="1565038071317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$non_repeating_test.coverage" NAME="non_repeating_test Coverage Results" MODIFIED="1614880611693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$numberOfWaysToMakeChange.coverage" NAME="numberOfWaysToMakeChange Coverage Results" MODIFIED="1586534183538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dynamic Programming" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$_735_.coverage" NAME="[735]行星碰撞 Coverage Results" MODIFIED="1586715968203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/var/folders/_y/3cxmq6cx2zqbfd5bgp6swfxc0000gn/T/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$is_rotation.coverage" NAME="is_rotation Coverage Results" MODIFIED="1614840800337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$205.coverage" NAME="205 Coverage Results" MODIFIED="1564762757864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$balancedBrackets.coverage" NAME="balancedBrackets Coverage Results" MODIFIED="1587447224727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$anagram.coverage" NAME="anagram Coverage Results" MODIFIED="1620659340205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$Priority_Queues_Binary_Heaps.coverage" NAME="Priority_Queues_Binary_Heaps Coverage Results" MODIFIED="1622045541318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$minesweeper_click.coverage" NAME="minesweeper_click Coverage Results" MODIFIED="1615140198559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$python_tips.coverage" NAME="python_tips Coverage Results" MODIFIED="1586673556108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dynamic Programming" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$non_repeating_char.coverage" NAME="non_repeating_char Coverage Results" MODIFIED="1614877854807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$2.coverage" NAME="2 Coverage Results" MODIFIED="1565138661949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$selectionSort.coverage" NAME="selectionSort Coverage Results" MODIFIED="1583545680458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$common_elements_2_arrays.coverage" NAME="common_elements_2_arrays Coverage Results" MODIFIED="1614755740499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$bubbleSort.coverage" NAME="bubbleSort Coverage Results" MODIFIED="1583160770542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$test.coverage" NAME="cls_vs_static Coverage Results" MODIFIED="1606114234523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$ms_test.coverage" NAME="ms_test Coverage Results" MODIFIED="1615187650061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$rotate.coverage" NAME="rotate Coverage Results" MODIFIED="1615445794782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$Non_Constructible_change.coverage" NAME="Non-Constructible_change Coverage Results" MODIFIED="1616258477183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$is_one_away.coverage" NAME="is_one_away Coverage Results" MODIFIED="1614963505545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$moveElementToEnd.coverage" NAME="moveElementToEnd Coverage Results" MODIFIED="1583602106479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$binary_search_tree.coverage" NAME="binary_search_tree Coverage Results" MODIFIED="1615704649859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$longest_Palindromic_substring.coverage" NAME="longest_Palindromic_substring Coverage Results" MODIFIED="1617120518442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$parse_tree.coverage" NAME="parse_tree Coverage Results" MODIFIED="1621835431761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$remove_duplicates.coverage" NAME="remove-duplicates Coverage Results" MODIFIED="1620196510749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Linked List" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$tree_linked_list.coverage" NAME="tree_linked_list Coverage Results" MODIFIED="1621441784044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565376674757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$binary_search.coverage" NAME="binary_search Coverage Results" MODIFIED="1620666346678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$MinMaxStack.coverage" NAME="MinMaxStack Coverage Results" MODIFIED="1587322519318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$First_non_repeating_character.coverage" NAME="First-non-repeating-character Coverage Results" MODIFIED="1617603101841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$minesweeper.coverage" NAME="minesweeper Coverage Results" MODIFIED="1615050194899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$smallestDifference.coverage" NAME="smallestDifference Coverage Results" MODIFIED="1585502105422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$insertion_test.coverage" NAME="insertion_test Coverage Results" MODIFIED="1621016308780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Sorting" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$hashing.coverage" NAME="hashing Coverage Results" MODIFIED="1621351620273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$tournament_winner.coverage" NAME="tournament_winner Coverage Results" MODIFIED="1616390318057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$insertionSort.coverage" NAME="insertionSort Coverage Results" MODIFIED="1583247997220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$rotate_test.coverage" NAME="rotate_test Coverage Results" MODIFIED="1615394372712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -483,361 +895,5 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DailyCoding/106.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/107.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="45" lean-forward="true" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/108.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/109.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Strings/1_away_strings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Strings/non_repeating_char.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quicksort/quicksort.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/110.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/two_sum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Strings/reverse_string.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="1758" lean-forward="true" selection-start-line="1758" selection-end-line="1758" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/PDF/111.py" />
-    <entry file="file://$PROJECT_DIR$/DailyCoding/112.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/111.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/113.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/114.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="65" column="57" lean-forward="true" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/rome_to_integer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/115.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/118.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/117.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="46" selection-end-column="43" />
-          <folding>
-            <element signature="e#628#651#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/116.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/119.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/120.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/121.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="63" column="22" selection-start-line="58" selection-start-column="14" selection-end-line="63" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/122.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/123.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-759">
-          <caret column="18" selection-start-column="18" selection-end-line="27" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/124.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/125.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/126.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/127.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/128.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/129.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/130.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/134.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/133.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/132.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="60" column="18" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="60" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/131.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/137.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/136.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/135.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Arrays/common_elements_2_arrays.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Arrays/Most_Frequent_item_in_an_array.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Arrays/product_of_all_other_elements.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/140.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/139.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DailyCoding/138.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Arrays/is_rotation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/palindrome_num.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/climbStairs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LeetCode/Easy/reverse_integer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
