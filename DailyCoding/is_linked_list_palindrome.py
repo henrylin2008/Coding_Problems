@@ -9,7 +9,8 @@
 # Solution
 # This problem can be solved for both singly and doubly linked list by using iterators.
 #
-# We can then create an iterator over the first node, and another iterator over the reverse of the linked list. Then compare that the two are the same.
+# We can then create an iterator over the first node, and another iterator over the reverse of the linked list. Then
+# compare that the two are the same.
 #
 # This would take O(N) space and time.
 

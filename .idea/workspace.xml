@@ -28,12 +28,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="Priority Queue with Binary Heaps">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/93.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/largest_bst_subtree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/94.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/max_path_sum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/95.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/next_permutation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/96.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/permutations.py" afterDir="false" />
+    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/DailyCoding/98.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/find_word_in_a_board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/99.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/longest_consecutive.py" afterDir="false" />
     </list>
     <list id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="added the logic" />
     <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph" />
@@ -334,14 +331,7 @@
       <workItem from="1621265750382" duration="24065000" />
       <workItem from="1621789665532" duration="156000" />
       <workItem from="1621830946332" duration="24920000" />
-      <workItem from="1627229252236" duration="1018000" />
-    </task>
-    <task id="LOCAL-00286" summary="recursion">
-      <created>1620711909699</created>
-      <option name="number" value="00286" />
-      <option name="presentableId" value="LOCAL-00286" />
-      <option name="project" value="LOCAL" />
-      <updated>1620711909699</updated>
+      <workItem from="1627229252236" duration="1480000" />
     </task>
     <task id="LOCAL-00287" summary="bubble sort">
       <created>1620712787244</created>
@@ -679,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627229985368</updated>
     </task>
-    <option name="localTasksCounter" value="335" />
+    <task id="LOCAL-00335" summary="updating file name and the format">
+      <created>1627230451542</created>
+      <option name="number" value="00335" />
+      <option name="presentableId" value="LOCAL-00335" />
+      <option name="project" value="LOCAL" />
+      <updated>1627230451542</updated>
+    </task>
+    <option name="localTasksCounter" value="336" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,7 +725,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="renamed the file" />
     <MESSAGE value="Implementing tree with linked list" />
     <MESSAGE value="Implementing tree with a linked list" />
     <MESSAGE value="added methods to print a tree diagram" />
@@ -753,7 +749,8 @@
     <MESSAGE value="added spliceOut, findSuccessor, findMin methods" />
     <MESSAGE value="added test code" />
     <MESSAGE value="updating file name and its format" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating file name and its format" />
+    <MESSAGE value="updating file name and the format" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating file name and the format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
