@@ -9,7 +9,8 @@
 # Solution
 # If the strings are not the same length, then we can immediately return false.
 #
-# One solution might be to use a doubly nested for loop, and compare each character starting at different offsets and verifying that they all match up:
+# One solution might be to use a doubly nested for loop, and compare each character starting at different offsets and
+# verifying that they all match up:
 
 def is_shifted(a, b):
     if len(a) != len(b):
@@ -20,8 +21,11 @@ def is_shifted(a, b):
             return True
 
     return False
-# Another cleaner way to solve this might be to concatenate one of the strings to itself (like a + a), and try looking for the other string in this concatenated string. If the string is shifted, we should find it in the concatenated string.
 
+
+# Another cleaner way to solve this might be to concatenate one of the strings to itself (like a + a),
+# and try looking for the other string in this concatenated string. If the string is shifted, we should find it in
+# the concatenated string.
 def is_shifted(a, b):
     if len(a) != len(b):
         return False

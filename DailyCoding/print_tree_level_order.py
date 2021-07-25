@@ -9,8 +9,12 @@
 # 2   3
 #    / \
 #   4   5
+
 # Solution
-# We can solve this problem by using a queue, initialized with the root, and continuously grabbing the first element and adding its left child and then its right child to the back of the queue, like so:
+# We can solve this problem by using a queue, initialized with the root, and continuously grabbing the first element
+# and adding its left child and then its right child to the back of the queue, like so:
+from queue import Queue
+
 
 class Node:
     def __init__(self, val, left=None, right=None):
@@ -18,7 +22,6 @@ class Node:
         self.left = left
         self.right = right
 
-from queue import Queue
 
 def print_level_order(root):
     queue = Queue()

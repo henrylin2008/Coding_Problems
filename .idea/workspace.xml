@@ -29,8 +29,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DailyCoding/98.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/find_word_in_a_board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/99.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/longest_consecutive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/105.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/106.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/can_reach_end.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/107.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/print_tree_level_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/108.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/108.py" afterDir="false" />
     </list>
     <list id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="added the logic" />
     <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph" />
@@ -106,7 +109,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DailyCoding" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -115,6 +118,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DailyCoding" />
       <recent name="$PROJECT_DIR$/Dynamic Programming" />
       <recent name="$PROJECT_DIR$/Stack" />
       <recent name="$PROJECT_DIR$/Lyft" />
@@ -331,14 +335,7 @@
       <workItem from="1621265750382" duration="24065000" />
       <workItem from="1621789665532" duration="156000" />
       <workItem from="1621830946332" duration="24920000" />
-      <workItem from="1627229252236" duration="1480000" />
-    </task>
-    <task id="LOCAL-00287" summary="bubble sort">
-      <created>1620712787244</created>
-      <option name="number" value="00287" />
-      <option name="presentableId" value="LOCAL-00287" />
-      <option name="project" value="LOCAL" />
-      <updated>1620712787244</updated>
+      <workItem from="1627229252236" duration="1980000" />
     </task>
     <task id="LOCAL-00288" summary="updated comment">
       <created>1620713769921</created>
@@ -676,7 +673,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627230451542</updated>
     </task>
-    <option name="localTasksCounter" value="336" />
+    <task id="LOCAL-00336" summary="updating file name and its format">
+      <created>1627230835638</created>
+      <option name="number" value="00336" />
+      <option name="presentableId" value="LOCAL-00336" />
+      <option name="project" value="LOCAL" />
+      <updated>1627230835638</updated>
+    </task>
+    <option name="localTasksCounter" value="337" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -748,9 +752,9 @@
     <MESSAGE value="added remove method" />
     <MESSAGE value="added spliceOut, findSuccessor, findMin methods" />
     <MESSAGE value="added test code" />
-    <MESSAGE value="updating file name and its format" />
     <MESSAGE value="updating file name and the format" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating file name and the format" />
+    <MESSAGE value="updating file name and its format" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating file name and its format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
