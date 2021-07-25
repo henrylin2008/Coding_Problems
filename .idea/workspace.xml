@@ -30,18 +30,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="Priority Queue with Binary Heaps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/93.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/largest_bst_subtree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/94.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/max_path_sum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/95.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/next_permutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/96.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/permutations.py" afterDir="false" />
     </list>
     <list id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="added the logic" />
-    <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph">
-      <change beforePath="$PROJECT_DIR$/Graphs/remove-islands.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphs/remove-islands.py" afterDir="false" />
-    </list>
-    <list id="84d007dd-07b8-4731-a1a5-ede9cd778e70" name="Implementing tree with linked list" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Coding_Problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Coding_Problems.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph" />
+    <list id="84d007dd-07b8-4731-a1a5-ede9cd778e70" name="Implementing tree with linked list" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,59 +94,6 @@
     <auto-save>true</auto-save>
   </component>
   <component name="JupyterTrust" id="beca0b31-04aa-4380-9721-2e7f0d5387be" />
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="29" changelist="84d007dd-07b8-4731-a1a5-ede9cd778e70" />
-        <range start1="3" end1="5" start2="30" end2="44" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="10" end1="43" start2="49" end2="62" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="47" end1="47" start2="66" end2="67" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="51" end1="55" start2="71" end2="81" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="59" end1="115" start2="85" end2="92" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="116" end1="121" start2="93" end2="152" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="122" end1="122" start2="153" end2="154" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="125" end1="163" start2="157" end2="160" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="165" end1="165" start2="162" end2="163" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="166" end1="166" start2="164" end2="165" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="167" end1="167" start2="166" end2="167" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="172" end1="172" start2="172" end2="173" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="175" end1="175" start2="176" end2="181" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="176" end1="178" start2="182" end2="187" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="180" end1="194" start2="189" end2="191" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="201" end1="202" start2="198" end2="199" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="206" end1="207" start2="203" end2="204" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="215" end1="216" start2="212" end2="213" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="223" end1="224" start2="220" end2="221" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="228" end1="229" start2="225" end2="226" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="237" end1="238" start2="234" end2="235" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="245" end1="246" start2="242" end2="243" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="250" end1="251" start2="247" end2="248" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="259" end1="260" start2="256" end2="257" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="272" end1="273" start2="269" end2="270" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="281" end1="282" start2="278" end2="279" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="289" end1="290" start2="286" end2="287" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="294" end1="295" start2="291" end2="292" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="303" end1="304" start2="300" end2="301" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="311" end1="312" start2="308" end2="309" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="316" end1="317" start2="313" end2="314" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="327" end1="332" start2="324" end2="329" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="335" end1="335" start2="332" end2="333" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="341" end1="341" start2="339" end2="342" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="356" end1="356" start2="357" end2="512" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="357" end1="357" start2="513" end2="738" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="359" end1="398" start2="740" end2="742" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="399" end1="401" start2="743" end2="752" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="408" end1="421" start2="759" end2="763" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="441" end1="441" start2="783" end2="812" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="444" end1="466" start2="815" end2="822" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="469" end1="469" start2="825" end2="830" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="470" end1="471" start2="831" end2="855" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="472" end1="473" start2="856" end2="862" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="474" end1="476" start2="863" end2="888" changelist="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" />
-        <range start1="485" end1="841" start2="897" end2="897" changelist="84d007dd-07b8-4731-a1a5-ede9cd778e70" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectId" id="1aJLHHhq69kV5sDaRJHDIgjxsbV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -391,13 +334,7 @@
       <workItem from="1621265750382" duration="24065000" />
       <workItem from="1621789665532" duration="156000" />
       <workItem from="1621830946332" duration="24920000" />
-    </task>
-    <task id="LOCAL-00285" summary="binary search">
-      <created>1620666762144</created>
-      <option name="number" value="00285" />
-      <option name="presentableId" value="LOCAL-00285" />
-      <option name="project" value="LOCAL" />
-      <updated>1620666762145</updated>
+      <workItem from="1627229252236" duration="1018000" />
     </task>
     <task id="LOCAL-00286" summary="recursion">
       <created>1620711909699</created>
@@ -735,7 +672,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622184390363</updated>
     </task>
-    <option name="localTasksCounter" value="334" />
+    <task id="LOCAL-00334" summary="updating file name and its format">
+      <created>1627229985368</created>
+      <option name="number" value="00334" />
+      <option name="presentableId" value="LOCAL-00334" />
+      <option name="project" value="LOCAL" />
+      <updated>1627229985368</updated>
+    </task>
+    <option name="localTasksCounter" value="335" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -784,7 +728,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="List implementation of a tree" />
     <MESSAGE value="renamed the file" />
     <MESSAGE value="Implementing tree with linked list" />
     <MESSAGE value="Implementing tree with a linked list" />
@@ -809,7 +752,8 @@
     <MESSAGE value="added remove method" />
     <MESSAGE value="added spliceOut, findSuccessor, findMin methods" />
     <MESSAGE value="added test code" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test code" />
+    <MESSAGE value="updating file name and its format" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating file name and its format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -8,7 +8,10 @@
 #
 # set(key, value, time): sets key to value for t = time.
 # get(key, time): gets the key at t = time.
-# The map should work like this. If we set a key at a particular time, it will maintain that value forever or until it gets set at a later time. In other words, when we get a key at a time, it should return the value that was set for that key set at the most recent time.
+
+# The map should work like this. If we set a key at a particular time, it will maintain that value forever or until
+# it gets set at a later time. In other words, when we get a key at a time, it should return the value that was set
+# for that key set at the most recent time.
 #
 # Consider the following examples:
 #
@@ -22,23 +25,31 @@
 # d.set(1, 1, 0) # set key 1 to value 1 at time 0
 # # d.set(1, 2, 0) # set key 1 to value 2 at time 0
 # # d.get(1, 0) # get key 1 at time 0 should be 2
-# Solution
-# One possible way to solve this question is using a map of maps, where each key has its own map of time-value pairs. That would mean something like:
 
-{
-    key: {
-        time: value,
-        time: value,
-        ...
-    },
-    key: {
-        time: value,
-        time: value,
-        ...
-    },
-    ...
-}
-# Also, if a particular time does not exist on the time-value map, we must be able to get the value of the nearest previous time (or null if doesn't have one). A sorted map would fit the bill, but python standard library doesn't have one. So, let's see how this map would look:
+# Solution
+# One possible way to solve this question is using a map of maps, where each key has its own map of
+# time-value pairs. That would mean something like:
+
+# {
+#     key: {
+#         time: value,
+#         time: value,
+#         ...
+#     },
+#     key: {
+#         time: value,
+#         time: value,
+#         ...
+#     },
+#     ...
+# }
+
+# Also, if a particular time does not exist on the time-value map, we must be able to get the value of the nearest
+# previous time (or null if doesn't have one). A sorted map would fit the bill, but python standard library doesn't
+# have one. So, let's see how this map would look:
+import bisect
+from collections import defaultdict
+
 
 class TimeMap:
     def __init__(self):
@@ -60,9 +71,13 @@ class TimeMap:
     def set(self, key, value):
         self.sorted_keys_cache = None
         self.map[key] = value
-# This is a map with a list of sorted keys. To find out the nearest previous time we use the binary search algorithm provided by the bisect.
+
+
+# This is a map with a list of sorted keys. To find out the nearest previous time we use the binary search algorithm
+# provided by the bisect.
 #
-# Any write operation on this map wipes the key's cache, causing a full sort of the keys on the next get call, which in python's TimSort averages as O(n log n) complexity.
+# Any write operation on this map wipes the key's cache, causing a full sort of the keys on the next get call,
+# which in python's TimSort averages as O(n log n) complexity.
 #
 # For mixed workloads, a more suitable approach is to use arrays under the hood. Something like this:
 
@@ -94,7 +109,10 @@ class TimeMap:
         else:
             self.keys.insert(i + 1, key)
             self.values.insert(i + 1, value)
-# In this way, both get and set behave more predictable from the performance standpoint, it's just a binary search, and for set two array reallocations in the worst case.
+
+
+# In this way, both get and set behave more predictable from the performance standpoint, it's just a binary search,
+# and for set two array reallocations in the worst case.
 #
 # The last missing part to solve this question is the first level map, which the code would look this:
 
