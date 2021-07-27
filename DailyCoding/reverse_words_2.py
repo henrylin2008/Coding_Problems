@@ -2,14 +2,20 @@
 # Problem
 # This problem was asked by Facebook.
 #
-# Given a string and a set of delimiters, reverse the words in the string while maintaining the relative order of the delimiters. For example, given "hello/world:here", return "here/world:hello"
+# Given a string and a set of delimiters, reverse the words in the string while maintaining the relative order of the
+# delimiters. For example, given "hello/world:here", return "here/world:hello"
 #
 # Follow-up: Does your solution work for the following cases: "hello/world:here/", "hello//world:here"
 #
 # Solution
-# The algorithm seems rather straightforward, but there are quite a few edge cases. We need to make sure that we handle when there are multiple delimiters in a row, as well as delimiters at the beginning and/or end of the string. One way we can handle these cases is by iterating through the string, and adding delimiters to the output when they appear. When we reach a word, we add the word from the end of the string instead of the current word. In order to do this, we pre-process the string into a list of words and reverse the list.
+# The algorithm seems rather straightforward, but there are quite a few edge cases. We need to make sure
+# that we handle when there are multiple delimiters in a row, as well as delimiters at the beginning and/or end of
+# the string. One way we can handle these cases is by iterating through the string, and adding delimiters to the
+# output when they appear. When we reach a word, we add the word from the end of the string instead of the current
+# word. In order to do this, we pre-process the string into a list of words and reverse the list.
 
 import re
+
 
 def reverse(string, delimiters):
     # Parse the string into words between delimiters using regex
@@ -40,9 +46,13 @@ def reverse(string, delimiters):
             delimiter_found = False
 
     return ''.join(output)
-# We can also simplify our code by using an additional regex to split the string into a list of words and a list of delimiters. Then, we reverse the list of words and merge the two lists together. We need to again be careful of cases where there are multiple consecutive delimiters or delimiters that appear at the beginning and/or end of the string.
 
-import re
+
+# We can also simplify our code by using an additional regex to split the string into a list of words and a list of
+# delimiters. Then, we reverse the list of words and merge the two lists together. We need to again be careful of
+# cases where there are multiple consecutive delimiters or delimiters that appear at the beginning and/or end of the
+# string.
+
 
 def reverse(string, delimiters):
     # Parse the string into words between delimiters using regex
