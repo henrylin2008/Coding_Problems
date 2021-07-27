@@ -14,17 +14,21 @@
 # Return the nodes 5 and 15.
 #
 # Solution
-# This question is similar to the two-sum problem with a list. We can actually reduce this problem into that one by turning the tree into a list. To save some space, we'll use generators, which are like list-like but are generated on-the-fly.
+
+# This question is similar to the two-sum problem with a list. We can actually reduce this problem into that one by
+# turning the tree into a list. To save some space, we'll use generators, which are like list-like but are generated
+# on-the-fly.
 
 def two_sum(root, K):
-    seen = {} # Map of val to node
+    seen = {}  # Map of val to node
 
     for node in iter_tree(root):
         if K - node.val in seen:
-            return (node, seen[K - node.val])
+            return node, seen[K - node.val]
         seen[node.val] = node
 
     return None
+
 
 def iter_tree(root):
     if root:
@@ -35,14 +39,18 @@ def iter_tree(root):
 
         for node in iter_tree(root.right):
             yield node
-# Another solution is to simply to iterate over each node and do a binary tree search for K - node.val. This takes O(N log N) time since for each node, we do a search which takes log N. However, it will only take O(log N) space because the call stack gets log N deep.
+
+
+# Another solution is to simply to iterate over each node and do a binary tree search for K - node.val. This takes O(
+# N log N) time since for each node, we do a search which takes log N. However, it will only take O(log N) space
+# because the call stack gets log N deep.
 
 def two_sum(root, K):
     for node_one in iter_tree(root):
         node_two = search(root, K - node_one.val)
 
         if node_two:
-            return (node_one, node_two)
+            return node_one, node_two
 
     return None
 
