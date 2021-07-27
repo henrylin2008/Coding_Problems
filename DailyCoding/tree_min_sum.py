@@ -5,19 +5,17 @@
 # Given a binary tree, return the level of the tree with minimum sum.
 #
 # Solution
-# A binary tree is a data structure in which each node has at most two children (left and right), and a level is how many parents a node has until it reaches the root.
+# A binary tree is a data structure in which each node has at most two children (left and right),
+# and a level is how many parents a node has until it reaches the root.
 #
 # To better explain this question, let's see this example:
 #
-#        1      (Level 0 = 1)
-#       / \
-#      2   3    (Level 1 = 2 + 3)
-#         / \
-#        4   5  (Level 2 = 4 + 5)
-# One possible way to solve this problem is iterate level by level on the tree's nodes, so we can get theirs respective sum. Like this code:
+# 1      (Level 0 = 1) / \ 2   3    (Level 1 = 2 + 3) / \ 4   5  (Level 2 = 4 + 5) One possible way to solve this
+# problem is iterate level by level on the tree's nodes, so we can get theirs respective sum. Like this code:
 
 from Queue import Queue
 from collections import defaultdict
+
 
 class Node:
     def __init__(self, value, left=None, right=None):
@@ -25,11 +23,11 @@ class Node:
         self.left = left
         self.right = right
 
+
 def minimum_level_sum(root):
     queue = Queue()
     queue.put((root, 0))
-    level_to_sum = defaultdict(int) # Maps level to its sum
-
+    level_to_sum = defaultdict(int)  # Maps level to its sum
 
     while not queue.empty():
         node, level = queue.get()
@@ -42,7 +40,10 @@ def minimum_level_sum(root):
             queue.put((node.left, level + 1))
 
     return min(level_to_sum, key=level_to_sum.get)
-# The complexity of this function is O(N), and works both with positive or negative values. It works by doing a breadth first search and keeping track of the sum in each level.
+
+
+# The complexity of this function is O(N), and works both with positive or negative values. It works by doing a
+# breadth first search and keeping track of the sum in each level.
 #
 # You can try yourself with these examples:
 

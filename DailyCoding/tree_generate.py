@@ -16,11 +16,13 @@
 
 import random
 
+
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 def generate():
     root = Node(0)
@@ -31,10 +33,14 @@ def generate():
         root.right = generate()
 
     return root
+
+
 # Lazy tree generation
-# The trick here is that we can generate the tree lazily. Here we use Python's property keyword, which lets us define a property that of an object at look-up time.
+# The trick here is that we can generate the tree lazily. Here we use Python's property keyword,
+# which lets us define a property that of an object at look-up time.
 #
-# When a left or right property is looked up, we check if that sub-tree has been evaulated. If not, we recursively create a new node half the time. If it has been, then we just return that node.
+# When a left or right property is looked up, we check if that sub-tree has been evaulated. If not, we recursively
+# create a new node half the time. If it has been, then we just return that node.
 #
 # The object is O(1) to create since nothing happens when it's created.
 
@@ -46,7 +52,6 @@ class Node:
 
         self._is_left_evaluated = False
         self._is_right_evaluated = False
-
 
     @property
     def left(self):
@@ -65,6 +70,7 @@ class Node:
 
         self._is_right_evaluated = True
         return self._right
+
 
 def generate():
     return Node(0)

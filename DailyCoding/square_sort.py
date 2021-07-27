@@ -7,11 +7,15 @@
 # For example, given [-9, -2, 0, 2, 3], return [0, 4, 4, 9, 81].
 #
 # Solution
-# A brute force method would be to simply square and sort the list, like so: sorted([x ** 2 for x in lst]). This would result in O(n log n) time.
+# A brute force method would be to simply square and sort the list, like so: sorted([x ** 2 for x in lst]).
+# This would result in O(n log n) time.
 #
-# A fater way to do this would be to notice that there are two natural sublists in lst: The positive numbers and negative numbers.
+# A faster way to do this would be to notice that there are two natural sublists in lst: The positive numbers and
+# negative numbers.
 #
-# The positive numbers, if sorted, would still remain sorted, while negative numbers, if sorted, would be reverse sorted. So by reversing the negative numbers and then sorting it we get two sorted sections in lst. Then we can apply a merge operation, similar to merge sort.
+# The positive numbers, if sorted, would still remain sorted, while negative numbers, if sorted, would be reverse
+# sorted. So by reversing the negative numbers and then sorting it we get two sorted sections in lst. Then we can
+# apply a merge operation, similar to merge sort.
 
 def square_sort(lst):
     negatives = [x for x in lst if x < 0]
