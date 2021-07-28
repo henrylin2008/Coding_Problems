@@ -16,9 +16,10 @@
 # Solution
 # We can use case-analysis to break the problem down to two steps.
 #
-# First, if there is a right child of node, then the leftmost descendant of node.right (or just node.right if it has none) is simply the inorder successor.
-# Otherwise, we can find the inorder successor by traversing through the parent pointers, keeping track of the current node and parent. When we find a parent whose left child is equal to node, then we know this is the inorder successor.
-# Let's look at an example.
+# First, if there is a right child of node, then the leftmost descendant of node.right (or just node.right if it has
+# none) is simply the inorder successor. Otherwise, we can find the inorder successor by traversing through the
+# parent pointers, keeping track of the current node and parent. When we find a parent whose left child is equal to
+# node, then we know this is the inorder successor. Let's look at an example.
 #
 #    10
 #   /  \
@@ -47,6 +48,7 @@ def inorder_successor(node):
         parent, node = parent.parent, parent
 
     return parent
+
 
 def leftmost(node):
     while node.left:

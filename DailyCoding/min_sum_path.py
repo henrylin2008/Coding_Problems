@@ -17,12 +17,15 @@
 # This question can be solved using structural induction.
 #
 # Assuming that we can find the min_sum_path of node.left and node.right, how could we use these results for node?
-# We can pick one of min_sum_path(node.left) min_sum_path(node.right), whichever has the min sum, and add node to the end of that list.
+# We can pick one of min_sum_path(node.left) min_sum_path(node.right), whichever has the min sum, and add node to the
+# end of that list.
 # For the base case, we simply return [] since no such path exists.
-# Since the above code returns the list in reversed order, we can create a wrapper method that can reverse this list to make it in proper order:
+# Since the above code returns the list in reversed order, we can create a wrapper method that can reverse this list
+# to make it in proper order:
 
 def min_sum_path(node):
     return list(reversed(_min_sum_path(node)))
+
 
 def _min_sum_path(node):
     if node:

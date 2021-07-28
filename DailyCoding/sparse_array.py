@@ -10,9 +10,13 @@
 # set(i, val): updates index at i with val.
 # get(i): gets the value at index i.
 # Solution
-# Since the original array is mostly zeroes, we should be able to manage our array with a lot less space by only keeping track of the non-zero values and indices. We can use a dictionary to keep track of those, and default to zero when the key is not found in our dictionary.
+
+# Since the original array is mostly zeroes, we should be able to manage our array with a lot less space by only
+# keeping track of the non-zero values and indices. We can use a dictionary to keep track of those, and default to
+# zero when the key is not found in our dictionary.
 #
-# Remember to also check the bounds when setting or getting i, and to clean up any indices if we're setting an index to zero again.
+# Remember to also check the bounds when setting or getting i, and to clean up any indices if we're setting an index
+# to zero again.
 
 class SparseArray:
     def __init__(self, arr, n):

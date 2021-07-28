@@ -2,7 +2,8 @@
 # Problem
 # This question was asked by Google.
 #
-# Given an N by M matrix consisting only of 1's and 0's, find the largest rectangle containing only 1's and return its area.
+# Given an N by M matrix consisting only of 1's and 0's, find the largest rectangle containing only 1's and return
+# its area.
 #
 # For example, given the following matrix:
 #
@@ -13,7 +14,11 @@
 # Return 4.
 #
 # Solution
-# The brute force method for solving this problem would involve enumerating every possible subrectangle in the matrix, checking if they are all 1s and summing them up if they are, keeping track of the largest subrectangle of 1s so far. This would take constant space but O(M3N3) time, since we have to enumerate every subrectangle, which is O(N2M2), and for each subrectangle we may have to sum up all the area inside it, which is another O(MN).
+
+# The brute force method for solving this problem would involve enumerating every possible subrectangle in the
+# matrix, checking if they are all 1s and summing them up if they are, keeping track of the largest subrectangle of
+# 1s so far. This would take constant space but O(M3N3) time, since we have to enumerate every subrectangle,
+# which is O(N2M2), and for each subrectangle we may have to sum up all the area inside it, which is another O(MN).
 #
 # The code for the brute force method would look like this:
 
@@ -24,8 +29,10 @@ def is_valid(matrix, top_left_row, top_left_col, bottom_right_row, bottom_right_
                 return False
     return True
 
+
 def area(top_left_row, top_left_col, bottom_right_row, bottom_right_col):
     return (bottom_right_row - top_left_row) * (bottom_right_col - top_left_col)
+
 
 def largest_rectangle(matrix):
     n, m = len(matrix), len(matrix[0])
@@ -48,7 +55,10 @@ def largest_rectangle(matrix):
                                     bottom_right_row,
                                     bottom_right_col))
     return max_so_far
-# To improve the runtime, we can actually only look at the whole matrix once. If we keep a row in our cache, then we can keep incrementing the elements in our row for each column if we encounter a 1, or reset it to 0 if we encounter a 0. Then we can infer the largest subrectangle we've seen so far, and keep track of the largest.
+
+# To improve the runtime, we can actually only look at the whole matrix once. If we keep a row in our cache,
+# then we can keep incrementing the elements in our row for each column if we encounter a 1, or reset it to 0 if we
+# encounter a 0. Then we can infer the largest subrectangle we've seen so far, and keep track of the largest.
 #
 # Let's go through an example:
 #
@@ -64,9 +74,12 @@ def largest_rectangle(matrix):
 #
 # After reading the third row, we get [1, 2, 3], and again infer that the largest area is 2 * 2 = 4.
 #
-# How can we infer the area? We're given a row of heights, similar to a histogram, and we want the largest rectangle we can make given these values. We can do this using brute force: calculating the area of each rectangle starting and ending at each index by multiplying the min height by the width.
+# How can we infer the area? We're given a row of heights, similar to a histogram, and we want the largest rectangle
+# we can make given these values. We can do this using brute force: calculating the area of each rectangle starting
+# and ending at each index by multiplying the min height by the width.
 #
 # The code for this would look like this:
+
 
 def infer_area(cache):
     max_area = 0
@@ -91,4 +104,5 @@ def largest_rectangle(matrix):
         max_so_far = max(max_so_far, infer_area(cache))
 
     return max_so_far
-# This would take O(MN3) time and O(N) space, since we keep one row in memory (as the cache), and we run a double for loop over each row to calculate the area.
+# This would take O(MN3) time and O(N) space, since we keep one row in memory (as the cache), and we run a double for
+# swloop over each row to calculate the area.
