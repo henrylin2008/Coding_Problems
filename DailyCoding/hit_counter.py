@@ -2,7 +2,8 @@
 # Problem
 # This question was asked by Riot Games.
 #
-# Design and implement a HitCounter class that keeps track of requests (or hits). It should support the following operations:
+# Design and implement a HitCounter class that keeps track of requests (or hits). It should support the following
+# operations:
 #
 # record(timestamp): records a hit that happened at timestamp
 # total(): returns the total number of hits recorded
@@ -12,7 +13,8 @@
 # Solution
 # Let's first assume the timestamps in Unix time, that is, integers.
 #
-# We can naively create a HitCounter class by simply using an unsorted list to store all the hits, and implement range by querying over each hit one by one:
+# We can naively create a HitCounter class by simply using an unsorted list to store all the hits, and implement
+# range by querying over each hit one by one:
 
 class HitCounter:
     def __init__(self):
@@ -30,13 +32,17 @@ class HitCounter:
             if lower <= hit <= upper:
                 count += 1
         return count
+
+
 # Here, record() and total() would take constant time, but range() would take O(n) time.
 #
-# One tradeoff we could make here is to use a sorted list or binary search tree to keep track of the hits. That way, range() would now take O(lg n) time, but so would record().
+# One tradeoff we could make here is to use a sorted list or binary search tree to keep track of the hits. That way,
+# range() would now take O(lg n) time, but so would record().
 #
-# We'll use python's bisect library to maintain sortedness:
+# We'll use python's bisect library to maintain soreness:
 
 import bisect
+
 
 class HitCounter:
     def __init__(self):
@@ -52,21 +58,26 @@ class HitCounter:
         left = bisect.bisect_left(self.hits, lower)
         right = bisect.bisect_right(self.hits, upper)
         return right - left
+
+
 # This will still take up a lot of space, though -- one element for each timestamp.
 #
 # To address the follow-up question, we can make several possible trade-offs.
 #
-# One possible trade-off would be to sacrifice accuracy for memory by grouping together timestamps in a coarser granularity, such as minute or even hours. That means we'll lose some accuracy around the borders but we'd be using up to a constant factor less space.
+# One possible trade-off would be to sacrifice accuracy for memory by grouping together timestamps in a coarser
+# granularity, such as minute or even hours. That means we'll lose some accuracy around the borders but we'd be using
+# up to a constant factor less space.
 #
-# For our solution, we'll keep track of each group in a tuple where the first item is the timestamp in minutes and the second is the number of hits occurring within that minute. We'll sort the tuples by minute for O(lg n) record:
+# For our solution, we'll keep track of each group in a tuple where the first item is the timestamp in minutes and
+# the second is the number of hits occurring within that minute. We'll sort the tuples by minute for O(lg n) record:
 
-import bisect
 from math import floor
+
 
 class HitCounter:
     def __init__(self):
         self.counter = 0
-        self.hits = [] # (timestamp in minutes, # of times)
+        self.hits = []  # (timestamp in minutes, # of times)
 
     def record(self, timestamp):
         self.counter += 1

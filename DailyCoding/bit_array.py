@@ -12,16 +12,21 @@
 # Solution
 # Although Python has arbitrary precision, let's assume each Python int has 32 bits.
 #
-# We can use a list of ints to store size bits. Since size may not be divisible by 32, we find the ceiling of size / 32 to figure out the number of integers we need in the list.
+# We can use a list of ints to store size bits. Since size may not be divisible by 32, we find the ceiling of size /
+# 32 to figure out the number of integers we need in the list.
 #
 # Using the above strategy, we would store the first 32 bits in list[0], the next 32 bits in list[1], and so forth.
 #
-# For the get(i) method, we first find the index in the list that holds the ith bit, which is at i / BITS_PER_INT. Then we find the offset in the integer which holds the bit, which is at i % BITS_PER_INT. After these steps, we can extract the bit like so: (self._list[list_idx] >> int_idx) & 1
+# For the get(i) method, we first find the index in the list that holds the ith bit, which is at i / BITS_PER_INT.
+# Then we find the offset in the integer which holds the bit, which is at i % BITS_PER_INT. After these steps,
+# we can extract the bit like so: (self._list[list_idx] >> int_idx) & 1
 #
 # As for set(i, val), we use the following formula:
 #
 # self._list[list_idx] ^= (-val ^ self._list[list_idx]) & (1 << int_idx)
-# The above formula works since if val is 0, then the ith bit ends up getting xord by itself, resulting in 0. If val is 1, then, the ith bit gets xored by itself again, which results in 1.
+
+# The above formula works since if val is 0, then the ith bit ends up getting xord by itself, resulting in 0. If val
+# is 1, then, the ith bit gets xored by itself again, which results in 1.
 
 import math
 
