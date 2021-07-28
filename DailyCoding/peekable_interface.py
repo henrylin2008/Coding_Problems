@@ -2,7 +2,8 @@
 # Problem
 # This problem was asked by Google.
 #
-# Given an iterator with methods next() and hasNext(), create a wrapper iterator, PeekableInterface, which also implements peek(). peek shows the next element that would be returned on next().
+# Given an iterator with methods next() and hasNext(), create a wrapper iterator, PeekableInterface, which also
+# implements peek(). peek shows the next element that would be returned on next().
 #
 # Here is the interface:
 
@@ -18,6 +19,7 @@ class PeekableInterface(object):
 
     def hasNext(self):
         pass
+
 # Solution
 # This problem can be solved by storing an instance variable _next in our class that holds the following invariant:
 #
@@ -25,7 +27,8 @@ class PeekableInterface(object):
 #
 # We can follow this by setting _next to next(self.iterator) in the constructor and then updating on each next() call.
 #
-# Using this invariant, we can then implement peek by simply returning _next and we can implement hasNext by checking that it's not None.
+# Using this invariant, we can then implement peek by simply returning _next and we can implement hasNext by checking
+# that it's not None.
 
 class PeekableInterface(object):
     def __init__(self, iterator):

@@ -28,13 +28,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DailyCoding/swap_bits.py" afterDir="false" />
+    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="updating file name and the format">
+      <change afterPath="$PROJECT_DIR$/DailyCoding/array_two_elements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/109.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/110.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/find_leaves.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/112.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/lowest_common_ancestor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/113.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/reverse_words.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/138.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/minimum_coins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/139.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/peekable_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DailyCoding/140.py" beforeDir="false" />
     </list>
     <list id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="added the logic" />
     <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph" />
@@ -336,63 +335,7 @@
       <workItem from="1621265750382" duration="24065000" />
       <workItem from="1621789665532" duration="156000" />
       <workItem from="1621830946332" duration="24920000" />
-      <workItem from="1627229252236" duration="2291000" />
-    </task>
-    <task id="LOCAL-00289" summary="Merge Sort">
-      <created>1620798420233</created>
-      <option name="number" value="00289" />
-      <option name="presentableId" value="LOCAL-00289" />
-      <option name="project" value="LOCAL" />
-      <updated>1620798420233</updated>
-    </task>
-    <task id="LOCAL-00290" summary="added comments">
-      <created>1620800947379</created>
-      <option name="number" value="00290" />
-      <option name="presentableId" value="LOCAL-00290" />
-      <option name="project" value="LOCAL" />
-      <updated>1620800947380</updated>
-    </task>
-    <task id="LOCAL-00291" summary="folder structure">
-      <created>1620829818066</created>
-      <option name="number" value="00291" />
-      <option name="presentableId" value="LOCAL-00291" />
-      <option name="project" value="LOCAL" />
-      <updated>1620829818067</updated>
-    </task>
-    <task id="LOCAL-00292" summary="quick sort">
-      <created>1620831883906</created>
-      <option name="number" value="00292" />
-      <option name="presentableId" value="LOCAL-00292" />
-      <option name="project" value="LOCAL" />
-      <updated>1620831883906</updated>
-    </task>
-    <task id="LOCAL-00293" summary="added another solution">
-      <created>1620888597269</created>
-      <option name="number" value="00293" />
-      <option name="presentableId" value="LOCAL-00293" />
-      <option name="project" value="LOCAL" />
-      <updated>1620888597270</updated>
-    </task>
-    <task id="LOCAL-00294" summary="Shell sort">
-      <created>1620973718704</created>
-      <option name="number" value="00294" />
-      <option name="presentableId" value="LOCAL-00294" />
-      <option name="project" value="LOCAL" />
-      <updated>1620973718706</updated>
-    </task>
-    <task id="LOCAL-00295" summary="Insertion Sort">
-      <created>1621010849729</created>
-      <option name="number" value="00295" />
-      <option name="presentableId" value="LOCAL-00295" />
-      <option name="project" value="LOCAL" />
-      <updated>1621010849729</updated>
-    </task>
-    <task id="LOCAL-00296" summary="added time and space complexity">
-      <created>1621011085741</created>
-      <option name="number" value="00296" />
-      <option name="presentableId" value="LOCAL-00296" />
-      <option name="project" value="LOCAL" />
-      <updated>1621011085741</updated>
+      <workItem from="1627229252236" duration="7032000" />
     </task>
     <task id="LOCAL-00297" summary="added comments">
       <created>1621012975647</created>
@@ -681,7 +624,63 @@
       <option name="project" value="LOCAL" />
       <updated>1627231289421</updated>
     </task>
-    <option name="localTasksCounter" value="338" />
+    <task id="LOCAL-00338" summary="updating file name and its format">
+      <created>1627231574595</created>
+      <option name="number" value="00338" />
+      <option name="presentableId" value="LOCAL-00338" />
+      <option name="project" value="LOCAL" />
+      <updated>1627231574595</updated>
+    </task>
+    <task id="LOCAL-00339" summary="updating file name and the format">
+      <created>1627399997037</created>
+      <option name="number" value="00339" />
+      <option name="presentableId" value="LOCAL-00339" />
+      <option name="project" value="LOCAL" />
+      <updated>1627399997037</updated>
+    </task>
+    <task id="LOCAL-00340" summary="updating file name and the format">
+      <created>1627400334163</created>
+      <option name="number" value="00340" />
+      <option name="presentableId" value="LOCAL-00340" />
+      <option name="project" value="LOCAL" />
+      <updated>1627400334163</updated>
+    </task>
+    <task id="LOCAL-00341" summary="updating file name and the format">
+      <created>1627405695625</created>
+      <option name="number" value="00341" />
+      <option name="presentableId" value="LOCAL-00341" />
+      <option name="project" value="LOCAL" />
+      <updated>1627405695625</updated>
+    </task>
+    <task id="LOCAL-00342" summary="updating file name and the format">
+      <created>1627406284939</created>
+      <option name="number" value="00342" />
+      <option name="presentableId" value="LOCAL-00342" />
+      <option name="project" value="LOCAL" />
+      <updated>1627406284939</updated>
+    </task>
+    <task id="LOCAL-00343" summary="updating file name and the format">
+      <created>1627483552476</created>
+      <option name="number" value="00343" />
+      <option name="presentableId" value="LOCAL-00343" />
+      <option name="project" value="LOCAL" />
+      <updated>1627483552477</updated>
+    </task>
+    <task id="LOCAL-00344" summary="updating file name and the format">
+      <created>1627483942467</created>
+      <option name="number" value="00344" />
+      <option name="presentableId" value="LOCAL-00344" />
+      <option name="project" value="LOCAL" />
+      <updated>1627483942467</updated>
+    </task>
+    <task id="LOCAL-00345" summary="updating file name and the format">
+      <created>1627483953088</created>
+      <option name="number" value="00345" />
+      <option name="presentableId" value="LOCAL-00345" />
+      <option name="project" value="LOCAL" />
+      <updated>1627483953088</updated>
+    </task>
+    <option name="localTasksCounter" value="346" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -753,9 +752,9 @@
     <MESSAGE value="added remove method" />
     <MESSAGE value="added spliceOut, findSuccessor, findMin methods" />
     <MESSAGE value="added test code" />
-    <MESSAGE value="updating file name and the format" />
     <MESSAGE value="updating file name and its format" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating file name and its format" />
+    <MESSAGE value="updating file name and the format" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating file name and the format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

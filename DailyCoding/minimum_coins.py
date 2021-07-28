@@ -9,7 +9,9 @@
 # For example, given n = 16, return 3 since we can make it with a 10¢, a 5¢, and a 1¢.
 #
 # Solution
-# If we think about this problem recursively, we can assume we already have a minimum_coin(n) function and do the following:
+
+# If we think about this problem recursively, we can assume we already have a minimum_coin(n) function and do the
+# following:
 #
 # Calculate the minimum number of coins to make n - denomination for each denomination if it's valid
 # Return the min of these, plus one (to account for adding that coin).
@@ -19,7 +21,8 @@
 # If n is one of the denominations 1, 5, 10, 25, then return 1.
 # Here's the code:
 #
-# DENOMINATIONS = [1, 5, 10, 25]
+DENOMINATIONS = [1, 5, 10, 25]
+
 
 def minimum_coins(n):
     if n == 0:
@@ -28,9 +31,10 @@ def minimum_coins(n):
         return 1
     else:
         return min(1 + minimum_coins(n - d) for d in DENOMINATIONS if n - d >= 0)
-# This will run really slowly -- in exponential time, since for each call we're making up to 4 calls recursively and only decrementing our input by a constant value. To improve performance, we can use dynamic programming to keep an of all of our previous results. Now we can just look up values in the array instead of repeating subcomputations.
-#
-# DENOMINATIONS = [1, 5, 10, 25]
+# This will run really slowly -- in exponential time, since for each call we're making up to 4 calls recursively and
+# only decrementing our input by a constant value. To improve performance, we can use dynamic programming to keep an
+# of all of our previous results. Now we can just look up values in the array instead of repeating subcomputations.
+
 
 def minimum_coins_dp(n):
     cache = [0 for _ in range(n + 1)]
