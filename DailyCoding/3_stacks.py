@@ -13,15 +13,20 @@ class Stack:
 
     def push(self, item, stack_number):
         pass
+
+
 # Solution
 # In order to implement 3 stacks using one list, we separate the list into 3 separate parts, one for each stack.
 #
 # The first stack starts from list[0] and grows up.
 # The second stack starts from list[len(list) / 2] and grows up.
 # The third stack starts from list[len(list) - 1] and grows down.
-# In order to know where to put the next item on push, we store three pointers s0, s1, and s2 for the above three stacks.
+
+# In order to know where to put the next item on push, we store three pointers s0, s1, and s2 for the above three
+# stacks.
 #
-# When one of the stacks is about to overwrite another stack, we resize the stack, similar to how lists themselves are resized.
+# When one of the stacks is about to overwrite another stack, we resize the stack, similar to how lists themselves
+# are resized.
 
 class Stacks:
     def __init__(self):
@@ -66,9 +71,9 @@ class Stacks:
         prev_s2 = self.s2
 
         self.list = [None] * size
-        self.s0 = 0 # Grows up
-        self.s1 = len(self.list) / 2 # Grows up
-        self.s2 = len(self.list) - 1 # Grows down
+        self.s0 = 0     # Grows up
+        self.s1 = len(self.list) / 2    # Grows up
+        self.s2 = len(self.list) - 1    # Grows down
         self.size = size
 
         for i in range(prev_s0):
