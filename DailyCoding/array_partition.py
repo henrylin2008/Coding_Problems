@@ -7,20 +7,21 @@
 #
 # Do this in linear time and in-place.
 #
-# For example, given the array ['G', 'B', 'R', 'R', 'B', 'R', 'G'], it should become ['R', 'R', 'R', 'G', 'G', 'B', 'B'].
+# For example, given the array ['G', 'B', 'R', 'R', 'B', 'R', 'G'], it should become ['R', 'R', 'R', 'G', 'G', 'B',
+# 'B'].
 #
-# Solution
-# It may be easier to first consider an easier problem: one with only two possible values, say 'R' and 'G'. Then we could
-# maintain the following loop invariant quite easily:
+# Solution It may be easier to first consider an easier problem: one with only two possible values, say 'R' and 'G'.
+# Then we could maintain the following loop invariant quite easily:
 #
 # Maintain three sections of the array using two indices, low and high:
 # Strictly 'R's: array[:low]
 # Unknown: array[low:high]
 # Strictly 'G's: array[high:]
-# Initially, low will be 0 and high will be len(array) - 1, since the whole array is unknown. As we iterate over the array,
-# we'll swap any 'G's we see to the third section and decrement high. If we see an 'R', then we just need to increment low,
-# since that's where it belongs. We can terminate once low crosses high. So we can gradually shrink our unknown section through
-# the following algorithm:
+
+# Initially, low will be 0 and high will be len(array) - 1, since the whole array is unknown. As we iterate over the
+# array, we'll swap any 'G's we see to the third section and decrement high. If we see an 'R', then we just need to
+# increment low, since that's where it belongs. We can terminate once low crosses high. So we can gradually shrink
+# our unknown section through the following algorithm:
 
 def partition(arr):
     low, high = 0, len(arr) - 1
@@ -30,6 +31,8 @@ def partition(arr):
         else:
             arr[low], arr[high] = arr[high], arr[low]
             high -= 1
+
+
 # This correctly partitions our array into two separate categories. How can we extend this to three partitions? Let's
 # maintain four sections using 3 indices, low, mid, and high:
 
