@@ -15,7 +15,7 @@
 #  0   0
 # should be pruned to:
 #
-#    0
+#    0s
 #   / \
 #  1   0
 #     /
@@ -23,7 +23,9 @@
 # We do not remove the tree at the root or its left child because it still has a 1 as a descendant.
 #
 # Solution
-# If we think about prune recursively and assume that it works, then we can run prune on our input tree's left and right child and it should get rid of all subtrees that are wholly 0s. By that logic, if there is still a left or right child then this the current tree cannot be wholly 0s. So the only remaining cases are:
+# If we think about prune recursively and assume that it works, then we can run prune on our input tree's
+# left and right child and it should get rid of all subtrees that are wholly 0s. By that logic, if there is still a
+# left or right child then this the current tree cannot be wholly 0s. So the only remaining cases are:
 #
 # When the root itself is null, just return null
 # When the root's value is 0 and it is a leaf, then it should return null

@@ -7,7 +7,8 @@
 # For example, given 1 -> 2 -> 3 -> 4, return 2 -> 1 -> 4 -> 3.
 #
 # Solution
-# This problem can be solved either recursively or iteratively, and either by mutating next pointers or val values. The easiest implementation which yields the best space and time complexity is iteratively changing val.
+# This problem can be solved either recursively or iteratively, and either by mutating next pointers or val
+# values. The easiest implementation which yields the best space and time complexity is iteratively changing val.
 #
 # In the following code, we maintain and see these properties:
 #
