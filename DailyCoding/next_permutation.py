@@ -60,7 +60,7 @@ def nextPermutation(self, nums):
     if pivot >= 0:
         # Find the next-largest number to swap with
         successor = len(nums) - 1
-        while (successor > 0 and nums[successor] <= nums[pivot]):
+        while successor > 0 and nums[successor] <= nums[pivot]:
             successor -= 1
         swap(nums, pivot, successor)
 
