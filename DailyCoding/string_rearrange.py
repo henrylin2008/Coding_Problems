@@ -44,13 +44,17 @@ def rearrange(string):
         return None
 
 
-# This will take O(N2), where N is the number of letters in the string. This is because finding the maximum value in the dictionary is O(N), and we must do this every time we locate the next letter to add to our result.
+# This will take O(N2), where N is the number of letters in the string. This is because finding the maximum value in
+# the dictionary is O(N), and we must do this every time we locate the next letter to add to our result.
 
 
 #
-# We can improve this by using a better data structure. In particular, a heap will allow us to pop and push the most frequent letter in O(log N), reducing our time complexity to O(N * log N).
+# We can improve this by using a better data structure. In particular, a heap will allow us to pop and push the most
+# frequent letter in O(log N), reducing our time complexity to O(N * log N).
 #
-# Similar to before, our algorithm will be divided into two steps. First we insert the counts of each character into a heap. Then, we pop the most frequent element one at a time and add it to the result. Once this element is popped, we reinsert the previous element, decrementing its count by one.
+# Similar to before, our algorithm will be divided into two steps. First we insert the counts of each character into
+# a heap. Then, we pop the most frequent element one at a time and add it to the result. Once this element is popped,
+# we reinsert the previous element, decrementing its count by one.
 
 from collections import defaultdict
 import heapq

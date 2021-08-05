@@ -1,16 +1,20 @@
 # Problem
 # This problem was asked by Dropbox.
 #
-# Spreadsheets often use this alphabetical encoding for its columns: "A", "B", "C", ..., "AA", "AB", ..., "ZZ", "AAA", "AAB", ....
+# Spreadsheets often use this alphabetical encoding for its columns: "A", "B", "C", ..., "AA", "AB", ..., "ZZ",
+# "AAA", "AAB", ....
 #
 # Given a column number, return its alphabetical column id. For example, given 1, return "A". Given 27, return "AA".
 #
 # Solution
 # Let's look at some simpler cases first and see if we can find a pattern.
 #
-# First, what would we do if the input was between 1 and 26? In this case, we can map our input using the dictionary {1: "A", 2: "B", ..., 26: "Z"}.
+# First, what would we do if the input was between 1 and 26? In this case, we can map our input using the dictionary
+# {1: "A", 2: "B", ..., 26: "Z"}.
 #
-# Now let's look at some two-letter solutions. What would happen if our input was between 27 and 52? In this case, our first letter would be "A", and our second letter would be mapped as before. What if our input was between 53 and 78? This would be similar, except our first letter would be "B".
+# Now let's look at some two-letter solutions. What would happen if our input was between 27 and 52? In this case,
+# our first letter would be "A", and our second letter would be mapped as before. What if our input was between 53
+# and 78? This would be similar, except our first letter would be "B".
 #
 # More mathematically, for any two-letter outcome, we can perform the following steps:
 #

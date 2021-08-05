@@ -13,13 +13,15 @@
 # The sentence must end with a terminal mark immediately following a word.
 
 # Solution
-# Since the input is a stream, we will only have access to one character at a time. As a result, we must come up with
-# some rules to determine, based on the data we have seen earlier, whether adding the current character creates a valid sentence.
+# Since the input is a stream, we will only have access to one character at a time. As a result,
+# we must come up with some rules to determine, based on the data we have seen earlier, whether adding the current
+# character creates a valid sentence.
 #
 # We know that a sentence must end in a terminal punctuation mark, such as a period or question mark. So maybe if the
-# previous character was lowercase and the current character is one of these, we should print out the sentence. But we
-# must also know if a capital letter started the sentence. So maybe we can set a variable to True if a capital letter has
-# been seen. But maybe two spaces appeared at some point, and ... it turns out we need a system for these rules.
+# previous character was lowercase and the current character is one of these, we should print out the sentence. But
+# we must also know if a capital letter started the sentence. So maybe we can set a variable to True if a capital
+# letter has been seen. But maybe two spaces appeared at some point, and ... it turns out we need a system for these
+# rules.
 #
 # As it turns out, one system that suits this problem well is a finite state machine. After processing each element in
 # our stream, we can update the state to be one of the following:
@@ -30,9 +32,13 @@
 # 3: Space
 # 4: Separator
 #
-# Depending on the current character and state, different rules will apply. For example, if the current state is 0, meaning the sentence has not started, only a capital letter can follow, moving us to state 1. If any other character is seen, we remain in state 0. If at any point when processing the stream we break one of the abovementioned rules, the state gets reset to 0, and the sentence is reset to the empty string.
+# Depending on the current character and state, different rules will apply. For example, if the current state is 0,
+# meaning the sentence has not started, only a capital letter can follow, moving us to state 1. If any other
+# character is seen, we remain in state 0. If at any point when processing the stream we break one of the
+# above mentioned rules, the state gets reset to 0, and the sentence is reset to the empty string.
 #
-# Finally, if we manage to reach a terminal punctuation mark, we yield the current sentence and reset both the state and sentence.
+# Finally, if we manage to reach a terminal punctuation mark, we yield the current sentence and reset both the state
+# and sentence.
 #
 import string
 
@@ -41,6 +47,7 @@ LOWER = string.ascii_lowercase
 SPACE = [' ']
 SEP = [',', ';', ':']
 TERM = ['.', '?', '!', '‽']
+
 
 def check_sentences(stream):
     state = 0
@@ -70,5 +77,5 @@ def check_sentences(stream):
         else:
             sentence = []
 
-
-# Since appending to a list and updating our state are constant time operations, each element can be processed in O(1) time. The space required will be equal to the length of the longest sentence.
+# Since appending to a list and updating our state are constant time operations, each element can be processed in O(1)
+# time. The space required will be equal to the length of the longest sentence.
