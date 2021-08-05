@@ -2,7 +2,8 @@
 # Problem
 # This problem was asked by Goldman Sachs.
 #
-# Given a list of numbers L, implement a method sum(i, j) which returns the sum from the sublist L[i:j] (including i, excluding j).
+# Given a list of numbers L, implement a method sum(i, j) which returns the sum from the sublist L[i:j] (including i,
+# excluding j).
 #
 # For example, given L = [1, 2, 3, 4, 5], sum(1, 3) should return sum([2, 3]), which is 5.
 #
@@ -27,13 +28,15 @@
 # If the node's segment is equivalent to the query, return its val
 # Otherwise, query for the left node if it encloses the starting index and add it to our result.
 # Also query for the right node if it encloses the ending index and add it to our result.
-result = 0
+# result = 0
+#
+# if left.start_ind <= start_ind <= left.end_ind:
+#     result += query(left, start_ind, min(end_ind, left.end_ind))
+#
+# if right.start_ind <= end_ind <= right.end_ind:
+#     result += query(right, max(start_ind, right.start_ind), end_ind)
 
-if left.start_ind <= start_ind <= left.end_ind:
-    result += query(left, start_ind, min(end_ind, left.end_ind))
 
-if right.start_ind <= end_ind <= right.end_ind:
-    result += query(right, max(start_ind, right.start_ind), end_ind)
 # The full code:
 
 class Node:
@@ -46,7 +49,7 @@ class Node:
 
     @property
     def interval(self):
-        return (self.start_ind, self.end_ind)
+        return self.start_ind, self.end_ind
 
 
 def make_segment_tree(lst):
@@ -55,7 +58,7 @@ def make_segment_tree(lst):
 
 def _make_segment_tree(lst, start_ind, end_ind):
     if start_ind == end_ind:
-        assert(len(lst) == 1)
+        assert (len(lst) == 1)
         val = lst[0]
         return Node(val, start_ind, end_ind)
 
@@ -67,6 +70,7 @@ def _make_segment_tree(lst, start_ind, end_ind):
     root_val = left.val + right.val
 
     return Node(root_val, start_ind, end_ind, left, right)
+
 
 def query(node, start_ind, end_ind):
     if node.start_ind == start_ind and node.end_ind == end_ind:

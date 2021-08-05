@@ -19,8 +19,10 @@ def pancake_sort(lst):
         reverse(lst, 0, size)
     return lst
 
+
 def max_pos(lst):
     return lst.index(max(lst))
+
 
 def reverse(lst, i, j):
     while i < j:
