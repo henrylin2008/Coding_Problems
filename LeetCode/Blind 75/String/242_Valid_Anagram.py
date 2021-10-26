@@ -20,7 +20,7 @@
 #
 # Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 
-# Solution: use hashmap to count each chart
+# Solution: use hashmap to count each chart; return False if lengths are different or total count are different
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -36,3 +36,11 @@ class Solution:
                 return False
         return True
 
+
+# Solution #2: use Counter function from the Collections module
+from collections import Counter
+
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s) == Counter(t)
