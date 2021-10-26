@@ -21,6 +21,8 @@
 # Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 
 # Solution: use hashmap to count each chart; return False if lengths are different or total count are different
+# Time: O(s + t); run through every character in each string
+# Space: O(s + t); needs to store all characters from each string
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -44,3 +46,11 @@ from collections import Counter
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         return Counter(s) == Counter(t)
+
+
+# Solution #3: constraint: run in constant space; use the built-in sorted function to sort each string
+# Time: O(nLog(n)); best runtime for sorting algorithm is O(nlog(n)).
+# Space: O(1); no extra space needed, as it compares each character in each string after sorting takes place
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
