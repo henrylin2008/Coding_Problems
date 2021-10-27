@@ -34,3 +34,27 @@ class Solution:
             if c.isalnum():
                 new_str += c.lower()
         return new_str == new_str[::-1]
+
+
+# Solution #2: more efficient method; using 2 pointers: left pointer and right pointer, and skip the white space
+# Time: O(n)
+# Space: O(1), only pointers are used, no extra memory is used
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        left, right = 0, len(s) -1
+        while left < right:
+            while left < right and not self.alphaNum(s[left]):  # enable both characters (left and right) are alphaNum
+                left += 1
+            while right > left and not self.alphaNum(s[right]):
+                right -= 1
+            if s[left].lower() != s[right].lower():     # compare letters at current position in lower case
+                return False
+            left += 1
+            right -= 1
+        return True
+
+
+    def alphaNum(self, c):
+        return (ord('A') <= ord(c) <= ord('Z') or
+                ord('a') <= ord(c) <= ord('z') or
+                ord('0') <= ord(c) <= ord('9'))
