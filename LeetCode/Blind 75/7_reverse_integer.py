@@ -48,16 +48,16 @@ class Solution:
 
         res = 0
         while x:  # when x is not 0
-            digit = int(math.fmod(x, 10))  # last digit; using math.fmod b/c of -1 %  10 = 9;
-            x = int(x / 10)  # digits before last digit; (python dumb) -1 // 10 = -1
+            last_digit = int(math.fmod(x, 10))  # last digit; using math.fmod b/c of -1 %  10 = 9;
+            x = int(x / 10)  # all digits before last digit; (python dumb) -1 // 10 = -1
 
-            if (res > MAX // 10 or  # if last digit > last digit of current max value, it's going to be overflow
-                    (res == MAX // 10 and digit >= MAX % 10)):
-                # if everything matched before last digit, and last digit > last digit of MAX
-                return 0
+            if (res > MAX // 10 or  # If res > all digits but last digit (one's) of MAX valve (ex: > 214748364)
+                    (res == MAX // 10 and last_digit >= MAX % 10)):
+                # if all digits but last are matched, and digit > last digit of MAX
+                return 0    # overflow
             if (res < MIN // 10 or
-                    (res == MIN // 10 and digit <= MIN % 10)):
+                    (res == MIN // 10 and last_digit <= MIN % 10)):  # If res < MIN value
                 return 0
-            res = (res * 10) + digit
-
+            res = (res * 10) + last_digit   # append last_digit into the current res and move current res to one
+            # digit to the left; ex: 2345 --> 5 -> 54 -> 543 -> 5432
         return res
