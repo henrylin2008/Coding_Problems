@@ -25,10 +25,11 @@
 # strs[i] consists of lowercase English letters.
 
 # Solution:
-# use Hashmap to count how many time of each letter appears; ex: 'eat': a:1, e:1, t:1
+# use Hashmap to count number of time that each character appearance; ex: "eat", key would be # of occurrence of each
+# letter (1e, 1a, 1t), values are the list of anagrams (which string has the pattern from the key)
 from collections import defaultdict
 
-# time: O(m*n*26) -> O(mn); m: number of input strings; n: length (chars) of the string
+# time: O(m*n*26) -> O(mn); m: number of input strings; n: length (chars) of a string
 class Solution:
     def groupAnagrams(self, strs):
         res = defaultdict(list)  # mapping charCount to list of anagrams; defaultdict to deal with non-existing char
@@ -40,5 +41,5 @@ class Solution:
                 count[ord(char) - ord("a")] += 1    # count of each character
 
             res[tuple(count)].append(str)   # group anagrams together; tuple(count): b/c count is a list and it can't be
-            # the key.
-        return res.values()  # return list/group of anagrams
+            # the key in Python.
+        return res.values()  # return a list of anagrams
