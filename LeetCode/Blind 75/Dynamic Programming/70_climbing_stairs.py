@@ -32,8 +32,8 @@
 # from:      1,2     2,3     3,4    4,5     (base cases)
 #                                             one    two
 
-# Time: O(n)
-# Space: O(n)
+# Time: O(n); looping through the ints
+# Space: O(1); only using 2 variables 
 class Solution:
     def climb_stairs(self, n: int) -> int:
         one, two = 1, 1     # base cases
