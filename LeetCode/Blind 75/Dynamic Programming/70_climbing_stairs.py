@@ -25,19 +25,22 @@
 #
 # 1 <= n <= 45
 
-# Solution idea: dynamic programming - Bottom up:
+# Solution idea: dynamic programming - Bottom up and memoization/cache (use the previous calculated values)
 # ex: n = 5:
 # stairs:      0      1       2      3        4       5
 # DP:        5+3=8   3+2=5   2+1=3  1+1=2     1       1
 # from:      1,2     2,3     3,4    4,5     (base cases)
 #                                             one    two
+
+# Time: O(n)
+# Space: O(n)
 class Solution:
-    def climbStairs(self, n: int) -> int:
+    def climb_stairs(self, n: int) -> int:
         one, two = 1, 1     # base cases
 
         for i in range(n - 1):
             temp = one      # temp variable for var one
-            one = one + two  # new one (sum of 2 previous variables)
-            two = temp      # move two to old one (temp)
+            one = one + two  # update one (sum of 2 previous variables)
+            two = temp      # move two to the original one position (temp)
 
         return one
