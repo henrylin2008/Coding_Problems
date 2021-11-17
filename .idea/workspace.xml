@@ -28,12 +28,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="updating file name and the format">
-      <change afterPath="$PROJECT_DIR$/DailyCoding/array_two_elements.py" afterDir="false" />
+    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="valid palindrome">
+      <change afterPath="$PROJECT_DIR$/LeetCode/Blind 75/Dynamic Programming/70_climbing_stairs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/138.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/minimum_coins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/139.py" beforeDir="false" afterPath="$PROJECT_DIR$/DailyCoding/peekable_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DailyCoding/140.py" beforeDir="false" />
     </list>
     <list id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="added the logic" />
     <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph" />
@@ -109,10 +106,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DailyCoding" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -124,14 +120,80 @@
       <recent name="$PROJECT_DIR$/Lyft" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LeetCode/Blind 75/Array" />
       <recent name="$PROJECT_DIR$/DS and Algorithms" />
       <recent name="$PROJECT_DIR$/DS and Algorithms/Search" />
       <recent name="$PROJECT_DIR$/DS and Algorithms/Sorting" />
       <recent name="$PROJECT_DIR$/Graphs" />
-      <recent name="$PROJECT_DIR$/Trees/BinarySearchTrees" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Priority_Queues_Binary_Heaps">
+  <component name="RunManager" selected="Python.49_Group_Anagrams">
+    <configuration name="217_Contains_Duplicate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coding_Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode/Blind 75/Array" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Blind 75/Array/217_Contains_Duplicate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="49_Group_Anagrams" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coding_Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode/Blind 75/String" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Blind 75/String/49_Group_Anagrams.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="7_reverse_integer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coding_Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode/Blind 75" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Blind 75/7_reverse_integer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Priority_Queues_Binary_Heaps" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coding_Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -146,50 +208,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/Trees/Priority_Queues_Binary_Heaps.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="binaryTree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Coding_Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms/pythonds/trees" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/pythonds/trees/binaryTree.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="hashing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Coding_Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/hashing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -242,35 +260,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tree_linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Coding_Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DS and Algorithms/Trees" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DS and Algorithms/Trees/tree_linked_list.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.49_Group_Anagrams" />
+        <item itemvalue="Python.7_reverse_integer" />
+        <item itemvalue="Python.217_Contains_Duplicate" />
         <item itemvalue="Python.Priority_Queues_Binary_Heaps" />
         <item itemvalue="Python.parse_tree" />
-        <item itemvalue="Python.binaryTree" />
-        <item itemvalue="Python.tree_linked_list" />
-        <item itemvalue="Python.hashing" />
       </list>
     </recent_temporary>
   </component>
@@ -335,133 +331,13 @@
       <workItem from="1621265750382" duration="24065000" />
       <workItem from="1621789665532" duration="156000" />
       <workItem from="1621830946332" duration="24920000" />
-      <workItem from="1627229252236" duration="7032000" />
-    </task>
-    <task id="LOCAL-00297" summary="added comments">
-      <created>1621012975647</created>
-      <option name="number" value="00297" />
-      <option name="presentableId" value="LOCAL-00297" />
-      <option name="project" value="LOCAL" />
-      <updated>1621012975647</updated>
-    </task>
-    <task id="LOCAL-00298" summary="Hashing">
-      <created>1621106694815</created>
-      <option name="number" value="00298" />
-      <option name="presentableId" value="LOCAL-00298" />
-      <option name="project" value="LOCAL" />
-      <updated>1621106694819</updated>
-    </task>
-    <task id="LOCAL-00299" summary="Implementing the Map Abstract Data type, 2 lists">
-      <created>1621120900809</created>
-      <option name="number" value="00299" />
-      <option name="presentableId" value="LOCAL-00299" />
-      <option name="project" value="LOCAL" />
-      <updated>1621120900809</updated>
-    </task>
-    <task id="LOCAL-00300" summary="added sample data">
-      <created>1621145617004</created>
-      <option name="number" value="00300" />
-      <option name="presentableId" value="LOCAL-00300" />
-      <option name="project" value="LOCAL" />
-      <updated>1621145617004</updated>
-    </task>
-    <task id="LOCAL-00301" summary="Sequential Search and re-org directories">
-      <created>1621147649537</created>
-      <option name="number" value="00301" />
-      <option name="presentableId" value="LOCAL-00301" />
-      <option name="project" value="LOCAL" />
-      <updated>1621147649537</updated>
-    </task>
-    <task id="LOCAL-00302" summary="added comments">
-      <created>1621148023420</created>
-      <option name="number" value="00302" />
-      <option name="presentableId" value="LOCAL-00302" />
-      <option name="project" value="LOCAL" />
-      <updated>1621148023420</updated>
-    </task>
-    <task id="LOCAL-00303" summary="added short bubble implementation">
-      <created>1621177735381</created>
-      <option name="number" value="00303" />
-      <option name="presentableId" value="LOCAL-00303" />
-      <option name="project" value="LOCAL" />
-      <updated>1621177735382</updated>
-    </task>
-    <task id="LOCAL-00304" summary="Selection sort">
-      <created>1621180811917</created>
-      <option name="number" value="00304" />
-      <option name="presentableId" value="LOCAL-00304" />
-      <option name="project" value="LOCAL" />
-      <updated>1621180811917</updated>
-    </task>
-    <task id="LOCAL-00305" summary="added code, runtime, space complexity">
-      <created>1621231563600</created>
-      <option name="number" value="00305" />
-      <option name="presentableId" value="LOCAL-00305" />
-      <option name="project" value="LOCAL" />
-      <updated>1621231563600</updated>
-    </task>
-    <task id="LOCAL-00306" summary="added comments">
-      <created>1621272432249</created>
-      <option name="number" value="00306" />
-      <option name="presentableId" value="LOCAL-00306" />
-      <option name="project" value="LOCAL" />
-      <updated>1621272432250</updated>
-    </task>
-    <task id="LOCAL-00307" summary="added time and space Complexity">
-      <created>1621314837608</created>
-      <option name="number" value="00307" />
-      <option name="presentableId" value="LOCAL-00307" />
-      <option name="project" value="LOCAL" />
-      <updated>1621314837608</updated>
-    </task>
-    <task id="LOCAL-00308" summary="List implementation of a tree">
-      <created>1621319081933</created>
-      <option name="number" value="00308" />
-      <option name="presentableId" value="LOCAL-00308" />
-      <option name="project" value="LOCAL" />
-      <updated>1621319081933</updated>
-    </task>
-    <task id="LOCAL-00309" summary="renamed the file">
-      <created>1621319604844</created>
-      <option name="number" value="00309" />
-      <option name="presentableId" value="LOCAL-00309" />
-      <option name="project" value="LOCAL" />
-      <updated>1621319604844</updated>
-    </task>
-    <task id="LOCAL-00310" summary="Implementing tree with linked list">
-      <created>1621351188635</created>
-      <option name="number" value="00310" />
-      <option name="presentableId" value="LOCAL-00310" />
-      <option name="project" value="LOCAL" />
-      <updated>1621351188635</updated>
-    </task>
-    <task id="LOCAL-00311" summary="Implementing tree with a linked list">
-      <created>1621351964826</created>
-      <option name="number" value="00311" />
-      <option name="presentableId" value="LOCAL-00311" />
-      <option name="project" value="LOCAL" />
-      <updated>1621351964826</updated>
-    </task>
-    <task id="LOCAL-00312" summary="added methods to print a tree diagram">
-      <created>1621357251090</created>
-      <option name="number" value="00312" />
-      <option name="presentableId" value="LOCAL-00312" />
-      <option name="project" value="LOCAL" />
-      <updated>1621357251090</updated>
-    </task>
-    <task id="LOCAL-00313" summary="added basic support files">
-      <created>1621437559013</created>
-      <option name="number" value="00313" />
-      <option name="presentableId" value="LOCAL-00313" />
-      <option name="project" value="LOCAL" />
-      <updated>1621437559013</updated>
-    </task>
-    <task id="LOCAL-00314" summary="added basic support files">
-      <created>1621437821318</created>
-      <option name="number" value="00314" />
-      <option name="presentableId" value="LOCAL-00314" />
-      <option name="project" value="LOCAL" />
-      <updated>1621437821318</updated>
+      <workItem from="1627229252236" duration="8024000" />
+      <workItem from="1627941789348" duration="6454000" />
+      <workItem from="1635217880549" duration="11911000" />
+      <workItem from="1635439240017" duration="5401000" />
+      <workItem from="1635617530212" duration="11358000" />
+      <workItem from="1636306526359" duration="7852000" />
+      <workItem from="1636959493040" duration="3030000" />
     </task>
     <task id="LOCAL-00315" summary="remove comments">
       <created>1621438094940</created>
@@ -680,7 +556,133 @@
       <option name="project" value="LOCAL" />
       <updated>1627483953088</updated>
     </task>
-    <option name="localTasksCounter" value="346" />
+    <task id="LOCAL-00346" summary="updating file name and the format">
+      <created>1627490137064</created>
+      <option name="number" value="00346" />
+      <option name="presentableId" value="LOCAL-00346" />
+      <option name="project" value="LOCAL" />
+      <updated>1627490137065</updated>
+    </task>
+    <task id="LOCAL-00347" summary="updating file name and the format">
+      <created>1627972978361</created>
+      <option name="number" value="00347" />
+      <option name="presentableId" value="LOCAL-00347" />
+      <option name="project" value="LOCAL" />
+      <updated>1627972978362</updated>
+    </task>
+    <task id="LOCAL-00348" summary="updating file name and the format">
+      <created>1627973225918</created>
+      <option name="number" value="00348" />
+      <option name="presentableId" value="LOCAL-00348" />
+      <option name="project" value="LOCAL" />
+      <updated>1627973225918</updated>
+    </task>
+    <task id="LOCAL-00349" summary="updating file name and the format">
+      <created>1628098613755</created>
+      <option name="number" value="00349" />
+      <option name="presentableId" value="LOCAL-00349" />
+      <option name="project" value="LOCAL" />
+      <updated>1628098613755</updated>
+    </task>
+    <task id="LOCAL-00350" summary="updating file name and the format">
+      <created>1628145021435</created>
+      <option name="number" value="00350" />
+      <option name="presentableId" value="LOCAL-00350" />
+      <option name="project" value="LOCAL" />
+      <updated>1628145021435</updated>
+    </task>
+    <task id="LOCAL-00351" summary="updating file name and the format">
+      <created>1628176161397</created>
+      <option name="number" value="00351" />
+      <option name="presentableId" value="LOCAL-00351" />
+      <option name="project" value="LOCAL" />
+      <updated>1628176161397</updated>
+    </task>
+    <task id="LOCAL-00352" summary="6">
+      <created>1628178016836</created>
+      <option name="number" value="00352" />
+      <option name="presentableId" value="LOCAL-00352" />
+      <option name="project" value="LOCAL" />
+      <updated>1628178016836</updated>
+    </task>
+    <task id="LOCAL-00353" summary="Contains Duplicate">
+      <created>1635220517926</created>
+      <option name="number" value="00353" />
+      <option name="presentableId" value="LOCAL-00353" />
+      <option name="project" value="LOCAL" />
+      <updated>1635220517926</updated>
+    </task>
+    <task id="LOCAL-00354" summary="valid anagram">
+      <created>1635268334737</created>
+      <option name="number" value="00354" />
+      <option name="presentableId" value="LOCAL-00354" />
+      <option name="project" value="LOCAL" />
+      <updated>1635268334737</updated>
+    </task>
+    <task id="LOCAL-00355" summary="Valid Anagram: solution #2">
+      <created>1635269055926</created>
+      <option name="number" value="00355" />
+      <option name="presentableId" value="LOCAL-00355" />
+      <option name="project" value="LOCAL" />
+      <updated>1635269055926</updated>
+    </task>
+    <task id="LOCAL-00356" summary="Valid Anagram run in constant space">
+      <created>1635269978713</created>
+      <option name="number" value="00356" />
+      <option name="presentableId" value="LOCAL-00356" />
+      <option name="project" value="LOCAL" />
+      <updated>1635269978713</updated>
+    </task>
+    <task id="LOCAL-00357" summary="valid palindrome">
+      <created>1635357800861</created>
+      <option name="number" value="00357" />
+      <option name="presentableId" value="LOCAL-00357" />
+      <option name="project" value="LOCAL" />
+      <updated>1635357800861</updated>
+    </task>
+    <task id="LOCAL-00358" summary="valid palindrome - space efficient solution">
+      <created>1635360617128</created>
+      <option name="number" value="00358" />
+      <option name="presentableId" value="LOCAL-00358" />
+      <option name="project" value="LOCAL" />
+      <updated>1635360617128</updated>
+    </task>
+    <task id="LOCAL-00359" summary="reverse integer">
+      <created>1635744517506</created>
+      <option name="number" value="00359" />
+      <option name="presentableId" value="LOCAL-00359" />
+      <option name="project" value="LOCAL" />
+      <updated>1635744517506</updated>
+    </task>
+    <task id="LOCAL-00360" summary="updated comments">
+      <created>1635798432480</created>
+      <option name="number" value="00360" />
+      <option name="presentableId" value="LOCAL-00360" />
+      <option name="project" value="LOCAL" />
+      <updated>1635798432480</updated>
+    </task>
+    <task id="LOCAL-00361" summary="Group anagrams">
+      <created>1636443205352</created>
+      <option name="number" value="00361" />
+      <option name="presentableId" value="LOCAL-00361" />
+      <option name="project" value="LOCAL" />
+      <updated>1636443205353</updated>
+    </task>
+    <task id="LOCAL-00362" summary="group anagrams">
+      <created>1636445170577</created>
+      <option name="number" value="00362" />
+      <option name="presentableId" value="LOCAL-00362" />
+      <option name="project" value="LOCAL" />
+      <updated>1636445170577</updated>
+    </task>
+    <task id="LOCAL-00363" summary="group anagrams">
+      <created>1636480070522</created>
+      <option name="number" value="00363" />
+      <option name="presentableId" value="LOCAL-00363" />
+      <option name="project" value="LOCAL" />
+      <updated>1636480070522</updated>
+    </task>
+    <option name="localTasksCounter" value="364" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,17 +731,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementing tree with linked list" />
-    <MESSAGE value="Implementing tree with a linked list" />
-    <MESSAGE value="added methods to print a tree diagram" />
-    <MESSAGE value="added basic support files" />
-    <MESSAGE value="remove comments" />
-    <MESSAGE value="format update" />
-    <MESSAGE value="parse_tree" />
-    <MESSAGE value="format updates" />
-    <MESSAGE value="added comments" />
-    <MESSAGE value="added evaluate method to perform calculation on the nodes" />
-    <MESSAGE value="Tree Traversals" />
     <MESSAGE value="Priority Queue with Binary Heaps" />
     <MESSAGE value="Binary Heap constructor and insert" />
     <MESSAGE value="Delete min value" />
@@ -754,7 +745,18 @@
     <MESSAGE value="added test code" />
     <MESSAGE value="updating file name and its format" />
     <MESSAGE value="updating file name and the format" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating file name and the format" />
+    <MESSAGE value="6" />
+    <MESSAGE value="Contains Duplicate" />
+    <MESSAGE value="valid anagram" />
+    <MESSAGE value="Valid Anagram: solution #2" />
+    <MESSAGE value="Valid Anagram: constant space" />
+    <MESSAGE value="valid palindrome" />
+    <MESSAGE value="valid palindrome - space efficient solution" />
+    <MESSAGE value="reverse integer" />
+    <MESSAGE value="updated comments" />
+    <MESSAGE value="Group anagrams" />
+    <MESSAGE value="group anagrams" />
+    <option name="LAST_COMMIT_MESSAGE" value="group anagrams" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -768,69 +770,72 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Coding_Problems$testMinMaxPeek.coverage" NAME="testMinMaxPeek Coverage Results" MODIFIED="1587323302290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$productSum.coverage" NAME="productSum Coverage Results" MODIFIED="1583041232825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Recursion" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$insertion_sort.coverage" NAME="insertion_sort Coverage Results" MODIFIED="1621012552075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Sorting" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$palindrome_num.coverage" NAME="palindrome_num Coverage Results" MODIFIED="1565447303236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$run_length_encoding.coverage" NAME="run-length_encoding Coverage Results" MODIFIED="1616910476386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_integer.coverage" NAME="reverse_integer Coverage Results" MODIFIED="1565446578837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$maxSubarraySum.coverage" NAME="maxSubarraySum Coverage Results" MODIFIED="1588978394154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FamousAlgorithms" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$group_anagrams.coverage" NAME="group_anagrams Coverage Results" MODIFIED="1617383119363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$lowest_common_ancestor.coverage" NAME="lowest_common_ancestor Coverage Results" MODIFIED="1616172403868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Trees/BinaryTrees" />
     <SUITE FILE_PATH="coverage/Coding_Problems$Unittests_in_testMinMaxPeek_py.coverage" NAME="Unittests in testMinMaxPeek.py Coverage Results" MODIFIED="1587322815305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$test_rotation.coverage" NAME="test_rotation Coverage Results" MODIFIED="1614875564457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$longest_substring_no_duplication.coverage" NAME="longest-substring-no-duplication Coverage Results" MODIFIED="1617731029215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$threeLargestNumbers.coverage" NAME="threeLargestNumbers Coverage Results" MODIFIED="1583094697903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Searching" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$common_elements.coverage" NAME="common_elements Coverage Results" MODIFIED="1614841251425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$one_away_test.coverage" NAME="one_away_test Coverage Results" MODIFIED="1614964194467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$sorted_squared_array.coverage" NAME="sorted_squared_array Coverage Results" MODIFIED="1616734895103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$threeNumberSum.coverage" NAME="threeNumberSum Coverage Results" MODIFIED="1583865338930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$nth_element.coverage" NAME="nth_element Coverage Results" MODIFIED="1615481813894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Linked List" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$valid_ip_addresses.coverage" NAME="valid_ip_addresses Coverage Results" MODIFIED="1617302828195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$asteroidCollision.coverage" NAME="asteroidCollision Coverage Results" MODIFIED="1586709734165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$binaryTree.coverage" NAME="binaryTree Coverage Results" MODIFIED="1621532417300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/pythonds/trees" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$Most_Frequent_item_in_an_array.coverage" NAME="Most_Frequent_item_in_an_array Coverage Results" MODIFIED="1604083012879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$quickSort.coverage" NAME="quickSort Coverage Results" MODIFIED="1598833995926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$quicksort.coverage" NAME="quicksort Coverage Results" MODIFIED="1565211531580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Quicksort" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_words.coverage" NAME="reverse_words Coverage Results" MODIFIED="1617467243981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$two_sum.coverage" NAME="two_sum Coverage Results" MODIFIED="1565038071317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$non_repeating_test.coverage" NAME="non_repeating_test Coverage Results" MODIFIED="1614880611693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$numberOfWaysToMakeChange.coverage" NAME="numberOfWaysToMakeChange Coverage Results" MODIFIED="1586534183538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dynamic Programming" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$_735_.coverage" NAME="[735]行星碰撞 Coverage Results" MODIFIED="1586715968203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/var/folders/_y/3cxmq6cx2zqbfd5bgp6swfxc0000gn/T/leetcode/editor/cn" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$is_rotation.coverage" NAME="is_rotation Coverage Results" MODIFIED="1614840800337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
     <SUITE FILE_PATH="coverage/Coding_Problems$205.coverage" NAME="205 Coverage Results" MODIFIED="1564762757864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$balancedBrackets.coverage" NAME="balancedBrackets Coverage Results" MODIFIED="1587447224727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$anagram.coverage" NAME="anagram Coverage Results" MODIFIED="1620659340205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$Priority_Queues_Binary_Heaps.coverage" NAME="Priority_Queues_Binary_Heaps Coverage Results" MODIFIED="1622045541318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Trees" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$minesweeper_click.coverage" NAME="minesweeper_click Coverage Results" MODIFIED="1615140198559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$python_tips.coverage" NAME="python_tips Coverage Results" MODIFIED="1586673556108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dynamic Programming" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$non_repeating_char.coverage" NAME="non_repeating_char Coverage Results" MODIFIED="1614877854807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$2.coverage" NAME="2 Coverage Results" MODIFIED="1565138661949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$selectionSort.coverage" NAME="selectionSort Coverage Results" MODIFIED="1583545680458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$common_elements_2_arrays.coverage" NAME="common_elements_2_arrays Coverage Results" MODIFIED="1614755740499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$bubbleSort.coverage" NAME="bubbleSort Coverage Results" MODIFIED="1583160770542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$test.coverage" NAME="cls_vs_static Coverage Results" MODIFIED="1606114234523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$ms_test.coverage" NAME="ms_test Coverage Results" MODIFIED="1615187650061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$rotate.coverage" NAME="rotate Coverage Results" MODIFIED="1615445794782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$Non_Constructible_change.coverage" NAME="Non-Constructible_change Coverage Results" MODIFIED="1616258477183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$threeLargestNumbers.coverage" NAME="threeLargestNumbers Coverage Results" MODIFIED="1583094697903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Searching" />
     <SUITE FILE_PATH="coverage/Coding_Problems$is_one_away.coverage" NAME="is_one_away Coverage Results" MODIFIED="1614963505545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$moveElementToEnd.coverage" NAME="moveElementToEnd Coverage Results" MODIFIED="1583602106479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$binary_search_tree.coverage" NAME="binary_search_tree Coverage Results" MODIFIED="1615704649859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Trees" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$longest_Palindromic_substring.coverage" NAME="longest_Palindromic_substring Coverage Results" MODIFIED="1617120518442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$maxSubarraySum.coverage" NAME="maxSubarraySum Coverage Results" MODIFIED="1588978394154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FamousAlgorithms" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$minesweeper_click.coverage" NAME="minesweeper_click Coverage Results" MODIFIED="1615140198559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
     <SUITE FILE_PATH="coverage/Coding_Problems$parse_tree.coverage" NAME="parse_tree Coverage Results" MODIFIED="1621835431761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Trees" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$remove_duplicates.coverage" NAME="remove-duplicates Coverage Results" MODIFIED="1620196510749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Linked List" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$insertion_test.coverage" NAME="insertion_test Coverage Results" MODIFIED="1621016308780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Sorting" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$python_tips.coverage" NAME="python_tips Coverage Results" MODIFIED="1586673556108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dynamic Programming" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$common_elements_2_arrays.coverage" NAME="common_elements_2_arrays Coverage Results" MODIFIED="1614755740499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$sorted_squared_array.coverage" NAME="sorted_squared_array Coverage Results" MODIFIED="1616734895103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$longest_substring_no_duplication.coverage" NAME="longest-substring-no-duplication Coverage Results" MODIFIED="1617731029215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$test_rotation.coverage" NAME="test_rotation Coverage Results" MODIFIED="1614875564457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$2.coverage" NAME="2 Coverage Results" MODIFIED="1565138661949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DailyCoding" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$test.coverage" NAME="cls_vs_static Coverage Results" MODIFIED="1606114234523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$rotate.coverage" NAME="rotate Coverage Results" MODIFIED="1615445794782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$217_Contains_Duplicate.coverage" NAME="217_Contains_Duplicate Coverage Results" MODIFIED="1635220157655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Blind 75/Array" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$run_length_encoding.coverage" NAME="run-length_encoding Coverage Results" MODIFIED="1616910476386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
     <SUITE FILE_PATH="coverage/Coding_Problems$tree_linked_list.coverage" NAME="tree_linked_list Coverage Results" MODIFIED="1621441784044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Trees" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565376674757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
     <SUITE FILE_PATH="coverage/Coding_Problems$binary_search.coverage" NAME="binary_search Coverage Results" MODIFIED="1620666346678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$longest_Palindromic_substring.coverage" NAME="longest_Palindromic_substring Coverage Results" MODIFIED="1617120518442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$remove_duplicates.coverage" NAME="remove-duplicates Coverage Results" MODIFIED="1620196510749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Linked List" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_string.coverage" NAME="reverse_string Coverage Results" MODIFIED="1565376674757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$testMinMaxPeek.coverage" NAME="testMinMaxPeek Coverage Results" MODIFIED="1587323302290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$palindrome_num.coverage" NAME="palindrome_num Coverage Results" MODIFIED="1565447303236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$binaryTree.coverage" NAME="binaryTree Coverage Results" MODIFIED="1621532417300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/pythonds/trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$quickSort.coverage" NAME="quickSort Coverage Results" MODIFIED="1598833995926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$is_rotation.coverage" NAME="is_rotation Coverage Results" MODIFIED="1614840800337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$rotate_test.coverage" NAME="rotate_test Coverage Results" MODIFIED="1615394372712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$lowest_common_ancestor.coverage" NAME="lowest_common_ancestor Coverage Results" MODIFIED="1616172403868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Trees/BinaryTrees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$group_anagrams.coverage" NAME="group_anagrams Coverage Results" MODIFIED="1617383119363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$numberOfWaysToMakeChange.coverage" NAME="numberOfWaysToMakeChange Coverage Results" MODIFIED="1586534183538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dynamic Programming" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$smallestDifference.coverage" NAME="smallestDifference Coverage Results" MODIFIED="1585502105422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$productSum.coverage" NAME="productSum Coverage Results" MODIFIED="1583041232825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Recursion" />
     <SUITE FILE_PATH="coverage/Coding_Problems$MinMaxStack.coverage" NAME="MinMaxStack Coverage Results" MODIFIED="1587322519318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
     <SUITE FILE_PATH="coverage/Coding_Problems$First_non_repeating_character.coverage" NAME="First-non-repeating-character Coverage Results" MODIFIED="1617603101841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$insertion_sort.coverage" NAME="insertion_sort Coverage Results" MODIFIED="1621012552075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Sorting" />
     <SUITE FILE_PATH="coverage/Coding_Problems$minesweeper.coverage" NAME="minesweeper Coverage Results" MODIFIED="1615050194899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$smallestDifference.coverage" NAME="smallestDifference Coverage Results" MODIFIED="1585502105422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$insertion_test.coverage" NAME="insertion_test Coverage Results" MODIFIED="1621016308780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Sorting" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$hashing.coverage" NAME="hashing Coverage Results" MODIFIED="1621351620273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_words.coverage" NAME="reverse_words Coverage Results" MODIFIED="1617467243981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$two_sum.coverage" NAME="two_sum Coverage Results" MODIFIED="1565038071317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
     <SUITE FILE_PATH="coverage/Coding_Problems$tournament_winner.coverage" NAME="tournament_winner Coverage Results" MODIFIED="1616390318057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$balancedBrackets.coverage" NAME="balancedBrackets Coverage Results" MODIFIED="1587447224727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$non_repeating_test.coverage" NAME="non_repeating_test Coverage Results" MODIFIED="1614880611693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$non_repeating_char.coverage" NAME="non_repeating_char Coverage Results" MODIFIED="1614877854807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$common_elements.coverage" NAME="common_elements Coverage Results" MODIFIED="1614841251425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$selectionSort.coverage" NAME="selectionSort Coverage Results" MODIFIED="1583545680458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$Priority_Queues_Binary_Heaps.coverage" NAME="Priority_Queues_Binary_Heaps Coverage Results" MODIFIED="1628176682601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms/Trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$anagram.coverage" NAME="anagram Coverage Results" MODIFIED="1620659340205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$reverse_integer.coverage" NAME="reverse_integer Coverage Results" MODIFIED="1565446578837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Easy" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$one_away_test.coverage" NAME="one_away_test Coverage Results" MODIFIED="1614964194467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$moveElementToEnd.coverage" NAME="moveElementToEnd Coverage Results" MODIFIED="1583602106479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$7_reverse_integer.coverage" NAME="7_reverse_integer Coverage Results" MODIFIED="1635798030646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Blind 75" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$ms_test.coverage" NAME="ms_test Coverage Results" MODIFIED="1615187650061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$binary_search_tree.coverage" NAME="binary_search_tree Coverage Results" MODIFIED="1615704649859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Trees" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$quicksort.coverage" NAME="quicksort Coverage Results" MODIFIED="1565211531580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Quicksort" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$_735_.coverage" NAME="[735]行星碰撞 Coverage Results" MODIFIED="1586715968203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/var/folders/_y/3cxmq6cx2zqbfd5bgp6swfxc0000gn/T/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$Non_Constructible_change.coverage" NAME="Non-Constructible_change Coverage Results" MODIFIED="1616258477183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$Most_Frequent_item_in_an_array.coverage" NAME="Most_Frequent_item_in_an_array Coverage Results" MODIFIED="1604083012879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
     <SUITE FILE_PATH="coverage/Coding_Problems$insertionSort.coverage" NAME="insertionSort Coverage Results" MODIFIED="1583247997220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
-    <SUITE FILE_PATH="coverage/Coding_Problems$rotate_test.coverage" NAME="rotate_test Coverage Results" MODIFIED="1615394372712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays/Two-Dimensional_Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$49_Group_Anagrams.coverage" NAME="49_Group_Anagrams Coverage Results" MODIFIED="1636355723133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode/Blind 75/String" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$nth_element.coverage" NAME="nth_element Coverage Results" MODIFIED="1615481813894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Linked List" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$hashing.coverage" NAME="hashing Coverage Results" MODIFIED="1621351620273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DS and Algorithms" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$threeNumberSum.coverage" NAME="threeNumberSum Coverage Results" MODIFIED="1583865338930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arrays" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$valid_ip_addresses.coverage" NAME="valid_ip_addresses Coverage Results" MODIFIED="1617302828195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Strings" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$asteroidCollision.coverage" NAME="asteroidCollision Coverage Results" MODIFIED="1586709734165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stack" />
+    <SUITE FILE_PATH="coverage/Coding_Problems$bubbleSort.coverage" NAME="bubbleSort Coverage Results" MODIFIED="1583160770542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sorting" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
