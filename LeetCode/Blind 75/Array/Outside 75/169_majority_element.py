@@ -21,12 +21,25 @@
 #
 # Follow-up: Could you solve the problem in linear time and in O(1) space?
 class Solution:
+    # Idea: set 2 variables: result and count, set the first number as the initial result, then increment the count, if
+    # the next is the same number, increment the count, otherwise decrement the count; when the count reaches to 0,
+    # then update the result with the number that has the majority count; this would work if a valid array with a
+    # majority element is in place.
     # Time: O(n)
-    # Space: O(n)
+    # Space: O(1); no additional space, because we're using a count variable to get the most frequent number
     def majorityElement(self, nums) -> int:  # nums: List[int]
-        """
-        solution 1: use hashmap to get count of each value
-         """
+        result, count = 0, 0
+
+        for n in nums:
+            if count == 0:
+                result = n
+            count += (1 if n == result else -1)     # increment count if n == result, otherwise count - 1
+        return result
+
+    # Solution # 2: use hashmap to get count of each value
+    # Time: O(n)
+    # Space: O(n); extra space needed to store count, result, max_count
+    def majorityElement(self, nums) -> int:  # nums: List[int]
         count = {}
         result, max_count = 0, 0
 
