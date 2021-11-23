@@ -47,3 +47,14 @@ class Solution:
                 left = right    # set the left pointer to the right pointer
             right += 1      # move the right pointer
         return max_profit
+
+
+# better runtime in Leetcode: 64ms
+    def maxProfit2(self, prices) -> int:
+
+        min_price, max_profit = float("inf"), 0
+
+        for price in prices:
+            min_price = min(min_price, price)
+            max_profit = max(max_profit, price - min_price)
+        return max_profit
