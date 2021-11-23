@@ -27,3 +27,23 @@
 #
 # 1 <= prices.length <= 105
 # 0 <= prices[i] <= 104
+
+# Solution: use 2 pointers: left and right pointer, left pointer = buy (lowest), right pointer = sell (highest);
+# set left pointer (lowest), then keep sliding the right pointer and find the max profit, update max profit when a
+# higher right pointer is found; update left pointer if a lower value than left point is found, return the max profit
+
+class Solution:
+    # Time: O(n)
+    # Space: O(1); only use 2 pointers
+    def maxProfit(self, prices) -> int:  # prices: List[int]
+        left, right = 0, 1
+        max_profit = 0
+
+        while right < len(prices):
+            if prices[left] < prices[right]:    # if profitable? when left pointer is right pointer
+                profit = prices[right] - prices[left]   # find the profit
+                max_profit = max(max_profit, profit)    # compare the current max profit and the new profit
+            else:   # when right pointer is lower than the left pointer
+                left = right    # set the left pointer to the right pointer
+            right += 1      # move the right pointer
+        return max_profit
