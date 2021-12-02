@@ -28,9 +28,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="valid palindrome">
-      <change afterPath="$PROJECT_DIR$/LeetCode/Blind 75/Dynamic Programming/70_climbing_stairs.py" afterDir="false" />
+    <list default="true" id="e80fdf75-4ec6-4a00-b0b5-7890e6ac9dee" name="Default Changelist" comment="reverse integer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeetCode/Blind 75/Array/Outside 75/238_Product_of_array_except_self.py" beforeDir="false" afterPath="$PROJECT_DIR$/LeetCode/Blind 75/Array/Outside 75/238_Product_of_array_except_self.py" afterDir="false" />
     </list>
     <list id="2c851797-37a1-4f33-9026-fc3eb1e201f1" name="added the logic" comment="added the logic" />
     <list id="65784185-14ca-4d3b-a2d7-4780469965e0" name="create a graph" comment="create a graph" />
@@ -103,6 +103,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -120,11 +121,11 @@
       <recent name="$PROJECT_DIR$/Lyft" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LeetCode/Blind 75/Binary/Outside 75" />
       <recent name="$PROJECT_DIR$/LeetCode/Blind 75/Array" />
       <recent name="$PROJECT_DIR$/DS and Algorithms" />
       <recent name="$PROJECT_DIR$/DS and Algorithms/Search" />
       <recent name="$PROJECT_DIR$/DS and Algorithms/Sorting" />
-      <recent name="$PROJECT_DIR$/Graphs" />
     </key>
   </component>
   <component name="RunManager" selected="Python.49_Group_Anagrams">
@@ -185,7 +186,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Blind 75/7_reverse_integer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Blind 75/Binary/Outside 75/7_reverse_integer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -337,98 +338,10 @@
       <workItem from="1635439240017" duration="5401000" />
       <workItem from="1635617530212" duration="11358000" />
       <workItem from="1636306526359" duration="7852000" />
-      <workItem from="1636959493040" duration="3030000" />
-    </task>
-    <task id="LOCAL-00315" summary="remove comments">
-      <created>1621438094940</created>
-      <option name="number" value="00315" />
-      <option name="presentableId" value="LOCAL-00315" />
-      <option name="project" value="LOCAL" />
-      <updated>1621438094941</updated>
-    </task>
-    <task id="LOCAL-00316" summary="format update">
-      <created>1621446332103</created>
-      <option name="number" value="00316" />
-      <option name="presentableId" value="LOCAL-00316" />
-      <option name="project" value="LOCAL" />
-      <updated>1621446332103</updated>
-    </task>
-    <task id="LOCAL-00317" summary="parse_tree">
-      <created>1621446358087</created>
-      <option name="number" value="00317" />
-      <option name="presentableId" value="LOCAL-00317" />
-      <option name="project" value="LOCAL" />
-      <updated>1621446358087</updated>
-    </task>
-    <task id="LOCAL-00318" summary="format updates">
-      <created>1621532607931</created>
-      <option name="number" value="00318" />
-      <option name="presentableId" value="LOCAL-00318" />
-      <option name="project" value="LOCAL" />
-      <updated>1621532607931</updated>
-    </task>
-    <task id="LOCAL-00319" summary="added comments">
-      <created>1621752539893</created>
-      <option name="number" value="00319" />
-      <option name="presentableId" value="LOCAL-00319" />
-      <option name="project" value="LOCAL" />
-      <updated>1621752539894</updated>
-    </task>
-    <task id="LOCAL-00320" summary="added evaluate method to perform calculation on the nodes">
-      <created>1621835618153</created>
-      <option name="number" value="00320" />
-      <option name="presentableId" value="LOCAL-00320" />
-      <option name="project" value="LOCAL" />
-      <updated>1621835618154</updated>
-    </task>
-    <task id="LOCAL-00321" summary="Tree Traversals">
-      <created>1621838289318</created>
-      <option name="number" value="00321" />
-      <option name="presentableId" value="LOCAL-00321" />
-      <option name="project" value="LOCAL" />
-      <updated>1621838289318</updated>
-    </task>
-    <task id="LOCAL-00322" summary="Priority Queue with Binary Heaps">
-      <created>1621839301824</created>
-      <option name="number" value="00322" />
-      <option name="presentableId" value="LOCAL-00322" />
-      <option name="project" value="LOCAL" />
-      <updated>1621839301824</updated>
-    </task>
-    <task id="LOCAL-00323" summary="Binary Heap constructor and insert">
-      <created>1621921370611</created>
-      <option name="number" value="00323" />
-      <option name="presentableId" value="LOCAL-00323" />
-      <option name="project" value="LOCAL" />
-      <updated>1621921370613</updated>
-    </task>
-    <task id="LOCAL-00324" summary="Delete min value">
-      <created>1621923252817</created>
-      <option name="number" value="00324" />
-      <option name="presentableId" value="LOCAL-00324" />
-      <option name="project" value="LOCAL" />
-      <updated>1621923252817</updated>
-    </task>
-    <task id="LOCAL-00325" summary="added buildHeap method">
-      <created>1621924672974</created>
-      <option name="number" value="00325" />
-      <option name="presentableId" value="LOCAL-00325" />
-      <option name="project" value="LOCAL" />
-      <updated>1621924672974</updated>
-    </task>
-    <task id="LOCAL-00326" summary="# Binary Search Trees">
-      <created>1621955177253</created>
-      <option name="number" value="00326" />
-      <option name="presentableId" value="LOCAL-00326" />
-      <option name="project" value="LOCAL" />
-      <updated>1621955177254</updated>
-    </task>
-    <task id="LOCAL-00327" summary="added TreeNode class">
-      <created>1621958847259</created>
-      <option name="number" value="00327" />
-      <option name="presentableId" value="LOCAL-00327" />
-      <option name="project" value="LOCAL" />
-      <updated>1621958847259</updated>
+      <workItem from="1636959493040" duration="9479000" />
+      <workItem from="1637533544460" duration="7661000" />
+      <workItem from="1637952050130" duration="12281000" />
+      <workItem from="1638469718251" duration="1007000" />
     </task>
     <task id="LOCAL-00328" summary="added put method">
       <created>1621962449419</created>
@@ -682,7 +595,98 @@
       <option name="project" value="LOCAL" />
       <updated>1636480070522</updated>
     </task>
-    <option name="localTasksCounter" value="364" />
+    <task id="LOCAL-00364" summary="climbing stairs">
+      <created>1637185143004</created>
+      <option name="number" value="00364" />
+      <option name="presentableId" value="LOCAL-00364" />
+      <option name="project" value="LOCAL" />
+      <updated>1637185143005</updated>
+    </task>
+    <task id="LOCAL-00365" summary="climbing stairs">
+      <created>1637186860028</created>
+      <option name="number" value="00365" />
+      <option name="presentableId" value="LOCAL-00365" />
+      <option name="project" value="LOCAL" />
+      <updated>1637186860028</updated>
+    </task>
+    <task id="LOCAL-00366" summary="reverse integer">
+      <created>1637187438864</created>
+      <option name="number" value="00366" />
+      <option name="presentableId" value="LOCAL-00366" />
+      <option name="project" value="LOCAL" />
+      <updated>1637187438864</updated>
+    </task>
+    <task id="LOCAL-00367" summary="climbing stairs">
+      <created>1637190407185</created>
+      <option name="number" value="00367" />
+      <option name="presentableId" value="LOCAL-00367" />
+      <option name="project" value="LOCAL" />
+      <updated>1637190407186</updated>
+    </task>
+    <task id="LOCAL-00368" summary="minimum cost climbing stairs">
+      <created>1637190549162</created>
+      <option name="number" value="00368" />
+      <option name="presentableId" value="LOCAL-00368" />
+      <option name="project" value="LOCAL" />
+      <updated>1637190549162</updated>
+    </task>
+    <task id="LOCAL-00369" summary="majority element">
+      <created>1637648488333</created>
+      <option name="number" value="00369" />
+      <option name="presentableId" value="LOCAL-00369" />
+      <option name="project" value="LOCAL" />
+      <updated>1637648488334</updated>
+    </task>
+    <task id="LOCAL-00370" summary="majority element">
+      <created>1637650547645</created>
+      <option name="number" value="00370" />
+      <option name="presentableId" value="LOCAL-00370" />
+      <option name="project" value="LOCAL" />
+      <updated>1637650547645</updated>
+    </task>
+    <task id="LOCAL-00371" summary="Best Time to Buy and Sell Stock">
+      <created>1637698141751</created>
+      <option name="number" value="00371" />
+      <option name="presentableId" value="LOCAL-00371" />
+      <option name="project" value="LOCAL" />
+      <updated>1637698141751</updated>
+    </task>
+    <task id="LOCAL-00372" summary="max profit">
+      <created>1637699418044</created>
+      <option name="number" value="00372" />
+      <option name="presentableId" value="LOCAL-00372" />
+      <option name="project" value="LOCAL" />
+      <updated>1637699418044</updated>
+    </task>
+    <task id="LOCAL-00373" summary="Best Time to Buy and Sell Stock">
+      <created>1637699501991</created>
+      <option name="number" value="00373" />
+      <option name="presentableId" value="LOCAL-00373" />
+      <option name="project" value="LOCAL" />
+      <updated>1637699501991</updated>
+    </task>
+    <task id="LOCAL-00374" summary="product of array except self">
+      <created>1637998540865</created>
+      <option name="number" value="00374" />
+      <option name="presentableId" value="LOCAL-00374" />
+      <option name="project" value="LOCAL" />
+      <updated>1637998540866</updated>
+    </task>
+    <task id="LOCAL-00375" summary="square of a sorted array">
+      <created>1638216571228</created>
+      <option name="number" value="00375" />
+      <option name="presentableId" value="LOCAL-00375" />
+      <option name="project" value="LOCAL" />
+      <updated>1638216571230</updated>
+    </task>
+    <task id="LOCAL-00376" summary="product of array except self">
+      <created>1638258904814</created>
+      <option name="number" value="00376" />
+      <option name="presentableId" value="LOCAL-00376" />
+      <option name="project" value="LOCAL" />
+      <updated>1638258904815</updated>
+    </task>
+    <option name="localTasksCounter" value="377" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -731,13 +735,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Priority Queue with Binary Heaps" />
-    <MESSAGE value="Binary Heap constructor and insert" />
-    <MESSAGE value="Delete min value" />
-    <MESSAGE value="added buildHeap method" />
-    <MESSAGE value="# Binary Search Trees" />
-    <MESSAGE value="added TreeNode class" />
-    <MESSAGE value="added put method" />
     <MESSAGE value="added get method" />
     <MESSAGE value="added delete method" />
     <MESSAGE value="added remove method" />
@@ -752,11 +749,18 @@
     <MESSAGE value="Valid Anagram: constant space" />
     <MESSAGE value="valid palindrome" />
     <MESSAGE value="valid palindrome - space efficient solution" />
-    <MESSAGE value="reverse integer" />
     <MESSAGE value="updated comments" />
     <MESSAGE value="Group anagrams" />
     <MESSAGE value="group anagrams" />
-    <option name="LAST_COMMIT_MESSAGE" value="group anagrams" />
+    <MESSAGE value="reverse integer" />
+    <MESSAGE value="climbing stairs" />
+    <MESSAGE value="minimum cost climbing stairs" />
+    <MESSAGE value="majority element" />
+    <MESSAGE value="max profit" />
+    <MESSAGE value="Best Time to Buy and Sell Stock" />
+    <MESSAGE value="square of a sorted array" />
+    <MESSAGE value="product of array except self" />
+    <option name="LAST_COMMIT_MESSAGE" value="product of array except self" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

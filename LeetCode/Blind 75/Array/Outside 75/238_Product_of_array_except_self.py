@@ -35,7 +35,7 @@
 # ex:       1     2     3     4
 #             \      \     \
 # prefix    1     1     2     6  (prefix starts at 1, then multiply it by the new prefix number: 1, 1*1, 1*2, 2*3)
-#           |     |     |     |  (postfix starts at 1)
+#           |     |     |     |  (postfix starts at 1, 1*6(result from prefix), next postfixes: 1*4=4, 4*3=12, 12*2)
 # postfix   24    12    8     6  (from right to left; 1*6=6, 4(1*4) *2(prefix)=8, 12 (4*3)*1 = 12, 24 (12*2) * 1 = 24)
 
 # Time: O(n)
