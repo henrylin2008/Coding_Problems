@@ -28,3 +28,19 @@
 #
 # Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer
 # approach, which is more subtle.
+
+# Solution: sliding window; remove negative prefix (before left pointer), and keep sliding the right pointer, then
+# compare the current max subarray and new max subarray (after adding new value from the right pointer), and return the
+# max subarray
+class Solution:
+    def maxSubArray(self, nums) -> int:    # List[int] -> int:
+        max_subarray = nums[0]
+        current_sum = 0
+
+        for n in nums:
+            if current_sum < 0:     # if prefix sum is less than 0, then reset the current sum to 0
+                current_sum = 0
+            current_sum += n        # adding new number to the current sum
+            max_subarray = max(max_subarray, current_sum)   # max between current max_subarray and the new sum
+        return max_subarray
+
