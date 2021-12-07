@@ -32,6 +32,9 @@
 # Solution: sliding window; remove negative prefix (before left pointer), and keep sliding the right pointer, then
 # compare the current max subarray and new max subarray (after adding new value from the right pointer), and return the
 # max subarray
+
+# Time: O(n); only loop through nums once
+# Space: O(1); removing any negative sum
 class Solution:
     def maxSubArray(self, nums) -> int:    # List[int] -> int:
         max_subarray = nums[0]
