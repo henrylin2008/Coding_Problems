@@ -53,7 +53,6 @@ class Solution:
             right -= 1
         return True
 
-
     def alphaNum(self, c):
         return (ord('A') <= ord(c) <= ord('Z') or
                 ord('a') <= ord(c) <= ord('z') or
