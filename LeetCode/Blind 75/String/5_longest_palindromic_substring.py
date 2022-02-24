@@ -24,7 +24,7 @@ def longestPalindrome(self, s: str) -> str:
     result_len = 0
 
     for i in range(len(s)):
-        # loop for odd numbers (ex:'babad' --> 'bab')
+        # odd length (ex:'babad' --> 'bab')
         left, right = i, i
         while left >= 0 and right < len(s) and s[left] == s[right]:
             if right - left + 1 > result_len:
@@ -33,7 +33,7 @@ def longestPalindrome(self, s: str) -> str:
             left -= 1
             right += 1
 
-        # loop for even numbers (ex: 'cbbd' --> 'bb')
+        # even length (ex: 'cbbd' --> 'bb')
         left, right = i, i + 1
         while left >= 0 and right < len(s) and s[left] == s[right]:
             if right - left + 1 > result_len:
