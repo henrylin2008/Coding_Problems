@@ -24,3 +24,18 @@
 #
 # 0 <= s.length <= 5 * 104
 # s consists of English letters, digits, symbols and spaces.
+
+# Solution: sliding window, if we see same char twice within curr window, shift start position (remove left, move right)
+# Time: O(n); loop through every char in the string
+# Space: O(n); set to store unique characters, potentially every character in the string
+def lengthOfLongestSubstring(self, s: str) -> int:
+    char_set = set()
+    result = 0
+    left = 0
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left += 1
+        char_set.add(s[right])
+        result = max(result, right - left + 1)
+    return result
