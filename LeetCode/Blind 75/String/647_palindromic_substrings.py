@@ -23,7 +23,7 @@
 
 # Time: O(n^2); odd length, O(n) for all chars, expanding outward is O(n), -> O(n*n) = O(n^2); same for even length
 #               O(n^2) + O(n^2) ==> O(2n^2) => O(n^2)
-
+# Space: O(n); result to store the count of palindromic
 class Solution:
     def countSubstrings(self, s: str) -> int:
         res = 0
