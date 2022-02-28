@@ -20,3 +20,26 @@
 #
 # 1 <= s.length <= 1000
 # s consists of lowercase English letters.
+
+# Time: O(n^2); odd length, O(n) for all chars, expanding outward is O(n), -> O(n*n) = O(n^2); same for even length
+#               O(n^2) + O(n^2) ==> O(2n^2) => O(n^2)
+
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        res = 0
+
+        for i in range(len(s)):
+            # odd length
+            l, r = i, i
+            while l >= 0 and r < len(s) and s[l] == s[r]:   # while within the range, and left letter == right letter
+                res += 1
+                l -= 1
+                r += 1
+
+            # even length
+            l, r = i, i + 1
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                res += 1
+                l -= 1
+                r += 1
+        return res
