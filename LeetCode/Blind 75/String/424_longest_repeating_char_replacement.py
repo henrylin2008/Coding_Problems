@@ -38,11 +38,11 @@ class Solution:
         left = 0  # left pointer
         max_freq = 0  # most frequency of a letter
         for right in range(len(s)):
-            count[s[right]] = 1 + count.get(s[right], 0)  # increment of the count of s[r]
+            count[s[right]] = 1 + count.get(s[right], 0)  # increment of the count of s[right]
             max_freq = max(max_freq, count[s[right]])  # max frequency of the hashmap (most freq letter in s)
 
             while (right - left + 1) - max_freq > k:  # # of replacement > # of replacement allowed
-                count[s[left]] -= 1  # decrement of count for letter at the left pointer
+                count[s[left]] -= 1  # decrease the count of letter at the original left pointer before shifted
                 left += 1  # shift left pointer
 
             res = max(res, right - left + 1)  # update the result
