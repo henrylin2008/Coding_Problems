@@ -36,8 +36,9 @@ class Solution:
         l = 0       # left pointer
         for r in range(len(s)):
             count[s[r]] = 1 + count.get(s[r], 0)    # increment of the count of s[r]
+            max_freq = max(max_freq, count[s[r]])
 
-            while (r - l + 1) - max(count.values()) > k:  # # of replacement > # of replacement allowed
+            while (r - l + 1) - max_freq > k:  # # of replacement > # of replacement allowed
                 count[s[l]] -= 1        # decrement of count for left pointer
                 l += 1                  # shift left pointer
 
