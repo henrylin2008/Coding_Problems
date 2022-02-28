@@ -26,18 +26,20 @@
 # s consists of only uppercase English letters.
 # 0 <= k <= s.length
 
+# Time: O(n)
+#
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        count = {}
-        res = 0
+        count = {}  # count of each character
+        res = 0     # longest substring with k replacement
 
-        l = 0
+        l = 0       # left pointer
         for r in range(len(s)):
-            count[s[r]] = 1 + count.get(s[r], 0)
+            count[s[r]] = 1 + count.get(s[r], 0)    # increment of the count of s[r]
 
-            while (r - l + 1) - max(count.values()) > k:
-                count[s[l]] -= 1
-                l += 1
+            while (r - l + 1) - max(count.values()) > k:  # # of replacement > # of replacement allowed
+                count[s[l]] -= 1        # decrement of count for left pointer
+                l += 1                  # shift left pointer
 
             res = max(res, r - l + 1)
         return res
