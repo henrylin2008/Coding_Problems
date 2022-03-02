@@ -39,7 +39,15 @@ class Solution:
     @return: dcodes a single string to a list of strings
     """
     def decode(self, str):
-        pass
+        res, i = [], 0
 
+        while i < len(str):
+            j = i       # first char (num)
+            while str[j] != "#":
+                j += 1      # nive ti second char (#)
+            length = int(str[i:j])    # length of the string
+            res.append(str[j + 1: j + 1 + length])  # append each string to the res
+            i = j + 1 + length      # move index to the next num (beg of next string)
+        return res
 
 
