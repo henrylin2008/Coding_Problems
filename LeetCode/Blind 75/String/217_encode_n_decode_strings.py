@@ -22,8 +22,12 @@
 
 # Encoding: store length of str before each string and delimiter like '#';
 #           ex: # Input: ["lint","code","love","you"] -> 4#lint4#code4#love3#you
+# Decoding: second pointer (j), move it to after # (2nd char), calculate the length of the next string (= 1st num),
+#           add the string to the res array, then move i after each string
+
 # Time: O(n); n is number of characters in given string
-# Space: O(n)
+# Space: O(n); encode: res to store every string and nums and "#" delimiter
+#              decode: res to store every string after splitting the characters
 class Solution:
     """
     @param: strs: a list of strings
