@@ -44,8 +44,8 @@ class Solution:
         while i < len(str):
             j = i       # first char (num)
             while str[j] != "#":
-                j += 1      # nive ti second char (#)
-            length = int(str[i:j])    # length of the string
+                j += 1      # second char (#)
+            length = int(str[i:j])    # length of the next string: str[i] (first char: 4#lint2#we)
             res.append(str[j + 1: j + 1 + length])  # append each string to the res
             i = j + 1 + length      # move index to the next num (beg of next string)
         return res
