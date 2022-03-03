@@ -36,7 +36,7 @@ class Solution:
         return res
     """
     @param: str: A string
-    @return: dcodes a single string to a list of strings
+    @return: decodes a single string to a list of strings
     """
     def decode(self, str):
         res, i = [], 0
@@ -49,5 +49,3 @@ class Solution:
             res.append(str[j + 1: j + 1 + length])  # append each string to the res
             i = j + 1 + length      # move index to the next num (beg of next string)
         return res
-
-
