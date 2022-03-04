@@ -45,7 +45,7 @@ class Solution:
         result = [1] * (len(nums))
 
         prefix = 1
-        for i in range(len(nums)):  # loop through to get the prefix result: 1, 1, 2, 6
+        for i in range(len(nums)):  # loop through to get the prefix result: 1, 1 (1*1), 2 (1*2), 6 (2*3)
             result[i] = prefix
             prefix *= nums[i]  # previous prefix * new number from nums
         postfix = 1
