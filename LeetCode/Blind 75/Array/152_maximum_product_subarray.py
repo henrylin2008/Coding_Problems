@@ -26,15 +26,15 @@
 
 # Solution: dp: compute max and max-abs-val for each prefix subarray;
 #
-# Time: O(n)
-# Space: O(n)
+# Time: O(n); loop through the nums
+# Space: O(1); using single variables
 def maxProduct(self, nums) -> int:
     res = max(nums)
     cur_min, cur_max = 1, 1
 
     for n in nums:
-        temp = n * cur_max
-        cur_max = max(n * cur_max, n * cur_min, n)
-        cur_min = min(temp, n * cur_min, n)
+        temp = n * cur_max      # old cur_max from last loop
+        cur_max = max(n * cur_max, n * cur_min, n)  # n*cur_max: n,cur_max = pos; n*cur_min: n,cur_min = neg; n is max
+        cur_min = min(temp, n * cur_min, n)   # min(cur_max from last loop, new min, current num)
         res = max(res, cur_max)
     return res
