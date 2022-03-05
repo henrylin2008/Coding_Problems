@@ -23,3 +23,18 @@
 # 1 <= nums.length <= 2 * 104
 # -10 <= nums[i] <= 10
 # The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+# Solution: dp: compute max and max-abs-val for each prefix subarray;
+#
+# Time: O(n)
+# Space: O(n)
+def maxProduct(self, nums) -> int:
+    res = max(nums)
+    cur_min, cur_max = 1, 1
+
+    for n in nums:
+        temp = n * cur_max
+        cur_max = max(n * cur_max, n * cur_min, n)
+        cur_min = min(temp, n * cur_min, n)
+        res = max(res, cur_max)
+    return res
