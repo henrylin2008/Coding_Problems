@@ -36,3 +36,26 @@
 # -5000 <= nums[i] <= 5000
 # All the integers of nums are unique.
 # nums is sorted and rotated between 1 and n times.
+
+# solution: check if half of array is sorted in order to find pivot, arr is guaranteed to be in at most two sorted
+#           subarrays
+
+
+class Solution:
+    def findMin(self, nums) -> int:
+        l, r = 0, len(nums) - 1
+        res = nums[0]
+
+        while l <= r:
+            if nums[l] < nums[r]:   # list already sorted
+                res = min(res, nums[l])
+                break
+
+            # if list is not sorted
+            m = (l + r) // 2
+            res = min(res, nums[m])
+            if nums[m] >= nums[l]:
+                l = m + 1
+            else:
+                r = m - 1
+        return res
