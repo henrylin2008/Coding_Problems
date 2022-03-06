@@ -48,15 +48,15 @@ class Solution:
         res = nums[0]
 
         while l <= r:
-            if nums[l] < nums[r]:   # list already sorted
+            if nums[l] < nums[r]:   # sub-array already sorted
                 res = min(res, nums[l])
                 break
 
-            # if list is not sorted
-            m = (l + r) // 2
+            # binary search when array is not sorted
+            m = (l + r) // 2        # mid pointer
             res = min(res, nums[m])
-            if nums[m] >= nums[l]:
+            if nums[m] >= nums[l]:  # search right side
                 l = m + 1
-            else:
+            else:       # search left side
                 r = m - 1
         return res
