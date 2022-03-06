@@ -39,7 +39,8 @@
 
 # solution: check if half of array is sorted in order to find pivot, arr is guaranteed to be in at most two sorted
 #           subarrays
-
+# Time: O(log n)
+# Space: O(1); only use a couple of pointers and a variable for result.
 
 class Solution:
     def findMin(self, nums) -> int:
