@@ -49,14 +49,14 @@ class Solution:
 
         while l <= r:
             if nums[l] < nums[r]:   # sub-array already sorted
-                res = min(res, nums[l])
-                break
+                res = min(res, nums[l])     # update result by comparing current result and most left pointer value
+                break       # exit
 
             # binary search when array is not sorted
             m = (l + r) // 2        # mid pointer
-            res = min(res, nums[m])
-            if nums[m] >= nums[l]:  # search right side
-                l = m + 1
+            res = min(res, nums[m])     # update result
+            if nums[m] >= nums[l]:  # if left sub-array is sorted, search right side
+                l = m + 1   # move left pointer
             else:       # search left side
-                r = m - 1
+                r = m - 1   # move right pointer
         return res
