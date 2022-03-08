@@ -22,6 +22,7 @@
 # The number of nodes in the tree is in the range [0, 104].
 # -100 <= Node.val <= 100
 
+# Note: recursive dfs to find max-depth of subtrees; iterative bfs to count number of levels in tree
 
 # Definition for a binary tree node.
 from collections import deque

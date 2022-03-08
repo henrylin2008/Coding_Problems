@@ -27,7 +27,8 @@
 #
 # The number of nodes in both trees is in the range [0, 100].
 # -104 <= Node.val <= 104
-#
+
+# note: recursive dfs on both trees at the same time; iterative bfs compare each level of both trees
 #
 # Definition for a binary tree node.
 from typing import Optional
