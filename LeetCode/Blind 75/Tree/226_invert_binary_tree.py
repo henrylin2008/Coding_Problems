@@ -44,11 +44,9 @@ class Solution:
         if not root:    # if root is empty
             return None
         # swap the children
-        tmp = root.left
-        root.left = root.right
-        root.right = tmp
+        root.left, root.right = root.right, root.left
 
-        # recursive subtree
+        # recursive invert subtrees
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
