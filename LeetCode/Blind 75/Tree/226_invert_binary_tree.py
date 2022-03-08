@@ -23,3 +23,32 @@
 #
 # The number of nodes in the tree is in the range [0, 100].
 # -100 <= Node.val <= 100
+
+
+# solution: recursive dfs to invert subtrees; bfs to invert levels, use collections.deque; iterative dfs is easy
+# with stack if doing pre-order traversal
+
+# Definition for a binary tree node.
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:    # if root is empty
+            return None
+        # swap the children
+        tmp = root.left
+        root.left = root.right
+        root.right = tmp
+
+        # recursive subtree
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
