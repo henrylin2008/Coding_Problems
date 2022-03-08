@@ -24,9 +24,11 @@
 
 
 # Definition for a binary tree node.
+from collections import deque
 from typing import Optional
 
 
+# Definition for a binary tree node
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -41,8 +43,8 @@ class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
-
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
 
 # BFS solution: use queue to store node/s from each level (top down) until it reaches to an empty node;
 #               ex: 1(l1) + 2(l2) + 3(l2) + 4(l3) + 5 (l4) + empty
@@ -64,3 +66,24 @@ class Solution:
                     q.append(node.right)
             level += 1
         return level
+
+
+# Iterative DFS: use a stack to keep track the node and current depth (ex: [3 (node), 1 (depth)]) and return max depth
+# Time: O(n)
+# Space: O(n)
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        stack = [[root, 1]]     # initial stack and current depth
+        res = 1
+
+        while stack:
+            node, depth = stack.pop()   # pop current node (and its depth)
+
+            if node:
+                res = max(res, depth)
+                stack.append([node.left, depth + 1])    # add left child node and increase the depth
+                stack.append([node.right, depth + 1])   # add right child noe and increase the depth
+        return res
