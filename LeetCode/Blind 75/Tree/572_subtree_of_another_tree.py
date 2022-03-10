@@ -35,6 +35,8 @@ class TreeNode:
         self.right = right
 
 
+# Time: O(root + subRoot)
+# Space: O(1)
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not subRoot:     # if subRoot is empty -> subtree of root
