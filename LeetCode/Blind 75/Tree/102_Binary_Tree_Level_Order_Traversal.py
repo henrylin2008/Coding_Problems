@@ -22,3 +22,33 @@
 #
 # The number of nodes in the tree is in the range [0, 2000].
 # -1000 <= Node.val <= 1000
+
+# Definition for a binary tree node.
+from typing import Optional, List
+import collections
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        res = []
+        q = collections.deque()
+        q.append(root)
+        while q:  # q is not empty
+            q_len = len(q)  # one level at a time
+            level = []
+            for i in range(q_len):
+                node = q.popleft()
+                if node:  # node is not null
+                    level.append(node.val)
+                    q.append(node.left)
+                    q.append(node.right)
+            if level:
+                res.append(level)  # add each level to the result
+        return res
