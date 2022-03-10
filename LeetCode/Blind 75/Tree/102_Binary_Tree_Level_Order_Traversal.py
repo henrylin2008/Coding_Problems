@@ -23,6 +23,12 @@
 # The number of nodes in the tree is in the range [0, 2000].
 # -1000 <= Node.val <= 1000
 
+# Note: iterative bfs, add prev level which doesn't have any nulls to the result;
+# Create a res list and a level list, and use deque to popleft for the root node, then append child nodes into the
+# level list, lastly append the level into the res list
+
+# Time: O(n); visiting every node once
+# Space: O(n); biggest tree: O(n/2) --> O(n)
 # Definition for a binary tree node.
 from typing import Optional, List
 import collections
@@ -41,14 +47,14 @@ class Solution:
         q = collections.deque()
         q.append(root)
         while q:  # q is not empty
-            q_len = len(q)  # one level at a time
-            level = []
+            q_len = len(q)
+            level = []      # one level at a time
             for i in range(q_len):
                 node = q.popleft()
                 if node:  # node is not null
                     level.append(node.val)
-                    q.append(node.left)
-                    q.append(node.right)
+                    q.append(node.left)     # left child
+                    q.append(node.right)    # right child
             if level:
                 res.append(level)  # add each level to the result
         return res
