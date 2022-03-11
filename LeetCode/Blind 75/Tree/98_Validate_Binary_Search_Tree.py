@@ -41,9 +41,11 @@ class TreeNode:
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         def valid(node, left, right):
-            if not node:
+            if not node:      # return True if node is empty
                 return True
-            if not left < node.val < right:
+            if not left < node.val < right:  # False if node.val is not between left and right
                 return False
+            # Recursive calls to check on the validations of the left subtree and right subtree, setting the boundaries
             return valid(node.left, left, node.val) and valid(node.right, node.val, right)
+        # validate if the tree is a BST
         return valid(root, float("-inf"), float("inf"))
