@@ -29,3 +29,26 @@
 # All Node.val are unique.
 # p != q
 # p and q will exist in the BST.
+
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+# Time: O(log n); only one node each level
+# Space: O(1); no data structure is used
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        cur = root
+
+        while cur:  # when current is not empty
+            if p.val > cur.val and q.val > cur.val:  # p and q are greater than current, which is on the right side
+                cur = cur.right
+            elif p.val < cur.val and q.val < cur.val:
+                cur = cur.left
+            else:
+                return cur
