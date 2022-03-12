@@ -34,19 +34,24 @@ class TreeNode:
         self.right = right
 
 
+# solve in iterative; traverse the tree in-order, keep going left child nodes until it reaches the null node, then pop
+# the most recently added value in the stack, visit the parent node and then visit the right child, if it reaches the
+# null node, then pop the most recently added value; if n == k, then return current node's value
+# Time: O(H + k); H: tree height
+# Space: O(H); H: tree height; worst case: O(N); average case: O(log n)
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        n = 0
-        stack = []
-        cur = root
+        n = 0       # number of element visited
+        stack = []  # stack to store visited node/s
+        cur = root  # pointer for current node
 
-        while cur or stack:
-            while cur:
-                stack.append(cur)
-                cur = cur.left
-
-            cur = stack.pop()  # pop recent added item
-            n += 1
+        while cur or stack:         # while current node is not null or stack is not empty
+            while cur:              # current is not null, keep going left
+                stack.append(cur)   # add current to the stack
+                cur = cur.left      # visit left child
+            # cur is at the null
+            cur = stack.pop()       # pop most recently added value
+            n += 1                  # update visited node value
             if n == k:
                 return cur.val
-            cur = cur.right
+            cur = cur.right         # visit right subtree
