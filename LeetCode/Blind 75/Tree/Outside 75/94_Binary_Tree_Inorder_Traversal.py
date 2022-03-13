@@ -53,3 +53,17 @@ class Solution:
 
         inorder(root)
         return res
+
+    # iterative solution
+    def inorderTraversal_iterative(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        cur = root
+        stack = []
+        while stack or cur:         # while stack and cur not empty
+            while cur:              # while cur is not null
+                stack.append(cur)   # add cur to the stack
+                cur = cur.left      # move to the left subtree
+            cur = stack.pop()       # pop recently added node/value
+            res.append(cur.val)     # add popped item into the res
+            cur = cur.right         # move to the right subtree
+        return res
