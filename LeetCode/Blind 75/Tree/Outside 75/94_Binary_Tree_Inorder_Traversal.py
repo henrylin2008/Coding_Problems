@@ -54,15 +54,17 @@ class Solution:
         inorder(root)
         return res
 
-    # iterative solution
+    # iterative solution: use a pointer for current position and stack to store/pop nodes while traverse the tree, keep
+    # moving to the left subtree until it reaches a null node, then pop most recently added the node, store its value
+    # to the result list, then move the right subtree and repeat the same process, until there's no more in stack/cur
     def inorderTraversal_iterative(self, root: Optional[TreeNode]) -> List[int]:
         res = []
-        cur = root
-        stack = []
+        cur = root                  # pointer for current location
+        stack = []                  # stack to keep track of the nodes
         while stack or cur:         # while stack and cur not empty
             while cur:              # while cur is not null
                 stack.append(cur)   # add cur to the stack
-                cur = cur.left      # move to the left subtree
+                cur = cur.left      # move the pointer to the left subtree
             cur = stack.pop()       # pop recently added node/value
             res.append(cur.val)     # add popped item into the res
             cur = cur.right         # move to the right subtree
