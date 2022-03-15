@@ -1,6 +1,10 @@
 # Construct Trie
 
 # Method 1:
+# Time: O(M); M is the length of the word checking upon
+# Time for adding a word: O(M); M is the length of word to be added
+# Space: O(n)
+#
 # class Trie:
 #     def __init__(self):
 #         self.root = {"*": "*"}      # root is a dictionary
@@ -23,6 +27,10 @@
 
 
 # Method 2:
+# Time: O(M); M is the length of the word checking upon
+# Time for adding a word: O(M); M is the length of word to be added
+# Space: O(n)
+
 class TrieNode:
     def __init__(self, letter):
         self.letter = letter
