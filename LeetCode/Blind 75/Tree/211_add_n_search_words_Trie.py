@@ -38,3 +38,41 @@
 # word in search consist of '.' or lowercase English letters.
 # There will be at most 3 dots in word for search queries.
 # At most 104 calls will be made to addWord and search.
+
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.end_of_word = False
+
+
+class WordDictionary:
+
+    def __init__(self):
+        self.root = TrieNode()
+
+    def addWord(self, word: str) -> None:
+        curr_node = self.root
+        for letter in word:
+            if letter not in curr_node.children:
+                curr_node.children[letter] = TrieNode()
+            curr_node = curr_node.children[letter]
+        curr_node.end_of_word = True
+
+    def search(self, word: str) -> bool:
+        def dfs(j, root):       # dfs calls on the children
+            cur = root
+
+            for i in range(j, len(word)):
+                c = word[i]
+                if c == ".":
+                    for child in cur.children.values():
+                        if dfs(i + 1, child):  # recursive calls on the children; input: index,current node
+                            return True  # if any path matches
+                    return False  # False if no match
+                else:
+                    if c not in cur.children:
+                        return False
+                    cur = cur.children[c]  # shift pointer down
+            return cur.end_of_word  # True if reach the end of the word
+
+        return dfs(0, self.root)
