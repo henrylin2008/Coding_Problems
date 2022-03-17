@@ -39,6 +39,8 @@
 # There will be at most 3 dots in word for search queries.
 # At most 104 calls will be made to addWord and search.
 
+# Note: if char = "." run search for remaining portion of word on all of curr nodes children;
+
 class TrieNode:
     def __init__(self):
         self.children = {}
@@ -54,7 +56,7 @@ class WordDictionary:
         curr_node = self.root
         for letter in word:
             if letter not in curr_node.children:
-                curr_node.children[letter] = TrieNode()
+                curr_node.children[letter] = TrieNode()     # insert a TrieNode
             curr_node = curr_node.children[letter]
         curr_node.end_of_word = True
 
@@ -64,15 +66,14 @@ class WordDictionary:
 
             for i in range(j, len(word)):
                 c = word[i]
-                if c == ".":
+                if c == ".":            # when curren char is a "."
                     for child in cur.children.values():
-                        if dfs(i + 1, child):  # recursive calls on the children; input: index,current node
-                            return True  # if any path matches
-                    return False  # False if no match
+                        if dfs(i + 1, child):  # recursive calls on the children; input: starting index, current node
+                            return True        # if one path matches
+                    return False               # False if no match
                 else:
                     if c not in cur.children:
                         return False
-                    cur = cur.children[c]  # shift pointer down
-            return cur.end_of_word  # True if reach the end of the word
-
-        return dfs(0, self.root)
+                    cur = cur.children[c]      # shift pointer down
+            return cur.end_of_word             # True if reach the end of the word
+        return dfs(0, self.root)               # recursive calls, start index at 0, and the root node
