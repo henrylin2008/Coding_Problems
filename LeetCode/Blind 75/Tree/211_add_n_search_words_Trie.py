@@ -61,19 +61,19 @@ class WordDictionary:
         curr_node.end_of_word = True
 
     def search(self, word: str) -> bool:
-        def dfs(j, root):       # dfs calls on the children
+        def dfs(j, root):       # dfs calls on the children; j: starting index; root: node (pass in)
             cur = root
 
-            for i in range(j, len(word)):
+            for i in range(j, len(word)):       # j: starting index, until reach end of the word
                 c = word[i]
-                if c == ".":            # when curren char is a "."
-                    for child in cur.children.values():
-                        if dfs(i + 1, child):  # recursive calls on the children; input: starting index, current node
-                            return True        # if one path matches
-                    return False               # False if no match
-                else:
-                    if c not in cur.children:
+                if c == ".":                    # when curren char is a "."; Recursive
+                    for child in cur.children.values():    # look at child's values
+                        if dfs(i + 1, child):  # recursive calls on the children; input: child index(i+1), curr node
+                            return True        # True if a path matches
+                    return False               # False if no match found
+                else:                   # iterative, when it's not a "."
+                    if c not in cur.children:  # if current character does not exist: False
                         return False
-                    cur = cur.children[c]      # shift pointer down
-            return cur.end_of_word             # True if reach the end of the word
+                    cur = cur.children[c]      # shift pointer the node if it exists
+            return cur.end_of_word             # True if it reaches the end of the word
         return dfs(0, self.root)               # recursive calls, start index at 0, and the root node
