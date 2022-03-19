@@ -39,3 +39,21 @@
 
 # Time: O(n); linear time; O(n) for input array, O(n) for values row, O(n) + O(n) -> O(n)
 # Space: O(n); hashmap to count the input array
+from typing import List
+
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        count = {}  # count of occurrence of each value
+        freq = [[] for i in range(len(nums) + 1)]  # array for values associate with the count, same size of input array
+        for n in nums:  # counting the occurrence of each value
+            count[n] = 1 + count.get(n, 0)
+        for n, c in count.items():  #
+            freq[c].append(n)  # n occurs c times
+
+        res = []
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
