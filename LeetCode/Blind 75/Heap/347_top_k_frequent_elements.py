@@ -44,16 +44,15 @@ from typing import List
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = {}  # count of occurrence of each value
+        count = {}          # hashmap for count of occurrence of each value
         freq = [[] for i in range(len(nums) + 1)]  # array for values associate with the count, same size of input array
-        for n in nums:  # counting the occurrence of each value
+        for n in nums:      # counting the occurrence of each value
             count[n] = 1 + count.get(n, 0)
-        for n, c in count.items():  #
-            freq[c].append(n)  # n occurs c times
-
+        for n, c in count.items():      # associate number and count in count hashmap
+            freq[c].append(n)           # n(number) occurs c(count) times
         res = []
-        for i in range(len(freq) - 1, 0, -1):
-            for n in freq[i]:
-                res.append(n)
-                if len(res) == k:
+        for i in range(len(freq) - 1, 0, -1):  # descending order (most frequent elements)
+            for n in freq[i]:                  # go through n value in the freq array
+                res.append(n)                  # if n is not empty, append n (times) to the res
+                if len(res) == k:              # when length of res == k: return res
                     return res
