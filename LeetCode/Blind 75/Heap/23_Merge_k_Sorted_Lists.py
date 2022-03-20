@@ -39,7 +39,8 @@
 # lists[i] is sorted in ascending order.
 # The sum of lists[i].length will not exceed 104.
 
-
+# idea: merge 2 lists (in given lists) same time
+# Time: O(n log(k)); O(n) for each level (when merge 2 lists); log(k): number of times repeating the O(n) step
 from typing import Optional, List
 
 
