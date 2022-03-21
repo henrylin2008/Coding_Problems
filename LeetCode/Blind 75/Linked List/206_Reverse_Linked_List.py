@@ -48,3 +48,18 @@ class Solution:
             prev = current
             current = temp
         return prev
+
+    # Recursive solution: if there's node at head.next, recursive call on the sub-list, and set the next node as the new
+    #                     head, and point the original head to the null
+    # Time: O(n)
+    # Space: O(n); the solution requires to store every node
+    # def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    #     if not head:
+    #         return None
+    #     new_head = head     # new_head: temp var
+    #     if head.next:       # if there's a next node/sub-problem (recursive)
+    #         new_head = self.reverseList(head.next)  # new_head is the next node (reverse order)
+    #         head.next.next = head       # reverse the list
+    #     head.next = None   # if head is the first node in the list, then set the head next node to Null
+    #
+    #     return new_head
