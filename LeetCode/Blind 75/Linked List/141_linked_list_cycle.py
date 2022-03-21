@@ -34,3 +34,24 @@
 #
 #
 # Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+# Time: O(n); linear time; n is length of the cycle
+# Space: O(1); only using the pointers
+# Definition for singly-linked list.
+from typing import Optional
+
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow, fast = head, head
+        while fast and fast.next:
+            slow, fast = slow.next, fast.next.next
+            if slow == fast:
+                return True
+        return False
