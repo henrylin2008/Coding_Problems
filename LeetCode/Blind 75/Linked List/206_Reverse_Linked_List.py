@@ -24,3 +24,27 @@
 #
 #
 # Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
+
+# Definition for singly-linked list.
+from typing import Optional
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+# Iterative solution: using 2 pointers: prev (Null), current (head), set a temp var as the current.next, then set the
+# current.next to prev (null), repeat the process until no more current node
+# Time: O(n); it needs to run through the entire linked list
+# Space: O(1); only using the pointers
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev, current = None, head
+        while current:
+            temp = current.next
+            current.next = prev
+            prev = current
+            current = temp
+        return prev
