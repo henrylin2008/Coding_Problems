@@ -26,6 +26,9 @@
 # The number of nodes in the list is in the range [1, 5 * 104].
 # 1 <= Node.val <= 1000
 
+# Logic: divide the given list to 2 halves using slow and fast pointers, then reverse (pointers) the second half, and
+# adjust the next pointers (first -> second -> first.next -> second.next -> first.next.next -> second.next.next ...)
+
 # Definition for singly-linked list.
 from typing import Optional
 
