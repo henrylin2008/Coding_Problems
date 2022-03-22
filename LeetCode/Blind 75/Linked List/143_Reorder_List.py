@@ -38,7 +38,8 @@ class ListNode:
         self.val = val
         self.next = next
 
-
+# Time: O(n): linear time
+# Space: O(1); only using pointers
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
         """
