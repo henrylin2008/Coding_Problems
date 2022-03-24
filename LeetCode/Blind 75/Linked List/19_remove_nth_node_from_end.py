@@ -38,20 +38,24 @@ class ListNode:
         self.next = next
 
 
+# Idea: set up a dummy node (a node before the head), and use 2 pointers (left, right), dummy --> left --> +n --> right
+
+# Time: O(n);
+# Space: O(1); using 2 pointers technique
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         dummy = ListNode(0, head)
         left = dummy
         right = head
-
+        # right = head + n
         while n > 0 and right:
-            right = right.next
+            right = right.next  # keep shift right
             n -= 1
 
-        while right:
+        while right:            # move both pointers as long as it has not reached the end of the list
             left = left.next
             right = right.next
 
         # delete
-        left.next = left.next.next
+        left.next = left.next.next      # remove the next node
         return dummy.next
