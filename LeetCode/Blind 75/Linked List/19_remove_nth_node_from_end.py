@@ -39,6 +39,8 @@ class ListNode:
 
 
 # Idea: set up a dummy node (a node before the head), and use 2 pointers (left, right), dummy --> left --> +n --> right
+#       keep shifting the 2 pointers to the right until it reaches the end, then left.next = left.next.next, return
+#       dummy.next
 
 # Time: O(n);
 # Space: O(1); using 2 pointers technique
@@ -47,15 +49,14 @@ class Solution:
         dummy = ListNode(0, head)
         left = dummy
         right = head
-        # right = head + n
+        # find the right pointer: right = head + n
         while n > 0 and right:
             right = right.next  # keep shift right
             n -= 1
-
-        while right:            # move both pointers as long as it has not reached the end of the list
+        # move both pointers until right pointer reaches the end
+        while right:
             left = left.next
             right = right.next
-
-        # delete
+        # delete (left.next) node
         left.next = left.next.next      # remove the next node
         return dummy.next
