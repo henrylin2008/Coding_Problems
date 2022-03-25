@@ -55,3 +55,27 @@
 # Node.val is unique for each node.
 # There are no repeated edges and no self-loops in the graph.
 # The Graph is connected and all nodes can be visited starting from the given node.
+
+
+# Definition for a Node.
+class Node:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+
+
+class Solution:
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        new = {}
+
+        def dfs(node):
+            if node in new:  # if node in current hashmap
+                return new[node]
+
+            copy = Node(node.val)  # copy of the original node
+            new[node] = copy  # add the copy to the hashmap
+            for neigh in node.neighbors:
+                copy.neighbors.append(dfs(neigh))
+            return copy
+
+        return dfs(node)
