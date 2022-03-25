@@ -69,13 +69,12 @@ class Solution:
         new = {}
 
         def dfs(node):
-            if node in new:  # if node in current hashmap
+            if node in new:                     # if node in current hashmap
                 return new[node]
 
-            copy = Node(node.val)  # copy of the original node
-            new[node] = copy  # add the copy to the hashmap
-            for neigh in node.neighbors:
+            copy = Node(node.val)               # copy of the original node
+            new[node] = copy                    # add the copy to the hashmap
+            for neigh in node.neighbors:        # add neighbors to the copy (list) node
                 copy.neighbors.append(dfs(neigh))
             return copy
-
-        return dfs(node)
+        return dfs(node) if node else None      # return when node is not empty
