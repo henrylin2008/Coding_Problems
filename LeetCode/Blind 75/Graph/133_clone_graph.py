@@ -64,15 +64,16 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 
 
+# Time: O(n) = # of Edges + # of Vertices
+# Space: O(n); hashmap for cloning
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
         new = {}
 
         def dfs(node):
-            if node in new:                     # if node in current hashmap
+            if node in new:                     # if node in the hashmap, return the clone
                 return new[node]
-
-            copy = Node(node.val)               # copy of the original node
+            copy = Node(node.val)               # create a new node by copy of the original node value
             new[node] = copy                    # add the copy to the hashmap
             for neigh in node.neighbors:        # add neighbors to the copy (list) node
                 copy.neighbors.append(dfs(neigh))
