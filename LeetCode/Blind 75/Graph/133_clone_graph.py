@@ -64,18 +64,19 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 
 
+# note: recursive dfs, hashmap for visited nodes
 # Time: O(n) = # of Edges + # of Vertices
 # Space: O(n); hashmap for cloning
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        new = {}
+        hash_map = {}            # hashmap to map old nodes: new nodes: 1:1, 2:2, 3:3, 4:4
 
-        def dfs(node):
-            if node in new:                     # if node in the hashmap, return the clone
-                return new[node]
-            copy = Node(node.val)               # create a new node by copy of the original node value
-            new[node] = copy                    # add the copy to the hashmap
+        def clone(node):         # dfs on nodes
+            if node in hash_map:                # if node in the hashmap (already cloned), return the clone
+                return hash_map[node]
+            new_node = Node(node.val)           # create a new node by copy of the original node value
+            hash_map[node] = new_node           # add the new_node to the hashmap; old_node: new_node
             for neigh in node.neighbors:        # add neighbors to the copy (list) node
-                copy.neighbors.append(dfs(neigh))
-            return copy
-        return dfs(node) if node else None      # return when node is not empty
+                new_node.neighbors.append(clone(neigh))   # dfs on neighbors: cloning the neighbors recursively
+            return new_node
+        return clone(node) if node else None      # return when node is not empty
