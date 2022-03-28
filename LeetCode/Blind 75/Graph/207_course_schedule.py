@@ -38,10 +38,15 @@
 # note: build adjacentcy_list with edges, run dfs on each V, if while dfs on V we see V again, then loop exists,
 # otherwise V isnt in a loop, 3 states= not visited, visited, still visiting
 
+# Idea: using a dictionary to store courses and map its prerequisites list, use a set to store visited courses, run dfs
+# on the course, if any course from visited_set shows up again, which mean there's a loop, return False; then run dfs
+# on the prerequisites, return False if any course can't be completed; then remove current course from the visited_ste,
+# and set the prerequisite of the current course to empty and return True for dfs(course). Run a for loop on numCourses,
+# if any of the course return False, return False;
 from typing import List
 
 
-# Time: O(n + pre); n: number of nodes; preq: prerequisites
+# Time: O(n + pre); n: number of nodes; pre: prerequisites
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         # map each course to prereq list
@@ -53,20 +58,20 @@ class Solution:
 
         def dfs(crs):
             # base cases
-            if crs in visited_set:    # if the course already been visited; there's a loop
+            if crs in visited_set:    # if the course already been visited (visiting twice); there's a loop
                 return False
             if pre_map[crs] == []:    # this course has no prereq
                 return True
 
-            visited_set.add(crs)      # add this crs to visit_set
+            visited_set.add(crs)      # add this crs to visit_set, currently visiting this course
             for pre in pre_map[crs]:  # loop through prereq for this course
-                if not dfs(pre):      # run dfs on pre, if one course failed, then False
+                if not dfs(pre):      # run dfs on pre, if one course can't be completed, then return False
                     return False
-            visited_set.remove(crs)   # remove visited crs from visit_set
-            pre_map[crs] = []         # set no prereq
+            visited_set.remove(crs)   # remove current/visited crs from visited_set
+            pre_map[crs] = []         # set no prereq on current visiting course
             return True
 
-        for crs in range(numCourses):  # run dfs on every course
-            if not dfs(crs):           # False if any return false
+        for crs in range(numCourses):  # run dfs on every course; ex: courses are not connected; 1 -> 2; 3 -> 4
+            if not dfs(crs):           # False if any dfs return false
                 return False
         return True
