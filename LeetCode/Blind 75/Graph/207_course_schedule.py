@@ -45,27 +45,28 @@ from typing import List
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         # map each course to prereq list
-        pre_map = {i: [] for i in range(numCourses)}
+        pre_map = {i: [] for i in range(numCourses)}  # ex: [[1,0]] -> {0: [], 1: [0]}
         for crs, pre in prerequisites:
             pre_map[crs].append(pre)
 
-        visit_set = set()  # all courses along the current DFS path
+        visited_set = set()           # all courses along the current DFS path
 
         def dfs(crs):
-            if crs in visit_set:  # if the course already been visited; loop
+            # base cases
+            if crs in visited_set:    # if the course already been visited; there's a loop
                 return False
-            if pre_map[crs] == []:  # this course has no prereq
+            if pre_map[crs] == []:    # this course has no prereq
                 return True
 
-            visit_set.add(crs)  # add this crs to visit_set
+            visited_set.add(crs)      # add this crs to visit_set
             for pre in pre_map[crs]:  # loop through prereq for this course
-                if not dfs(pre):  # run dfs on pre, if one course failed, then False
+                if not dfs(pre):      # run dfs on pre, if one course failed, then False
                     return False
-            visit_set.remove(crs)  # remove visited crs from visit_set
-            pre_map[crs] = []  # set no prereq
+            visited_set.remove(crs)   # remove visited crs from visit_set
+            pre_map[crs] = []         # set no prereq
             return True
 
         for crs in range(numCourses):  # run dfs on every course
-            if not dfs(crs):  # False if any return false
+            if not dfs(crs):           # False if any return false
                 return False
         return True
