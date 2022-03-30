@@ -34,3 +34,37 @@
 # n == heights[r].length
 # 1 <= m, n <= 200
 # 0 <= heights[r][c] <= 105
+from typing import List
+
+
+class Solution:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        rows, cols = len(heights), len(heights[0])
+        pac, atl = set(), set()
+
+        def dfs(r, c, visit, prev_height):  # (row, column, visit_set, previous_height)
+            # going from ocean into the cells
+            if ((r, c) in visit or  # if row, column already in visit set, then return/not continue
+                    r < 0 or c < 0 or r == rows or c == cols or  # if out of bounds
+                    heights[r][c] < prev_height):  # water only flow if curr_height >= prev_height
+                return
+            visit.add((r, c))  # add it to the visit set
+            dfs(r + 1, c, visit, heights[r][c])  # down neighbor
+            dfs(r - 1, c, visit, heights[r][c])  # up neighbor
+            dfs(r, c + 1, visit, heights[r][c])  # right neighbor
+            dfs(r, c - 1, visit, heights[r][c])  # left neighbor
+
+        for c in range(cols):
+            dfs(0, c, pac, heights[0][c])  # dfs on first row; (row, column, visit_set, prev_height)
+            dfs(rows - 1, c, atl, heights[rows - 1][c])  # dfs on last row;
+
+        for r in range(rows):
+            dfs(r, 0, pac, heights[r][0])  # dfs on first column
+            dfs(r, cols - 1, atl, heights[r][cols - 1])  # dfs on last column
+
+        res = []
+        for r in range(rows):  # every cell in the rows
+            for c in range(cols):  # every cell in the columns
+                if (r, c) in pac and (r, c) in atl:  # if the cell in both of pac set and atl set
+                    res.append([r, c])  # add the cell to the result
+        return res
