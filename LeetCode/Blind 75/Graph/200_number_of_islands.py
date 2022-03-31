@@ -38,6 +38,8 @@ import collections
 from typing import List
 
 
+# Time: O(v + e); v: vertices; e: edges
+# Space: O(v + e); v: vertices; e: edges
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         if not grid:
@@ -70,6 +72,6 @@ class Solution:
             for c in range(cols):   # every col
                 if grid[r][c] == "1" and (r, c) not in visit:
                     bfs(r, c)       # bfs on current node
-                    islands += 1    #
+                    islands += 1    # increment island if the island has not been visited
         return islands
 
