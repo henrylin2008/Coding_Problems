@@ -34,3 +34,42 @@
 # n == grid[i].length
 # 1 <= m, n <= 300
 # grid[i][j] is '0' or '1'.
+import collections
+from typing import List
+
+
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        if not grid:
+            return 0
+
+        rows, cols = len(grid), len(grid[0])
+        visit = set()       # visited nodes
+        islands = 0         # count of islands
+
+        def bfs(r, c):
+            q = collections.deque()
+            visit.add((r, c))
+            q.append((r, c))
+
+            while q:        # q not empty
+                row, col = q.popleft()      # pop left most left item in the q
+                directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]  # [[right], [left], [above], [below]]
+
+                for dr, dc in directions:
+                    r, c = row + dr, col + dc
+                    if (r in range(rows) and
+                            c in range(cols) and
+                            grid[r][c] == "1" and
+                            (r, c) not in visit):
+                        q.append((r, c))        # add node to the q, needs to run bfs
+                        visit.add((r, c))       # mark it as visited
+
+        # visit every cell
+        for r in range(rows):       # every row
+            for c in range(cols):   # every col
+                if grid[r][c] == "1" and (r, c) not in visit:
+                    bfs(r, c)       # bfs on current node
+                    islands += 1    #
+        return islands
+
