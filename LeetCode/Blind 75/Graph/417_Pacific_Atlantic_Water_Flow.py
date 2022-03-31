@@ -57,7 +57,7 @@ class Solution:
         pac, atl = set(), set()            # hashset that can reach either Pacific or Atlantic ocean
 
         def dfs(row, col, visit, prev_height):  # (row, column, visit_set, previous_height)
-            # going from ocean into the cells
+            # going from ocean inward (to the center)
             if ((row, col) in visit or  # if row, column already in visit set, then skip
                     row < 0 or col < 0 or row == rows or col == cols or  # if out of bounds
                     heights[row][col] < prev_height):  # water only flow if curr_height >= prev_height
@@ -69,10 +69,12 @@ class Solution:
             dfs(row, col - 1, visit, heights[row][col])  # left neighbor
 
         for c in range(cols):
+            # run dfs on first/last rows
             dfs(0, c, pac, heights[0][c])  # dfs on first row; (row, column, visit_set, prev_height); reach Pacific
             dfs(rows - 1, c, atl, heights[rows - 1][c])  # dfs on last row; reach Atlantic
 
         for r in range(rows):
+            # run dfs on first/last cols
             dfs(r, 0, pac, heights[r][0])  # dfs on first column; reach Pacific
             dfs(r, cols - 1, atl, heights[r][cols - 1])  # dfs on last column; reach Atlantic
 
