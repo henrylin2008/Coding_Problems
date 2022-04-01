@@ -51,8 +51,8 @@ class Solution:
 
         def bfs(r, c):
             q = collections.deque()
-            visit.add((r, c))
-            q.append((r, c))
+            visit.add((r, c))       # mark this position as visited
+            q.append((r, c))        # add it to the q
 
             while q:        # q not empty
                 row, col = q.popleft()      # pop left most left item in the q
@@ -60,7 +60,7 @@ class Solution:
 
                 for dr, dc in directions:
                     r, c = row + dr, col + dc
-                    if (r in range(rows) and
+                    if (r in range(rows) and        # if r, c in bound, land ("1"), and not been visited
                             c in range(cols) and
                             grid[r][c] == "1" and
                             (r, c) not in visit):
@@ -70,7 +70,7 @@ class Solution:
         # visit every cell
         for r in range(rows):       # every row
             for c in range(cols):   # every col
-                if grid[r][c] == "1" and (r, c) not in visit:
+                if grid[r][c] == "1" and (r, c) not in visit:   # if node is "1" and not in the visit set
                     bfs(r, c)       # bfs on current node
                     islands += 1    # increment island if the island has not been visited
         return islands
