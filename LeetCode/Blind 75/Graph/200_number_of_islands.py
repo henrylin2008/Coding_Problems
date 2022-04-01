@@ -34,6 +34,22 @@
 # n == grid[i].length
 # 1 <= m, n <= 300
 # grid[i][j] is '0' or '1'.
+
+# Note: for each cell, if it's == "1" and not visited, then run bfs and increment the islands; in bfs function, use a
+# queue/deque to store info about the node, mark current cell as visited and add it to the queue, run a while on queue,
+# as long as it's not empty, pop the leftmost node from the queue, then check on its adjacent nodes, if r, c within the
+# range and is a land ("1") and it has not been visited, then add the node to the queue and visited set
+#
+# -visited set: keep track of visited nodes
+# -Queue: keep track of adjacent nodes, and pop the leftmost node from the queue and add it to the visited set, and add
+#        the new adjacent nodes to the back of the queue
+#
+# dfs algorithm:
+# 1.Start by putting any one of the graph's vertices at the back of a queue.
+# 2.Take the front item of the queue and add it to the visited list.
+# 3.Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to the back of the
+#   queue.
+# 4. Keep repeating steps 2 and 3 until the queue is empty.
 import collections
 from typing import List
 
@@ -46,32 +62,29 @@ class Solution:
             return 0
 
         rows, cols = len(grid), len(grid[0])
-        visit = set()       # visited nodes
-        islands = 0         # count of islands
+        visit = set()  # visited nodes
+        islands = 0  # count of islands
 
         def bfs(r, c):
             q = collections.deque()
-            visit.add((r, c))       # mark this position as visited
-            q.append((r, c))        # add it to the q
+            visit.add((r, c))  # mark this position as visited
+            q.append((r, c))  # add it to the q
 
-            while q:        # q not empty
-                row, col = q.popleft()      # pop left most left item in the q
-                directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]  # [[right], [left], [above], [below]]
+            while q:  # q not empty, expanding the island
+                row, col = q.popleft()  # pop left most item from the q
+                directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]  # adjacent nodes: [[right], [left], [above], [below]]
 
                 for dr, dc in directions:
                     r, c = row + dr, col + dc
-                    if (r in range(rows) and        # if r, c in bound, land ("1"), and not been visited
-                            c in range(cols) and
-                            grid[r][c] == "1" and
-                            (r, c) not in visit):
-                        q.append((r, c))        # add node to the q, needs to run bfs
-                        visit.add((r, c))       # mark it as visited
+                    # if r, c are inbound, current node is a land ("1"), and it has not been visited
+                    if r in range(rows) and c in range(cols) and grid[r][c] == "1" and (r, c) not in visit:
+                        q.append((r, c))  # add node to the q, and run bfs on this cell/node
+                        visit.add((r, c))  # mark it as visited, avoid visit twice
 
         # visit every cell
-        for r in range(rows):       # every row
-            for c in range(cols):   # every col
-                if grid[r][c] == "1" and (r, c) not in visit:   # if node is "1" and not in the visit set
-                    bfs(r, c)       # bfs on current node
-                    islands += 1    # increment island if the island has not been visited
+        for r in range(rows):  # every row
+            for c in range(cols):  # every col
+                if grid[r][c] == "1" and (r, c) not in visit:  # if node is "1" and not in the visit set
+                    bfs(r, c)  # bfs on current node
+                    islands += 1  # increment island if the island has not been visited
         return islands
-
