@@ -21,6 +21,11 @@
 #
 # 0 <= nums.length <= 105
 # -109 <= nums[i] <= 109
+
+# Note: create a hashset for given nums, consider each consecutive sequence, check if the previous num (n- 1) of the
+# starting consequence exists in the hashset, and increment the length if the next number is in the hashset,
+# update and return the max between the current length and the longest length.
+
 from typing import List
 
 
