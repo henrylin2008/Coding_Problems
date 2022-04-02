@@ -21,3 +21,20 @@
 #
 # 0 <= nums.length <= 105
 # -109 <= nums[i] <= 109
+from typing import List
+
+
+# Time: O(n)
+# Space: O(n)
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        num_set = set(nums)     # set to check unique nums
+        longest = 0             # longest length of a sequence
+        for n in nums:
+            # check if it's the start of a sequence; n -1: start of a sequence
+            if (n - 1) not in num_set:
+                length = 0
+                while (n + length) in num_set:   # check if next consecutive num in the num_set
+                    length += 1         # increment the length
+                longest = max(length, longest)
+        return longest
