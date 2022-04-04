@@ -29,6 +29,8 @@
 # 1 <= coins.length <= 12
 # 1 <= coins[i] <= 231 - 1
 # 0 <= amount <= 104
+from typing import List
+
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
@@ -38,4 +40,4 @@ class Solution:
             for c in coins:
                 if a - c >= 0:  # if amount - current_coin >= 0
                     dp[a] = min(dp[a], 1 + dp[a - c])   # min coins; min(current_coin, current_coin(1) + dp[a-c] )
-        return dp[amount] if dp[amount] != amount + 1 else -1
+        return dp[amount] if dp[amount] != amount + 1 else -1   # return if the value is not the default value else -1
