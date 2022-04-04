@@ -64,31 +64,22 @@
 # 否则，如果 abs(new) < abs(top)，则新小行星 new 将爆炸；如果 abs(new) == abs(top)，则两个小行星都将爆炸；如果 abs(new) > abs(top)，
 # 则 top 小行星将爆炸（可能还会有更多小行星爆炸，因此我们应继续检查）
 
-class Solution(object):
-    def asteroidCollision(self, asteroids):
-        res = []
-        for new in asteroids: # for each new item
-            while res and new < 0 < res[-1]: # while there's res stack, and new item is < 0 and last item > 0
-                if res[-1] < abs(new):   # if last item in stack < abs(new)
-                    res.pop() # remove last item in stack
-                    continue
-                elif res[-1] == abs(new): # if last item in stack == abs(new):
-                    res.pop() # remove new and last item (as they collided in same size, ex: 5, -5)
-                break
-            else:
-                res.append(new) # add new item to the stack
-        # print(res)
-        return res
-
-Solution.asteroidCollision(1, [5, 6, 7, -8])
-
-
-
-
-
-
-
-
-
-
-
+class Solution:
+    # Time: O(n); O(1) for each asteroid; there are length of n
+    # Space: O(n)
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        stack = []
+        for a in asteroids:  # going through every asteroid
+            while stack and a < 0 and stack[-1] > 0:  # stack not empty, current asteroid is negative, top of stack
+                # is positive
+                diff = a + stack[-1]  # difference between current asteroid and top of stack
+                if diff < 0:  # if current asteroid wins,
+                    stack.pop()  # pop the top item from the stack
+                elif diff > 0:  # if top of stack wins
+                    a = 0  # destroy a; because it guarantees no input is 0; stop the loop
+                else:  # if a == top of stack;
+                    a = 0  # destroy a
+                    stack.pop()  # destroy top of stack
+            if a:  # if a is positive or negative, b/c we had set a == 0 earlier
+                stack.append(a)  # add a to the stack
+        return stack  # return stack
