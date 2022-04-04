@@ -29,3 +29,13 @@
 # 1 <= coins.length <= 12
 # 1 <= coins[i] <= 231 - 1
 # 0 <= amount <= 104
+
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        dp = [amount + 1] * (amount + 1)        # [max val]; 0...amount
+        dp[0] = 0   # base case
+        for a in range(1, amount + 1):  # reverse order, going from 1 to amount
+            for c in coins:
+                if a - c >= 0:  # if amount - current_coin >= 0
+                    dp[a] = min(dp[a], 1 + dp[a - c])   # min coins; min(current_coin, current_coin(1) + dp[a-c] )
+        return dp[amount] if dp[amount] != amount + 1 else -1
