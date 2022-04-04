@@ -63,6 +63,8 @@
 # 假设栈中顶部元素为 top，一个新的小行星 new 进来了。如果 new 向右移动（new>0），或者 top 向左移动（top<0），则不会发生碰撞。
 # 否则，如果 abs(new) < abs(top)，则新小行星 new 将爆炸；如果 abs(new) == abs(top)，则两个小行星都将爆炸；如果 abs(new) > abs(top)，
 # 则 top 小行星将爆炸（可能还会有更多小行星爆炸，因此我们应继续检查）
+from typing import List
+
 
 class Solution:
     # Time: O(n); O(1) for each asteroid; there are length of n
