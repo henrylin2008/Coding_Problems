@@ -31,7 +31,10 @@
 # DP:        5+3=8   3+2=5   2+1=3  1+1=2     1       1
 # from:      1,2     2,3     3,4    4,5     (base cases)
 #                                             one    two
-
+#                                 one+two    two
+#                           one+two  two
+#                 one+two   two
+#          one+two   two
 # Time: O(n); looping through the ints
 # Space: O(1); only using 2 variables 
 class Solution:
