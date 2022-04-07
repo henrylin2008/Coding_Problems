@@ -41,7 +41,7 @@ class Solution:
     def climb_stairs(self, n: int) -> int:
         one, two = 1, 1     # base cases
 
-        for i in range(n - 1):
+        for i in range(n - 1):  # range is 0 - 3, outside from 2 base cases
             temp = one      # temp variable for var one
             one = one + two  # update one (sum of 2 previous variables)
             two = temp      # move two to the original one position (temp)
