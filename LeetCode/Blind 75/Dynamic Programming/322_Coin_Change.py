@@ -31,8 +31,8 @@
 # 0 <= amount <= 104
 
 # Logic: Dynamic Programming - Button up; base case is dp[0] = 0 (zero coin), and an array with max value (amount + 1),
-# go through every amount and every given coin, find the min coins to get to the amount (min(dp[a], 1 + dp[a - c]));
-# return dp[amount] if it's not the default value else return -1
+# go through every amount and every given coin, if the amount - current coin >= 0, then find the min coins to get to the
+# amount (min(dp[a], 1 + dp[a - c])); return dp[amount] if it's not the default value else return -1
 from typing import List
 
 
