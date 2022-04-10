@@ -36,14 +36,15 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 # Time: O(n), O(2n) -> O(n); 2 comparisons, one on left, and one on right
 # Space: O(1)
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        def valid(node, left, right):
-            if not node:      # return True if node is empty
+        def valid(node, left, right):   # (current_node, left boundary, right boundary)
+            if not node:      # emtpy node is considered as True
                 return True
-            if not left < node.val < right:  # False if node.val is not between left and right
+            if not left < node.val < right:  # False if node.val is not between left and right boundaries
                 return False
             # Recursive calls to check on the validations of the left subtree and right subtree, setting the boundaries
             return valid(node.left, left, node.val) and valid(node.right, node.val, right)
