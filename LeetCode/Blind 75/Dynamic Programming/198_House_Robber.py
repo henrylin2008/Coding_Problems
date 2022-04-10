@@ -32,11 +32,14 @@
 from typing import List
 
 
+# Time: O(n)
+# Space: O(1); only pointers
 class Solution:
     def rob(self, nums: List[int]) -> int:
         rob1, rob2 = 0, 0
+        # [rob1, rob2, n, n+1, ...]
         for n in nums:
-            temp = max(rob1 + n, rob2)
-            rob1 = rob2
-            rob2 = temp
+            temp = max(rob1 + n, rob2)  # max of first 3 nums, or max upto position n
+            rob1 = rob2     # move to next num
+            rob2 = temp     # rob2 move to position n
         return rob2
