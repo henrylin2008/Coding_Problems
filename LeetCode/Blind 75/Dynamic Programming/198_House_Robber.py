@@ -29,6 +29,11 @@
 #
 # 1 <= nums.length <= 100
 # 0 <= nums[i] <= 400
+
+# Note: for each num, get max of prev subarr, or num + prev subarr not including last element, store results of prev,
+# and prev not including last element
+# Logic: sliding window, ex: [rob1, rob2, n, n+1, ...]; find the max of (rob1 + n, rob2), then move rob1 to rob2
+# position, and rob2 = temp (max((rob1+1), rob2))); return rob2
 from typing import List
 
 
