@@ -31,6 +31,8 @@
 #
 # 1 <= nums.length <= 100
 # 0 <= nums[i] <= 1000
+#
+# note: subarr = arr without first & last, get max of subarr, then pick which of first/last should be added to it
 from typing import List
 
 
