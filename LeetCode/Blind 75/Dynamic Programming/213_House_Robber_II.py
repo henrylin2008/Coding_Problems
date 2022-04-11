@@ -31,3 +31,17 @@
 #
 # 1 <= nums.length <= 100
 # 0 <= nums[i] <= 1000
+from typing import List
+
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        return max(nums[0], self.help(nums[1:]), self.help(nums[:-1]))
+
+    def help(self, nums):
+        rob1, rob2 = 0, 0
+        for n in nums:
+            temp = max(rob1 + n, rob2)
+            rob1 = rob2
+            rob2 = temp
+        return rob2
