@@ -34,8 +34,11 @@
 from typing import List
 
 
+# Time: O(n); O(2n) for 2 help functions --> O(n)
+# space: O(1); no data structure used
 class Solution:
     def rob(self, nums: List[int]) -> int:
+        # max(first_num, max except first num, max except last num)
         return max(nums[0], self.help(nums[1:]), self.help(nums[:-1]))
 
     def help(self, nums):
