@@ -40,7 +40,7 @@ from typing import List
 # space: O(1); no data structure used
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        # max(first_num, max except first num, max except last num)
+        # max(first_num: if only given one num, subarray skip first num, subarray skip last num)
         return max(nums[0], self.help(nums[1:]), self.help(nums[:-1]))
 
     def help(self, nums):
