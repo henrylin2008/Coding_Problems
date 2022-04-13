@@ -41,3 +41,22 @@
 #
 # 1 <= s.length <= 100
 # s contains only digits and may contain leading zero(s).
+
+class Solution:
+    # recursive + cache solution
+    def numDecodings(self, s: str) -> int:
+        dp = {len(s): 1}  # base case: len(s) == 1 even if it's an empty str
+
+        def dfs(i):  # recursive func, i: current position
+            if i in dp:  # i is already cached or i is the last position
+                return dp[i]
+            if s[i] == "0":  # base case
+                return 0
+            res = dfs(i + 1)  # next position
+            # condition for following char: i+1 is inbound, and next char is 1 or 2 and the following char in "0123456"
+            if i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"):
+                res += dfs(i + 2)  # next of next position if condition is met
+            dp[i] = res
+            return res
+
+        return dfs(0)
