@@ -42,18 +42,24 @@
 # 1 <= s.length <= 100
 # s contains only digits and may contain leading zero(s).
 
+# Note: can cur char be decoded in one or two ways? Recursion -> cache -> iterative dp solution, a lot of edge cases
+# to determine, 52, 31, 29, 10, 20 only decoded one way, 11, 26 decoded two ways
+
 class Solution:
     # recursive + cache solution
+    # Time: O(n)
+    # Space: O(n)
     def numDecodings(self, s: str) -> int:
-        dp = {len(s): 1}  # base case: len(s) == 1 even if it's an empty str
+        dp = {len(s): 1}  # cache; base case: len(s) == 1 if it's an empty str
 
         def dfs(i):  # recursive func, i: current position
-            if i in dp:  # i is already cached or i is the last position
+            if i in dp:  # i is already cached or i is at the last position
                 return dp[i]
             if s[i] == "0":  # base case
                 return 0
             res = dfs(i + 1)  # next position
             # condition for following char: i+1 is inbound, and next char is 1 or 2 and the following char in "0123456"
+            # if next char inbound, and current and next position is between 10 and 26:
             if i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"):
                 res += dfs(i + 2)  # next of next position if condition is met
             dp[i] = res
