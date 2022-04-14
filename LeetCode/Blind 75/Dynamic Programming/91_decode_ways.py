@@ -50,19 +50,34 @@ class Solution:
     # Time: O(n)
     # Space: O(n)
     def numDecodings(self, s: str) -> int:
-        dp = {len(s): 1}  # cache; base case: len(s) == 1 if it's an empty str
+        dp = {len(s): 1}  # cache; empty string = 1
 
         def dfs(i):  # recursive func, i: current position
-            if i in dp:  # i is already cached or i is at the last position
+            if i in dp:  # i is already cached or i is the last position of s
                 return dp[i]
-            if s[i] == "0":  # base case
+            if s[i] == "0":  # base case, if char starts with "0", return 0 (no way to decode it)
                 return 0
-            res = dfs(i + 1)  # next position
+            res = dfs(i + 1)  # sub-problem: next position
             # condition for following char: i+1 is inbound, and next char is 1 or 2 and the following char in "0123456"
-            # if next char inbound, and current and next position is between 10 and 26:
+            # if next char inbound, and the following 2 strs/digs is between 10 and 26:
             if i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"):
-                res += dfs(i + 2)  # next of next position if condition is met
-            dp[i] = res
+                res += dfs(i + 2)  # add the following str
+            dp[i] = res     # cached it; dp[i] = dp[i+1] + dp[i+2]
             return res
 
         return dfs(0)
+
+    # Dynamic: bottom-up solution
+    # Time: O(n)
+    # Space: O(n)
+    # def numDecodings(self, s: str) -> int:
+    #     dp = {len(s): 1}  # cache; base case: len(s): 1 if it's an empty str
+    #
+    #     for i in range(len(s) - 1, -1, -1):     # iterate through in the reverse order
+    #         if s[i] == "0":     # base case
+    #             dp[i] = 0
+    #         else:
+    #             dp[i] = dp[i + 1]
+    #         if i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"):
+    #             dp[i] += dp[i + 2]  # add the following str
+    #     return dp[0]
