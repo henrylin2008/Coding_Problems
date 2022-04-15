@@ -23,3 +23,23 @@
 # 1. Right -> Down -> Down
 # 2. Down -> Down -> Right
 # 3. Down -> Right -> Down
+
+# Note: work backwards from solution, store paths for each position in grid, to further optimize, we don’t store
+# whole grid, only need to store prev row;
+
+# Ex1: m = 3, n = 7
+# starting from the end, and backtracking to the starting point
+# start 28 | 21 (15+6) | 15 (10+5) | 10 (6+4) | 6 (3+3) | 3 (2+1) |   1   |   0
+#  7 (6+1) | 6 (5+1)   | 5 (4+1)   | 4 (3+1)  | 3 (2+1) | 2 (1+1) |   1   |   0
+#  1 ->    |  1 ->     |  1 ->     |  1 ->    |  1 ->   |  1 ->   | end 1 |   0
+#   0          0           0           0          0         0
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        row = [1] * n  # bottom row
+        for i in range(m - 1):  # all other rows except the top row
+            new_row = [1] * n  # row above the bottom row
+            for j in range(n - 2, -1, -1):  # from 2nd to last column to the left
+                new_row[j] = new_row[j + 1] + row[j]  # right + bottom
+            row = new_row  # update old row to the new row
+        return row[0]
