@@ -35,11 +35,13 @@
 #   0          0           0           0          0         0
 
 class Solution:
-    def uniquePaths(self, m: int, n: int) -> int:
+    # Time: O(n * m)
+    # Space: O(n); length of the row
+    def uniquePaths(self, m: int, n: int) -> int:       # m: columns, n: rows
         row = [1] * n  # bottom row
-        for i in range(m - 1):  # all other rows except the top row
+        for i in range(m - 1):  # loop through all other rows except the last row
             new_row = [1] * n  # row above the bottom row
-            for j in range(n - 2, -1, -1):  # from 2nd to last column to the left
-                new_row[j] = new_row[j + 1] + row[j]  # right + bottom
+            for j in range(n - 2, -1, -1):  # loop from 2nd to (right) last column to the left, last column are all 1s
+                new_row[j] = new_row[j + 1] + row[j]  # current cell = right cell + bottom cell
             row = new_row  # update old row to the new row
         return row[0]
