@@ -25,3 +25,13 @@
 #
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 105
+from typing import List
+
+
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        goal = len(nums) - 1        # goal = last position
+        for i in range(len(nums) - 1, -1, -1):  # reverse loop through the nums
+            if i + nums[i] >= goal:     # if current index + value at current idx >= goal (meaning can reach the goal)
+                goal = i                # move goal to current i position (goal = i + 1)
+        return True if goal == 0 else False     # True if the goal reaches to the first position else False
