@@ -34,6 +34,10 @@
 #  1 ->    |  1 ->     |  1 ->     |  1 ->    |  1 ->   |  1 ->   | end 1 |   0
 #   0          0           0           0          0         0
 
+# Note: we know that last row and last column has only one way to reach the goal, so we'll be starting from the last
+#       row, and a new row (above the last row); loop through columns from the second to the right to all the way left,
+#       current cell (new_row[i]) is the sum of the right cell (new_row[i+1]) and the cell below current cell
+#       (row[i]). Repeat the entire process and return the num on the first cell of first row
 class Solution:
     # Time: O(n * m)
     # Space: O(n); length of the row
