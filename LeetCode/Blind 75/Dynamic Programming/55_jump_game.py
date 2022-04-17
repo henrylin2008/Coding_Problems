@@ -36,6 +36,14 @@ from typing import List
 # Idea: solve the problem in the reverse order, set the goal on the last num, using the Greedy approach, check if
 # previous num can reach the goal, if so, move the goal to the previous num, repeat the process until it reaches to the
 # first num
+
+# Ex:               goal
+#       [2, 3, 1, 1, 4];      start: 2;   goal: 4
+# 1. can 1 reaches 4 (goal)? yes, shift goal to 1 (nums[3])
+# 2. can 1 reaches 1 (goal)? yes, shift goal to 1 (nums[2])
+# 3. can 3 reaches 1 (goal)? yes, shift goal to 3 (nums[1])
+# 4. can 2 reaches 3 (goal)? yes, shift goal to 2 (nums[0]); reaches first/last num, return True
+#
 # Time: O(n); only shifting the goal position (from right to left) if there's a path
 # Space: O(1); no data structure used
 class Solution:
