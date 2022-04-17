@@ -25,9 +25,19 @@
 #
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 105
+
+# Note: visualize the recursive tree, cache solution for O(n) time/mem complexity, iterative is O(1) mem,
+# just iterate backwards to see if element can reach goal node, if yes, then set it equal to goal node, continue;
+
 from typing import List
 
 
+# Greedy solution
+# Idea: solve the problem in the reverse order, set the goal on the last num, using the Greedy approach, check if
+# previous num can reach the goal, if so, move the goal to the previous num, repeat the process until it reaches to the
+# first num
+# Time: O(n); only shifting the goal position (from right to left) if there's a path
+# Space: O(1); no data structure used
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         goal = len(nums) - 1        # goal = last position
