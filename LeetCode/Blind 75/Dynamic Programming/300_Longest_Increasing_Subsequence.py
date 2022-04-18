@@ -28,3 +28,16 @@
 #
 #
 # Follow up: Can you come up with an algorithm that runs in O(n log(n)) time complexity?
+from typing import List
+
+
+# Dynamic programming
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        lis = [1] * len(nums)       # cache to store repeated work; a list with all 1s
+
+        for i in range(len(nums) - 1, -1, -1):  # loop through in the reverse order
+            for j in range(i + 1, len(nums)):   # every subsequence after i
+                if nums[i] < nums[j]:           # if current num < next num:
+                    lis[i] = max(lis[i], 1 + lis[j])    # max of list[i] or 1 + list[i]
+        return max(lis)     # return max in the lis
