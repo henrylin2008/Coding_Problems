@@ -35,8 +35,29 @@
 # 1 <= text1.length, text2.length <= 1000
 # text1 and text2 consist of only lowercase English characters.
 
+# 2D grid: text1 = "abcde", text2 = "ace"
+# Dynamic problem - button up
+# create a 2D grip (dp), work from button up: reverse text2 and text1,
+#      -if 2 characters are the same (text1[i] == text2[j]:)
+#           1 + diagonal cell (dp[i+1][j+1])
+#      -else:  (2 characters are not the same)
+#           max(adj right cell, adj below cell)
+#    return the value on the first cell
+#                        j
+#           a   |    c    |    e    |
+#         -----------------------------------
+#      a    3 x |    2    |    1    |   0
+#         -----------------------------------
+#      b    2   |    2    |    1    |   0
+#         -----------------------------------
+#      c    2   |    2 x  |    1    |   0
+#   i     -----------------------------------
+#      d    1   |    1    |    1    |   0
+#         -----------------------------------
+#      e    1   |    1    |    1 x  |   0
+#         -----------------------------------
+#           0   |    0    |    0    |   0
 class Solution:
-    # Dynamic problem - button up
     # Time: O(n * m); n: len(text1), m: len(text2)
     # Space: O(n * m); 2d dynamic grids (dp in the code), one extra column and one extra row with 0s
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
