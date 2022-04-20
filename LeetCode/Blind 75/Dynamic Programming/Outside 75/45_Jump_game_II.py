@@ -36,6 +36,8 @@ from typing import List
 # the farthest, then increment the result after every window; return result
 
 class Solution:
+    # Time: O(n); only using pointers to go through the array once
+    # Space: O(1); only few variables: result, farthest, left, and right pointers
     def jump(self, nums: List[int]) -> int:
         res = 0         # min number of jumps
         l, r = 0, 0     # left, right pointer
