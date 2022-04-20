@@ -27,3 +27,23 @@
 #
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 1000
+from typing import List
+
+
+# Solution: Greedy/BFS in one dimension array
+# Note: using left, right pointers as the range of the next window, farthest to store farthest distance from current
+# value; then shift left pointer to the right next of the current right pointer, and shift current right pointer to
+# the farthest, then increment the result after every window; return result
+
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+        res = 0         # min number of jumps
+        l, r = 0, 0     # left, right pointer
+        while r < len(nums) - 1:        # right pointer before reach end of length of nums
+            farthest = 0                # farthest distance
+            for i in range(l, r+1):     # loop through current window
+                farthest = max(farthest, i + nums[i])       # update the farthest var
+            l = r + 1                   # shift left pointer to the right next to the right pointer
+            r = farthest                # shift right pointer to the farthest var
+            res += 1                    # increment the result
+        return res
