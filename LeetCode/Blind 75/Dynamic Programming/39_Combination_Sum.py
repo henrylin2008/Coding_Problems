@@ -35,3 +35,29 @@
 # 1 <= candidates[i] <= 200
 # All elements of candidates are distinct.
 # 1 <= target <= 500
+from typing import List
+
+
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        res = []
+
+        def dfs(i, cur, total):  # i: candidate; cur: current combination; total: target/sum
+            if total == target:  # base case: if target is found
+                res.append(cur.copy())  # add copy of current combination to the res
+                return  # break out of the function
+            if i >= len(candidates) or total > target:  # edge cases: out of bound, or total > target
+                return  # exit
+            # left branch: include current candidate
+            print('cur, candidates[i]', cur, candidates[i])
+            cur.append(candidates[i])  # add candidate to the current combination
+            print('cur:', cur)
+            dfs(i, cur,
+                total + candidates[i])  # i, current(include the new candidate), new total (include new candidate)
+            print('res:', res)
+            # right branch: not include current candidate
+            cur.pop()  # remove candidates[i]
+            dfs(i + 1, cur, total)  # i+1, current combination, total
+
+        dfs(0, [], 0)  # call dfs with 0 as starting index, empty array, 0 as current total
+        return res
