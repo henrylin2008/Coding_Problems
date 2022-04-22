@@ -39,6 +39,10 @@ from typing import List
 
 
 class Solution:
+    # Backtracking
+    # Time: O(2^t); t: target = height of the tree
+    # Space: O(n); result to store possible combinations
+
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
 
@@ -49,12 +53,8 @@ class Solution:
             if i >= len(candidates) or total > target:  # edge cases: out of bound, or total > target
                 return  # exit
             # left branch: include current candidate
-            print('cur, candidates[i]', cur, candidates[i])
             cur.append(candidates[i])  # add candidate to the current combination
-            print('cur:', cur)
-            dfs(i, cur,
-                total + candidates[i])  # i, current(include the new candidate), new total (include new candidate)
-            print('res:', res)
+            dfs(i, cur, total + candidates[i])  # i, current(include new candidate), new total (include new candidate)
             # right branch: not include current candidate
             cur.pop()  # remove candidates[i]
             dfs(i + 1, cur, total)  # i+1, current combination, total
