@@ -1,5 +1,5 @@
 # Link: https://leetcode.com/problems/squares-of-a-sorted-array/
-# Squares of a Sorted Array: Easy
+# Squares of a Sorted Arrays and Hashing: Easy
 # Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in
 # non-decreasing order.
 #

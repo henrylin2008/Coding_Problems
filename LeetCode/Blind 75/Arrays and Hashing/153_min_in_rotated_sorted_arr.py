@@ -1,4 +1,4 @@
-# 153. Find Minimum in Rotated Sorted Array
+# 153. Find Minimum in Rotated Sorted Arrays and Hashing
 # https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 #
 # Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example,

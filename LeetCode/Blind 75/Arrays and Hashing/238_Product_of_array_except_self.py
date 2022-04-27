@@ -1,5 +1,5 @@
 # link: https://leetcode.com/problems/product-of-array-except-self/
-# 238. Product of Array Except Self
+# 238. Product of Arrays and Hashing Except Self
 # Difficulty: Medium
 
 # Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements
