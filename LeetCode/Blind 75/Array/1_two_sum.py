@@ -32,3 +32,16 @@
 #
 #
 # Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+from typing import List
+
+
+class Solution:
+    # Time: O(n); would need to go through the entire list
+    # Space: O(1); using Hashmap to store difference between target and num that has seen so far
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i, v in enumerate(nums):
+            if target - v in d:
+                return [d[target-v], i]
+            else:
+                d[v] = i
