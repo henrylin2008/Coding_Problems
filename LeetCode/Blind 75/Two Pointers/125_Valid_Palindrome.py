@@ -22,21 +22,7 @@
 # -1 <= s.length <= 2 * 105
 # -s consists only of printable ASCII characters.
 
-# Solution: create an empty string to store every character from the given s, then compare it with the reverse string
-#           this solution uses the extra memory (an empty string), and uses the built-in functions
-# Time: O(n)
-# Space: O(n); n is number of characters in s
-class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        new_str = ""
-
-        for c in s:
-            if c.isalnum():
-                new_str += c.lower()
-        return new_str == new_str[::-1]
-
-
-# Solution #2: more efficient method; using 2 pointers: left pointer and right pointer, and skip the white space
+# Solution: an efficient method; using 2 pointers: left pointer and right pointer, and skip the white space
 # Time: O(n)
 # Space: O(1), only pointers are used, no extra memory is used
 class Solution:
@@ -57,3 +43,17 @@ class Solution:
         return (ord('A') <= ord(c) <= ord('Z') or
                 ord('a') <= ord(c) <= ord('z') or
                 ord('0') <= ord(c) <= ord('9'))
+
+
+# Solution 2: create an empty string to store every character from the given s, then compare it with the reverse string
+#           this solution uses the extra memory (an empty string), and uses the built-in functions
+# Time: O(n)
+# Space: O(n); n is number of characters in s
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        new_str = ""
+
+        for c in s:
+            if c.isalnum():
+                new_str += c.lower()
+        return new_str == new_str[::-1]
