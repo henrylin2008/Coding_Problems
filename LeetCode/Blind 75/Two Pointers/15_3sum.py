@@ -40,20 +40,23 @@ class Solution:
         nums.sort()
 
         for idx, val in enumerate(nums):
-            if idx > 0 and val == nums[idx - 1]:    # not the first value, and current value is same as last value
+            if idx > 0 and val == nums[idx - 1]:    # if not the first value, and current value = last value
                 continue                            # skip
 
             l, r = idx + 1, len(nums) - 1
             while l < r:
                 three_sum = val + nums[l] + nums[r]
-                if three_sum > 0:
-                    r -= 1
-                elif three_sum < 0:
-                    l += 1
+                if three_sum > 0:       # sum > 0
+                    r -= 1              # shift right pointer
+                elif three_sum < 0:     # sum < 0
+                    l += 1              # shift left pointer
                 else:
                     res.append([val, nums[l], nums[r]])
                     l += 1      # update only the left pointer; conditions above would update the other pointer
-                    # ex: [-2, -2, 0, 0, 2, 2]
-                    while nums[l] == nums[l - 1] and l < r:     # current value == last value and left < right
-                        l += 1
+                    # ex: [-2, -2, 0, 0, 2, 2]:
+                    # if left = -2 (1st -2), right = 2, sum = 0, move left point, however the next num is also -2, then
+                    # we wanted to move the left pointer to the following position (0), thus the while loop (below) help
+                    # to check on this condition
+                    while nums[l] == nums[l - 1] and l < r:  # current value == last value and left < right
+                        l += 1              # move the left pointer to the next position
         return res
