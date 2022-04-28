@@ -25,6 +25,10 @@
 #
 # 0 <= nums.length <= 3000
 # -105 <= nums[i] <= 105
+#
+# Note: sort input, for each first element, find next two where -a = b+c, if a=prevA, skip a, if b=prevB skip b to
+# elim duplicates; to find b,c use two pointers, left/right on remaining list;
+
 from typing import List
 
 
