@@ -44,4 +44,4 @@ class Solution:
                     return False
             else:  # else if it's open parentheses: (, {, [
                 stack.append(c)  # add it to the stack
-        return True if not stack else False
+        return True if not stack else False     # True if stack is not empty, else False
