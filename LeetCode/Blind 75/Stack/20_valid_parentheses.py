@@ -29,14 +29,15 @@
 # 1 <= s.length <= 104
 # s consists of parentheses only '()[]{}'.
 
+# Note: push opening brace on stack, pop if matching close brace, at end if stack empty, return true;
+
 class Solution:
     def isValid(self, s: str) -> bool:
         hashmap = {")": "(", "]": "[", "}": "{"}
         stack = []
-
         for c in s:
             if c in hashmap:  # if char in hashmap (close to open)
-                if stack and stack[-1] == hashmap[c]:  #stack not empty and last value (top of stack) matches in hashmap
+                if stack and stack[-1] == hashmap[c]:  # stack not empty and top of stack matches in hashmap
                     stack.pop()  # pop the top item
                 else:  # if stack is empty, or they don't match each other: return False
                     return False
