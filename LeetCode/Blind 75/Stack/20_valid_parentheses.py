@@ -30,7 +30,8 @@
 # s consists of parentheses only '()[]{}'.
 
 # Note: push opening brace on stack, pop if matching close brace, at end if stack empty, return true;
-
+# Time: O(n); loop through the entire given string
+# Space: O(1); using hashmap to check on the matching parentheses
 class Solution:
     def isValid(self, s: str) -> bool:
         hashmap = {")": "(", "]": "[", "}": "{"}
