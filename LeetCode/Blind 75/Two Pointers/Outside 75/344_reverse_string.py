@@ -25,13 +25,15 @@
 from typing import List
 
 
+# note: using 2 pointers: one starts from the left-end, and the other starts from the right-end
+# Time: O(n), loop through the entire string
+# Space: O(1), in-place swap
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         """
         Do not return anything, modify s in-place instead.
         """
         l, r = 0, len(s) - 1
-
         while l < r:
             s[l], s[r] = s[r], s[l]
             l += 1
