@@ -51,3 +51,19 @@
 # 1 <= nums.length <= 3 * 104
 # -100 <= nums[i] <= 100
 # nums is sorted in non-decreasing order.
+from typing import List
+
+
+class Solution:
+    # Note: Using 2 pointers (left and right), right pointer iterates through the nums list, when a new value at the
+    # right pointer appears, place the new value at the left pointer, then increment the left pointer; return left
+    # pointer
+    # Time: O(n); loop through the entire nums list
+    # Space: O(1); using the 2 pointers and in-place swap
+    def removeDuplicates(self, nums: List[int]) -> int:
+        left = 1
+        for right in range(1, len(nums)):
+            if nums[right] != nums[right - 1]:
+                nums[left] = nums[right]
+                left += 1
+        return left
