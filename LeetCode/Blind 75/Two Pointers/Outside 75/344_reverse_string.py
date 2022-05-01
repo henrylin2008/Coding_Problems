@@ -25,7 +25,8 @@
 from typing import List
 
 
-# note: using 2 pointers: one starts from the left-end, and the other starts from the right-end
+# note: using 2 pointers: one starts from the left-end, and the other starts from the right-end, swap the values from
+# each end, and move the pointers inward until it reaches the middle value.
 # Time: O(n), loop through the entire string
 # Space: O(1), in-place swap
 class Solution:
