@@ -23,22 +23,25 @@
 # n == height.length
 # 2 <= n <= 105
 # 0 <= height[i] <= 104
+
+# Note: shrinking window, left/right initially at endpoints, shift the pointer with min height;
 from typing import List
 
 
-# Time: O(n)
-# 2 pointers: left and right, move the pointer with the smaller value, height would be the minimum between the
-# 2 pointers; result is max between the result and the area
+# Time: O(n), loop through the height list
+# Space: O(1), only using 2 pointers
+# Note: using 2 pointers: left and right endpoints, move the pointer with a smaller value, height is the minimum between
+# the 2 pointers; result is max between the result and the area
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         result = 0
         l, r = 0, len(height) - 1
         while l < r:
-            area = (r - l) * min(height[l], height[r])
-            result = max(result, area)
+            area = (r - l) * min(height[l], height[r])      # current area
+            result = max(result, area)                      # max of the result or current area
 
-            if height[l] < height[r]:
+            if height[l] < height[r]:           # if left < right: move left pointer to the next position
                 l += 1
-            else:
+            else:                               # else: move right pointer to the next position (-1)
                 r -= 1
-        return result
+        return result           # result
