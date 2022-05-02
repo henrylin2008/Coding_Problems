@@ -31,7 +31,6 @@
 # If all assertions pass, then your solution will be accepted.
 #
 #
-#
 # Example 1:
 # Input: nums = [1,1,1,2,2,3]
 # Output: 5, nums = [1,1,2,2,3,_]
@@ -56,13 +55,19 @@ from typing import List
 
 
 class Solution:
+    # Time: O(n); loop through the entire nums list
+    # Space: O(1); using 2 pointers and in-place swaps
+    # Note: using 2 pointers: left, and right, while looping through the nums, if right pointer not equal to value at
+    # left - 2 (ensure last 2 values are the same), swap the values at the left pointer and the right pointer, and
+    # increment the left pointer, then return left pointer
     def removeDuplicates(self, nums: List[int]) -> int:
-        # Edge Condition
-        if len(nums) < 3: return len(nums)
+        # Edge case
+        if len(nums) < 3:
+            return len(nums)
 
         left = 2  # Pointer from where we need to replace elements
         for right in range(2, len(nums)):
-            if nums[right] != nums[left - 2]:
-                nums[left] = nums[right]
-                left += 1
-        return left
+            if nums[right] != nums[left - 2]:   # if right pointer != left pointer (left -2)
+                nums[left] = nums[right]        # swap values at left and right pointer
+                left += 1                       # increment left pointer
+        return left                             # left pointer is the length for this problem
