@@ -52,3 +52,17 @@
 # 1 <= nums.length <= 3 * 104
 # -104 <= nums[i] <= 104
 # nums is sorted in non-decreasing order.
+from typing import List
+
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        # Edge Condition
+        if len(nums) < 3: return len(nums)
+
+        left = 2  # Pointer from where we need to replace elements
+        for right in range(2, len(nums)):
+            if nums[right] != nums[left - 2]:
+                nums[left] = nums[right]
+                left += 1
+        return left
