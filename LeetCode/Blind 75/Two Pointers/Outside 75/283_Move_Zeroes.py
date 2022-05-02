@@ -40,7 +40,7 @@ class Solution:
         # values at the 2 pointers, then increment the left pointer, return nums
         l = 0
         for r in range(len(nums)):
-            if nums[r]:
-                nums[l], nums[r] = nums[r], nums[l]
-                l += 1
-        return nums
+            if nums[r]:     # if num is non-zero:  (ignore if num is zero)
+                nums[l], nums[r] = nums[r], nums[l]     # swap values at the left and right index
+                l += 1      # increment left pointer (next 0)
+        return nums         # nums after zeros moved to the end
