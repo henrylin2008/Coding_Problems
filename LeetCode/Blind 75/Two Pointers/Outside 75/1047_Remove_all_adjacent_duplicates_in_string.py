@@ -33,15 +33,24 @@
 class Solution:
     # Time: O(n); loop through the entire s
     # Space: O(n); using a list to store the result
+    #
+    # Note:
+    # left refers to the index to set next character in the output string.
+    # right refers to the index of current iteration in the input string.
+    #
+    # Iterate characters of S one by one by increasing right.
+    # -If S[right] is same as the current last character S[left - 1], we remove duplicates by doing left -= 2.
+    # -If S[right] is different as the current last character S[left - 1], we set S[left] = S[right] and increment
+    #   left+=1.
     def removeDuplicates(self, s: str) -> str:
-        i = 0
+        left = 0
         res = list(s)
-        for j in range(len(s)):
-            res[i] = res[j]         # swap values at index i and index j
-            if i > 0 and res[i - 1] == res[j]:   # if i > 0 and adjacent letters are the same
-                i -= 2              # move i to 2 steps back
-            i += 1                  # next i to the next position
-        return ''.join(res[:i])
+        for right in range(len(s)):     # j is the right pointer, to iterate through the s
+            res[left] = res[right]         # swap values at index i and index j
+            if left > 0 and res[left - 1] == res[right]:   # if i > 0 and adjacent letters are the same
+                left -= 2              # move i to 2 steps back
+            left += 1                  # next i to the next position
+        return ''.join(res[:left])
 
 
 # Stack solution
