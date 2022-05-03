@@ -29,19 +29,34 @@
 # 1 <= s.length <= 105
 # s consists of lowercase English letters.
 
-# Stack solution
+# Two pointers solution
 class Solution:
     # Time: O(n); loop through the entire s
-    # Space: O(n); using list to store items in stack
+    # Space: O(n); using a list to store the result
     def removeDuplicates(self, s: str) -> str:
-        stack = []
+        i = 0
+        res = list(s)
+        for j in range(len(s)):
+            res[i] = res[j]         # swap values at index i and index j
+            if i > 0 and res[i - 1] == res[j]:   # if i > 0 and adjacent letters are the same
+                i -= 2              # move i to 2 steps back
+            i += 1                  # next i to the next position
+        return ''.join(res[:i])
 
-        for c in s:
-            if not stack:
-                stack.append(c)
-            else:
-                if c == stack[-1]:
-                    stack.pop()
-                else:
-                    stack.append(c)
-        return "".join(stack)
+
+# Stack solution
+# class Solution:
+#     # Time: O(n); loop through the entire s
+#     # Space: O(n); using list to store items in stack
+#     def removeDuplicates(self, s: str) -> str:
+#         stack = []
+#
+#         for c in s:
+#             if not stack:
+#                 stack.append(c)
+#             else:
+#                 if c == stack[-1]:
+#                     stack.pop()
+#                 else:
+#                     stack.append(c)
+#         return "".join(stack)
