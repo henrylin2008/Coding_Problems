@@ -46,6 +46,13 @@
 from typing import List
 
 
+# Time: O(n); loop through entire height
+# Space: O(1); using 2 pointers, no data structure used
+# Logic: using 2 pointers: left (0), right(last idx); left_max and right_max to keep track of current max on each
+#        side; shifting pointer based off min(left_max, right_max); if shifting left pointer: move left pointer to
+#        the next position, calculate left_max based off left_max and current idx value (height[left]), if
+#        the calculation is > 0, add it to the result, otherwise water capacity is 0; do the same for the right pointer
+#        lastly return the result
 def trap(self, height: List[int]) -> int:
     if not height:
         return 0
@@ -58,7 +65,7 @@ def trap(self, height: List[int]) -> int:
             left += 1
             left_max = max(left_max, height[left])
             res += left_max - height[left]
-        else:  # update right pointer
+        else:                    # update right pointer
             right -= 1
             right_max = max(right_max, height[right])
             res += right_max - height[right]
