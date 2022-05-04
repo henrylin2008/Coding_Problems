@@ -28,3 +28,22 @@
 #
 # Follow up: If you have figured out the O(n) solution, try coding another solution of which the time complexity is
 # O(n log(n)).
+from typing import List
+
+
+class Solution:
+    # Time: O(n); loop through entire list
+    # Time: O(1); only using the pointers, no data structure were used
+    # Note: using 2 pointers, keep shifting the right pointer and find the sum of the current window, until the
+    # sum >= target, calculate the size of the current window, deduct value at left pointer from the current sum, and
+    # shift the left pointer to the next position; return min window that matches the target, else return 0
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        res = float('inf')      # default value: inf, could also be -1 or len(nums) + 1
+        left, total = 0, 0
+        for right in range(len(nums)):
+            total += nums[right]    # adding right value to the total
+            while total >= target:
+                res = min(right - left + 1, res)    # min size of current window, or previous calculated res
+                total -= nums[left]                 # remove left pointer from the total
+                left += 1                           # shift left pointer
+        return 0 if res == float('inf') else res    # 0 if not matching else return res
