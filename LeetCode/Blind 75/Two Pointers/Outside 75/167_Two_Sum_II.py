@@ -37,3 +37,21 @@
 # numbers is sorted in non-decreasing order.
 # -1000 <= target <= 1000
 # The tests are generated such that there is exactly one solution.
+from typing import List
+
+
+class Solution:
+    # Time: O(n); loop through the entire numbers list
+    # Space: O(1); only using 2 pointers, no extra data structure used
+    # Note: using 2 pointers: left (beginning of list), right (end of list), if the current sum < target, shift left
+    #       pointer by one, elif the current sum > target, shift right pointer, else: return [left+1, right+1]
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        left, right = 0, len(numbers) - 1
+        while left < right:
+            total = numbers[left] + numbers[right]
+            if total == target:
+                return [left+1, right+1]
+            elif total < target:
+                left += 1
+            elif total > target:
+                right -= 1
