@@ -61,3 +61,26 @@ class Solution:
                 matches -= 1  # decrement by 1
             l += 1  # shift left pointer
         return matches == 26  # True if matches == 26
+
+
+#  similar logic as above: Use 2 hashmaps and sliding window to get the counts of each char, return True if the count
+#  of the characters are the same within the range.
+#     def checkInclusion(self, s1: str, s2: str) -> bool:
+#         if len(s2) < len(s1):
+#             return False
+#         count_s1, count_s2 = {}, {}
+#         for c in range(len(s1)):
+#             count_s1[s1[c]] = 1 + count_s1.get(s1[c], 0)
+#             count_s2[s2[c]] = 1 + count_s2.get(s2[c], 0)
+#         if count_s1 == count_s2:
+#             return True
+#         l = 0
+#         for r in range(len(s1), len(s2)):
+#             count_s2[s2[r]] = 1 + count_s2.get(s2[r], 0)
+#             count_s2[s2[l]] -= 1
+#             if count_s2[s2[l]] == 0:
+#                 count_s2.pop(s2[l])
+#             l += 1
+#             if count_s1 == count_s2:
+#                 return True
+#         return False
