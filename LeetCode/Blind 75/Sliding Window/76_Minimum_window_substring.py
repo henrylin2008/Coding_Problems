@@ -44,32 +44,32 @@ class Solution:
     # Time: O(n); sliding window loop through the string once
     # Space: O(1); using hashmaps and 2 pointers
     def minWindow(self, s: str, t: str) -> str:
-        if t == "": return ""   # edge case
+        if t == "": return ""  # edge case
 
         count_t, window = {}, {}  # hashmaps keep track of count of each char; window: current window
-        for c in t:     # count of each char and store it in the count_t hashmap
+        for c in t:  # count of each char and store it in the count_t hashmap
             count_t[c] = 1 + count_t.get(c, 0)
 
-        have, need = 0, len(count_t)    # need: count of unique char in t; have: count of unique char so far
+        have, need = 0, len(count_t)  # need: count of unique char in t; have: count of unique char so far
         res, res_len = [-1, -1], float("infinity")  # res: possible window [l, r]; res_len: length of the window
-        l = 0   # left pointer
-        for r in range(len(s)):     # loop through the string s
-            c = s[r]    # char at the right pointer
-            window[c] = 1 + window.get(c, 0)    # get the count of the char
+        l = 0  # left pointer
+        for r in range(len(s)):  # loop through the string s
+            c = s[r]  # char at the right pointer
+            window[c] = 1 + window.get(c, 0)  # get the count of the char
 
-            if c in count_t and window[c] == count_t[c]:    # if c in count_t, and it matches in count_t[c]
-                have += 1   # update the have count
+            if c in count_t and window[c] == count_t[c]:  # if c in count_t, and count of c matches in both hashmaps
+                have += 1  # increase the have count
 
-            while have == need:
+            while have == need:  # while loop when both hashmaps are same, while b/c it could have some windows match
                 # update result
-                if (r - l + 1) < res_len:   # if the current window < res_len
-                    res = [l, r]            # update the window
-                    res_len = (r - l + 1)   # size of the window
+                if (r - l + 1) < res_len:  # if the length of the current window < res_len
+                    res = [l, r]  # update the window
+                    res_len = (r - l + 1)  # update the size of the window
                 # pop from the left of the window
-                window[s[l]] -= 1   # remove left pointer char
-                # if removing the char resulted in count in windows < count_t
-                if s[l] in count_t and window[s[l]] < count_t[s[l]]:
-                    have -= 1   # decrease have count
-                l += 1      # shift left pointer
-        l, r = res      # left, right pointers
-        return s[l:r + 1] if res_len != float("infinity") else ""   # return if res_len has been changed else empty str
+                window[s[l]] -= 1  # remove char at the left pointer
+                if s[l] in count_t and window[s[l]] < count_t[s[l]]:  # if this char (req) in count_t and the count of
+                    # this char < need of this char in count_t
+                    have -= 1  # decrease the have count
+                l += 1  # shift left pointer
+        l, r = res  # res left, right pointers
+        return s[l:r + 1] if res_len != float("infinity") else ""  # return if res_len has been changed else empty str
