@@ -48,10 +48,17 @@
 class Solution:
     # Time: O(n); sliding window loop through the string once
     # Space: O(1); using hashmaps and 2 pointers
-    # Idea: use 2 hashmaps to get the count of each char (window, count_t), and 2 variables to keep track of unique char
-    #       (need: len(count_t), have: so far in the window), use 2 pointers to find the window; as the right pointer
-    #       sliding through the string s, find the window and make sure the need (count) and have (count) are equal,
-    #       and shift the left pointer, then find the minimum window/length.
+    # Idea: - 2 hashmaps to get the count of each char (window, count_t),
+    #       - 2 variables to keep track of unique chars;
+    #           - need: required count of unique chars in t
+    #           - have: count of unique chars so far in the current window
+    #       - 2 pointers for the window
+    #           - left pointer: left side of the window, keep sharding and update the have count and res, res_len
+    #           - right pointer: count of the new char and add it to the have count if it matches the char in count_t,
+    #                            while have == need, update res and res_len, shift the left pointer, if the removed char
+    #                            in count_t and count of char in window < count of char in count_t, decrease the have
+    #                            count, then shift left pointer
+    #       - left, right (from res) is the range that we are looking for, return it if it has been changed
     def minWindow(self, s: str, t: str) -> str:
         if t == "": return ""  # edge case
 
