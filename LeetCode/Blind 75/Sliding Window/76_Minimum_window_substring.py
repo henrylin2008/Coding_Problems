@@ -68,16 +68,16 @@ class Solution:
 
             if c in count_t and window[c] == count_t[c]:  # if c in count_t, and count of c matches in both hashmaps
                 have += 1  # increase the have count
-
-            while have == need:  # while loop when both hashmaps are same, while b/c it could have some windows match
+            # while have == need, shift left pointer, and update res and res_len
+            while have == need:  # while both hashmaps are same; possible multiple windows matched
                 # update result
                 if (r - l + 1) < res_len:  # if the length of the current window < res_len
                     res = [l, r]  # update the window
                     res_len = (r - l + 1)  # update the size of the window
                 # pop from the left of the window
                 window[s[l]] -= 1  # remove char at the left pointer
-                if s[l] in count_t and window[s[l]] < count_t[s[l]]:  # if this char (req) in count_t and the count of
-                    # this char < need of this char in count_t
+                if s[l] in count_t and window[s[l]] < count_t[s[l]]:  # if this char in count_t and the count of
+                    # this char in current window < need of this char in count_t
                     have -= 1  # decrease the have count
                 l += 1  # shift left pointer
         l, r = res  # res left, right pointers
