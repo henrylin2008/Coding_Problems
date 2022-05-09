@@ -40,9 +40,18 @@
 #
 # Follow up: Could you find an algorithm that runs in O(m + n) time?
 
+# Note: need is num of unique char in T, HAVE is num of char we have valid count for, sliding window, move right
+# until valid, if valid, increment left until invalid, to check validity keep track if the count of each unique char
+# is satisfied;
+
+
 class Solution:
     # Time: O(n); sliding window loop through the string once
     # Space: O(1); using hashmaps and 2 pointers
+    # Idea: use 2 hashmaps to get the count of each char (window, count_t), and 2 variables to keep track of unique char
+    #       (need: len(count_t), have: so far in the window), use 2 pointers to find the window; as the right pointer
+    #       sliding through the string s, find the window and make sure the need (count) and have (count) are equal,
+    #       and shift the left pointer, then find the minimum window/length.
     def minWindow(self, s: str, t: str) -> str:
         if t == "": return ""  # edge case
 
