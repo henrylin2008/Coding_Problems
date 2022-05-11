@@ -55,13 +55,13 @@ class Solution:
         l = r = 0
 
         while r < len(nums):    # while r still inbound
-            # pop smaller values from q and append a larger value (at r) to the q
-            while q and nums[q[-1]] < nums[r]:  # q is not empty and rightmost value < current idx value
+            # pop smaller values from q and append a larger value (r) to the q
+            while q and nums[q[-1]] < nums[r]:  # q is not empty and rightmost value in the queue < right pointer value
                 q.pop()     # remove rightmost value (smaller value)
             q.append(r)     # append new value to the queue (if no smaller value existing in the queue)
             # if left value is out of bound, remove left val from the window
-            if l > q[0]:    # if left index > leftmost value in the queue
-                q.popleft()  # pop left of the queue
+            if q[0] < l:    # if leftmost value (q[0] in the queue) is out of bound (l)
+                q.popleft()  # remove leftmost value from the queue
 
             if (r + 1) >= k:    # window is at least size of k
                 output.append(nums[q[0]])   # append leftmost value (max value) to the output
