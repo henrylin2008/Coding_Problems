@@ -31,3 +31,41 @@
 # 1 <= nums.length <= 105
 # -104 <= nums[i] <= 104
 # 1 <= k <= nums.length
+import collections
+from typing import List
+
+
+class Solution:
+    # Time: O(n); loop through the nums list once
+    # Space: O(n); output to store
+    # Idea: Monotonically decreasing queue: sliding window (l, r), in the window: if smaller value exists in the queue,
+    #       remove it from the queue, then add current index to the queue; if left index out of bound, pop most left
+    #       value from the queue; while within the window, append left index value (most value) to the output and shift
+    #       left pointer, always shift right pointer, then return the output
+    #       -use a deque (O(1) for popleft and remove right)
+    #       -while q (deque) not empty and rightmost value < current value: pop rightmost (smaller) value from the q
+    #       -add new (larger) value at the right idx
+    #       -edge case: left index > leftmost value in the queue: popleft from the queue
+    #       -if window is valid: add leftmost value from the queue to the output and shift left pointer
+    #       -shift right pointer
+    #       -return output
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        output = []
+        q = collections.deque()     # index (instead of its value)
+        l = r = 0
+
+        while r < len(nums):    # while r still inbound
+            # pop smaller values from q and append a larger value (at r) to the q
+            while q and nums[q[-1]] < nums[r]:  # q is not empty and rightmost value < current idx value
+                q.pop()     # remove rightmost value (smaller value)
+            q.append(r)     # append new value to the queue (if no smaller value existing in the queue)
+            # if left value is out of bound, remove left val from the window
+            if l > q[0]:    # if left index > leftmost value in the queue
+                q.popleft()  # pop left of the queue
+
+            if (r + 1) >= k:    # window is at least size of k
+                output.append(nums[q[0]])   # append leftmost value (max value) to the output
+                l += 1      # only increment left pointer once the window at least in size of k
+            r += 1          # increment right pointer
+
+        return output
