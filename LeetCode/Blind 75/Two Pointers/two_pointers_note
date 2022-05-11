@@ -1,0 +1,37 @@
+Same Direction:
+
+   Processed   |    not needed     |    unknown     |
+0              i                   j                n
+------->-------->--------->-------->-------->------->
+1. Initialize two pointers i and j, usually both equal to 0
+2. while j < len(array):
+    - if we need array[j], then we keep it by assigning array[i] = array[j], and move i forward, make it ready at the next position
+    - otherwise skip it. We do not need to move i since its spot is not fulfilled
+
+Leetcode problem:
+-Remove duplicates from sorted array (26)
+-Remove duplicates from sorted array II (80)
+-Minimum Size Subarray Sum (209)
+-Move Zeroes (283)
+-Remove All Adjacent Duplicates In String (1047)
+
+
+
+Opposite Direction:
+
+   Processed   |    unknown    |    processed    |
+0              i               j                 n
+    ------->-------->       <-------<--------
+
+1. Initialize two pointers i = 0, j = array.length – 1
+2. while i <= j:
+     -Decide what you should do based on the value of array[i] and array[j]
+     -Move at least one pointer forward in its direction
+
+Leetcode problems :
+-Reverse string (344)
+-Container with most water (11)
+-Trapping Rain Water (42)
+-Two Sum II (167)
+-3 sum (15)
+-Valid Palindrome (125)
