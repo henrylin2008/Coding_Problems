@@ -15,3 +15,22 @@ Find closest value:
 Universal:
 - condition: l < r - 1
 - range: l = mid, r = mid
+
+Conclusion:
+- Binary Search time: O(log(n))
+- 2 Principles:
+    * Shrink the search space every iteration (or recursion)
+    * Cannot exclude potential answers during each shrinking
+- 3 Methods (above)
+    * Find exact value
+    * Find Closest value
+    * Universal
+
+
+Leetcode Problem:
+-Split Array Largest Sum (410)
+-Divide Chocolate (1231)
+-Peak Index in a mountain array (852)
+-Capacity to ship packages within D days (1011)
+-Maximum side length of a Square with Sum less than or equal to Threshold (1292)
+-Longest Repeating Substring (1062)
