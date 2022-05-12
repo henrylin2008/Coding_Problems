@@ -27,3 +27,21 @@
 # -104 < nums[i], target < 104
 # All the integers in nums are unique.
 # nums is sorted in ascending order.
+from typing import List
+
+
+class Solution:
+    # Time: O(log(n))
+    # Space: O(1), no data structure is used
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
+        while l <= r:
+            mid = (l + r) // 2
+            # method never overflow (Java, C++): mid = l + ((r - l) // 2); ((r - l) // 2): half of distance
+            if target > nums[mid]:
+                l = mid + 1
+            elif target < nums[mid]:
+                r = mid - 1
+            else:
+                return mid
+        return -1
