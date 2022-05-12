@@ -1,0 +1,17 @@
+Binary Search
+
+mid = l + (r - l)/2
+mid = (1 + r)//2
+
+Find exact value:
+- condition: l <= r
+- l = mid + 1; r = mid - 1
+
+Find closest num:
+- Condition: l < r
+- l = mid, r = mid -1
+- or l = mid + 1, r = mid
+
+Universal:
+- condition: l < r - 1
+- l = mid, r = mid
