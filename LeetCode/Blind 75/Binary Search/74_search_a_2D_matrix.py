@@ -39,3 +39,34 @@
 # n == matrix[i].length
 # 1 <= m, n <= 100
 # -104 <= matrix[i][j], target <= 104
+from typing import List
+
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        ROWS, COLS = len(matrix), len(matrix[0])
+        # find out which row the target falls under
+        top, bot = 0, ROWS - 1      # top, bottle rows
+        while top <= bot:
+            row = (top + bot) // 2      # middle row
+            if target > matrix[row][-1]:    # target > rightmost value at the current row
+                top = row + 1               # row > current row, shift left pointer
+            elif target < matrix[row][0]:   # target < leftmost value at the current row
+                bot = row - 1               # row < current row, shift right pointer
+            else:       # target value falls in the current row
+                break
+        # if target not fall under any rows
+        if not (top <= bot):    # if target not fall into any of the rows that have been checked so far, return False
+            return False
+        # run binary search on the current row
+        row = (top + bot) // 2  # run binary search on the current row
+        l, r = 0, COLS - 1      # left, right pointers
+        while l <= r:
+            m = (l + r) // 2    # middle point
+            if target > matrix[row][m]:     # if target > middle value
+                l = m + 1       # shift left pointer
+            elif target < matrix[row][m]:   # if target < middle value
+                r = m - 1       # shift right pointer
+            else:           # found the target value
+                return True
+        return False
