@@ -43,6 +43,8 @@ from typing import List
 
 
 class Solution:
+    # Time: O(log(m) + log(n)); double binary search: one for searching the row, one for searching with the row
+    # Space: O(1); no data structure is being used
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         ROWS, COLS = len(matrix), len(matrix[0])
         # find out which row the target falls under
@@ -67,6 +69,6 @@ class Solution:
                 l = m + 1       # shift left pointer
             elif target < matrix[row][m]:   # if target < middle value
                 r = m - 1       # shift right pointer
-            else:           # found the target value
+            else:           # found the target value, return True
                 return True
-        return False
+        return False    # if nothing found after searching through the current row, return False
