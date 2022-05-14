@@ -1,0 +1,20 @@
+Trie / Prefix Tree
+
+                A
+            /   |   \
+          P     N     T
+        /               \
+      E                   E
+
+Note: each node could have up to 26 characters
+Benefit: prefix, word starting with; ex: autocomplete
+
+-----------------------------------------
+|   Operation     |    Time Complexity  |
+-----------------------------------------
+|    Insert       |        O(n)         |
+-----------------------------------------
+|    Search       |        O(n)         |
+-----------------------------------------
+
+n: size of word
