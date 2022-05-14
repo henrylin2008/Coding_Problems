@@ -34,3 +34,22 @@ Leetcode Problem:
 -Capacity to ship packages within D days (1011)
 -Maximum side length of a Square with Sum less than or equal to Threshold (1292)
 -Longest Repeating Substring (1062)
+
+
+                    6
+                  /   \
+                 3     8
+                         \
+                          9
+left subtree: less than the root value
+right subtree: greater than the root value
+
+-----------------------------------------
+|   Operation     |    Time Complexity  |
+-----------------------------------------
+|    Insert       |      O(1og(n))      |
+-----------------------------------------
+|    Remove       |      O(1og(n))      |
+-----------------------------------------
+|    Search       |      O(1og(n))      |
+-----------------------------------------
