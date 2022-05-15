@@ -45,6 +45,8 @@ from typing import List
 class Solution:
     # Time: O(log(m) + log(n)); double binary search: one for searching the row, one for searching with the row
     # Space: O(1); no data structure is being used
+    # Solution: 2 binary searches; first binary search: narrow down which row the target is located; second binary
+    #           search: if the target is the middle value, update left or right pointer accordingly
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         ROWS, COLS = len(matrix), len(matrix[0])
         # find out which row the target falls under
