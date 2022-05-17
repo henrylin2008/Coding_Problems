@@ -45,6 +45,7 @@ class TimeMap:
     def __init__(self):
         self.store = {}  # hashmap, key: list of [val, timestamp]
 
+    # Time: O(1); using hashmap
     def set(self, key: str, value: str, timestamp: int) -> None:
         if key not in self.store:   # if key not in store:
             self.store[key] = []    # set it to an empty list
