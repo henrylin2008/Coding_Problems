@@ -39,3 +39,30 @@
 # 1 <= timestamp <= 107
 # All the timestamps timestamp of set are strictly increasing.
 # At most 2 * 105 calls will be made to set and get.
+
+class TimeMap:
+
+    def __init__(self):
+        self.store = {}  # hashmap, key: list of [val, timestamp]
+
+    def set(self, key: str, value: str, timestamp: int) -> None:
+        if key not in self.store:   # if key not in store:
+            self.store[key] = []    # set it to an empty list
+        self.store[key].append([value, timestamp])  # add [val, timestamp] to the end of the store list
+
+    # Time: O(log(n)); binary search
+    # Space: O(1); return value at the index
+    def get(self, key: str, timestamp: int) -> str:
+        res = ""    # empty string if key doesn't exist
+        values = self.store.get(key, [])    # get the vale at the key, or default to an empty list
+
+        # binary search
+        l, r = 0, len(values) - 1
+        while l <= r:
+            m = (l + r) // 2
+            if values[m][1] <= timestamp:   # if it is <= given timestamp; allowed
+                res = values[m][0]  # res so far, value at index m
+                l = m + 1       # search right portion
+            else:  # if value > timestamp
+                r = m - 1   # search left portion
+        return res
