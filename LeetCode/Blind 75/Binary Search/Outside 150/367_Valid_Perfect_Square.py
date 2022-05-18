@@ -23,6 +23,13 @@
 # 1 <= num <= 2^31 - 1
 
 class Solution:
+    # Time: O(log(n)); use binary search
+    # Space: O(1); no data structure is used
+    # Solution: use a binary search to find the middle point, then compare squared of the middle point with the num;
+    #           if squared of middle pointer < num: update left pointer to middle + 1, search right portion
+    #           elif squared of middle pointer > num: update right pointer to middle - 1, search left portion
+    #           else if squared of middle pointer == num: return True
+    #           return False if no match is found
     def isPerfectSquare(self, num: int) -> bool:
         l, r = 1, num
         while l <= r:
