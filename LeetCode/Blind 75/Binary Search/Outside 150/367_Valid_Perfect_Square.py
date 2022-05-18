@@ -21,3 +21,17 @@
 # Constraints:
 #
 # 1 <= num <= 2^31 - 1
+
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+        l, r = 1, num
+        while l <= r:
+            mid = (l + r) // 2
+            sqt = mid ** 2
+            if sqt > num:
+                r = mid - 1
+            elif sqt < num:
+                l = mid + 1
+            else:
+                return True
+        return False
