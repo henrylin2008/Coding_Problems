@@ -33,7 +33,7 @@ from typing import List
 class Solution:
     # Time: Log(min(n, m)); running binary search on the smaller array
     # Space: O(1); no data structure is used
-    # Logic: get half of total length of 2 lists; run binary search on the shorter length(A), get the middle point of A
+    # Logic: find half of total length of 2 lists; run binary search on the shorter length(A), get the middle point of A
     #        and B, and left, right value of A and B; if the partition is correction (A_left <= B_right and B_left <=
     #        A_right): if it's an odd num, return min of either of A_right or B_right; else if it's even, get the min
     #        of (A_right, B_right) and max of (A_left, B_left), then divide 2.
@@ -49,20 +49,21 @@ class Solution:
         while True:
             i = (l + r) // 2    # middle point; A
             j = half - i - 2    # rest of the half from B; -2 because index are starting 0 (i and j)
-            # get values to find mediums
+            # A_left, B_left: last values at left half arrays;
+            # A_right, B_right: beginning values at the right half arrays
             #   set value if inbound else default value
-            A_left = A[i] if i >= 0 else float("-infinity")  # if i is inbound set the value at i else default -inf
-            A_right = A[i + 1] if (i + 1) < len(A) else float("infinity")  # if i+1 inbound set A[i+1] else default inf
+            A_left = A[i] if i >= 0 else float("-infinity")  # if i is inbound(>0) set the value at i else default -inf
+            A_right = A[i + 1] if (i + 1) < len(A) else float("infinity")  # if i+1 inbound set val at i+1 else def inf
             B_left = B[j] if j >= 0 else float("-infinity")  # if j is inbound set value at j else default -inf
             B_right = B[j + 1] if (j + 1) < len(B) else float("infinity")   # if j+1 inbound set A[j+1] else default inf
 
             if A_left <= B_right and B_left <= A_right:  # Partition is correct
                 # odd
-                if total % 2:   # if total % 2 == 1
-                    return min(A_right, B_right)    # if 4, infinity, return 4
+                if total % 2:   # if total % 2 == 1 (True), odd
+                    return min(A_right, B_right)    # min(A_right, B_right) is the middle value for odd length,
                 # even
-                return (max(A_left, B_left) + min(A_right, B_right)) / 2  # get the medium from 2 middle values
-            elif A_left > B_right:  # if A_left has too many elements
+                return (max(A_left, B_left) + min(A_right, B_right)) / 2  # med: (max(left arr) + min(right arr))/ 2
+            elif A_left > B_right:  # if left partition of A has too many elements
                 r = i - 1   # reduce size of left partition from A
-            else:
+            else:   # B_left > A_right
                 l = i + 1   # increase size of left partition from A
