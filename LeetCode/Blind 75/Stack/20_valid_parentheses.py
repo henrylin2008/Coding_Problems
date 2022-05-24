@@ -45,3 +45,27 @@ class Solution:
             else:  # else if it's open parentheses: (, {, [
                 stack.append(c)  # add it to the stack
         return True if not stack else False     # True if stack is not empty, else False
+
+
+# If problem that has the characters/string in it:
+# Ex of correct usage:
+#   -"typical (parenthesis) usage"
+#   -"(nested (parenthesis))"
+#   -"no parenthesis here"
+
+# Ex of incorrect usage:
+#   -"(missing (parenthesis)"
+#   -"no open-parenthesis)"
+
+def isValid(s):
+    hashmap = {")": "(", "]": "[", "}": "{"}
+    stack = []
+    for c in s:
+        if c in hashmap:  # if char in hashmap (close to open)
+            if stack and stack[-1] == hashmap[c]:  # stack not empty and top of stack matches in hashmap
+                stack.pop()  # pop the top item
+            else:  # if stack is empty, or they don't match each other: return False
+                return False
+        elif c in hashmap.values():  # else if the char is in the hashmap
+            stack.append(c)  # add it to the stack
+    return True if not stack else False  # True if stack is not empty, else False
