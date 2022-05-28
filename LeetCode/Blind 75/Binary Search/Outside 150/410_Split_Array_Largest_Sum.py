@@ -29,3 +29,27 @@
 # 1 <= nums.length <= 1000
 # 0 <= nums[i] <= 106
 # 1 <= m <= min(50, nums.length)
+from typing import List
+
+
+class Solution:
+    def splitArray(self, nums: List[int], m: int) -> int:
+        def can_split(largest):
+            subarray = 0
+            cur_sum = 0
+            for n in nums:
+                cur_sum += n
+                if cur_sum > largest:
+                    subarray += 1
+                    cur_sum = n
+            return subarray + 1 <= m
+
+        l, r = max(nums), sum(nums)
+        res = r
+        while l <= r:
+            mid = l + ((r - l) // 2)
+            if can_split(mid):
+                res = mid
+                r = mid - 1
+            else:
+                l = mid + 1
