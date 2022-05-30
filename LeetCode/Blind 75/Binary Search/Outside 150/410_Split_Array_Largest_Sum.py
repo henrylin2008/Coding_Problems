@@ -33,6 +33,7 @@ from typing import List
 
 
 class Solution:
+    # Time: O(n log(s)); log(s): binary search; O(n): split into groups
     def splitArray(self, nums: List[int], m: int) -> int:
         def can_split(largest):
             subarray = 0
@@ -45,10 +46,10 @@ class Solution:
             return subarray + 1 <= m
 
         l, r = max(nums), sum(nums)
-        res = r
+        res = r     # assume the worst
         while l <= r:
-            mid = l + ((r - l) // 2)
-            if can_split(mid):
+            mid = l + ((r - l) // 2)    # mid-point
+            if can_split(mid):  # mid: largest
                 res = mid
                 r = mid - 1
             else:
