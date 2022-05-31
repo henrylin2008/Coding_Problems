@@ -35,22 +35,23 @@ from typing import List
 class Solution:
     # Time: O(n log(s)); log(s): binary search; O(n): split into groups
     def splitArray(self, nums: List[int], m: int) -> int:
-        def can_split(largest):
-            subarray = 0
-            cur_sum = 0
-            for n in nums:
-                cur_sum += n
-                if cur_sum > largest:
-                    subarray += 1
-                    cur_sum = n
+        def can_split(largest):  # split nums into m, and largest sum <= largest/mid
+            subarray = 0    # number of subarray
+            cur_sum = 0     # current sum
+            for n in nums:  # loop through nums
+                cur_sum += n    # add n to the current sum
+                if cur_sum > largest:   # current_sum > largest
+                    subarray += 1   # own group, increase subarray
+                    cur_sum = n     # update current sum to n, b/c += n (above) exceed the sum
             return subarray + 1 <= m
 
         l, r = max(nums), sum(nums)
         res = r     # assume the worst
         while l <= r:
             mid = l + ((r - l) // 2)    # mid-point
-            if can_split(mid):  # mid: largest
+            if can_split(mid):  # split nums into m, and largest sum <= mid; mid: largest
+                # if we can split, smaller result is found
                 res = mid
                 r = mid - 1
-            else:
+            else:  # look on the right side of the mid
                 l = mid + 1
