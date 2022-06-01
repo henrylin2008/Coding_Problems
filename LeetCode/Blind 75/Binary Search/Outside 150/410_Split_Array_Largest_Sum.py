@@ -33,7 +33,11 @@ from typing import List
 
 
 class Solution:
-    # Time: O(n log(s)); log(s): binary search; O(n): split into groups
+    # Time: O(n log(s)); log(s): binary search, s=sum(input array); O(n): split into m groups
+    # Idea: left boundary: max(nums), right boundary: sum(nums); mid = (left + right) // 2; split nums to m groups, such
+    #       group with the largest sum close to mid; start from the beginning of the array, add next value, until the
+    #       sum < mid; update right boundary (mid - 1), continue the binary search until we found the smallest result
+    #       possible.
     def splitArray(self, nums: List[int], m: int) -> int:
         def can_split(largest):  # split nums into m, and largest sum <= largest/mid
             subarray = 0    # number of subarray
@@ -42,7 +46,7 @@ class Solution:
                 cur_sum += n    # add n to the current sum
                 if cur_sum > largest:   # current_sum > largest
                     subarray += 1   # own group, increase subarray
-                    cur_sum = n     # update current sum to n, b/c += n (above) exceed the sum
+                    cur_sum = n     # update current sum to n, b/c adding n (above) exceed the sum
             return subarray + 1 <= m
 
         l, r = max(nums), sum(nums)
