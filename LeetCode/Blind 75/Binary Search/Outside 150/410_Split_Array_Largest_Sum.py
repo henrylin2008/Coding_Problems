@@ -34,6 +34,7 @@ from typing import List
 
 class Solution:
     # Time: O(n log(s)); log(s): binary search, s=sum(input array); O(n): split into m groups
+    # Space: O(1); no data structure is used
     # Idea: left boundary: max(nums), right boundary: sum(nums); mid = (left + right) // 2; split nums to m groups, such
     #       group with the largest sum close to mid; start from the beginning of the array, add next value, until the
     #       sum < mid; update right boundary (mid - 1), continue the binary search until we found the smallest result
