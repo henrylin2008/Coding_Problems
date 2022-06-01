@@ -60,4 +60,4 @@ class Solution:
                 r = mid - 1
             else:  # look on the right side of the mid
                 l = mid + 1
-        return r
+        return res
