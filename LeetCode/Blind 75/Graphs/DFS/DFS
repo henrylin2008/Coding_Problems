@@ -1,0 +1,7 @@
+ Bottom up DFS (general steps):
+	1.	Base Case
+	2.	Get return value from the child nodes (recursion)
+	3.	Use the return value from the child node to solve the current problem
+	4.	(optional) additional operations
+	5.	return answer (for parent problem)
+
