@@ -22,3 +22,23 @@
 # The number of nodes in the tree is in the range [0, 104].
 # -100 <= Node.val <= 100
 
+# Definition for a binary tree node.
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    # Time: O(n); recursion to visit (all) child nodes
+    # Space: O(1)
+    # Idea: Base case: node is null and return 0, else recursive calls on the child nodes to get the max depth on either
+    #       side of the tree, then return max depth between left and right branch + 1 (parent)
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
