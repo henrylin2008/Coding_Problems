@@ -5,3 +5,8 @@
 	4.	(optional) additional operations
 	5.	return answer (for parent problem)
 
+Top Down DFS (steps):
+	1.	Base Case
+	2.	Do some calculation based off the value returned from the parent node
+	3.	(optional) additional operations
+	4.	pass down the return value and continue recursion
