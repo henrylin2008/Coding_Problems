@@ -21,3 +21,17 @@ Graph: node with edges that connected the nodes together
 --------------------------
 |   1     |     []       |
 --------------------------
+
+
+Bottom up DFS (steps):
+	1.	Base Case
+	2.	Get return value from the child nodes (recursion)
+	3.	Use the return value from the child node to solve the current problem
+	4.	(optional) additional operations
+	5.	return answer (for parent problem)
+
+Top Down DFS (steps):
+	1.	Base Case
+	2.	Do some calculation based off the value returned from the parent node
+	3.	(optional) additional operations
+	4.	pass down the return value and continue recursion
