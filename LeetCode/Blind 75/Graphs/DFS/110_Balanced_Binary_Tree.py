@@ -40,6 +40,10 @@ class TreeNode:
 
 
 class Solution:
+    # Time: O(n); only visit every node once, use bottom-up DFS
+    # Idea: use the bottom-up DFS to calculate the height of the subtrees, then pass on the calculated height of
+    #       the subtrees to the parent node, ensure the height difference is no more than 1, and recursive calls until
+    #       it reaches the top of the tree
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def dfs(root):
             if not root:    # empty tree
