@@ -45,14 +45,16 @@ class TreeNode:
 
 
 class Solution:
+    # Time: O(n), Look through all the nodes in the tree
+    # Space: O(h)/O(log(n)); h: height; log(n): balanced tree
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         def dfs(node, cur_sum):
-            if not node:
+            if not node:  # empty tree: False
                 return False
 
-            cur_sum += node.val
-            if not node.left and not node.right:
-                return cur_sum == targetSum
-            return dfs(node.left, cur_sum) or dfs(node.right, cur_sum)
+            cur_sum += node.val     # add current node's value to the current sum
+            if not node.left and not node.right:    # if leaf node (no children)
+                return cur_sum == targetSum         # return True if cur_sum == targetSum
+            return dfs(node.left, cur_sum) or dfs(node.right, cur_sum)  # run dfs on the subtrees on non-leaf node
 
         return dfs(root, 0)
