@@ -52,17 +52,24 @@ class TreeNode:
 
 
 class Solution:
+    # Time: O(n)
+    # Space: O(1)
+    # Idea: run a dfs on subtrees, base case: if it's an empty tree: return False; else add current node value to the
+    #       current sum; if it's a leaf node and cur_sum == target_sum: add current node value to the current path and
+    #       append it to the final res list; recursive calls on the subtrees that are not empty (until it reaches the
+    #       base case)
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
         res = []
 
         def dfs(node, path, cur_sum):
-            if not node:
+            if not node:    # empty Tree: False
                 return False
 
-            cur_sum += node.val
-            if not node.left and not node.right and cur_sum == targetSum:
-                res.append(path + [node.val])
+            cur_sum += node.val     # add current node's value to the cur_sum
+            if not node.left and not node.right and cur_sum == targetSum:  # if it's a leaf node and cur_sum==targetSum
+                res.append(path + [node.val])   # add path + current node's value to the res list
+            # recursive dfs calls on left/right subtrees if it's not the leaf node
             return dfs(node.left, path + [node.val], cur_sum) or dfs(node.right, path + [node.val], cur_sum)
 
-        dfs(root, [], 0)
+        dfs(root, [], 0)    # dfs starts from the root node
         return res
