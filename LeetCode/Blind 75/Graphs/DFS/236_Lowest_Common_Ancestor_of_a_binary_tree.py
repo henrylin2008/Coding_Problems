@@ -33,6 +33,7 @@
 # p != q
 # p and q will exist in the tree.
 
+# DFS + Recursive
 # Explanation: When we think as a node, there could be five scenarios of how we are relative to the LCA and two target
 # nodes.
 # Current node is the LCA
@@ -64,6 +65,8 @@
 #             /    \
 #           A       B
 
+# Time: O(n); n nodes and n - 1 edges: O(2n - 1) --> O(n)
+
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
@@ -79,6 +82,7 @@ def lca(root, node1, node2):
     if root == node1 or root == node2:
         return root
 
+    # DFS on left, right subtrees
     left = lca(root.left, node1, node2)
     right = lca(root.right, node1, node2)
 
