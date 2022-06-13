@@ -32,6 +32,38 @@
 # All Node.val are unique.
 # p != q
 # p and q will exist in the tree.
+
+# Explanation: When we think as a node, there could be five scenarios of how we are relative to the LCA and two target
+# nodes.
+# Current node is the LCA
+# 1. One target node is on the left subtree, the other target node on the right subtree, so the current node itself is
+# the LCA.
+#                   LCA  (current node)
+#                  /    \
+#                A        B
+# 2. Current node is one of the target and the other node is in a subtree.
+#           LCA/B (current node)
+#           /
+#         A
+#
+# Current node is not the LCA
+# 3. Current node is not a target node and its subtrees has no target node.
+#           LCA
+#          /
+#      (current node)
+# 4. Current node is in the path between the LCA and a target node in case 2.
+#                   LCA
+#                 /
+#            (current node)
+#             /
+#           A
+# 5. LCA is in the subtree of the current node.
+#                  (current node)
+#                 /
+#               LCA
+#             /    \
+#           A       B
+
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
