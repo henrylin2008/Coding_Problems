@@ -75,11 +75,11 @@ class Node:
 
 
 def lca(root, node1, node2):
-    if not root:    # Empty node
+    if not root:  # Empty node
         return
 
     # case 2 in above figure
-    if root == node1 or root == node2:
+    if root == node1 or root == node2:  # if either node is the root, return root
         return root
 
     # DFS on left, right subtrees
@@ -87,14 +87,14 @@ def lca(root, node1, node2):
     right = lca(root.right, node1, node2)
 
     # case 1
-    if left and right:
+    if left and right:  # if nodes are in the left and right subtree
         return root
 
     # at this point, left and right can't be both non-null since we checked above
     # case 4 and 5, report target node or LCA back to parent
-    if left:
+    if left:    # if nodes are in left subtree, return left
         return left
-    if right:
+    if right:   # if nodes are in right subtree, return right
         return right
 
     # case 4, not found return null
@@ -106,8 +106,9 @@ def lca(root, node1, node2):
 # recursive calls on left/right subtree
 # return root if left and right are True otherwise return left or right
 def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-    if not root or root in [p, q]:
+    if not root or root in [p, q]:  # base case: if root does not exist or current root is one of node: return root
         return root
-    l = self.lowestCommonAncestor(root.left, p, q)
-    r = self.lowestCommonAncestor(root.right, p, q)
-    return root if l and r else l or r
+    l = self.lowestCommonAncestor(root.left, p, q)  # recursive call on left subtree
+    r = self.lowestCommonAncestor(root.right, p, q)  # recursive call on right subtree
+    return root if l and r else l or r  # if nodes are found in left (True) and right subtree (True), return root
+    # else if lowest common ancestor found in either left or right subtree, return either left or right subtree
