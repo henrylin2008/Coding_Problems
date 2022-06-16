@@ -99,3 +99,15 @@ def lca(root, node1, node2):
 
     # case 4, not found return null
     return None
+
+
+# solution #2: recursion
+# Base case: if none or root is any of p and q: return root
+# recursive calls on left/right subtree
+# return root if left and right are True otherwise return left or right
+def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    if not root or root in [p, q]:
+        return root
+    l = self.lowestCommonAncestor(root.left, p, q)
+    r = self.lowestCommonAncestor(root.right, p, q)
+    return root if l and r else l or r
