@@ -65,16 +65,16 @@ class TreeNode:
 
 class Solution:
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
-        if not root:
+        if not root:    # if empty: return None
             return None
 
         if root.val == key:
             # 4 possibilities
-            if not root.left and not root.right:
+            if not root.left and not root.right:    # if no children: return None
                 return None
-            if not root.left and root.right:
+            if not root.left and root.right:    # if only right children: return root.right
                 return root.right
-            if not root.right and root.left:
+            if not root.right and root.left:    # if only left children: return root.left
                 return root.left
             pointer = root.right
             while pointer.left:
@@ -82,9 +82,9 @@ class Solution:
             root.val = pointer.val
             root.right = self.deleteNode(root.right, root.val)
 
-        elif root.val > key:
+        elif root.val > key:    # if root.val > key: key is on left subtree, recursive call on left subtree
             root.left = self.deleteNode(root.left, key)
-        else:
+        else:   # if root.val < key: key is on right subtree, recursive call on right subtree
             root.right = self.deleteNode(root.right, key)
 
         return root
