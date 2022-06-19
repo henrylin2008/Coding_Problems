@@ -64,27 +64,42 @@ class TreeNode:
 
 
 class Solution:
+    # idea: compare the root.val with the key:
+    #       - if given empty tree: return None
+    #       - if root.val > key: recursive calls on left subtree
+    #       - ir root.val < key: recursive calls on right subtree
+    #       - if root.val == key:
+    #       -     * no children: return None
+    #       -     * only left children: return left children
+    #       -     * only right children: return right children
+    #       -     * if both children: get the left most value of the right subtree, and swap root.val and left most
+    #               value of the right subtree, then remove the left most value from the tree
+
+    # Time: O(h); h is the height of the tree
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         if not root:    # if empty: return None
             return None
 
         if root.val == key:
-            # 4 possibilities
+            # 4 possibilities: no children; only left children; only right children; or children on both sides
             if not root.left and not root.right:    # if no children: return None
                 return None
-            if not root.left and root.right:    # if only right children: return root.right
+            if not root.left and root.right:    # if only right children: return right children
                 return root.right
-            if not root.right and root.left:    # if only left children: return root.left
+            if not root.right and root.left:    # if only left children: return left children
                 return root.left
-            pointer = root.right
-            while pointer.left:
-                pointer = pointer.left
-            root.val = pointer.val
-            root.right = self.deleteNode(root.right, root.val)
+            # idea: swap the root val with the value at the left most of the right subtree, and remove left most node
+            #       from the right subtree
+            pointer = root.right    # set a pointer, move to the right
+            while pointer.left:  # while there's left node
+                pointer = pointer.left  # keep trivial to the left, pointer set to the left most node of right subtree
+            root.val = pointer.val  # swap root val and left most value of the right subtree
+            root.right = self.deleteNode(root.right, root.val)  # deleteNode on the right of the root, and remove the
+            # value that we just replaced with
 
-        elif root.val > key:    # if root.val > key: key is on left subtree, recursive call on left subtree
+        elif root.val > key:    # if root.val > key: key is on left subtree, recursive calls on left subtree
             root.left = self.deleteNode(root.left, key)
-        else:   # if root.val < key: key is on right subtree, recursive call on right subtree
+        else:   # if root.val < key: key is on right subtree, recursive calls on right subtree
             root.right = self.deleteNode(root.right, key)
 
         return root
