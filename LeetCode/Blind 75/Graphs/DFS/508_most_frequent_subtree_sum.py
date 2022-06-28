@@ -43,6 +43,9 @@ class TreeNode:
 
 
 class Solution:
+    # Ideal: Use a hashMap count to count the subtree sum occurrence.
+    # A sub function dfs(TreeNode node) will travel through a tree, recursively calculate the sum of subtree,
+    # increment the count, and finally return the sum of the subtree.
     def findFrequentTreeSum(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
             return []
