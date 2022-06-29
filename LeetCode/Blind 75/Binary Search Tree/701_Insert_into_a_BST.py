@@ -43,3 +43,24 @@
 # All the values Node.val are unique.
 # -108 <= val <= 108
 # It's guaranteed that val does not exist in the original BST.
+
+# Definition for a binary tree node.
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if not root:
+            return TreeNode(val)
+        if root.val > val:
+            root.left = self.insertIntoBST(root.left, val)
+        elif root.val < val:
+            root.right = self.insertIntoBST(root.right, val)
+        return root
