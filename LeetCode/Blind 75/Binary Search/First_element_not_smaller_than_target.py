@@ -41,3 +41,31 @@ if __name__ == '__main__':
     target = int(input())
     res = first_not_smaller(arr, target)
     print(res)
+
+
+# Test #1:
+# Input:
+# 1 3 3 5 8 8 10
+# 2
+# Output: 1
+
+# Test #2:
+# Input
+# 0
+# 0
+# Output
+# 0
+
+# Test #3:
+# Input
+# 1 2 3 4 5 6 7 8 9 10
+# 10
+# Output
+# 9
+
+# Test #4:
+# Input
+# 1 1 1 1 4 5
+# 3
+# Output
+# 4
