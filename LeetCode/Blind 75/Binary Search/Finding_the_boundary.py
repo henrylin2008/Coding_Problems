@@ -14,6 +14,16 @@
 from typing import List
 
 
+# Time Complexity: O(log(n))
+#
+# The binary decision we have to make when we look at an element is
+# 1. if the element is false, we discard everything to the left and the current element itself.
+# 2. if the element is true, the current element could be the first true although there may be other true to the left.
+#    We discard everything to the right but what about the current element?
+# We keep a variable boundary_index that represents the leftmost true's index currently recorded. If the current
+# element is true, then we update boundary_index with its index and discard everything to the right including the
+# current element itself since its index has been recorded by the variable.
+
 def find_boundary(arr: List[bool]) -> int:
     l, r = 0, len(arr) - 1
     boundary = -1
