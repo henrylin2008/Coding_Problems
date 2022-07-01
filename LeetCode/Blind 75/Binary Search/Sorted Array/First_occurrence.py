@@ -45,3 +45,34 @@ if __name__ == '__main__':
     target = int(input())
     res = find_first_occurrence(arr, target)
     print(res)
+
+
+# Test #1:
+# Input
+# 1 3 3 3 3 6 10 10 10 100
+# 3
+# Output
+# 1
+
+# Test #2:
+# Input
+# 1 1 1 1 1 1 1 1 1 1 1 1
+# 1
+# Output
+# 0
+
+# Test #3:
+# Input
+# 1 22 22 33 50 100 20000
+# 33
+# Output
+# 3
+
+# Test #4:
+# Input
+# 4 6 7 7 7 20
+# 8
+# Output
+# -1
+
+
