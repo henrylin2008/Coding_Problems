@@ -16,3 +16,28 @@
 # Output: 3
 # Explanation: the first element larger than 6 is 7 which has index 3.
 
+from typing import List
+
+
+# Time Complexity: O(log(n))
+# The problem is equivalent to finding the boundary of elements < 3 and elements >=3. Now the problem is reduced to
+# finding the first true element in a boolean array.
+
+def first_not_smaller(arr: List[int], target: int) -> int:
+    l, r = 0, len(arr) - 1
+    boundary = -1
+    while l <= r:
+        mid = (l + r) // 2
+        if arr[mid] >= target:
+            boundary = mid
+            r = mid - 1
+        else:
+            l = mid + 1
+    return boundary
+
+
+if __name__ == '__main__':
+    arr = [int(x) for x in input().split()]
+    target = int(input())
+    res = first_not_smaller(arr, target)
+    print(res)
