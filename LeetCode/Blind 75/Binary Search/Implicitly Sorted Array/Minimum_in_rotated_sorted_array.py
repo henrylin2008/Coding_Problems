@@ -15,6 +15,13 @@
 from typing import List
 
 
+# Notice the numbers are divided into two sections: numbers larger than the last element of the array and numbers
+# smaller than it. The minimum element is at the boundary between the two sections.
+#
+# We can apply a filter of < the last element and get the boolean array that characterizes the two sections.
+# Now the problem is yet again reduced to finding the first true element in a boolean array.
+
+# Time: O(log(n))
 def find_min_rotated(arr: List[int]) -> int:
     left, right = 0, len(arr) - 1
     boundary = -1
