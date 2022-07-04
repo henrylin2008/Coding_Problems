@@ -12,3 +12,24 @@
 # Output: 7
 # Explanation: the smallest element is 2 and its index is 7.
 
+from typing import List
+
+
+def find_min_rotated(arr: List[int]) -> int:
+    left, right = 0, len(arr) - 1
+    boundary = -1
+
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] <= arr[-1]:     # if <= last element, then belongs to lower half
+            boundary = mid
+            right = mid - 1
+        else:
+            left = mid + 1
+    return boundary
+
+
+if __name__ == '__main__':
+    arr = [int(x) for x in input().split()]
+    res = find_min_rotated(arr)
+    print(res)
