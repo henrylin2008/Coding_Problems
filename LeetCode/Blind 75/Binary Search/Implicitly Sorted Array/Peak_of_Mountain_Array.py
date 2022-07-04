@@ -47,3 +47,29 @@ if __name__ == '__main__':
     arr = [int(x) for x in input().split()]
     res = peak_of_mountain_array(arr)
     print(res)
+
+
+# Test #1
+# Input
+# 0 1 2 3 2 1 0
+# Output
+# 3
+
+# Test #2
+# Input
+# 0 10 3 2 1 0
+# Output
+# 1
+
+# Test #3
+# Input
+# 0 10 0
+# Output
+# 1
+
+# Test #4
+# Input
+# 0 1 2 12 22 32 42 52 62 72 82 92 102 112 122 132 133 132 111 0
+# Output
+# 16
+
