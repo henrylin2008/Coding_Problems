@@ -17,7 +17,6 @@ from typing import List
 
 # Notice the numbers are divided into two sections: numbers larger than the last element of the array and numbers
 # smaller than it. The minimum element is at the boundary between the two sections.
-#
 # We can apply a filter of < the last element and get the boolean array that characterizes the two sections.
 # Now the problem is yet again reduced to finding the first true element in a boolean array.
 
@@ -40,3 +39,22 @@ if __name__ == '__main__':
     arr = [int(x) for x in input().split()]
     res = find_min_rotated(arr)
     print(res)
+
+
+# Test #1:
+# Input
+# 30 40 50 10 20
+# Output
+# 3
+
+# Test #2:
+# Input
+# 0 1 2 3 4 5
+# Output
+# 0
+
+# Test #3:
+# Input
+# 0
+# Output
+# 0
