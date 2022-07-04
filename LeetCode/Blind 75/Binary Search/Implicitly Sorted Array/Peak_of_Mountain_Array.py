@@ -22,6 +22,13 @@
 from typing import List
 
 
+# Note: The peak element is always larger than the next element. Applying the filter of arr[i] > arr[i + 1] we get a
+# boolean array. A minor edge case is for the last element as it has no next element. In that case, we assume its
+# next element is negative infinity.
+# Now the problem is reduced to finding the first true element in a boolean array.
+
+# Time: O(log(n))
+
 def peak_of_mountain_array(arr: List[int]) -> int:
     left, right = 0, len(arr) - 1
     boundary = -1
