@@ -25,6 +25,15 @@ from typing import List
 # Note: The peak element is always larger than the next element. Applying the filter of arr[i] > arr[i + 1] we get a
 # boolean array. A minor edge case is for the last element as it has no next element. In that case, we assume its
 # next element is negative infinity.
+#
+#   0   1   2   3   2   1   0   [-inf]
+#               ||
+#               vv
+#        arr[i] > arr[i + 1]
+#               ||
+#               vv
+#   F   F   F   T   T   T   T
+#
 # Now the problem is reduced to finding the first true element in a boolean array.
 
 # Time: O(log(n))
