@@ -50,6 +50,9 @@ from typing import List
 
 
 class Solution:
+    # Note: use binary search to set boundaries (min: max(weights), max: sum(weights)); Since we want to ship within d
+    #       days, the optimal truck capacity somewhere in between. We know how to find if a truck capacity is feasible
+    #       or not - we simply loop through the weights and see if we can ship it within d days.
     # Time: O(n log(n)); binary search: O(log(n)); can_ship: O(n); O(n) * log(n)
     # Space: O(1); only use the pointers, and constant variables
     def shipWithinDays(self, weights: List[int], days: int) -> int:
