@@ -50,6 +50,7 @@ from typing import List
 
 
 class Solution:
+    # Time:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         left = max(weights)         # left boundary; minimum requirement to carry the max weight
         right = sum(weights)        # right boundary
@@ -65,15 +66,15 @@ class Solution:
         return boundary
 
     def can_ship(self, candidate, weights, days):
-        current_weight = 0
-        days_taken = 1
+        current_weight = 0      # current_weight
+        days_taken = 1          # days taken so far, at least one day
 
         for weight in weights:
-            current_weight += weight
+            current_weight += weight    # add weight to the current_weight
 
-            if current_weight > candidate:
-                days_taken += 1
+            if current_weight > candidate:  # if current_weight exceed the weight that we are allowed to use
+                days_taken += 1     # send the ship off without the last weight
                 current_weight = weight     # reset the weight to the current weight
-        return days_taken <= days
+        return days_taken <= days       # return days_taken as long as it less than/equal to the given days
 
 
