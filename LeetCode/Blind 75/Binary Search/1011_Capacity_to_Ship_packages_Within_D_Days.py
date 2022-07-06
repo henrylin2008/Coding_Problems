@@ -46,4 +46,34 @@
 # Constraints:
 # 1 <= days <= weights.length <= 5 * 104
 # 1 <= weights[i] <= 500
+from typing import List
+
+
+class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        left = max(weights)         # left boundary; minimum requirement to carry the max weight
+        right = sum(weights)        # right boundary
+        boundary = right
+
+        while left <= right:
+            mid = (left + right) // 2       # mid-point
+            if self.can_ship(mid, weights, days):   # can ship the weight whatever the mid
+                boundary = mid
+                right = mid - 1
+            else:       # if can't ship with the weight
+                left = mid + 1  # shift the left pointer
+        return boundary
+
+    def can_ship(self, candidate, weights, days):
+        current_weight = 0
+        days_taken = 1
+
+        for weight in weights:
+            current_weight += weight
+
+            if current_weight > candidate:
+                days_taken += 1
+                current_weight = weight     # reset the weight to the current weight
+        return days_taken <= days
+
 
