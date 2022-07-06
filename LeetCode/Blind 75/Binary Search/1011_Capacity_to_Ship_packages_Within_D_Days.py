@@ -50,7 +50,8 @@ from typing import List
 
 
 class Solution:
-    # Time:
+    # Time: O(n log(n)); binary search: O(log(n)); can_ship: O(n); O(n) * log(n)
+    # Space: O(1); only use the pointers, and constant variables
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         left = max(weights)         # left boundary; minimum requirement to carry the max weight
         right = sum(weights)        # right boundary
