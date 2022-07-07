@@ -36,6 +36,30 @@
 from typing import List
 
 
+# Logic: use binary search on possible time values (min: max(read_times), max: sum(read_times)), checking if each time
+#        limit is enough to finish the work.
+# We check if a particular time works by trying to split the work among the coworkers and see if the total time
+# taken exceeds the given time limit. We do so by moving from left to right in the newspapers array while keeping
+# track of the time that the current coworker spent. When the time that the current coworker spent exceeds the given
+# time limit, we reset the current time tracker and add 1 to our coworker count. When we finish checking the
+# newspapers array, we check if the required coworker count exceeds the one we are given. If it does, then we know
+# that the given time limit doesn't work and we must try a higher value. Otherwise, we want to try a lower value to
+# look for the minimum time limit that works.
+
+# Time: O(n log(n)); O(n): find low and high values; binary search is O(log(n)), feasible function: O(n)
+# Space: O(1)
+def newspapers_split(newspapers_read_times: List[int], num_coworkers: int) -> int:
+    low, high = max(newspapers_read_times), sum(newspapers_read_times)
+    while low <= high:
+        mid = (low + high) // 2
+        # helper function to check if a time works
+        if feasible(newspapers_read_times, num_coworkers, mid):
+            high = mid - 1
+        else:
+            low = mid + 1
+    return high + 1
+
+
 def feasible(newspapers_read_times: List[int], num_coworkers: int, limit: int) -> bool:
     # time to keep track of the current worker's time spent, num_workers to keep track of the number of coworkers used
     time, num_workers = 0, 0
@@ -50,18 +74,6 @@ def feasible(newspapers_read_times: List[int], num_coworkers: int, limit: int) -
         num_workers += 1
     # check if the number of workers we need is more than what we have
     return num_workers <= num_coworkers
-
-
-def newspapers_split(newspapers_read_times: List[int], num_coworkers: int) -> int:
-    low, high = max(newspapers_read_times), sum(newspapers_read_times)
-    while low <= high:
-        mid = (low + high) // 2
-        # helper function to check if a time works
-        if feasible(newspapers_read_times, num_coworkers, mid):
-            high = mid - 1
-        else:
-            low = mid + 1
-    return high + 1
 
 
 if __name__ == '__main__':
