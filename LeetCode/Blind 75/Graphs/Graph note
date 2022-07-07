@@ -35,3 +35,12 @@ Top Down DFS (steps):
 	2.	Do some calculation based off the value returned from the parent node
 	3.	(optional) additional operations
 	4.	pass down the return value and continue recursion
+
+
+Tree Traversal:
+
+In-order traversal (left-right): left branch, root, right branch.
+
+Pre-order traversal (top-down): root, left subtree, right subtree.
+
+Post-order traversal (bottom-up): left subtree, right subtree, root.
