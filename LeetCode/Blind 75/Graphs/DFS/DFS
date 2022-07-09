@@ -10,3 +10,19 @@ Top Down DFS (steps):
 	2.	Do some calculation based off the value returned from the parent node
 	3.	(optional) additional operations
 	4.	pass down the return value and continue recursion
+
+
+The template for DFS on tree is:
+
+function dfs(node, state):
+    if node is null:
+        ...
+        return
+    left = dfs(node.left, state)
+    right = dfs(node.right, state)
+        ...
+    return ...
+
+Two things we need to decide to define the function:
+1. Return value (passing value up from child to parent)
+2. Identify state(s) (passing value down from parent to child)
