@@ -33,3 +33,11 @@
 # True
 # Explanation
 # This is strictly decreasing.
+
+# Time: O(n); loop through nums a couple of times
+# Space: O(1); no space is use
+class Solution:
+    def solve(self, nums):
+        if len(nums) == 1:
+            return True
+        return all(x > y for x, y in zip(nums, nums[1:])) or all(x < y for x, y in zip(nums, nums[1:]))
