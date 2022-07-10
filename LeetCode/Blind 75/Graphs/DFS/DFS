@@ -23,6 +23,15 @@ function dfs(node, state):
         ...
     return ...
 
+Defining the recursive function
 Two things we need to decide to define the function:
 1. Return value (passing value up from child to parent)
+   What do we want to return after visiting a node. For example, for the max depth problem this is the max depth for the
+   current node's subtree. If we are looking for a node in the tree, we'd want to return that node if found, else return
+   null. Use the return value to pass information from children to parent.
+
 2. Identify state(s) (passing value down from parent to child)
+   What states do we need to maintain to compute the return value for the current node. For example, to know if the
+   current node's value is larger than its parent we have to maintain the parent's value as a state. State becomes DFS's
+   function arguments. Use states to pass information from parent to children.
+
