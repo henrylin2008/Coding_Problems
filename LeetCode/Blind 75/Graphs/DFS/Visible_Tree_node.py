@@ -17,6 +17,21 @@
 # For example: Node 4 is not visible since 5>4, similarly Node 3 is not visible since both 5>3 and 4>3. Node 8 is
 # visible since all 5<=8, 4<=8, and 8<=8.
 
+# Note: We can DFS on the tree and keep track of the max value we have seen as we go.
+#
+# 1. Decide on the return value
+# The problem asks for the total number of visible nodes, so we return the total number of visible nodes for the current
+# subtree after we visit a node.
+#
+# 2. Identify states
+# The definition for a "visible" node is its value is greater than any other node's value on the root-to-itself path.
+# To determine whether the current node is visible or not, we need to know the max value from the root to it. We can
+# carry this as a state as we traverse down the tree.
+#
+# Having decided on the state and return value we can now write the DFS.
+
+# Time: O(n); n nodes and n - 1 edges => O(2n - 1) => O(n)
+# Space: O(1); only total variable
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
