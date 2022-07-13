@@ -60,6 +60,27 @@ class Solution:
 
 # Solution #2
 
+# This question can be solved using a post-order traversal on the tree. To find whether a tree is balanced,
+# and to find out about its height, we look at the two subtrees and see whether they are balanced, and if so,
+# their height. If one of the subtree is unbalanced, this tree is unbalanced. Otherwise, if the height difference
+# between the trees is greater than 1, the tree is unbalanced. Otherwise, the tree is balanced by definition,
+# and the height is the max height between the two subtrees plus 1.
+#
+# We have established the recursion logic. For the base case, we assume the empty subtree has a height of 0.
+#
+# Implementation
+# Now let's think like a node and apply our two-step formula:
+#
+# 1. Return value
+# We want to return the height of the current tree to the parents so that current node's parent can decide whether
+# its subtrees' height difference is no more than 1.
+#
+# 2. Identify states(s)
+# To decide whether current node's subtree is balanced we do not need any information other than the height for each
+# subtree returned from each child's recursive call. Therefor no additional state is needed.
+#
+# Time complexity is O(n), where n is the number of nodes in this tree.
+
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
