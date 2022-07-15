@@ -13,6 +13,9 @@ class Node:
         self.right = right
 
 
+# To serialize, we can simply do a DFS and append the node value to the string. We need to encode null nodes too
+# since otherwise, we wouldn't be able to tell if we have reached leaf nodes when we deserialize. We use x here as a
+# placeholder for the null node.
 def serialize(root):
     res = []
 
@@ -28,6 +31,8 @@ def serialize(root):
     return ' '.join(res)
 
 
+# To deserialize, we split the string into tokens and consume them. For each token we create a new node using the
+# token value. When we see an x, we know we reached the leaf and return.
 def deserialize(s):
     def dfs(nodes):
         val = next(nodes)
