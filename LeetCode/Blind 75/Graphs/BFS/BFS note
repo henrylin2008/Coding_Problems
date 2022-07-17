@@ -5,6 +5,8 @@ We can implement BFS using a queue. Important things to remember:
    -We need at least one element to kick start the process
    -Right after we dequeue an element, we'd want to enqueue its children if there are any
 
+
+BFS Template
 from collections import deque
 
 def bfs_by_queue(root):
