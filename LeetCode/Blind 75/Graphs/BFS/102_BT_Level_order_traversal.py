@@ -1,4 +1,6 @@
 # 102. Binary Tree Level Order Traversal
+# Medium
+# https://leetcode.com/problems/binary-tree-level-order-traversal/
 # https://algo.monster/problems/binary_tree_level_order_traversal
 
 # Given a binary tree, return its level order traversal. The input is the root node of the tree. The output should be
@@ -15,6 +17,19 @@
 
 # Output: [[1], [2,3], [4,5,6], [7]]
 
+# Example 2:
+# Input: root = [1]
+# Output: [[1]]
+#
+# Example 3:
+# Input: root = []
+# Output: []
+#
+#
+# Constraints:
+# The number of nodes in the tree is in the range [0, 2000].
+# -1000 <= Node.val <= 1000
+
 from collections import deque
 from typing import List
 
@@ -26,6 +41,8 @@ class Node:
         self.right = right
 
 
+# Time Complexity: O(n); We traverse every edge and node once but since the number of edges is n - 1 ==> O(n).
+
 def level_order_traversal(root: Node) -> List[List[int]]:
     res = []
     queue = deque([root])  # at least one element in the queue to kick start bfs
@@ -36,13 +53,13 @@ def level_order_traversal(root: Node) -> List[List[int]]:
             node = queue.popleft()
             if node:  # if there's a node, in case of edge case of null node
                 new_level.append(node.val)
-                # following for loop can be rewritten as 2 append statements
-                # queue.append(node.left)
-                # queue.append(node.right)
                 for child in [node.left, node.right]:  # enqueue non-null children
                     if child is not None:
                         queue.append(child)
-        if new_level:   # if level is non-null
+                # for loop can be re-written with 2 append statements
+                # queue.append(node.left)
+                # queue.append(node.right)
+        if new_level:   # if new_level is non-empty
             res.append(new_level)
     return res
 
