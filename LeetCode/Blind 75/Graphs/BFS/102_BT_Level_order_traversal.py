@@ -1,4 +1,4 @@
-# Binary Tree Level Order Traversal
+# 102. Binary Tree Level Order Traversal
 # https://algo.monster/problems/binary_tree_level_order_traversal
 
 # Given a binary tree, return its level order traversal. The input is the root node of the tree. The output should be
@@ -34,11 +34,16 @@ def level_order_traversal(root: Node) -> List[List[int]]:
         new_level = []  # store child node/s
         for _ in range(n):  # dequeue each node in the current level
             node = queue.popleft()
-            new_level.append(node.val)
-            for child in [node.left, node.right]:  # enqueue non-null children
-                if child is not None:
-                    queue.append(child)
-        res.append(new_level)
+            if node:  # if there's a node, in case of edge case of null node
+                new_level.append(node.val)
+                # following for loop can be rewritten as 2 append statements
+                # queue.append(node.left)
+                # queue.append(node.right)
+                for child in [node.left, node.right]:  # enqueue non-null children
+                    if child is not None:
+                        queue.append(child)
+        if new_level:   # if level is non-null
+            res.append(new_level)
     return res
 
 
