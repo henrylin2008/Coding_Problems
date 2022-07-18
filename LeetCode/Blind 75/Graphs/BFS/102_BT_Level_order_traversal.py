@@ -42,11 +42,13 @@ class Node:
 
 
 # Time Complexity: O(n); We traverse every edge and node once but since the number of edges is n - 1 ==> O(n).
-
+# Logic: use a deque to remove the oldest node from the beginning of the queue, and add any of its children node/s to
+#        the end of the queue. While there's a node in the queue, popleft node from the queue, and add (if) any child
+#        node/s to the queue. Add any new_level (list) into the (final) res list, and return the res
 def level_order_traversal(root: Node) -> List[List[int]]:
     res = []
     queue = deque([root])  # at least one element in the queue to kick start bfs
-    while len(queue) > 0:  # as long as there is element in the queue
+    while len(queue):  # as long as there is element in the queue
         n = len(queue)  # number of nodes in current level
         new_level = []  # store child node/s
         for _ in range(n):  # dequeue each node in the current level
