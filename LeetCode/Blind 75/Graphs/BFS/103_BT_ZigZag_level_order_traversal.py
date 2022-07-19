@@ -48,13 +48,13 @@ def zig_zag_traversal(root: Node) -> List[List[int]]:
         new_level = []
         for _ in range(n):  # dequeue each node in the current level
             node = queue.popleft()
-            if node:
-                new_level.append(node.val)
-                queue.append(node.left)
-                queue.append(node.right)
+            if node:    # if non-empty node
+                new_level.append(node.val)  # new_level appends node value
+                queue.append(node.left)     # add node's left child to the queue
+                queue.append(node.right)    # add node's right child to the queue
         if not left_to_right:
             new_level.reverse()  # reverse current level
-        if new_level:
+        if new_level:   # if non-empty new_level
             res.append(new_level)
         left_to_right = not left_to_right  # flip flag
     return res
