@@ -34,10 +34,15 @@ class Node:
         self.right = right
 
 
+# This problem is almost the same as level order traversal. We just have to keep a flag to track if we are currently
+# traversing left-to-right or right-to-left.
+#
+# Time Complexity: O(n)
+# We traverse every edge and node once but since the number of edges is n - 1, then this simply becomes O(n).
 def zig_zag_traversal(root: Node) -> List[List[int]]:
     res = []
     queue = deque([root])  # at least one element in the queue to kick start bfs
-    left_to_right = True
+    left_to_right = True    # flag to track traversing direction (left-to-right, right-to-left)
     while len(queue) > 0:  # as long as there is element in the queue
         n = len(queue)  # number of nodes in current level, see explanation above
         new_level = []
