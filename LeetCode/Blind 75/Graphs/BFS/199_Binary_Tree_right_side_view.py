@@ -37,8 +37,16 @@ class Node:
         self.left = left
         self.right = right
 
+# We can do a level order traversal and add the last node to return the result.
+#
+# Time Complexity: O(n)
+#
+# We traverse every edge and node once but since the number of edges is n - 1, then this simply becomes O(n).
 
 def binary_tree_right_side_view(root):
+    if not root:    # edge case
+        return None
+
     res = []
     queue = deque([root])  # at least one element in the queue to kick start bfs
     while len(queue) > 0:  # as long as there is element in the queue
@@ -46,7 +54,7 @@ def binary_tree_right_side_view(root):
         res.append(queue[0].val)  # only append the first node we encounter since it's the rightmost
         for _ in range(n):  # dequeue each node in the current level
             node = queue.popleft()
-            for child in [node.right, node.left]:  # we add right children first so it'll pop out of the queue first
+            for child in [node.right, node.left]:  # we add right children first, so it'll pop out of the queue first
                 if child is not None:
                     queue.append(child)
     return res
