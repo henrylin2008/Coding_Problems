@@ -74,3 +74,12 @@ if __name__ == '__main__':
     root = build_tree(iter(input().split()), int)
     res = binary_tree_right_side_view(root)
     print(' '.join(map(str, res)))
+
+
+# Test #1
+# Input: 1 2 4 x 7 x x 5 x x 3 x 6 x x
+# Output: 1 3 6 7
+
+# Test #2
+# Input: 0 x x
+# Output: 0
