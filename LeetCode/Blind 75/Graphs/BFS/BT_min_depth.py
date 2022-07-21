@@ -23,6 +23,12 @@ class Node:
         self.right = right
 
 
+# With BFS, since we search level by level we are guaranteed to find shallowest leaf node earlier than other leaf nodes.
+# Use a deque to pop node and add child node/s to the queue, as long as there's node in the queue, we add 1 to the
+# depth, while removing the current node (popleft), and add its children node/s to the queue if it's not None node.
+
+# Time: O(n)
+# We traverse every edge and node once but since the number of edges is n - 1, then this simply becomes O(n).
 def binary_tree_min_depth(root: Node) -> int:
     queue = deque([root])  # at least one element in the queue to kick start bfs
     depth = -1  # we start from -1 because popping root will add 1 depth
