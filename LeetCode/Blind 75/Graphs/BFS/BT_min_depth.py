@@ -59,3 +59,12 @@ if __name__ == '__main__':
     root = build_tree(iter(input().split()), int)
     res = binary_tree_min_depth(root)
     print(res)
+
+
+# test #1
+# Input: 1 2 4 x 7 x x 5 x x 3 x 6 x x
+# Output: 2
+
+# Test #2
+# Input: 0 x x
+# Output: 0
