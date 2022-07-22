@@ -1,3 +1,6 @@
+Combinatorial search problems involve finding groupings and assignments of objects that satisfy certain conditions.
+Finding all permutations/subsets, solving sudoku, and 8-queens are classic combinatorial problems.
+
 Combinatorial search == DFS on a tree
 
 The complexity of combinatorial problems often grows rapidly with the size of the problem.
