@@ -1,0 +1,9 @@
+Combinatorial search == DFS on a tree
+
+The complexity of combinatorial problems often grows rapidly with the size of the problem.
+
+
+Three steps to conquer combinatorial search problems
+1. Identify the state(s).
+2. Draw the state-space tree.
+3. DFS/backtrack on the state-space tree.
