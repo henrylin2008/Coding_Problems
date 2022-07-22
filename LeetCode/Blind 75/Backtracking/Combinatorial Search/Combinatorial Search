@@ -5,5 +5,24 @@ The complexity of combinatorial problems often grows rapidly with the size of th
 
 Three steps to conquer combinatorial search problems
 1. Identify the state(s).
+    1. What state do we need to know whether we have reached a solution (and using it to construct a solution if the
+       problem asks for it)?. In the above permutation example, we need to keep track of the letters we have already
+       selected when we perform DFS.
+    2. What state do we need to decide which child nodes should be visited next and which ones should be pruned? In the
+       above permutation example, we have to know what the letters are left that we can still use (since each letter can
+       only be used once)
 2. Draw the state-space tree.
+    - you want to draw the tree (on a piece of paper if you have one). A small test case that's big enough to reach at
+      least one solution (leaf node).
 3. DFS/backtrack on the state-space tree.
+    - apply the following backtracking template:
+        function dfs(node, state):
+            if state is a solution:
+                    report(state) # e.g. add state to final result list
+                    return
+
+            for child in children:
+                if child is a part of a potential solution:
+                    state.add(child) # make move
+                    dfs(child, state)
+                    state.remove(child) # backtrack
