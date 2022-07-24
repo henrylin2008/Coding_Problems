@@ -32,6 +32,8 @@
 from typing import List
 
 
+# Time Complexity: O(n!)
+# This is because we have n letters to choose from then n - 1 and so on therefore n * (n - 1) * (n - 2) * ... * 1
 def permutations(letters):
     def dfs(path, used, res):
         if len(path) == len(letters):
