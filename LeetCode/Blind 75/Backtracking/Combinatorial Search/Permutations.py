@@ -13,6 +13,22 @@
 # ```` abc acb bac bca cab cba
 
 
+
+
+# 3-step system from backtracking template:
+# 1. Identify States
+# What state do we need to know whether we have reached a solution (and using it to construct a solution if the problem
+# asks for it)?
+#   -We need a state to keep track of the list of letters we have chosen for the current permutation
+# What state do we need to decide which child nodes should be visited next and which ones should be pruned?
+#   -We have to know what are the letters left that we can still use (since each letter can only be used once)?
+# 2. Draw the State-space Tree
+# 3. DFS on the State-space tree
+# Using the backtracking template as basis, we add the two states we identified in step 1:
+#   -A path list to represent permutation constructed so far.
+#   -A used list to record which letters are already used. used[i] == true means ith letter in the origin list has been
+#    used.
+
 from typing import List
 
 
