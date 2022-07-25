@@ -34,7 +34,11 @@ def ternary_tree_paths(root: Node) -> List[str]:
 
         for child in root.children:
             if child:
-                dfs(child, path + [str(root.val)], res)
+                # dfs(child, path + [str(root.val)], res)  # recursive call, additional space with a new list every time
+                # use a single list path and push and pop following the call stack
+                path.append(str(root.val))
+                dfs(child, path, res)
+                path.pop()
 
     res = []
     if root: dfs(root, [], res)
