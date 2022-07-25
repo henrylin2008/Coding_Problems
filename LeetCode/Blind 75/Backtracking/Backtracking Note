@@ -1,0 +1,7 @@
+Backtrack:
+1. Base Case
+2. For each possibility p
+    a. Memorize current state
+    b. backtrack (nex_state)
+    c. Restore current state
+
