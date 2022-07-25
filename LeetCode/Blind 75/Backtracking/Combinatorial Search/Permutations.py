@@ -36,9 +36,9 @@ from typing import List
 # This is because we have n letters to choose from then n - 1 and so on therefore n * (n - 1) * (n - 2) * ... * 1
 def permutations(letters):
     def dfs(path, used, res):
-        if len(path) == len(letters):
-            res.append(''.join(path))
-            return
+        if len(path) == len(letters):   # if length of path and letter are matching
+            res.append(''.join(path))   # add/group current path to the result
+            return      # exit
 
         for i, letter in enumerate(letters):
             # skip used letters
