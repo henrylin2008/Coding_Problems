@@ -5,3 +5,17 @@ Backtrack:
     b. backtrack (nex_state)
     c. Restore current state
 
+
+
+DFS/backtrack on the state-space tree.
+    - apply the following backtracking template:
+       function dfs(node, state):
+            if state is a solution:
+                    report(state) # e.g. add state to final result list
+                    return
+
+            for child in children:
+                if child is a part of a potential solution:
+                    state.add(child) # make move
+                    dfs(child, state)
+                    state.remove(child) # backtrack
