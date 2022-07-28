@@ -17,6 +17,21 @@
 # ["jm","jn","jo","km","kn","ko","lm","ln","lo"]
 
 
+# This is essentially asking for all permutations with the constraint of a number to letter mapping.
+#
+# 1. Identify state(s)
+# To construct a letter combination we need
+#   The letters we have selected so far
+# To make a choice when we visit the current node's children, we don't need to maintain any additional state since
+# the next possible letters are defined by the number to letter mapping.
+
+# 2. Draw the tree
+# 3. DFS on the tree
+
+# Time Complexity: O(4^n)
+# n is the length of the input string. Worst case we have 4 choices for every number, average case we have 3 choices so
+# it should be closer to O(3^n).
+
 from typing import List
 
 KEYBOARD = {
