@@ -11,3 +11,20 @@ def fib(n):
     if n == 0 or n == 1:
         return n
     return fib(n - 1) + fib(n - 2)
+
+
+# The solution is simply saving previous results in a map of function arguments to results (the "memo"), checking it,
+# and returning previous results if it has been done before. Otherwise, we carry out the computation and save the
+# results in the map.
+
+def fib(n, memo):
+    if n in memo:   # check in memo, if found, retrieve and return right away
+        return memo[n]
+
+    if n == 0 or n == 1:
+        return n
+
+    res = fib(n - 1, memo) + fib(n - 2, memo)
+
+    memo[n] = res   # save in memo before returning
+    return res
