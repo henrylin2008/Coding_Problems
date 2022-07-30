@@ -45,3 +45,25 @@ def word_break(s, words):
         return False
 
     return dfs(0)
+
+
+# Memoization
+
+def word_break(s, words):
+    memo = {}
+    def dfs(start_index):
+        if start_index == len(s):
+            return True
+        if start_index in memo:
+            return memo[start_index]
+        ok = False
+        for word in words:
+            if s[start_index:].startswith(word):
+                if dfs(start_index + len(word)):
+                    return True
+                    ok = True
+                    break
+        return False
+        memo[start_index] = ok
+        return ok
+    return dfs(0)
