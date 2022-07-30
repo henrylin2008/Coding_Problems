@@ -49,8 +49,30 @@ def word_break(s, words):
 
 # Memoization
 
+# Everything looks great. When we finish typing that last bracket/semicolon, we can almost hear angels singing and
+# all tests passing.
+#
+# Except there is one pesky test case:
+#   1. "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#       aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+#   2. ["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]
+#
+# Why does this one time out? We have 10 branches to check each level of the tree and there are 140 as in the target,
+# in the worse case we'd be looking at 10^140 branches. Remember we talked about "combinatorial explosion" in the
+# backtracking module. We have just been struck by it. The way to solve this is to use memoization to cache the
+# branches we have already seen. We can even see duplicates in the above example.
+#
+#
+#
+# Time Complexity: O(s * w * max(w[i]))
+#
+# s is the length of the string, w is the length of the words array and max(w[i]) is the maximal possible word
+# length. Here our time complexity is polynomial since we memoize and we iterate through the possibilities. At every
+# position s we try every word in w which takes time proportionate to the word length.
+
 def word_break(s, words):
     memo = {}
+
     def dfs(start_index):
         if start_index == len(s):
             return True
@@ -64,4 +86,5 @@ def word_break(s, words):
                     break
         memo[start_index] = ok
         return ok
+
     return dfs(0)
