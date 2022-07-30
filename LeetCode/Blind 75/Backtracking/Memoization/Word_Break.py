@@ -60,10 +60,8 @@ def word_break(s, words):
         for word in words:
             if s[start_index:].startswith(word):
                 if dfs(start_index + len(word)):
-                    return True
                     ok = True
                     break
-        return False
         memo[start_index] = ok
         return ok
     return dfs(0)
