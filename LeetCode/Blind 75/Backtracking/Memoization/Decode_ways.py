@@ -33,6 +33,13 @@
 # Since there's no constraint on which letters can be used for decoding, we don't need any state here.
 #
 # 2. Draw the space-state tree
+#                       123
+#                1=A  /     \ 12=L
+#                  23         3
+#             2=B/   \23=w      \ 3=c
+#              3      ''         ''
+#               \ 3=c
+#                ''
 #
 # 3. DFS
 # Using the backtracking template as a basis, we add the state we identified in step 1:
@@ -57,8 +64,31 @@ def decode_ways(digits):
         remaining = digits[start_index:]
         for prefix in prefixes:
             if remaining.startswith(prefix):
-                ways += dfs(start_index + len(prefix)) # add number of ways returned from child node
+                ways += dfs(start_index + len(prefix))  # add number of ways returned from child node
 
         return ways
 
     return dfs(0)
+
+
+# Again, we see there are overlapping subproblems.
+
+
+# Add memoization:
+def decode_ways(digits):
+    prefixes = [str(i) for i in range(1, 27)]
+
+    def dfs(start_index, memo):
+        if start_index in memo:
+            return memo[start_index]
+        if start_index == len(digits):
+            return 1
+        ways = 0
+        remaining = digits[start_index:]
+        for prefix in prefixes:
+            if remaining.startswith(prefix):
+                ways += dfs(start_index + len(prefix), memo)
+        memo[start_index] = ways
+        return ways
+
+    return dfs(0, {})
