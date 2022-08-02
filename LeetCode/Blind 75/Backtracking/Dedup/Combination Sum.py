@@ -47,3 +47,50 @@
 # 1 <= candidates[i] <= 200
 # All elements of candidates are distinct.
 # 1 <= target <= 500
+
+# We can try subtracting each candidate number until the remaining number is either less or equal to zero.
+# State-space Tree
+# candidates = [2, 3]
+#                   5 (remaining num)
+#             2 /       \3 (num to subtract)
+#              3         2
+#         2 /    \3    2/   \3
+#         1      0 x  0 x    -1
+#     2 /   \ 3
+#     -1    -2
+#
+# The only problem is that we have duplicate combinations in our results.
+#
+# Dedup
+#
+# The way we dedup is to only use candidate numbers whose index in the array is >= last used number's index. In this
+# example, when we are at the teal node, we don't want to look back and use any precedent candidate such as 2. This
+# is because by DFS order **we already explored subtracting 2 and during that traversal we have considered using 3 (
+# blue nodes) **.
+# Candidates = [2, 3]
+#                   5
+#             2 /       \3
+#              3         2
+#         2 /    \3    2/   \3
+#         1      0 x  0 x    -1
+#     2 /   \ 3  (2,3) (3,2) ==> duplicate
+#     -1    -2
+
+# We use an additional state start_index to keep track of the position of the last used number ("start" "index"
+# because it is the index you want to start building new branches from). Final tree with duplicate branch pruned.
+
+#                   5
+#             2 /       \3
+#              3         2
+#         2 /    \3        \3
+#         1      0 x        -1
+#     2 /   \ 3  (2,3)
+#     -1    -2
+
+# This idea of establishing order and pruning backward branches a is very useful de-duplication technique. You can
+# also use it in two-pointer problems that has duplicate candidates.
+#
+# Time Complexity: O(n^target/min(candidates)). In the worse case, the state-space tree has n branches and the depth
+# of the tree is at most target divided by the smallest number in candidates.
+#
+# Every number can be used or not used therefore leading to exponential time complexity.
