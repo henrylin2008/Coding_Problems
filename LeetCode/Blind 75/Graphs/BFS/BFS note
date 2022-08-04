@@ -6,15 +6,25 @@ We can implement BFS using a queue. Important things to remember:
    -Right after we dequeue an element, we'd want to enqueue its children if there are any
 
 
-BFS Template
+BFS on graph Template
+The BFS template consists of two core functions
+1.bfs: uses a queue to keep track of the nodes to be visited
+2.get_neighbors: returns a node's neighbors. In an adjacency list representation, this would be returning the list of
+  neighbors for the node. If the problem is about a matrix, this would be the surrounding valid cells as we will see in
+  number of islands and knight shortest path. If the graph is implicit, we have to generate the neighbors as we traverse.
+  We will see this in word ladder.
+
+
+# BFS on Tree
 from collections import deque
 
 def bfs_by_queue(root):
     queue = deque([root]) # at least one element in the queue to kick start bfs
+    visited = set([root])
     while len(queue) > 0: # as long as there is an element in the queue
         node = queue.popleft() # dequeue
-        for child in node.children: # enqueue children
-            if OK(child): # early return if problem condition met
-                return FOUND(child)
-            queue.append(child)
-    return NOT_FOUND
+        for neighbor in get_neighbors(node):
+            if neighbor in visited:
+                continue
+            queue.append(neighbor)
+            visited.add(neighbor)
