@@ -15,15 +15,29 @@ The BFS template consists of two core functions
   We will see this in word ladder.
 
 
-# BFS on Tree
+# BFS on graph
 from collections import deque
 
-def bfs_by_queue(root):
+def bfs_graph(root):
     queue = deque([root]) # at least one element in the queue to kick start bfs
     visited = set([root])
     while len(queue) > 0: # as long as there is an element in the queue
         node = queue.popleft() # dequeue
         for neighbor in get_neighbors(node):
+            if neighbor in visited:
+                continue
+            queue.append(neighbor)
+            visited.add(neighbor)
+
+
+# BFS on tree
+from collections import deque
+def bfs_tree(root):
+    queue = deque([root])
+    while len(queue) > 0:
+        node = queue.popleft()
+        for child in node.children:
+            queue.append(child)
             if neighbor in visited:
                 continue
             queue.append(neighbor)
