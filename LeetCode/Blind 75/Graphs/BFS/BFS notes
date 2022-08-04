@@ -6,6 +6,12 @@ We can implement BFS using a queue. Important things to remember:
    -Right after we dequeue an element, we'd want to enqueue its children if there are any
 
 
+When to use BFS?
+    -Shortest path from A to B (unweight)
+    -Graph of unknown or even infinite size, e.g. knight shortest path
+    -Dijkstra Intro | Shortest Path in a Weighted Graph
+
+
 BFS on graph Template
 The BFS template consists of two core functions
 1.bfs: uses a queue to keep track of the nodes to be visited
@@ -68,4 +74,5 @@ def bfs(root):
                 visited.add(neighbor)
         # increment level after we have processed all nodes of the level
         level += 1
+
 
