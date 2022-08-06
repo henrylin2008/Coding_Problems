@@ -45,3 +45,9 @@ def dfs(root, visited):
             continue
         visited.add(neighbor)
         dfs(neighbor, visited)
+
+Complexity: O(|V| + |E|)
+We only visit each vertex once in both BFS and DFS with visited. Since technically a graph is made of vertices and
+edges, the time complexity of BFS/DFS on graphs is normally expressed as O(|V| + |E|) where |V| stands for number of
+vertices and |E| stands for number of edges (V is set of vertices and in math |V| means the size of a set).
+
