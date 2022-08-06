@@ -36,7 +36,13 @@ Two things we need to decide to define the function:
    function arguments. Use states to pass information from parent to children.
 
 
-Similar to BFS, we just have to add visited to keep track of the visited nodes and use get_neighbors to get the next nodes to visit.
+DFS is better at:
+    -uses less memory than BFS for wide graphs, since BFS has to keep all the nodes in the queue, and for wide graphs
+     this can be quite large.
+    -finding nodes far away from the root, e.g. looking for an exit in a maze.
+
+Similar to BFS, we just have to add visited to keep track of the visited nodes and use get_neighbors to get the next
+nodes to visit.
 def dfs(root, visited):
     if not root: return
 
