@@ -31,3 +31,43 @@
 #      -----------------------------------
 #   2  |   2,0     |    2,1    |   2,2   |
 #      -----------------------------------
+
+
+
+# Getting neighboring node's coordinates
+# The core of BFS/DFS is to add neighbors of the current vertex to a queue/stack. The get_neighbors function returns all
+# 4 (or 8 if you are allowed to go diagonal) coordinates of neighboring nodes.
+
+#      -------------------------------------
+#      |           |   r-1, c  |           |
+#      -------------------------------------
+#      |  r, c-1   |   r, c    |   r, c+1  |
+#      -------------------------------------
+#      |           |   r+1, c  |           |
+#      -------------------------------------
+
+# One way to get each neighbor's coordinates is to keep each neighbor's horizontal and vertical offsets (i.e. delta) in
+# a list and adding them to each vertex's coordinates.
+
+#  delta_row
+#      -------------------------------------
+#  -1  |           |   r - 1   |           |
+#      -------------------------------------
+#   0  |   r + 0   |     r     |   r + 0   |
+#      -------------------------------------
+#   1  |           |   r + 1   |           |
+#      -------------------------------------
+
+# delta_col
+#           -1          0           1
+#      -------------------------------------
+#      |           |   c + 0   |           |
+#      -------------------------------------
+#      |   c - 1   |     c     |   c + 1   |
+#      -------------------------------------
+#      |           |   c + 0   |           |
+#      -------------------------------------
+
+# Starting from north, clockwise
+#      delta_row = [-1, 0, 1, 0]
+#      delta_col = [0, 1, 0, -1]
