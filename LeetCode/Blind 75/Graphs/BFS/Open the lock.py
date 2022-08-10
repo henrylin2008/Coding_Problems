@@ -34,3 +34,48 @@
 #
 # Constraints
 # The starting combination (0000) and the final combination is not trapped because that defeats the purpose of the lock.
+
+# Solution
+# This question is a standard BFS problem, except we consider two combinations who has one digit differ by one
+# "adjacent". The implementation comes easily after we defined what "adjacent" means for this question.
+#
+# The time complexity is O(n), where n is the number of possible combinations (which is 10^4 == 10000 in this case).
+
+from collections import deque
+from typing import List
+
+next_digit = {**{str(i): str(i + 1) for i in range(9)}, "9": "0"}
+prev_digit = {e: n for n, e in next_digit.items()}
+
+
+def num_steps(target_combo: str, trapped_combos: List[str]) -> int:
+    if target_combo == "0000":
+        return 0
+    trapped_combo_set = set(trapped_combos)
+    steps = {
+        "0000": 0
+    }
+    bfs_queue = deque({"0000"})
+    while bfs_queue:
+        top = bfs_queue.popleft()
+        for i in range(4):
+            new_combo = top[0:i] + next_digit[top[i]] + top[i + 1:]
+            if new_combo not in trapped_combo_set and new_combo not in steps:
+                bfs_queue.append(new_combo)
+                steps[new_combo] = steps[top] + 1
+                if new_combo == target_combo:
+                    return steps[new_combo]
+            new_combo = top[0:i] + prev_digit[top[i]] + top[i + 1:]
+            if new_combo not in trapped_combo_set and new_combo not in steps:
+                bfs_queue.append(new_combo)
+                steps[new_combo] = steps[top] + 1
+                if new_combo == target_combo:
+                    return steps[new_combo]
+    return -1
+
+
+if __name__ == '__main__':
+    target_combo = input()
+    trapped_combos = input().split()
+    res = num_steps(target_combo, trapped_combos)
+    print(res)
