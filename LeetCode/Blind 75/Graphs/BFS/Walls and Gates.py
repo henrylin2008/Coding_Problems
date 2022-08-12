@@ -35,3 +35,12 @@
 #
 # Constraints
 # 1 <= n, m <= 500
+
+# Solution
+# This is a classical breadth-first search problem, as it asks for the distance from each point to some location.
+# Simply initialize the queue with a list of gate locations, and each cycle, when we process the location at the
+# front of the queue, we add all the adjacent locations into the queue if their value is INF (meaning it is empty and
+# unprocessed) and mark the distances on the cells by adding the value of the current cell by 1. This way each empty
+# space is only in the queue once.
+#
+# The time complexity is O(n * m).
