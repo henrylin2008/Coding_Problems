@@ -62,3 +62,43 @@
 # case scenario though.
 #
 # Below is an implementation.
+
+from collections import deque
+from typing import List
+
+directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+
+target = ((1, 2, 3), (4, 5, 0))
+
+
+def num_steps(init_pos: List[List[int]]) -> int:
+    init_pos = tuple(tuple(line) for line in init_pos)
+    if init_pos == target:
+        return 0
+    moves_map = {init_pos: 0}
+    moves_queue = deque([init_pos])
+    while moves_queue:
+        top = moves_queue.popleft()
+        row, col = 0, 0
+        for i, line in enumerate(top):
+            for j, entry in enumerate(line):
+                if entry == 0:
+                    row, col = i, j
+        for delta_row, delta_col in directions:
+            new_row, new_col = row + delta_row, col + delta_col
+            if 0 <= new_row < 2 and 0 <= new_col < 3:
+                new_state = list(list(line) for line in top)
+                new_state[new_row][new_col], new_state[row][col] = new_state[row][col], new_state[new_row][new_col]
+                new_tuples = tuple(tuple(line) for line in new_state)
+                if new_tuples not in moves_map:
+                    moves_map[new_tuples] = moves_map[top] + 1
+                    moves_queue.append(new_tuples)
+                    if new_tuples == target:
+                        return moves_map[new_tuples]
+    return -1
+
+
+if __name__ == '__main__':
+    init_pos = [[int(x) for x in input().split()] for _ in range(int(input()))]
+    res = num_steps(init_pos)
+    print(res)
