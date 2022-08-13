@@ -42,3 +42,23 @@
 #
 # Constraints
 # The input must be a 2 x 3 integer matrix containing exactly one of each from 0 to 5
+
+# Solution
+# This is a straightforward BFS problem. However, the biggest difficulty in implementing a solution is finding the
+# state adjacent to the current state and being able to store the different states in a hash table for lookup of
+# items. The core idea is another state is adjacent to the current state when the entry with the 0 is swapped with
+# one of the entries adjacent to it, which is very helpful if we use a mutable structure (like lists). On the other
+# hand, we need to store the swapped value in a hash table and in a queue, which is very helpful if we use a hashable
+# structure (like tuples), which are usually immutable. Other than that, it's just a standard BFS solution.
+#
+# A node transition graph might look like this:
+#
+#
+#
+# Which side a line comes out of represent which way the puzzle can move, and what happens when you move the puzzle
+# that way. Note this graph is two-directional, as you can always move back to return to the original position.
+#
+# The time complexity is O(n!), where n is the size of the matrix in question. We usually would never reach the worst
+# case scenario though.
+#
+# Below is an implementation.
