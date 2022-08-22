@@ -1,0 +1,26 @@
+Priority Queue and Heap
+Priority Queue
+A priority queue is a data structure that consists of a collection of items and supports the following operations:
+    -insert: insert an item with a key
+    -delete_min/delete_max: remove the item with the smallest/largest key and returning it
+Note that
+    -we only allow getting and deleting the element with min/max key and NOT arbitrary key.
+
+
+Use cases
+The hospital triage process is a quintessential priority queue. Patients are sorted based on the severity of their
+condition. For example, a person with the cold comes in and he is placed near the end of the queue. Then a person who
+had a car accident comes in, and he is placed before the person with the cold even though he came in later because his
+condition is more severe. Severity is the key in this case.
+
+Consider a problem like Merge K sorted lists. We need to keep track of min value among k elements (smallest element in
+each sorted list) and remove the min value and insert new values at will while still having access to the min value at
+any point in time. Here are some other problems where the priority queue comes in handy.
+
+    -k closest pointers to origin
+    -kth largest element
+    -kth largest element in a stream
+    -Median of a data stream
+    -Uniform Cost Search
+
+
