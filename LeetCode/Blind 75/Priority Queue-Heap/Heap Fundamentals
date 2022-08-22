@@ -23,4 +23,36 @@ any point in time. Here are some other problems where the priority queue comes i
     -Median of a data stream
     -Uniform Cost Search
 
+Implement Priority Queue using an array
+To do this, we could try using
+    -an unsorted array, insert would be O(1) as we just have to put it at the end, but finding and deleting min value
+     would be O(N) since we have to loop through the entire array to find it
+    -a sorted array, finding min value would be easy O(1), but it would be O(N) to insert since we have to loop through
+     to find the correct position of the value and move elements after the position to make space and insert into the
+     space
+There must be a better way! "Patience you must have, my young padawan." Enter Heap.
 
+
+Heap
+Max Heap and Min Heap
+There are two kinds of heaps - Min Heap and Max Heap. A Min Heap is a tree that has two properties:
+    1. almost complete, i.e. every level is filled except possibly the last(deepest) level. The filled items in the last
+    level are left-justified.
+    2. for any node, its key (priority) is greater than its parent's key (Min Heap).
+A Max Heap has the same property #1 and opposite property #2, i.e. for any node, its key is less than its parent's key.
+
+Note that
+    -the number in each node is the key, not value (remember a tree node has a value). Keys are used to sort the
+     nodes/construct the tree, and values are the data we want heap to store.
+    -unlike a binary search tree, there is no comparable relationship between children. For example, the third example
+     in the first row, 17 and 8 are both larger than 2 but they are NOT sorted left to right. In fact, there is no
+     comparable relationship across a level of a heap at all.
+
+What makes it so useful is
+    -because a heap is a complete tree, the height of a heap is guaranteed to be O(log(N)). This makes operations that
+    go from root to leaf guaranteed to be O(log(N)).
+    -because only nodes in a root-to-leaf path are sorted (nodes in the same level are not sorted), when we add/remove a
+    node, we only have to fix the order in the vertical path the node is in. This makes inserting and deleting O(log(N))
+     too.
+    -being complete also makes array a good choice to store a heap since data is continuous. As we will see later in
+    this module, we can find the parent and children of a node simply by doing index arithmetics.
