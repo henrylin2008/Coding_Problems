@@ -56,3 +56,41 @@ What makes it so useful is
      too.
     -being complete also makes array a good choice to store a heap since data is continuous. As we will see later in
     this module, we can find the parent and children of a node simply by doing index arithmetics.
+
+
+Operations
+insert
+To insert a key into a heap,
+    -place the new key at the first free leaf
+    -if property #2 is violated, perform a bubble-up
+
+def bubble_up(node):
+    while node.parent exist and node.parent.key > node.key:
+        swap node and node.parent
+        node = node.parent
+
+As the name of the algorithm suggests, it "bubbles up" the new node by swapping it with its parent until the order is
+correct
+Since the height of a heap is O(log(N)), the complexity of bubble-up is O(log(N)).
+
+
+delete_min
+What this operation does is:
+    -delete a node with min key and return it
+    -reorganize the heap so the two properties still hold
+To do that, we:
+    -remove and return the root since the node with the minimum key is always at the root
+    -replace the root with the last node (the rightmost node at the bottom) of the heap
+    -if property #2 is violated, perform a bubble-down
+
+def bubble_down(node):
+    while node is not a leaf:
+        smallest_child = child of node with smallest key
+        if smallest_child < node:
+            swap node and smallest_child
+            node = smallest_child
+        else:
+            break
+
+What this says is we keep swapping between the current node and its smallest child until we get to the leaf, hence a
+"bubble down". Again the time complexity is O(log(N)) since the height of a heap is O(log(N)).
