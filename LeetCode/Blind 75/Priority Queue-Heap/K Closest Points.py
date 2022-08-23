@@ -47,3 +47,16 @@ if __name__ == '__main__':
     res = k_closest_points(points, k)
     for row in res:
         print(' '.join(map(str, row)))
+
+
+# Alternative solution using max heap
+
+# It might be counter-intuitive to think that a max heap can solve a problem that asks for minimum distances. Here's
+# how to think about it:
+#
+# If we had the k closest points already and we have to decide whether a new point belongs to top k. The criterion is
+# whether the new point is closer than the furthermost point within the current k points. If it is, we want to kick
+# the current furthermost point out and add the new point.
+#
+# We can use a max heap to accomplish this. The root of the max heap is the point with max distance to the origin. If
+# the new point has a smaller distance, then we pop the root of the max heap and push the new point in.
