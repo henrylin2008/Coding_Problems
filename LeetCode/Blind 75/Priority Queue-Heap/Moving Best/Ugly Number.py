@@ -10,3 +10,11 @@
 # Note:
 #   1. 1 is typically treated as an ugly number.
 #   2. n does not exceed 1690.
+
+# Solution
+# Brute Force
+# A brute force method would generate ugly numbers and store all possibilities for look up. We can generate them out
+# of order and then sort them later.
+#
+# In theory this is impossible, but since there are limits on the size of datatypes, we only need to loop up to those
+# limits:
