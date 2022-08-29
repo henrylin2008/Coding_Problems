@@ -47,3 +47,48 @@
 # Time Complexity: O(qlog(q))
 #
 # Here we let q denote the number of queries so worst case its log(q) insertion for a given number.
+
+# Implementation
+
+# Note that python and java's default heap is min heap. To create a max heap, the simplest way is to add - to every
+# number that gets put in (since this reverses the order of heap elements).
+from heapq import heappop, heappush
+
+
+class MedianOfStream:
+    def __init__(self):
+        self.max_heap = []
+        self.min_heap = []
+
+    def add_number(self, num: float) -> None:
+        if len(self.min_heap) == 0 or num < self.min_heap[0]:
+            heappush(self.max_heap, -num)
+        else:
+            heappush(self.min_heap, num)
+        self._balance()
+
+    def get_median(self) -> float:
+        if len(self.max_heap) == len(self.min_heap):
+            return (-self.max_heap[0] + self.min_heap[0]) / 2
+        return -self.max_heap[0]
+
+    def _balance(self) -> None:
+        if len(self.max_heap) < len(self.min_heap):
+            val = heappop(self.min_heap)
+            heappush(self.max_heap, -val)
+        if len(self.max_heap) > len(self.min_heap) + 1:
+            val = heappop(self.max_heap)
+            heappush(self.min_heap, -val)
+
+
+if __name__ == '__main__':
+    median_of_stream = MedianOfStream()
+    n = int(input())
+    for _ in range(n):
+        line = input().strip()
+        if line == 'get':
+            median = median_of_stream.get_median()
+            print(f'{median:.1f}')
+        else:
+            num = float(line)
+            median_of_stream.add_number(num)
