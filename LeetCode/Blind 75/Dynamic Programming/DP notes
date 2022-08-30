@@ -9,3 +9,37 @@ A problem is a dynamic programming problem if it satisfies two conditions:
     1. The problem can be divided into sub-problems, and its optimal solution can be constructed from optimal solutions
        of the sub-problems. In academic terms, this is called optimal substructure.
     2. The sub-problems from 1) overlap.
+
+DP == DFS + memoization + pruning
+
+How to Solve Dynamic Programming Problems?
+    -Top-down: this is basically DFS + memoization as we have seen memoization. We split large problems and recursively
+               solve smaller sub-problems.
+        1. Draw the tree: see the tree above
+        2. Identify states
+           -What state do we need to know if we have reached a solution? We need to know the value of n we are computing
+           -What state do we need to decide which child nodes to visit next? No extra state is required. We always visit
+            n-1 and n-2.
+        3. DFS + pruning (if needed) + memoization
+
+        def fib(n, memo):
+            if n in memo: # check for the solution in the memo, if found, return it right away
+                return memo[n]
+
+            if n == 0 or n == 1:
+                return n
+
+            res = fib(n - 1, memo) + fib(n - 2, memo)
+
+            memo[n] = res # save the solution in memo before returning
+            return res
+
+    -Bottom-up: we try to solve sub-problems and then use their solutions to find the solutions to bigger sub-problems.
+                This is usually done in a tabular form.
+
+         def fib(n):
+            dp = [0, 1]
+            for i in range(2, n + 1):
+              dp.append(dp[i - 1] + dp[i - 2])
+
+            return dp[-1]
