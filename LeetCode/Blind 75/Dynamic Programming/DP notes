@@ -43,3 +43,31 @@ How to Solve Dynamic Programming Problems?
               dp.append(dp[i - 1] + dp[i - 2])
 
             return dp[-1]
+
+
+Should I do top-down or bottom-up?
+Top-down pros:
+    -The order of computing sub-problems doesn't matter. For bottom-up, we have to fill the table in order to solve all
+     the sub-problems first. For example, to fill dp[8], we have to have filled dp[6] and dp[7] first. For top-down, we
+     can let recursion and memoization take care of the sub-problems and, therefore, not worry about the order.
+    -Easier to the reason for partition type of problems (how many ways are there too.., splitting a string into...).
+     Just do DFS and add memoization.
+
+Bottom-up pros:
+    -Easier to analyze the time complexity (since it's just the time to fill the table)
+    -No recursion, and thus no system stack overflow—although not a huge concern for normal coding interviews.
+
+
+When to use dynamic programming
+Mathematically, dynamic programming is an optimization method on one or more sequences (e.g., arrays, matrices). So
+questions asking about the optimal way to do something on one or more sequences are often a good candidate for dynamic
+programming. Signs of dynamic programming:
+    -The problem asks for the maximum/longest, minimal/shortest value/cost/profit you can get from doing operations on a
+     sequence.
+    -You've tried greedy, but it sometimes gives the wrong solution. This often means you have to consider sub-problems
+     for an optimal solution.
+    -The problem asks how many ways there are to do something. This can often be solved by DFS + memoization,
+     i.e., top-down dynamic programming.
+    -Partition a string/array into sub-sequences so that a specific condition is met. This is often well-suited for
+     top-down dynamic programming.
+    -The problem is about the optimal way to play a game.
