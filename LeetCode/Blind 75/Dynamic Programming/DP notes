@@ -1,0 +1,11 @@
+Dynamic Programming
+
+Dynamic programming is an algorithmic optimization technique that breaks down a complicated problem into smaller
+overlapping sub-problems in a recursive manner and uses solutions to the sub-problems to construct a solution to the
+original problem.
+
+Characteristics of Dynamic Programming
+A problem is a dynamic programming problem if it satisfies two conditions:
+    1. The problem can be divided into sub-problems, and its optimal solution can be constructed from optimal solutions
+       of the sub-problems. In academic terms, this is called optimal substructure.
+    2. The sub-problems from 1) overlap.
