@@ -71,3 +71,49 @@ programming. Signs of dynamic programming:
     -Partition a string/array into sub-sequences so that a specific condition is met. This is often well-suited for
      top-down dynamic programming.
     -The problem is about the optimal way to play a game.
+
+
+Dynamic Programming Patterns
+
+Weight-only Knapsack
+This is the most common type of DP problem and an excellent place to get a feel of dynamic programming and how it's
+different from brute force backtracking. The state in these problems is a two-variable pair instead of the
+single-variable state we have seen so far in backtracking.
+    -Knapsack - given a number of items of different weights, is it possible to use the items to make up weight X?
+    -Partition an array into two equal sum subsets - is it possible to divide an array into two subsets with equal sum?
+    -0-1 Knapsack - same as weight-only knapsack except items have values, and the goal is to find the maximum object
+     value we can put in our knapsack without exceeding the allowed weight.
+
+Grid
+The state in this type of DP is often the grid itself. dp[i][j] means max/min/best value for matrix cell ending at index
+i, j.
+    -Robot unique paths - number of ways for robot to move from top left to bottom right
+    -Min path sum - find path in a grid with minimum cost
+    -Maximal square - find maximal square of 1s in a grid of 0s and 1s
+
+Game theory
+This type of problem asks whether a player can win a decision game. The key to solving game theory problems is to
+identify a winning state, and formulate a winning state as a state that returns a losing state to the opponent
+    -Divisor game These problems are often closely related to the following Interval DP problems.
+
+Interval
+The key to solving this type of problem involves finding a sub-problem defined on an interval dp[i][j].
+    -Coin game - two players play a game by removing coins from either end of a row of coins. Find the maximum store.
+    -Festival game, bursting balloons - similar to the coin game problem but with a different way of evaluating scores.
+
+Two Sequences
+This type of problem has two sequences in its problem statement. dp[i][j] represents the max/min/best value for the first
+ sequence ending in index i and the second sequence ending in index j.
+    -Longest common subsequence - find the longest common subsequence that is common in two sequences
+    -Edit distance - find the minimum distance to edit one string to another
+
+Dynamic number of sub-problems, Longest Increasing Subsequence
+This type of DP problem is unique in that the current state depends on a dynamic number of previous states,
+e.g. dp[i] = max(d[j]..) for j from 0 to i.
+    -Longest Increasing Subsequence - find the longest increasing subsequence of an array of numbers
+    -Buy/sell the stock with at most K transactions - maximize profit by buying and selling stocks using at most K transaction
+
+Bitmask
+These DP problems use bitmasks to reduce factorial complexity (n!) to 2^n by encoding the dp state in bitmasks.
+    -Longest Path in a DAG - find the longest path in a directed acyclic graph.
+    -Minimum Cost to Visit Every Node in a Graph - find the minimum cost to traverse every node in a directed weighted graph
