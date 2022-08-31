@@ -22,3 +22,18 @@
 #
 # 1 <= nums.length <= 105
 # -109 <= nums[i] <= 109
+
+
+# Time: O(n)
+# Space: O(n)
+# Logic: use a hashset to add unique values, and loop through the list to verify if current num exists in the hashset,
+#        then return True/False if the num exist in the hashset
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+
+        for num in nums:
+            if num in hashset:
+                return True
+            hashset.add(num)
+        return False
