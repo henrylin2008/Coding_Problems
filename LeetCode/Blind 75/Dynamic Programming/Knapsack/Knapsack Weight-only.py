@@ -107,6 +107,7 @@ def knapsack_weight_only(weights):
     generate_sums(weights, total_sums, 0, n, memo)
     return list(sums)
 
+
 # Since there are n * totalSum states, each state depends on O(1) subproblems, and each state takes O(1) to compute,
 # and the final runtime is O(n * totalSum).
 
@@ -137,5 +138,55 @@ def knapsack_weight_only(weights):
             ans.append(w)
     return ans
 
+
 # The final runtime of this program is O(n * totalSum) because there is O(n * totalSum) states, each state depends on
 # O(1) subproblems, and each state takes O(1) to compute.
+
+# Space Optimization (optional)
+# Finally, there is a slight memory optimization that we can perform. Observe that dp[i][w] depends on, at most,
+# the previous row (dp[i][w] = dp[i][w] || dp[i - 1][w - weights[i - 1]]). Thus, instead of storing the entire 2D
+# array, we can simply store two 1D arrays, one to keep track of the previous and one to for the current. This
+# improves our memory usage from O(n * totalSum) to O(totalSum).
+#
+# Here's the implementation:
+
+from typing import List
+
+
+def knapsack_weight_only(weights: List[int]) -> int:
+    n = len(weights)
+    total_sum = sum(weights)  # get maximum sum possible
+
+    # initialize 2 1D arrays (2 * N array)
+    dp = [[False for _ in range(total_sum + 1)] for _ in range(2)]
+    dp[0][0] = True
+    for i in range(1, n + 1):
+        for w in range(0, total_sum + 1):
+            # current row is dp[1], previous row is dp[0]
+            dp[1][w] = dp[1][w] or dp[0][w]
+            if w - weights[i - 1] >= 0:
+                dp[1][w] = dp[1][w] or dp[0][w - weights[i - 1]]
+        for w in range(0, total_sum + 1):  # update previous row to current row
+            dp[0][w] = dp[1][w]
+
+    # dp[0][w] = true if `w` is an attainable weight, thus add it to our answer
+    ans = []
+    for w in range(0, total_sum + 1):
+        if dp[0][w]:
+            ans.append(w)
+    return ans
+
+
+if __name__ == '__main__':
+    weights = [int(x) for x in input().split()]
+    res = knapsack_weight_only(weights)
+    res.sort()
+    for i in range(len(res)):
+        print(res[i], end='')
+        if i != len(res) - 1:
+            print(' ', end='')
+    print()
+
+# The space optimization is a nice trick but it's also easy to get the row swapping wrong. It's great to mention this
+# to the interviewer after you have perfected your regular solution and confirm that with the interviewer. Pre-mature
+# optimization is the root of all evil in software engineering.
