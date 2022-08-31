@@ -109,3 +109,33 @@ def knapsack_weight_only(weights):
 
 # Since there are n * totalSum states, each state depends on O(1) subproblems, and each state takes O(1) to compute,
 # and the final runtime is O(n * totalSum).
+
+# Bottom-up Dynamic Programming
+# Now let's talk about the "bottom-up" solution. Recall that the idea of any bottom-up The solution is to work from
+# the smallest cases, "combine" them together, and continue this until we get to our desired solution. Thus,
+# by looping through each item, we determine which sums we can construct based on if there exists a smaller sum that
+# we can build on top of. For example, suppose we already built all possible sums using [1, 3, 3], and we wanted to
+# know which sums we can build using all of [1, 3, 3, 5] now. The following is an illustration of this idea:
+
+
+def knapsack_weight_only(weights):
+    n = len(weights)
+    total_sum = sum(weights)
+    dp = [[False for _ in range(total_sum + 1)] for _ in range(n + 1)]
+    dp[0][0] = True
+    for i in range(1, n + 1):
+        for w in range(0, total_sum + 1):
+            # vertical blue arrow in the above slides
+            dp[i][w] = dp[i][w] or dp[i - 1][w]
+            # diagonal blue arrow in the above slides
+            if w - weights[i - 1] >= 0:  # make sure the current item's weight is smaller than the target weight w
+                dp[i][w] = dp[i][w] or dp[i - 1][w - weights[i - 1]]
+    ans = []
+    # check the last row for all possible answers
+    for w in range(0, total_sum + 1):
+        if dp[n][w]:
+            ans.append(w)
+    return ans
+
+# The final runtime of this program is O(n * totalSum) because there is O(n * totalSum) states, each state depends on
+# O(1) subproblems, and each state takes O(1) to compute.
