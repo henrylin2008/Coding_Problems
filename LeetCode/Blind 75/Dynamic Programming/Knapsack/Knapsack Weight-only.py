@@ -60,3 +60,52 @@ def knapsack_weight_only(weights):
     n = len(weights)
     generate_sums(weights, sums, 0, n)
     return list(sums)
+
+
+# Top-down Dynamic Programming
+# First, the "top-down" solution is, basically, the brute force solution but with memoization. We store results that
+# have already been computed and return them once needed. But in precisely what way should we store/represent the
+# data? Going back to the idea of dynamic programming, we should consider what is important so far and if any of the
+# information has been recomputed.
+#
+# Memoization, identifying the state
+# To memoize, we need to find the duplicate subtrees in the state-space tree.
+#
+# Notice that the duplicate subtrees are of the same level for this problem. This isn't a coincidence.
+#
+# Unlike Word Break and Decode Ways in the backtracking section, the items in the knapsack problem can only be used
+# once.
+#
+# Node A's subtree has leaf values of 3 and 8. And Node B's subtree has leaf values of 3, 8, 6, 11. They are clearly
+# not the same subtree. This is because the meaning of a node's value is the weight sum by considering items from 0
+# to i.
+#
+# Therefore, the state we need to memoize consists of the level/depth of the node and the node value itself. We will
+# use (i, sum) to denote this.
+#
+# Thus, we will store a 2D boolean array memo where memo[i][sum] = true if the (i, sum) pair has already been
+# computed and false otherwise. The size of the array is n * total_sum where n is the number of items and total_sum
+# is the weight sum of all items. We need a slot for each possible weight we can make up, and all the possible
+# weights are in the range of 0 to total_sum.
+
+def generate_sums(weights, sums, sum, n, memo):
+    if memo[n][sum]:
+        return
+    if n == 0:
+        sums.add(sum)
+        return
+    generate_sums(weights, sums, sum, n - 1, memo)
+    generate_sums(weights, sums, sum + weights[n - 1], n - 1, memo)
+
+
+def knapsack_weight_only(weights):
+    sums = set()
+    n = len(weights)
+    # find total sum of weights
+    total_sum = sum(weights)
+    memo = [[False for _ in range(total_sum + 1)] for _ in range(n + 1)]
+    generate_sums(weights, total_sums, 0, n, memo)
+    return list(sums)
+
+# Since there are n * totalSum states, each state depends on O(1) subproblems, and each state takes O(1) to compute,
+# and the final runtime is O(n * totalSum).
