@@ -39,18 +39,19 @@ class Solution:
         return True
 
 
-# Solution #2: use Counter function from the Collections module
-from collections import Counter
+# Alternative solutions
+# Time: O(n)
+# Space: O(n)
+# from collections import Counter
+#
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         return Counter(s) == Counter(t)
 
 
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        return Counter(s) == Counter(t)
-
-
-# Solution #3: constraint: run in constant space; use the built-in sorted function to sort each string
-# Time: O(nLog(n)); best runtime for sorting algorithm is O(nlog(n)).
-# Space: O(1); no extra space needed, as it compares each character in each string after sorting takes place
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        return sorted(s) == sorted(t)
+# Better space solution
+# Time: O(n log(n)); best sorting time
+# Space: O(1)
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         return sorted(s) == sorted(t)
