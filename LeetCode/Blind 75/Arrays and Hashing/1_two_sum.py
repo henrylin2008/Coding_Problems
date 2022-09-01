@@ -39,9 +39,9 @@ class Solution:
     # Time: O(n); would need to go through the entire list
     # Space: O(1); using Hashmap to store difference between target and num that has seen so far
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        d = {}
+        d = {}      # dictionary to store nums; val: index
         for i, v in enumerate(nums):
-            if target - v in d:
-                return [d[target-v], i]
+            if target - v in d:             # diff = target - v
+                return [d[target-v], i]     # index of diff and current index
             else:
-                d[v] = i
+                d[v] = i        # store value as the key in the dictionary, and index as the value
