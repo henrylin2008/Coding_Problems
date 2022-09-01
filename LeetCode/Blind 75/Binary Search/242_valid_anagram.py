@@ -7,7 +7,6 @@
 # An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all
 # the original letters exactly once.
 #
-#
 # Example 1:
 # Input: s = "anagram", t = "nagaram"
 # Output: true
@@ -17,7 +16,6 @@
 # Output: false
 #
 # Constraints:
-#
 # 1 <= s.length, t.length <= 5 * 104
 # s and t consist of lowercase English letters.
 #
@@ -40,3 +38,19 @@ class Solution:
         return count_s == count_t
 
 
+# Alternative solutions
+# Time: O(n)
+# Space: O(n)
+# from collections import Counter
+#
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         return Counter(s) == Counter(t)
+
+
+# Better space solution
+# Time: O(n log(n)); best sorting time
+# Space: O(1)
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         return sorted(s) == sorted(t)
