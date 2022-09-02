@@ -113,3 +113,43 @@ def can_partition(nums):
 # The runtime of this solution is O(n * target) since there there are O(n * target) states, each state depends on O(
 # 1) subproblems, and each state takes O(1) to compute. The runtime is also O(n * target + n) = O(n * target) because
 # of the O(n * target) DP table and O(n) recursion stack depth.
+
+
+# Bottom-Up
+# The top-down solution may exceed the recursive stack depth So, we can implement the idea above iteratively. Once
+# again, the idea of iterative or bottom-up dynamic programming is to start from the smallest case(s), and build our
+# way up to the final solution.
+#
+# We will maintain a 2D table where dp[i][s] = true if we can form the sum s when considering the first i items.
+# Otherwise, dp[i][s] = false. We can take our idea from the top-down solution by thinking about each item having two
+# possibilities: including it in our sum or not. Thus, dp[i][s] = true if:
+#
+# the sum s can be formed without including the ith element, dp[i - 1][s] == true; or
+# the sum s can be formed including the ith element, dp[i - 1][s - nums[i]] == true
+# The following figures presents this idea when considering all elements [3, 4, 7, 6]:
+
+# Notice that the base case dp[0][0] = true since we can always make a sum of 0 by choosing none of the elements.
+# Here's the implementation:
+
+def can_partition(nums):
+    total_sum = sum(nums)
+
+    if total_sum % 2 != 0:
+        return False
+
+    target = total_sum // 2
+    n = len(nums)
+
+    dp = [[False for s in range(target + 1)] for i in range(n + 1)]
+    dp[0][0] = True
+    for i in range(1, n + 1):
+        for s in range(target + 1):
+            if s < nums[i - 1]:
+                dp[i][s] = dp[i - 1][s]
+            else:
+                dp[i][s] = dp[i - 1][s] or dp[i - 1][s - nums[i - 1]]
+
+    return dp[n][target]
+# The runtime of the code above is O(n * target) since there are O(n * target) states, each state depends on O(1)
+# subproblems, and each state takes O(1) to compute. The space complexity is also O(n * target) with the use of the
+# 2D DP table.
