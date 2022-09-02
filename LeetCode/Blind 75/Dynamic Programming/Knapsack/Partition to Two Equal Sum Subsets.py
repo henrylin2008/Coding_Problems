@@ -110,6 +110,7 @@ def can_partition(nums):
     dp = [[0 for i in range(target + 1)] for j in range(n + 1)]
     return target_exists(n, nums, target, 0, dp)
 
+
 # The runtime of this solution is O(n * target) since there there are O(n * target) states, each state depends on O(
 # 1) subproblems, and each state takes O(1) to compute. The runtime is also O(n * target + n) = O(n * target) because
 # of the O(n * target) DP table and O(n) recursion stack depth.
@@ -150,6 +151,48 @@ def can_partition(nums):
                 dp[i][s] = dp[i - 1][s] or dp[i - 1][s - nums[i - 1]]
 
     return dp[n][target]
+
+
 # The runtime of the code above is O(n * target) since there are O(n * target) states, each state depends on O(1)
 # subproblems, and each state takes O(1) to compute. The space complexity is also O(n * target) with the use of the
 # 2D DP table.
+
+# Memory Optimization
+# We can slightly optimize the memory usage our solution above by noticing that for any dp[i][s], we only really care
+# about the previous row, dp[i - 1][...]. Thus, instead of storing the entire 2D grid, we can store a 2 1D arrays,
+# one for the current row and one for the previous row. Here's the implementation below:
+from typing import List
+
+
+def can_partition(nums: List[int]) -> bool:
+    total_sum = sum(nums)
+
+    if total_sum % 2 != 0:
+        return False
+
+    target = total_sum // 2
+    n = len(nums)
+
+    # dp[0] is the previous row
+    # dp[1] is the current row
+    dp = [[False for s in range(target + 1)] for i in range(2)]
+    dp[0][0] = True
+    for i in range(1, n + 1):
+        for s in range(target + 1):
+            if s < nums[i - 1]:
+                dp[1][s] = dp[0][s]
+            else:
+                dp[1][s] = dp[0][s] or dp[0][s - nums[i - 1]]
+
+        # swap rows so now current row is previous row
+        for s in range(target + 1):
+            dp[0][s] = dp[1][s]
+            dp[1][s] = False
+
+    return dp[0][target]
+
+
+if __name__ == '__main__':
+    nums = [int(x) for x in input().split()]
+    res = can_partition(nums)
+    print('true' if res else 'false')
