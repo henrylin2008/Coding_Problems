@@ -114,3 +114,35 @@ def minimum_total(triangle: List[List[int]]) -> int:
             dp[i][j] = min(dp[i + 1][j], dp[i + 1][j + 1]) + triangle[i][j]
 
     return dp[0][0]
+
+
+# Memory Optimization (Optional)
+# Lastly, we can optimize our memory usage by noticing that our transition only uses information from the row below
+# it. Thus, for every row, we only need to keep track of the row below and everything else beyond that is useless.
+# This takes our memory usage from O(n^2) to O(n).
+from typing import List
+
+
+def minimum_total(triangle: List[List[int]]) -> int:
+    n = len(triangle)
+    # dp[0][...] is current row
+    # dp[1][...] is row below
+    dp = [[0 for _ in range(n + 1)] for _ in range(2)]
+
+    for i in range(0, n):  # first deal with last row
+        dp[1][i] = triangle[n - 1][i]
+
+    for i in range(n - 2, -1, -1):
+        for j in range(0, i + 1):
+            dp[0][j] = min(dp[1][j], dp[1][j + 1]) + triangle[i][j]
+
+        for j in range(0, i + 1):  # swap rows - now dp[0][...] becomes row below
+            dp[1][j] = dp[0][j]
+
+    return dp[1][0]  # last swap makes our answer on the second row
+
+
+if __name__ == '__main__':
+    triangle = [[int(x) for x in input().split()] for _ in range(int(input()))]
+    res = minimum_total(triangle)
+    print(res)
