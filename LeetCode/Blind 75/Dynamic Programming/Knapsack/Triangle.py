@@ -49,5 +49,47 @@ def min_path_sum(triangle, row, col):
 def minimum_total(triangle):
     return min_path_sum(triangle, 0, 0)
 
+
 # The runtime is O(2^n) since for each state we have two choices -- go left or go right. The space complexity is O(n)
 # since we have at most O(n) function calls in the memory stack at any given time.
+
+
+# DFS + Memoization
+# The idea of memoization for this problem comes from the idea that for certain values in triangle, it may be useful
+# for more than one future computation. For example, in the following diagram we see that the nodes labelled A and B
+# depend on node C. Thus, both node A and node B depend on node C. So, instead of recomputing the value corresponding
+# to node C every time, we can store our result for node C in a memo table.
+#
+# Since each node can be uniquely identified based on their row and column value, memo will be a 2D array where memo[
+# row][col] represents the minimum path sum up to the node corresponding
+
+from functools import lru_cache
+from math import inf
+from typing import List
+
+
+# The runtime is O(n^2) since there are O(n^2) states and each state takes O(1) to compute. The space complexity is
+# O(n^2) too due to the use of the n by n memo table.
+def minimum_total(triangle: List[List[int]]) -> int:
+    n = len(triangle)
+
+    @lru_cache(None)
+    def dfs(i, level):
+        if level == n:
+            return 0
+
+        best = inf
+        next_level = level + 1
+        for nexti in [i, i + 1]:
+            if 0 <= nexti <= next_level:
+                best = min(best, dfs(nexti, next_level))
+
+        return best + triangle[level][i]
+
+    return dfs(0, 0)
+
+
+if __name__ == '__main__':
+    triangle = [[int(x) for x in input().split()] for _ in range(int(input()))]
+    res = minimum_total(triangle)
+    print(res)
