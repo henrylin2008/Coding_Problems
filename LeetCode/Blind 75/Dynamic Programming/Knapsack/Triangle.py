@@ -93,3 +93,24 @@ if __name__ == '__main__':
     triangle = [[int(x) for x in input().split()] for _ in range(int(input()))]
     res = minimum_total(triangle)
     print(res)
+
+
+# Bottom-up
+# Alternatively, you can use a bottom-up approach. Again, the idea of bottom-up is to build our solution from the
+# smallest solutions up to the one we want. So, we can start from the last row and build our way up to the first row.
+# Our state and transition remains the same.
+#   -State: dp[r][c] is the minimum path sum starting from r-th row and c-th column.
+#   -Transition: dp[r][c] = min(dp[r-1][c], dp[r-1][c-1]) + triangle[r][c]
+
+def minimum_total(triangle: List[List[int]]) -> int:
+    n = len(triangle)
+    dp = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
+
+    for i in range(0, n):  # first deal with last row
+        dp[n - 1][i] = triangle[n - 1][i]
+
+    for i in range(n - 2, -1, -1):  # start from second last row and build up to (0, 0)
+        for j in range(0, i + 1):
+            dp[i][j] = min(dp[i + 1][j], dp[i + 1][j + 1]) + triangle[i][j]
+
+    return dp[0][0]
