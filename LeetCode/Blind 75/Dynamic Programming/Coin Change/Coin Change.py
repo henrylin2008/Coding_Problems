@@ -50,3 +50,40 @@ def min_coins(coins, amount, sum):
 def coin_change(coins: List[int], amount: int) -> int:
     result = min_coins(coins, amount, 0)
     return result if result != inf else -1
+
+
+# DFS + Memoization
+# We can optimize the brute force solution by storing answers that have already been computed in a 1D array called
+# dp, where dp[i] is the minimum number of denominations required to get a sum of i. This is slightly different from
+# our classical knapsack problems, but the idea is mostly similar. The reason we don't add an extra dimension is
+# because the use of items is unbounded (i.e. every item can be used an infinite number of times). Thus, the number
+# of items, as a dimension, holds no meaning in our specific implementation.
+
+from math import inf
+
+
+def min_coins(coins, amount, sum, memo):
+    if sum == amount:
+        return 0
+
+    if sum > amount:
+        return inf
+
+    if memo[sum] != -1:
+        return memo[sum]
+
+    ans = inf
+    for coin in coins:
+        result = min_coins(coins, amount, sum + coin, memo)
+        if result == inf:
+            continue
+        ans = min(ans, result + 1)
+
+    memo[sum] = ans
+    return ans
+
+
+def coin_change(coins: List[int], amount: int) -> int:
+    memo = [-1] * (amount + 1)
+    result = min_coins(coins, amount, 0, memo)
+    return result if result != inf else -1
