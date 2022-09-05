@@ -40,3 +40,31 @@
 #   1 <= len(coins) <= 300
 #   1 <= amount <= 5000
 #   1 <= coins[i] <= 5000
+
+# Brute Force
+# A brute force method enumerates through all possibilities. We start with a total sum of 0 and try every
+# denomination. Since we can use each denomination more than once, after we retry every denomination again until we
+# reach our target.
+#
+# We essentially use the same idea used in Combination Sum where we try every single denomination while removing
+# duplicate combinations by maintaining the starting indices.
+
+def num_of_ways(sum, amount, start, coins):
+    if sum == amount:
+        return 1
+
+    if sum > amount:
+        return 0
+
+    res = 0
+    for i in range(start, len(coins)):
+        res += num_of_ways(sum + coins[i], amount, i, coins)
+    return res
+
+
+def coin_game(coins, amount):
+    return num_of_ways(0, amount, 0, coins)
+
+# The runtime is going to be O(n^{amount / T}) where T is the smallest denomination since each sum branches into n
+# combinations with a maximum depth of amount / T. The space complexity is amount / T since the recursion stack
+# contains at most amount / T calls.
