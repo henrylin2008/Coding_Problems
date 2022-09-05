@@ -68,3 +68,35 @@ def coin_game(coins, amount):
 # The runtime is going to be O(n^{amount / T}) where T is the smallest denomination since each sum branches into n
 # combinations with a maximum depth of amount / T. The space complexity is amount / T since the recursion stack
 # contains at most amount / T calls.
+
+
+# DFS + Memoization
+# We can slightly improve our runtime by reusing solutions that have already been computed. We apply memoization on
+# the starting position as one dimension and the current sum as a second dimension since our function is really just
+# f(start, sum), where we want to find the number of ways to reach amount starting with sum and using all coins
+# starting from index start. For further details as to why we use two dimensions, please visit the Knapsack
+# Introduction article.
+
+def num_of_ways(sum, amount, start, coins, dp):
+    if sum == amount:
+        return 1
+
+    if sum > amount:
+        return 0
+
+    if dp[start][sum] != -1:
+        return dp[start][sum]
+
+    res = 0
+    for i in range(start, len(coins)):
+        res += num_of_ways(sum + coins[i], amount, i, coins, dp)
+
+    dp[start][sum] = res
+    return res
+
+
+def coin_game(coins, amount):
+    n = len(coins)
+    dp = [[-1 for _ in range(amount + 1)] for _ in range(n + 1)]
+    return num_of_ways(0, amount, 0, coins, dp)
+
