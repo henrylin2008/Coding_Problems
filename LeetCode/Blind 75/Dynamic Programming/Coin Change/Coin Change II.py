@@ -119,6 +119,8 @@ def coin_game(coins, amount):
                 dp[i][s] += dp[i][s - coins[i - 1]]  # then, try the `i`th item (if it's valid to use)
 
     return dp[N][amount]
+
+
 # Once again, the idea for this solution is extremely similar to that of the Unbounded Knapsack.
 #
 # Note the order of the loops. We first loop through all coins, then amounts. You may think that with our top-down
@@ -128,3 +130,42 @@ def coin_game(coins, amount):
 # s] is the number of ways to construct the amount s using all coins. This is akin to the start value we pass in the
 # function in Combination Sum to remove duplicates. We must keep our definition to be dp[i][s] is the number of ways
 # to construct the amount s using the first i coins, otherwise there will be duplicates.
+
+
+# Memory Optimization
+# Notice that our transition dp[i][s] += dp[i][s - coins[i - 1]] only depends on the previous row. Thus,
+# we can optimize our solution from O(n * amount) to O(amount) by only storing the previous and current row. Once
+# again, for a detailed explanation, visit the Knapsack Introduction article.
+#
+# Here is the implementation:
+from typing import List
+
+
+def coin_game(coins: List[int], amount: int) -> int:
+    N = len(coins)
+
+    # dp[0][...] is the previous row
+    # dp[1][...] is the current row
+    dp = [[0 for _ in range(amount + 1)] for _ in range(2)]
+
+    dp[0][0] = 1  # there is only 1 way to make a sum of 0 using none of the coins
+    for i in range(1, N + 1):
+        for s in range(0, amount + 1):
+            dp[1][s] = dp[0][s]  # first take the number of ways to make `s` without the `i`th item
+            if s - coins[i - 1] >= 0:
+                dp[1][s] += dp[1][s - coins[i - 1]]  # then, try the `i`th item (if it's valid to use)
+
+        for s in range(0, amount + 1):  # current row becomes previous row for the next iteration
+            dp[0][s] = dp[1][s]
+
+    return dp[0][amount]
+
+
+if __name__ == '__main__':
+    coins = [int(x) for x in input().split()]
+    amount = int(input())
+    res = coin_game(coins, amount)
+    print(res)
+
+# The time complexity is still O(n * amount) where n is the number of items, but now the space complexity is O(
+# amount) since we only have two amount sized 1D arrays.
