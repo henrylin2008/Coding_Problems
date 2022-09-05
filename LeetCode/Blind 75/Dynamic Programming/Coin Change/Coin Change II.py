@@ -65,6 +65,7 @@ def num_of_ways(sum, amount, start, coins):
 def coin_game(coins, amount):
     return num_of_ways(0, amount, 0, coins)
 
+
 # The runtime is going to be O(n^{amount / T}) where T is the smallest denomination since each sum branches into n
 # combinations with a maximum depth of amount / T. The space complexity is amount / T since the recursion stack
 # contains at most amount / T calls.
@@ -100,3 +101,30 @@ def coin_game(coins, amount):
     dp = [[-1 for _ in range(amount + 1)] for _ in range(n + 1)]
     return num_of_ways(0, amount, 0, coins, dp)
 
+
+# Bottom-Up DP
+# This can also be done iteratively in a similar way to the unbounded knapsack problem. Once again, the idea of
+# bottom-up DP is to, instead of going from top-down, we build our solution from the bottom-up. Here is the iterative
+# implementation:
+def coin_game(coins, amount):
+    N = len(coins)
+
+    dp = [[0 for _ in range(amount + 1)] for _ in range(N + 1)]
+
+    dp[0][0] = 1  # there is only 1 way to make a sum of 0 using none of the coins
+    for i in range(1, N + 1):
+        for s in range(0, amount + 1):
+            dp[i][s] = dp[i - 1][s]  # first take the number of ways to make `s` without the `i`th item
+            if s - coins[i - 1] >= 0:
+                dp[i][s] += dp[i][s - coins[i - 1]]  # then, try the `i`th item (if it's valid to use)
+
+    return dp[N][amount]
+# Once again, the idea for this solution is extremely similar to that of the Unbounded Knapsack.
+#
+# Note the order of the loops. We first loop through all coins, then amounts. You may think that with our top-down
+# recursive solution, we would first loop through all amounts then coins. However, that would be incorrect.
+#
+# Why? Because then we would be overcounting the number of ways since our DP definition actually changes to be dp[i][
+# s] is the number of ways to construct the amount s using all coins. This is akin to the start value we pass in the
+# function in Combination Sum to remove duplicates. We must keep our definition to be dp[i][s] is the number of ways
+# to construct the amount s using the first i coins, otherwise there will be duplicates.
