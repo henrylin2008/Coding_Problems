@@ -65,3 +65,64 @@ def longest_sub_len(nums):
         if is_increasing(subset):
             mx_len = max(mx_len, len(subset))
     return mx_len
+
+
+# DFS + Memoization
+# The keywords "longest" and "sequence" are good indicators of dynamic programming.
+#
+# Let's try thinking about a dp solution. First, what is the overall problem that we want to solve? It's "what is the
+# LIS of a sequence of N numbers?"
+#
+# What is the dp state? Typically when you think of a dp solution for sequences, we consider a prefix of the original
+# sequence. In this case the state is: considering the first i numbers (nums[1], nums[2], ... nums[i]), what is the
+# longest increasing subsequence that contains nums[i]?
+#
+# Next, the transition. If we want to build an LIS that ends with nums[i], then we need to find a previously
+# exisiting LIS that ends with a number less than nums[i]. In order words, find the largest existing LIS (j < i)
+# where nums[j] < nums[i], and simply append nums[i] to that LIS!
+
+# A simple base case would be if i = 0 then return 0 since if we don't have any elements the longest increasing
+# subsequence is of length 0.
+#
+# Here's a summary of the dp relationship:
+#   -state: f(i) is the longest increasing subsequence that ends/contains nums[i].
+#   -base case: f(0) = 0: an empty list has an LIS of length 0.
+#   -transition: f(i) = max(f(j) + 1) for j = 0 ... i-1 as long as nums[j] < nums[i] (extend a pre-existing LIS)
+
+# As usual with problems with recursive relations, we store a memo table to store answers that may be reused to stop
+# unnecessary recomputations.
+
+global lis  # global variable to store answer
+
+
+def f(i, nums, memo):
+    global lis
+
+    if i == 0:
+        return 0
+
+    if memo[i] != 0:  # if already computed, use said answer
+        return memo[i]
+
+    len = f(0, nums, memo) + 1  # begin with starting a new LIS
+    ni = nums[i - 1]
+    for j in range(1, i):  # try building upon a pre-existing LIS
+        nj = nums[j - 1]
+        f_of_j = f(j, nums, memo)  # compute f(j), otherwise if nums[i] < nums[j] then f(j) will never be computed
+        if nj < ni:
+            len = max(len, f_of_j + 1)
+
+    # LIS can end anywhere in the sequence due to the definition of our state, so update each time
+    lis = max(lis, len)
+
+    memo[i] = len
+    return len
+
+
+def longest_sub_len(nums):
+    global lis
+    lis = 0
+    n = len(nums)
+    memo = [0] * (n + 1)
+    f(n, nums, memo)
+    return lis
