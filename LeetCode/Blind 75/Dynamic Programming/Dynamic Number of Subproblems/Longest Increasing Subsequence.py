@@ -126,3 +126,68 @@ def longest_sub_len(nums):
     memo = [0] * (n + 1)
     f(n, nums, memo)
     return lis
+
+# The runtime of this solution is O(n^2) where n is the number of elements in nums since there are O(n) states and
+# each state takes O(n) to compute. The space complexity is O(n) due to the use of the memo array.
+#
+#
+# Bottom-up DP
+# This can even be done iteratively. This is similar to the recursive version, except instead of going from top-down,
+# we build our solution from the bottom-up. We can do this because a larger solution f(n) will depend on smaller
+# solutions f(0)...f(n-1).
+
+def longest_sub_len(nums):
+    n = len(nums)
+    dp = [0] * (n + 1)
+
+    dp[0] = 0  # base case: no elements has an LIS of length 0
+    max_len = 0
+    for i in range(1, n + 1):
+        ni = nums[i - 1]
+        dp[i] = dp[0] + 1  # first we try starting a new sequence
+
+        for j in range(1, i):  # then try extending an existing LIS from indices less than i
+            nj = nums[j - 1]
+            if nj < ni:
+                dp[i] = max(dp[i], dp[j] + 1)
+
+        max_len = max(max_len, dp[i])
+
+    return max_len
+
+# The runtime for this solution is O(n^2) since there are O(n) states and each state takes O(n) to compute. The space
+# complexity is O(n) due to the use of the dp array of length O(n).
+
+# O(n log n) with DP and binary search
+
+# We're going to first construct a different DP solution that still runs in O(n^2) time and later see how we can
+# improve it to O(n log n).
+#
+# Let dp[i] be the last element for an LIS of length i. If there are multiple elements, then choose the smallest one.
+#
+# We will assume that dp[0] = -∞ and all other elements dp[i] = ∞. Then, process the elements in nums one by one
+# while maintaining the state we state above and keep dp[i] updated. Our answer will be the largest i such that dp(i)
+# != ∞.
+
+def longest_sub_len(nums):
+    n = len(nums)
+    dp = [inf] * (n + 1)
+    dp[0] = -inf
+
+    for i in range(0, n):
+        for j in range(1, n + 1):
+            if dp[j - 1] < nums[i] < dp[j]:
+                dp[j] = nums[i]
+
+    ans = 0
+    for i in range(0, n + 1):
+        if dp[i] < inf:
+            ans = i
+    return ans
+
+# If we look at the diagram above we see that dp array will always be sorted: dp[i - 1] <= dp[i] for all i = 1...n.
+# Also, for every nums[i], we only update the dp array once.
+#
+# This means, our goal for every nums[i] is to find the first number in dp strictly greater than nums[i]. This can be
+# done with binary search in O(log n) time. Thus, the final runtime is O(n log n).
+
