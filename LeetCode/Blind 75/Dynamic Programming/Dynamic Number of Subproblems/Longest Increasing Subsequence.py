@@ -127,6 +127,7 @@ def longest_sub_len(nums):
     f(n, nums, memo)
     return lis
 
+
 # The runtime of this solution is O(n^2) where n is the number of elements in nums since there are O(n) states and
 # each state takes O(n) to compute. The space complexity is O(n) due to the use of the memo array.
 #
@@ -154,6 +155,7 @@ def longest_sub_len(nums):
         max_len = max(max_len, dp[i])
 
     return max_len
+
 
 # The runtime for this solution is O(n^2) since there are O(n) states and each state takes O(n) to compute. The space
 # complexity is O(n) due to the use of the dp array of length O(n).
@@ -185,9 +187,50 @@ def longest_sub_len(nums):
             ans = i
     return ans
 
+
 # If we look at the diagram above we see that dp array will always be sorted: dp[i - 1] <= dp[i] for all i = 1...n.
 # Also, for every nums[i], we only update the dp array once.
 #
 # This means, our goal for every nums[i] is to find the first number in dp strictly greater than nums[i]. This can be
 # done with binary search in O(log n) time. Thus, the final runtime is O(n log n).
 
+from math import inf
+from typing import List
+
+
+def upper_bound(dp, target):
+    n = len(dp)
+    lo, hi = 0, n
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if dp[mid] > target:
+            hi = mid
+        else:
+            lo = mid + 1
+    return lo
+
+
+def longest_sub_len(nums):
+    n = len(nums)
+    dp = [inf] * (n + 1)
+    dp[0] = -inf
+
+    for i in range(0, n):
+        j = upper_bound(dp, nums[i])
+        if dp[j - 1] < nums[i] < dp[j]:
+            dp[j] = nums[i]
+
+    ans = 0
+    for i in range(0, n + 1):
+        if dp[i] < inf:
+            ans = i
+    return ans
+
+
+if __name__ == '__main__':
+    nums = [int(x) for x in input().split()]
+    res = longest_sub_len(nums)
+    print(res)
+
+# Once again, the final runtime is O(n log n) where n is the number of elements in nums since for each element we use
+# O(log n) time to update the dp array. The space complexity is O(n) due to the use of the dp array.
