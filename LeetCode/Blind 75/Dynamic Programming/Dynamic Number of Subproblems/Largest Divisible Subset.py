@@ -32,3 +32,23 @@
 #   1 <= len(nums) <= 1000
 #   1 <= nums[i] <= 10^9
 #   Each number in nums is unique
+
+# Solution
+
+# Note that divisibility is transitive. That is, if a is divisible by b and b is divisible by c, then a is divisible
+# by c. Furthermore, if a is divisible by b, then a must be larger than it (or equal, but that is not relevant in
+# this question as the numbers are unique).
+#
+# Therefore, if a set satisfies the condition, starting from the lowest number, the next smallest number must be
+# divisible by the current number. This means that we can expand on the set by finding a number that is divisible by
+# the largest element in the existing set.
+#
+# In that case, for each number in nums, consider the size of the largest set that satisfy the condition and whose
+# largest element is equal to that number. It is equal to the size of the largest subset whose largest number can
+# divide the current number (not including the current number) plus 1. If no such set exists, then the largest size
+# is 1 because the set simply consist of the number itself (and the condition always holds true for sets with one
+# element).
+#
+# Knowing this, we have built up a logic for a bottom-up DP: starting from the smallest number, we calculate the size
+# of the largest set that satisfy the condition and whose largest number is that number using the methods above.
+# Then, the size of the largest set that satisfies the condition is the max size from the numbers calculated above.
