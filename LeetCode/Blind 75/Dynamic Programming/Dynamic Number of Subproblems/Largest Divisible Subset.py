@@ -52,3 +52,23 @@
 # Knowing this, we have built up a logic for a bottom-up DP: starting from the smallest number, we calculate the size
 # of the largest set that satisfy the condition and whose largest number is that number using the methods above.
 # Then, the size of the largest set that satisfies the condition is the max size from the numbers calculated above.
+
+from typing import List
+
+
+def find_largest_subset(nums: List[int]) -> int:
+    nums.sort()
+    max_subsets = []
+    for i, num in enumerate(nums):
+        max_subset = 0
+        for j in range(i):
+            if num % nums[j] == 0:
+                max_subset = max(max_subset, max_subsets[j])
+        max_subsets.append(max_subset + 1)
+    return max(max_subsets)
+
+
+if __name__ == '__main__':
+    nums = [int(x) for x in input().split()]
+    res = find_largest_subset(nums)
+    print(res)
