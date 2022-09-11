@@ -60,3 +60,11 @@ if __name__ == '__main__':
     n = int(input())
     res = divisor_game(n)
     print('true' if res else 'false')
+
+# Review
+# The key to solving game theory type of DP problems is to keep in mind the winning state is the state that,
+# with an optimal play, results in a losing state for the opponent. With the base state being a winning/losing state,
+# we can derive the status for each state up to the one we are interested.
+#
+# Interestingly for this particular problem, all the even states are winning states and all the odd states are losing
+# states. So we could have just done return N % 2 == 0.
