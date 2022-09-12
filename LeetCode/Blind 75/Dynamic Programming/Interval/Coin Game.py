@@ -42,3 +42,42 @@
 # Constraints
 #   1 <= len(coins) <= 1000
 #   1 <= coins[i] <= 5 * 10^5
+
+# Solution
+# Brute Force
+# A brute force solution would enumerate through all possibilities. For each of the n turns, we either choose the
+# left-most coin or the right-most coin and check which option maximizes our score.
+#
+# The 2 cases mentioned above are described as follows:
+#   Case 1: We take coin l
+#       -Coins in the range [l + 1, r] are left
+#       -Since our opponent plays optimally, they will gain points equal to maxScore(l + 1, r)
+#       -Since we get all other coins, our score will be sum(l, r) - maxScore(l + 1, r)
+#   Case 2: We take coin r
+#       -Coins in range [l, r - 1] are left
+#       -Since our opponent plays optimally, they will gain points equal to maxScore(l, r - 1)
+#       -Since we get all other coins, our score will be sum(l, r) - maxScore(l, r - 1)
+#
+# Next, we choose the case that gives us the greatest score, or minimizes the opponent's score. Therefore,
+# the solution is either:
+#   -maxScore(l, r) = max(sum(l, r) - maxScore(l + 1, r), sum(l, r) - maxscore(l, r - 1)) or
+#   -maxScore(l, r) = sum(l, r) - min(maxScore(l + 1, r), maxScore(l, r - 1))
+# Since there are n turns, 2 possibilities each turn, and takes O(n) to calculate the sum from l to r,
+# the final runtime is O(n * 2^n).
+
+def max_score(coins, l, r):
+    if l == r:
+        return coins[r]
+
+    sum = 0
+    for i in range(l, r + 1):
+        sum += coins[i]
+
+    left_pick = max_score(coins, l + 1, r)
+    right_pick = max_score(coins, l, r - 1)
+    return sum - min(left_pick, right_pick)
+
+
+def coin_game(coins):
+    n = len(coins)
+    return max_score(coins, 0, n - 1)
