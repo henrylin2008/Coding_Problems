@@ -125,7 +125,6 @@ def coin_game(coins):
 #   - dp(l, r) = sum(l, r) - min(dp(l + 1, r), dp(l, r - 1))
 
 import sys
-
 sys.setrecursionlimit(1500)
 
 
@@ -150,3 +149,36 @@ def coin_game(coins):
         prefix_sum[i] = prefix_sum[i - 1] + coins[i - 1]
     return max_score(dp, prefix_sum, 1, n)
 
+
+# Bottom-up DP
+# The iterative version is a bit trickier. The idea is that we loop through all the possible lengths starting from 1
+# to n. Then for each size, we consider all possible left starting positions and calculate the respective right
+# ending position. We do it in this order because we are building solutions from the smallest case and building the
+# solutions up. That is, first considering each item as an interval of length 1 then merging their solutions together
+# to form larger and larger interval lengths until we get to an interval of size n.
+#
+# Note: There are slight tweaks in the implementation of this idea such as how we loop through the lengths.
+from typing import List
+
+
+def coin_game(coins: List[int]) -> int:
+    n = len(coins)
+    prefix_sum = [0 for i in range(n + 1)]
+    for i in range(1, n + 1):
+        prefix_sum[i] = prefix_sum[i - 1] + coins[i - 1]
+
+    dp = [[0 for i in range(n + 1)] for j in range(n + 1)]
+    for size in range(0, n):
+        for l in range(1, n - size + 1):
+            r = l + size
+            if l == r:
+                dp[l][r] = prefix_sum[r] - prefix_sum[l - 1]
+            else:
+                dp[l][r] = prefix_sum[r] - prefix_sum[l - 1] - min(dp[l + 1][r], dp[l][r - 1])
+    return dp[1][n]
+
+
+if __name__ == '__main__':
+    coins = [int(x) for x in input().split()]
+    res = coin_game(coins)
+    print(res)
