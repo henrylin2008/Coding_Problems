@@ -102,3 +102,51 @@ def coin_game(coins):
     for i in range(1, n + 1):
         prefix_sum[i] = prefix_sum[i - 1] + coins[i - 1]
     return max_score(prefix_sum, 0, n - 1)
+
+
+# Top-down DP
+
+# In essence, the DP top-down solution is the brute force solution with memoization. You may have noticed maxScore(l,
+# r) can be be memoized.
+#
+# Let’s formalize our idea above by specifying our DP state (i.e. what’s important that can lead us to our answer).
+# In this case, let dp(l, r) be the maximum score we can achieve if coins in the range [l, r] are the only ones
+# present and we go first.
+#
+# Furthermore, our base case is: dp(l, r) = v_r if l = r. That is, since the range contains only one coin,
+# we simply take that coin.
+#
+# Now we deal with the transition. Exactly like our brute force solution, we consider two cases of picking either the
+# left or right coin.
+#
+# Next, we choose the case that gives us the greatest score or minimizes the opponent's score. Therefore,
+# the solution is either:
+#   - dp(l, r) = max(sum(l, r) - dp(l + 1, r), sum(l, r) - dp(l, r - 1)) or
+#   - dp(l, r) = sum(l, r) - min(dp(l + 1, r), dp(l, r - 1))
+
+import sys
+
+sys.setrecursionlimit(1500)
+
+
+def max_score(dp, prefix_sum, l, r):
+    if dp[l][r] != 0:
+        return dp[l][r]
+
+    sum = prefix_sum[r] - prefix_sum[l - 1]
+    if l == r:
+        dp[l][r] = sum
+    else:
+        dp[l][r] = sum - min(max_score(dp, prefix_sum, l + 1, r), max_score(dp, prefix_sum, l, r - 1))
+
+    return dp[l][r]
+
+
+def coin_game(coins):
+    n = len(coins)
+    dp = [[0 for i in range(n + 1)] for j in range(n + 1)]
+    prefix_sum = [0 for i in range(n + 1)]
+    for i in range(1, n + 1):
+        prefix_sum[i] = prefix_sum[i - 1] + coins[i - 1]
+    return max_score(dp, prefix_sum, 1, n)
+
