@@ -81,3 +81,24 @@ def max_score(coins, l, r):
 def coin_game(coins):
     n = len(coins)
     return max_score(coins, 0, n - 1)
+
+# Slight Optimization
+# So far, for each recursive call we are spending O(n) time to calculate the sum between the range [l, r]. However,
+# instead of using O(n) every time we need the sum we can use a prefix sum array to get the range sum in O(1) time
+# and a single O(n) pre-computation.
+
+def max_score(coins, l, r):
+    if l == r:
+        return coins[r]
+    sum = coins[r] - coins[l - 1]  # query sum from [l, r] in O(1)
+    left_pick = max_score(coins, l + 1, r)
+    right_pick = max_score(coins, l, r - 1)
+    return sum - min(left_pick, right_pick)
+
+
+def coin_game(coins):
+    n = len(coins)
+    prefix_sum = [0 for i in range(n + 1)]  # precompute prefix sum
+    for i in range(1, n + 1):
+        prefix_sum[i] = prefix_sum[i - 1] + coins[i - 1]
+    return max_score(prefix_sum, 0, n - 1)
