@@ -28,3 +28,17 @@
 # Output: 30
 # Explanation:
 # Shoot targets 3, 1, 2 in that order.
+
+# Solution
+# For this problem we use interval dp in order to solve it. We maintain a 2-D DP array such that dp[i][j] represents
+# the maximum number of points that can be gained from hitting all targets from this interval. Now that we have our
+# dp state, how do we transition? We realize that in order to hit all targets in this interval that there must be
+# some final target in this interval that we hit. If we have hit all the other targets then the only targets left
+# would be target[i] and target[j]. Therefore, our transition is to try every target in our interval as the final
+# target that we would hit. Therefore, dp[i][j] = max(dp[i][j], dp[i][k - 1] + dp[k + 1][j] + target[i - 1] * target[
+# k] * target[j + 1]) for every k in range (i, j + 1).
+#
+# dp[i][j] is the maximum number of points that can be gained from clearing all target in the [i, j] interval target[
+# i - 1] * target[k] * target[j + 1] calculates the score gained by hitting target k with target i - 1 and j + 1 to
+# the left and right of it. dp[i][k - 1] and dp[k + 1][j] calculates the amount of points gained from hitting all the
+# targets in the interval [i, j] excluding k, we then use this for our dp transition.
