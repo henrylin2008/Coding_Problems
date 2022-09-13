@@ -42,3 +42,27 @@
 # i - 1] * target[k] * target[j + 1] calculates the score gained by hitting target k with target i - 1 and j + 1 to
 # the left and right of it. dp[i][k - 1] and dp[k + 1][j] calculates the amount of points gained from hitting all the
 # targets in the interval [i, j] excluding k, we then use this for our dp transition.
+
+from typing import List
+
+
+def festival_game(target: List[int]) -> int:
+    dp = [[0] * len(target) for _ in range(len(target))]
+
+    def f(l, r):
+        if dp[l][r] != 0:
+            return dp[l][r]
+        for i in range(l, r + 1):
+            left_interval = 0 if i == l else f(l, i - 1)
+            right_interval = 0 if i == r else f(i + 1, r)
+            val = (1 if l == 0 else target[l - 1]) * target[i] * (1 if r == len(target) - 1 else target[r + 1])
+            dp[l][r] = max(dp[l][r], left_interval + right_interval + val)
+        return dp[l][r]
+
+    return f(0, len(target) - 1)
+
+
+if __name__ == '__main__':
+    target = [int(x) for x in input().split()]
+    res = festival_game(target)
+    print(res)
