@@ -144,5 +144,31 @@ def longest_common_subsequence(word1, word2):
     memo = [[-1 for _ in range(m + 1)] for _ in range(n + 1)]
     return lcs(n, m, word1, word2, memo)
 
+
 # The runtime for this problem is O(n * m) since there are O(n * m) states and each state takes O(1) to compute.
 # Similarly, the space complexity is O(n * m) due to the use of the memo array.
+
+# Bottom-Up
+# Finally, we can also solve the problem iteratively. The recurrence/transition will remain the same, but we will
+# build our solution from the smallest cases up to the largest.
+
+def longest_common_subsequence(word1, word2):
+    n = len(word1)
+    m = len(word2)
+
+    dp = [[0 for _ in range(m + 1)] for _ in range(n + 1)]
+
+    for i in range(0, n + 1):
+        for j in range(0, m + 1):
+            if i == 0 or j == 0:
+                dp[i][j] = 0
+            elif word1[i - 1] == word2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+    return dp[n][m]
+
+# The runtime is still O(n * m) since there are O(n * m) states and each state takes O(1) to compute. Similarly,
+# the space complexity is O(n * m) with the use of the dp array.
+
