@@ -116,6 +116,33 @@ def longest_common_subsequence(word1, word2):
     m = len(word2)
     return lcs(n, m, word1, word2)
 
-# The reason this is slower than our first brute force solution is because this one runs in O(2^{n + m}) time since
-# we are recursing through both strings at the same time instead of seperately.
 
+# The reason this is slower than our first brute force solution is because this one runs in O(2^{n + m}) time since
+# we are recursing through both strings at the same time instead of separately.
+
+# DFS + Memoization
+# Like we mentioned above, for case (2), lcs(i - 1, j - 1) is a subproblem of both lcs(i - 1, j) and lcs(i, j - 1). So,
+# instead of computing it twice, we can simply store its result and reuse it when needed using a 2D table.
+
+def lcs(i, j, word1, word2, memo):
+    if i == 0 or j == 0:
+        return 0
+    if memo[i][j] != -1:
+        return memo[i][j]
+    res = 0
+    if word1[i - 1] == word2[j - 1]:
+        res = lcs(i - 1, j - 1, word1, word2) + 1
+    else:
+        res = max(lcs(i - 1, j, word1, word2), lcs(i, j - 1, word1, word2))
+    memo[i][j] = res
+    return res
+
+
+def longest_common_subsequence(word1, word2):
+    n = len(word1)
+    m = len(word2)
+    memo = [[-1 for _ in range(m + 1)] for _ in range(n + 1)]
+    return lcs(n, m, word1, word2, memo)
+
+# The runtime for this problem is O(n * m) since there are O(n * m) states and each state takes O(1) to compute.
+# Similarly, the space complexity is O(n * m) due to the use of the memo array.
