@@ -47,3 +47,46 @@
 #   2. match word1[i] to blank (delete word2[j])
 #   3. match word2[j] to blank (add word1[i])
 
+# Time Complexity: O(n*m)
+
+from functools import lru_cache
+from math import inf
+
+
+def min_distance(word1: str, word2: str) -> int:
+    min_dist = inf
+
+    @lru_cache(None)
+    def dfs(i, j, dist):
+        nonlocal min_dist
+
+        if i == len(word1) and j == len(word2):
+            min_dist = min(min_dist, dist)
+            return
+
+        if i == len(word1):
+            dist += len(word2) - j
+            min_dist = min(min_dist, dist)
+            return
+
+        if j == len(word2):
+            dist += len(word1) - i
+            min_dist = min(min_dist, dist)
+            return
+
+        if word1[i] == word2[j]:
+            dfs(i + 1, j + 1, dist)
+        else:
+            dfs(i + 1, j + 1, dist + 1)  # replace one of them
+            dfs(i + 1, j, dist + 1)  # remove i
+            dfs(i, j + 1, dist + 1)  # remove j
+
+    dfs(0, 0, 0)
+    return min_dist
+
+
+if __name__ == '__main__':
+    word1 = input()
+    word2 = input()
+    res = min_distance(word1, word2)
+    print(res)
