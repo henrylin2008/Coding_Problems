@@ -32,3 +32,18 @@
 #   3. enention   ->  exention   (replace 'n' with 'x')
 #   4. exention   ->  exection   (replace 'n' with 'c')
 #   5. exection   ->  execution  (insert 'u')
+
+# Solution
+# This is the classic "Two Sequence DP".
+#
+# Let dp[i][j] be the minimum edit distance to change from substring of word1 ending at index i to substring of word2
+# ending at index j.
+#
+# If word1[i] == word2[j], then edit distance d[i][j] = dp[i - 1][j - 1] since we don't have to pay any cost if the
+# current character is the same.
+#
+# To get dp[i][j], we can do three things
+#   1. match word1[i] to word2[j] and pay the replacement cost
+#   2. match word1[i] to blank (delete word2[j])
+#   3. match word2[j] to blank (add word1[i])
+
