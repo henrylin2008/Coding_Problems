@@ -37,3 +37,34 @@
 #
 # dp[i][j] = min(dp[i - 1][j] + cost_to_remove_last_character_from_s1, dp[i][j - 1] +
 # cost_to_remove_last_character_from_s2)
+
+from typing import List
+
+
+def delete_string(costs: List[int], s1: str, s2: str):
+    dp, n, m = [], len(s1), len(s2)
+    for i in range(1001):
+        dp.append([])
+    for i in range(1001):
+        for j in range(1001):
+            dp[i].append(0)
+    # ascii code of the character a is 97
+    for i in range(1, n + 1):
+        dp[i][0] = dp[i - 1][0] + costs[ord(s1[i - 1]) - 97]
+    for j in range(1, m + 1):
+        dp[0][j] = dp[0][j - 1] + costs[ord(s2[j - 1]) - 97]
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            if s1[i - 1] == s2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1]
+            else:
+                dp[i][j] = min(dp[i][j - 1] + costs[ord(s2[j - 1]) - 97], dp[i - 1][j] + costs[ord(s1[i - 1]) - 97])
+    return dp[n][m]
+
+
+if __name__ == '__main__':
+    costs = [int(x) for x in input().split()]
+    s1 = input()
+    s2 = input()
+    res = delete_string(costs, s1, s2)
+    print(res)
