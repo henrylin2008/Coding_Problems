@@ -23,3 +23,17 @@
 #
 # Explanation:
 # We can remove a from both string to make bb in both strings with only a cost of 2.
+
+# Solution
+# This problem is very similar to Edit Distance. The difference is now the only operation is delete and there is a
+# cost for it.
+#
+# Let dp[i][j] denote the minimum total cost to make substrings s1[:i] and s2[:j] equal. To get dp[i][j],
+#
+# If s1[i] and s2[j] are the same character, then we don't have to incur any delete cost, we simply use the total
+# cost without the last character dp[i - 1][j - 1].
+#
+# Else, we can delete the last character from either s1 or s2 and add the cost. We take the minimum of the two.
+#
+# dp[i][j] = min(dp[i - 1][j] + cost_to_remove_last_character_from_s1, dp[i][j - 1] +
+# cost_to_remove_last_character_from_s2)
