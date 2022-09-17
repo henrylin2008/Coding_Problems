@@ -54,3 +54,33 @@ def knapsack_helper(weights: List[int], values: List[int], remaining_weight: int
 def knapsack(weights: List[int], values: List[int], max_weight: int) -> int:
     n = len(weights)
     return knapsack_helper(weights, values, max_weight, n)
+
+
+# DFS + Memoization
+# We can optimize the brute force solution by storing answers that have already been computed in a 2D array called
+# dp. In this case dp[n][remaining_weight] stores the maximum value when considering the first n items with a maximum
+# available weight of remaining_weight. If the answer already exists for dp[n][remaining_weight], then we immediately
+# use that result. Otherwise, we recurse and store the result of the recurrence.
+def knapsack_helper(weights: List[int], values: List[int], memo: List[List[int]], remaining_weight: int, n: int) -> int:
+    if n == 0 or remaining_weight == 0:
+        return 0
+    if memo[n][remaining_weight] != -1:
+        return memo[n][remaining_weight]
+    res = 0
+    if weights[n - 1] > remaining_weight:
+        res = knapsack_helper(weights, values, remaining_weight, n - 1)
+    else:
+        res = max(values[n - 1] + knapsack_helper(weights, values, remaining_weight - weights[n - 1], n - 1),
+                  knapsack_helper(weights, values, remaining_weight, n - 1))
+    memo[n][remaining_weight] = res
+    return res
+
+
+def knapsack(weights: List[int], values: List[int], max_weight: int) -> int:
+    n = len(weights)
+    memo = [[-1 for i in range(max_weight + 1)] for j in range(n + 1)]
+    return knapsack_helper(weights, values, memo, max_weight, n)
+
+# The time and space complexity will be O(n * w) where n is the number of items and w is the max weight because we
+# have O(n * w) states and the time complexity of computing each state is O(1). Similarly, the only additional memory
+# we use is an n * w array, so the space complexity is O(n * w).
