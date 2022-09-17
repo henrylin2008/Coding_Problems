@@ -111,8 +111,50 @@ def knapsack(weights: List[int], values: List[int], max_weight: int) -> int:
     # the answer is the max value when considering all n items and available weight of max_weight
     return max_value[n][max_weight]
 
+
 # For an intuitive explanation, consider the recursive version again. If we were to translate it to an iterative
 # version while maintaining the same recurrence, we need to build our solution from the bottom-up since maxValue[i][
 # w] depends on the values in the previous row maxValue[i - 1]. Also, since the weights for the items are arbitrary,
 # we will need to calculate the maximum value for all weights from 0 to max_weight to ensure we have the answer for
 # the recurrence, since maxValue[i][w] depends on maxValue[i - 1][w - weights[i - 1]] where 0 <= weights[i - 1] <= w .
+
+# 2D to 1D Optimization
+# We have discussed how to do knapsack using 2-D DP but now we discuss how we can optimize this into 1-D DP. We
+# realize that for the first dimension keeping track of the objects that we only ever use the previous row so
+# therefor, we can simply remove that dimension from out DP without consequence.
+#
+# The basic idea is to maintain a 1-D array that keeps track of the maximal value we can get for a certain amount of
+# weight. We can loop from the largest value to the smallest value to ensure we do not use a given object twice.
+# Looping backwards ensures we only ever use DP values from the previous row which is equivalent to the 2-D DP except
+# we can save some memory.
+#
+# The dp state can then be calculated using dp[j] = max(dp[j], dp[j - weight[i]] + value[i]). We first set each array
+# element to be -1 which means we have not reached that weight. If we have not reached that weight we should skip it
+# and make sure to not compute the value for that index.
+#
+# Here is a graphic to demonstrate this idea. Note that when a weight is smaller than the array index we stop
+# considering the index as it means our weight is greater than the current capacity of the knapsack.
+
+from typing import List
+
+
+def knapsack(weights: List[int], values: List[int], max_weight: int) -> int:
+    # initialize the array and set values to -1 except for index 0
+    dp = [-1] * (max_weight + 1)
+    dp[0] = 0
+    # loop through the objects
+    for i in range(len(weights)):
+        # loop through the dp indexes from largest value to smallest one
+        for j in range(max_weight, weights[i] - 1, -1):
+            # check if we have reached the weight value before
+            if dp[j - weights[i]] != -1:
+                dp[j] = max(dp[j], dp[j - weights[i]] + values[i])
+    return max(dp)
+
+
+if __name__ == '__main__':
+    weights = [int(x) for x in input().split()]
+    values = [int(x) for x in input().split()]
+    max_weight = int(input())
+    res = knapsack(weights, values, max_weight)
+    print(res)
