@@ -81,6 +81,38 @@ def knapsack(weights: List[int], values: List[int], max_weight: int) -> int:
     memo = [[-1 for i in range(max_weight + 1)] for j in range(n + 1)]
     return knapsack_helper(weights, values, memo, max_weight, n)
 
+
 # The time and space complexity will be O(n * w) where n is the number of items and w is the max weight because we
 # have O(n * w) states and the time complexity of computing each state is O(1). Similarly, the only additional memory
 # we use is an n * w array, so the space complexity is O(n * w).
+
+def knapsack(weights: List[int], values: List[int], max_weight: int) -> int:
+    n = len(weights)
+    # 2D dp array, where maxValue[i][j] is the maximum knapsack value when
+    # considering the first i items with a max weight capacity of j
+    max_value = [[0 for i in range(max_weight + 1)] for j in range(n + 1)]
+    # iterate through all items
+    for i in range(n + 1):
+        # and all possible available weights
+        for w in range(max_weight + 1):
+            # if we consider no items or no weight, the max value is 0
+            if i == 0 or w == 0:
+                max_value[i][w] = 0
+            # if the weight of the current item exceeds the max available weight,
+            # then the answer is the max value when considering the first i - 1 items
+            elif w < weights[i - 1]:
+                max_value[i][w] = max_value[i - 1][w]
+            # otherwise, we choose the best option between either:
+            # picking up: item's value + max value when considering the rest of the items and a new weight
+            # giving up: similar to the condition above
+            else:
+                max_value[i][w] = max(values[i - 1] + max_value[i - 1][w - weights[i - 1]],
+                                      max_value[i - 1][w])
+    # the answer is the max value when considering all n items and available weight of max_weight
+    return max_value[n][max_weight]
+
+# For an intuitive explanation, consider the recursive version again. If we were to translate it to an iterative
+# version while maintaining the same recurrence, we need to build our solution from the bottom-up since maxValue[i][
+# w] depends on the values in the previous row maxValue[i - 1]. Also, since the weights for the items are arbitrary,
+# we will need to calculate the maximum value for all weights from 0 to max_weight to ensure we have the answer for
+# the recurrence, since maxValue[i][w] depends on maxValue[i - 1][w - weights[i - 1]] where 0 <= weights[i - 1] <= w .
