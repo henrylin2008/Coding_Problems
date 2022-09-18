@@ -60,3 +60,23 @@ for mask in range(2 ** n):
 # subsets = [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 # We didn't need to use backtracking for this. Pretty cool, eh!
+
+# Bitmask and Dynamic Programming
+# Now here is pseudocode to show how to use bitmask for dynamic programming.
+#
+# function f(int bitmask, int [] dp) {
+#     if calculated bitmask {
+#         return dp[bitmask];
+#     }
+#     for each state you want to keep track of {
+#         if current state not in mask {
+#             temp = new bitmask;
+#             dp[bitmask] = max(dp[bitmask], f(temp,dp) + transition_cost);
+#         }
+#     }
+#     return dp[bitmask];
+# }
+
+# Bitmask is helpful with problems that would normally require factorial complexity (something like n!) but can
+# instead reduce the computational complexity to 2^n by storing the dp state. It can also act as an effective
+# "upper-bound" on the number of computations that can take place.
