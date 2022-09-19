@@ -6,3 +6,12 @@
 # the edge doesn't exist. You do not have to end at the starting node. All edges are guaranteed to be in the range [
 # 0,1000], there will not exceed 15 nodes in the graph. The starting node will always be at node 0. If a solution
 # does not exist return -1.
+
+# Solution
+# Maintain a bitmask for the nodes that you visited. We can then perform dfs to check nodes we have not visited and
+# record the minimum value and return that for our recursive function. For further reading, this problem is actually
+# quite famous and known as the Travelling Salesman Problem(https://en.wikipedia.org/wiki/Travelling_salesman_problem).
+#
+# Time Complexity: O(2^n)
+#
+# Bitmask problems tend to reduce O(n!) time complexity or worse to O(2^n)
