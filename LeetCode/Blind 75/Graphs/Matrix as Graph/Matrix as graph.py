@@ -79,3 +79,7 @@ def bfs(starting_node):
             # ...
             queue.append(neighbor)
             visited.add(neighbor)
+
+# visited alternative
+# Sometimes, we can overwrite the value in the matrix to keep track of the visited nodes without using a visited set.
+# We'll see this in Number of Islands.
