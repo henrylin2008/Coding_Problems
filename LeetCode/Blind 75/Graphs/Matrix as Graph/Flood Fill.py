@@ -78,3 +78,13 @@ def flood_fill(r: int, c: int, replacement: int, image: List[List[int]]) -> List
 
     bfs((r, c))
     return image
+
+
+if __name__ == '__main__':
+    r = int(input())
+    c = int(input())
+    replacement = int(input())
+    image = [[int(x) for x in input().split()] for _ in range(int(input()))]
+    res = flood_fill(r, c, replacement, image)
+    for row in res:
+        print(' '.join(map(str, row)))
