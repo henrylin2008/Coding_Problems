@@ -33,3 +33,9 @@
 
 # Constraints
 # The starting combination (0000) and the final combination is not trapped because that defeats the purpose of the lock.
+
+# Solution
+# This question is a standard BFS problem, except we consider two combinations who has one digit differ by one
+# "adjacent". The implementation comes easily after we defined what "adjacent" means for this question.
+#
+# The time complexity is O(n), where n is the number of possible combinations (which is 10^4 == 10000 in this case).
