@@ -1,4 +1,6 @@
 # Sliding Window Intro
+# https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1627871350324_0Unit
+
 # In many coding problems where we are dealing with an array (or a LinkedList), we are asked to find or calculate
 # something among all the subarrays (or sublists) of a given size. For example, take a look at this problem:
 #
@@ -49,4 +51,27 @@ main()
 # This means that we will slide the window by one element when we move on to the next subarray. To reuse the sum from
 # the previous subarray, we will subtract the element going out of the window and add the element now being included
 # in the sliding window. This will save us from going through the whole subarray to find the sum and, as a result,
-# the algorithm complexity will reduce to O(N)O(N)
+# the algorithm complexity will reduce to O(N)
+
+# Here is the algorithm for the Sliding Window approach:
+
+def find_averages_of_subarrays(K, arr):
+    result = []
+    windowSum, windowStart = 0.0, 0
+    for windowEnd in range(len(arr)):
+        windowSum += arr[windowEnd]  # add the next element
+        # slide the window, no need to slide if we've not hit the required window size of 'k'
+        if windowEnd >= K - 1:
+            result.append(windowSum / K)  # calculate the average
+            windowSum -= arr[windowStart]  # subtract the element going out
+            windowStart += 1  # slide the window ahead
+
+    return result
+
+
+def main():
+    result = find_averages_of_subarrays(5, [1, 3, 2, 6, -1, 4, 1, 8, 2])
+    print("Averages of subarrays of size K: " + str(result))
+
+
+main()
