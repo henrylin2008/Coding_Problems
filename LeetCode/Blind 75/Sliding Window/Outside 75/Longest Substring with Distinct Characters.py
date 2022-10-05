@@ -58,3 +58,16 @@ def main():
 
 
 main()
+
+
+# Time Complexity
+#
+# The above algorithm’s time complexity will be O(N), where ‘N’ is the number of characters in the input string.
+#
+# Space Complexity
+#
+# The algorithm’s space complexity will be O(K), where K is the number of distinct characters in the input
+# string. This also means K<=N, because in the worst case, the whole string might not have any duplicate
+# character, so the entire string will be added to the HashMap. Having said that, since we can expect a fixed set of
+# characters in the input string (e.g., 26 for English letters), we can say that the algorithm runs in fixed space O(
+# 1); in this case, we can use a fixed-size array instead of the HashMap.
