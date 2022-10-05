@@ -18,3 +18,10 @@
 # Input: String="abccde"
 # Output: 3
 # Explanation: Longest substrings with distinct characters are "abc" & "cde".
+
+# Solution
+#
+# This problem follows the Sliding Window pattern, and we can use a similar dynamic sliding window strategy as
+# discussed in Longest Substring with K Distinct Characters. We can use a HashMap to remember the last index of each
+# character we have processed. Whenever we get a duplicate character, we will shrink our sliding window to ensure
+# that we always have distinct characters in the sliding window.
