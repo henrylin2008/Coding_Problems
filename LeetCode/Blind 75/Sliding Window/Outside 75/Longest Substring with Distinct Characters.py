@@ -61,11 +61,9 @@ main()
 
 
 # Time Complexity
-#
 # The above algorithm’s time complexity will be O(N), where ‘N’ is the number of characters in the input string.
 #
 # Space Complexity
-#
 # The algorithm’s space complexity will be O(K), where K is the number of distinct characters in the input
 # string. This also means K<=N, because in the worst case, the whole string might not have any duplicate
 # character, so the entire string will be added to the HashMap. Having said that, since we can expect a fixed set of
