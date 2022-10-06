@@ -56,9 +56,9 @@ def fruits_into_baskets(fruits):
 
 def main():
     print("Maximum number of fruits: "
-          + str(fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])))
+          + str(fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])))    # 3
     print("Maximum number of fruits: "
-          + str(fruits_into_baskets(['A', 'B', 'C', 'B', 'B', 'C'])))
+          + str(fruits_into_baskets(['A', 'B', 'C', 'B', 'B', 'C'])))   # 5
 
 
 main()
