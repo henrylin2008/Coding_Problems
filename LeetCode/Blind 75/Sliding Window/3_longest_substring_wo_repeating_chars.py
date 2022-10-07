@@ -34,7 +34,7 @@ def lengthOfLongestSubstring(self, s: str) -> int:
     max_length = 0
     left = 0            # left pointer of the sliding window
     for right in range(len(s)):         # sliding the right pointer
-        while s[right] in char_set:     # if right char is in the char_set
+        while s[right] in char_set:     # while there's a duplicate char in char_set/remove duplicates
             char_set.remove(s[left])    # remove the leftmost char
             left += 1                   # shift left pointer
         char_set.add(s[right])          # add right char to char_set hashmap
