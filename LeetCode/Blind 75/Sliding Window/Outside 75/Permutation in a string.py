@@ -35,3 +35,18 @@
 # Input: String="aaacb", Pattern="abc"
 # Output: true
 # Explanation: The string contains "acb" which is a permutation of the given pattern.
+
+
+# Solution
+# This problem follows the Sliding Window pattern, and we can use a similar sliding window strategy as discussed in
+# Longest Substring with K Distinct Characters. We can use a HashMap to remember the frequencies of all characters in
+# the given pattern. Our goal will be to match all the characters from this HashMap with a sliding window in the
+# given string. Here are the steps of our algorithm:
+#   1. Create a HashMap to calculate the frequencies of all characters in the pattern.
+#   2. Iterate through the string, adding one character at a time in the sliding window.
+#   3. If the character being added matches a character in the HashMap, decrement its frequency in the map. If the
+#      character frequency becomes zero, we got a complete match.
+#   4. If at any time, the number of characters matched is equal to the number of distinct characters in the pattern (
+#      i.e., total characters in the HashMap), we have gotten our required permutation.
+#   5. If the window size is greater than the length of the pattern, shrink the window to make it equal to the pattern’s
+#      size. At the same time, if the character going out was part of the pattern, put it back in the frequency HashMap.
