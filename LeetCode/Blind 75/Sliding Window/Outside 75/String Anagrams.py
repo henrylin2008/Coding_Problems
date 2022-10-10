@@ -25,3 +25,10 @@
 # Input: String="abbcabc", Pattern="abc"
 # Output: [2, 3, 4]
 # Explanation: The three anagrams of the pattern in the given string are "bca", "cab", and "abc".
+
+# Solution
+#
+# This problem follows the Sliding Window pattern and is very similar to Permutation in a String. In this problem,
+# we need to find every occurrence of any permutation of the pattern in the string. We will use a list to store the
+# starting indices of the anagrams of the pattern in the string.
+
