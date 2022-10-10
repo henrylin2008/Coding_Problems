@@ -31,18 +31,22 @@
 
 # Time: O(26n) -> O(n)
 # Space: O(n)
+# Logic: use a hashmap to count the frequency of each letter, and use sliding window technique, window is valid as long
+#        as window_len - count[most_freq_letter] <= k; if the window is invalid, shift the left pointer, reduce the
+#        count of the letter at the left pointer by 1, and shift the left pointer
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        count = {}  # count of each character; key=the char, value=count of each char
+        count = {}  # hashmap to store occurrence of each character; key: the char, value: count of each char
         res = 0  # longest substring with k replacement
         left = 0  # left pointer
-        max_freq = 0  # most frequency of a letter
-        for right in range(len(s)):
-            count[s[right]] = 1 + count.get(s[right], 0)  # increment of the count of s[right]
-            max_freq = max(max_freq, count[s[right]])  # max frequency of the hashmap (most freq letter in s)
-
+        max_freq = 0  # variable to store most frequency of a letter, instead of finding the max from the hashmap
+        # everytime, better run time
+        for right in range(len(s)):  # loop through the chars in s
+            count[s[right]] = 1 + count.get(s[right], 0)  # increase the count of the value at the new right pointer
+            max_freq = max(max_freq, count[s[right]])  # max of the current max_freq or max count of the new char,
+            # constant time operation
             while (right - left + 1) - max_freq > k:  # # of replacement > # of replacement allowed
-                count[s[left]] -= 1  # decrease the count of letter at the original left pointer before shifted
+                count[s[left]] -= 1  # decrease the count of letter at the left pointer before the shift
                 left += 1  # shift left pointer
 
             res = max(res, right - left + 1)  # update the result
