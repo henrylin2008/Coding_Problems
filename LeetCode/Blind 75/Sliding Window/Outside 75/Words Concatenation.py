@@ -72,3 +72,13 @@ def main():
 
 
 main()
+
+
+# Time Complexity
+# The time complexity of the above algorithm will be O(N * M * Len) where ‘N’ is the number of characters
+# in the given string, ‘M’ is the total number of words, and ‘Len’ is the length of a word.
+
+# Space Complexity
+# The space complexity of the algorithm is O(M) since at most, we will be storing all the words in the two
+# HashMaps. In the worst case, we also need O(N) space for the resulting list. So, the overall space complexity
+# of the algorithm will be O(M+N).
