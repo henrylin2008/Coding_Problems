@@ -48,10 +48,15 @@
 class Solution:
     # Time: O(n); sliding window loop through the string once
     # Space: O(1); using hashmaps and 2 pointers
-    # Idea: - 2 hashmaps to get the count of each char (window, count_t),
+    # Idea: use sliding window technique to shift the window, and use 2 hashmaps to compare the count of needed chars.
+    #       while looping through chars in the string s, compare the count of the char at the left/right pointers in the
+    #       have and need hashmaps, and update the count of the chars in 2 hashmaps. while the count of the chars >=
+    #       count of chars in the need hashmap, then update the res and res_len; return the res (window) that is the
+    #       smallest res_len after looping through string s.
+    #       - 2 hashmaps to get the count of each char (window, count_t),
     #       - 2 variables to keep track of unique chars;
-    #           - need: required count of unique chars in t
-    #           - have: count of unique chars so far in the current window
+    #           - need: total count of needed chars in t
+    #           - have: total count of unique chars in the current window
     #       - 2 pointers for the window
     #           - left pointer: left side of the window, keep sharding and update the have count and res, res_len
     #           - right pointer: count of the new char and add it to the have count if it matches the char in count_t,
@@ -60,32 +65,33 @@ class Solution:
     #                            count, then shift left pointer
     #       - left, right (from res) is the range that we are looking for, return it if it has been changed
     def minWindow(self, s: str, t: str) -> str:
-        if t == "": return ""  # edge case
+        if t == "":
+            return ""  # edge case
 
-        count_t, window = {}, {}  # hashmaps keep track of count of each char; window: current window
-        for c in t:  # count of each char and store it in the count_t hashmap
-            count_t[c] = 1 + count_t.get(c, 0)
+        count_t, window = {}, {}  # hashmaps keep track of count of each char; count_t: needed; window: current window
+        for c in t:  # get the count of each char and store it in the count_t hashmap
+            count_t[c] = 1 + count_t.get(c, 0)  # add one to the count of c, or return 0 if it doesn't exist in count_t
 
-        have, need = 0, len(count_t)  # need: count of unique char in t; have: count of unique char so far
-        res, res_len = [-1, -1], float("infinity")  # res: possible window [l, r]; res_len: length of the window
-        l = 0  # left pointer
-        for r in range(len(s)):  # loop through the string s
-            c = s[r]  # char at the right pointer
-            window[c] = 1 + window.get(c, 0)  # get the count of the char
+        have, need = 0, len(count_t)  # need: total count of chars in t; have: count of needed chars in current window
+        res, res_len = [-1, -1], float("infinity")  # res: possible window; res_len: length of the window
+        left = 0  # left pointer
+        for right in range(len(s)):  # loop through the chars in string s
+            c = s[right]  # char at the right pointer
+            window[c] = 1 + window.get(c, 0)  # add the count of c to the current window
 
             if c in count_t and window[c] == count_t[c]:  # if c in count_t, and count of c matches in both hashmaps
                 have += 1  # increase the have count
-            # while have == need, shift left pointer, and update res and res_len
-            while have == need:  # while both hashmaps are same; possible multiple windows matched
+            # while have == need, update the window (res and res_len)
+            while have == need:  # while count in both hashmaps are the same; possible multiple windows matched
                 # update result
-                if (r - l + 1) < res_len:  # if the length of the current window < res_len
-                    res = [l, r]  # update the window
-                    res_len = (r - l + 1)  # update the size of the window
-                # pop from the left of the window
-                window[s[l]] -= 1  # remove char at the left pointer
-                if s[l] in count_t and window[s[l]] < count_t[s[l]]:  # if this char in count_t and the count of
-                    # this char in current window < need of this char in count_t
+                if (right - left + 1) < res_len:  # if the size/length of the current window < res_len
+                    res = [left, right]  # update the window
+                    res_len = (right - left + 1)  # update the size of the window
+                # shift the left pointer and compare the count of this char to count in the need hashmap
+                window[s[left]] -= 1  # pop from the left of the window
+                if s[left] in count_t and window[s[left]] < count_t[s[left]]:  # if this char (left) is needed char from
+                    # count_t, and the count of have (hashmap) < count of need (hashmap)
                     have -= 1  # decrease the have count
-                l += 1  # shift left pointer
-        l, r = res  # res left, right pointers
-        return s[l:r + 1] if res_len != float("infinity") else ""  # return if res_len has been changed else empty str
+                left += 1  # shift left pointer
+        left, right = res  # res left, right pointers
+        return s[left:right + 1] if res_len != float("infinity") else ""  # return if res_len has changed else return ""
