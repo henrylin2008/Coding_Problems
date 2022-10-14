@@ -3,10 +3,17 @@ We will use a Queue to keep track of all the nodes of a level before we jump ont
 the space complexity of the algorithm will be O(W), where ‘W’ is the maximum number of nodes on any level.
 
 BFS General steps/Template:
-1. Initialize Queue with all entry points (typically just one)
+1. Initialize Queue with all entry points (typically just one for Tree)
 2. While queue is not empty:
     a. for each node in the queue (currently)
     b. poll out the element (add to result)
     c. expand it, offer children to the queue in order
     d. increase level
 
+
+BFS problem:
+-Symmetric Tree (101)
+-Binary Tree Zigzag Level Order Traversal (103)
+-Minimum Depth of Binary Tree (111)
+-Find Largest value in each tree row (505)
+-N-ary Tree Level Order Traversal (429)
