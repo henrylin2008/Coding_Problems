@@ -16,3 +16,10 @@
 #           [[9,10,5],
 #            [7,1],
 #            [12]]
+
+# Solution
+#
+# This problem follows the Binary Tree Level Order Traversal pattern. We can follow the same BFS approach. The only
+# difference will be that instead of appending the current level at the end, we will append the current level at the
+# beginning of the result list.
+
