@@ -8,11 +8,25 @@
 # alternating in the same manner for the following levels.
 #
 # Example 1:
+#           1
+#         /   \
+#       2       3
+#     /   \    /  \
+#   4     5   6    7
+# Zigzag Level Order Traversal:
 #           [[1],
 #            [3, 2],
 #            [4, 5, 6, 7]]
 #
 # Example 2:
+#           12
+#         /    \
+#       7        1
+#     /         /   \
+#    9         10    5
+#             /  \
+#           20   17
+# Zigzag Level Order Traversal:
 #           [[12],
 #            [1, 7],
 #            [9, 10, 5],
