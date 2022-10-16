@@ -17,3 +17,10 @@
 #            [1, 7],
 #            [9, 10, 5],
 #            [17, 20]]
+
+# Solution
+#
+# This problem follows the Binary Tree Level Order Traversal pattern. We can follow the same BFS approach. The only
+# additional step we have to keep in mind is to alternate the level order traversal, which means that for every other
+# level, we will traverse similar to Reverse Level Order Traversal.
+
