@@ -8,15 +8,27 @@
 # separate sub-arrays.
 #
 # Example 1:
+#           1
+#         /   \
+#       2       3
+#     /   \    /  \
+#   4     5   6    7
+# Reverse Level Order Traversal:
 #           [[4,5,6,7],
 #            [2,3],
 #            [1]]
 #
 # Example 2:
+#           12
+#         /    \
+#       7        1
+#     /        /   \
+#    9       10     5
+# Reverse Level Order Traversal:
 #           [[9,10,5],
 #            [7,1],
 #            [12]]
-
+#
 # Solution
 #
 # This problem follows the Binary Tree Level Order Traversal pattern. We can follow the same BFS approach. The only
