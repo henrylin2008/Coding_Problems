@@ -7,11 +7,21 @@
 # all nodes of each level from left to right in separate sub-arrays.
 
 # Example 1:
+#           1
+#         /   \
+#       2       3
+#     /   \    /  \
+#   4     5   6    7
 #       level order traversal: [[1],
 #                               [2,3],
 #                               [4,5,6,7]]
 
 # Example 2:
+#           12
+#         /    \
+#       7        1
+#     /        /   \
+#    9       10     5
 #       level order traversal: [[12],
 #                               [7,1],
 #                               [9,10,5]]
