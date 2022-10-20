@@ -20,3 +20,9 @@
 #     /        /   \
 # -> 9  -->  10  ->  5 --> null
 #
+#
+# Solution
+#
+# This problem follows the Binary Tree Level Order Traversal pattern. We can follow the same BFS approach. The only
+# difference will be that while traversing we will remember (irrespective of the level) the previous node to connect
+# it with the current node.
