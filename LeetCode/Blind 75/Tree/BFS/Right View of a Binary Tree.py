@@ -23,3 +23,8 @@
 #    |
 #    3
 # Right view: [12, 1, 5, 3]
+
+# Solution
+#
+# This problem follows the Binary Tree Level Order Traversal pattern. We can follow the same BFS approach. The only
+# additional thing we will be doing is to append the last node of each level to the result array.
