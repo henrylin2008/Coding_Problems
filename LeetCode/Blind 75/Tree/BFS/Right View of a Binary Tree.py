@@ -86,3 +86,12 @@ main()
 # The space complexity of the above algorithm will be O(N) needed for the return list. We will also need O(N)
 # space for the queue. Since we can have a maximum of N/2 nodes at any level (this could happen only at the lowest
 # level), therefore we will need O(N) space to store them in the queue.
+
+
+# Similar Questions
+#
+# Problem 1: Given a binary tree, return an array containing nodes in its left view. The left view of a binary tree
+# is the set of nodes visible when the tree is seen from the left side.
+#
+# Solution: We will be following a similar approach, but instead of appending the last element of each level,
+# we will be appending the first element of each level to the output array.
