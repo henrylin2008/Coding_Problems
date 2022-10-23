@@ -25,3 +25,11 @@
 # S: 23
 # Output: [[12, 7, 4], [12, 1, 10]]
 # Explanation: Here are the two paths with sum '23': 12 -> 7 -> 4 and 12 -> 1 -> 10
+
+#
+# Solution
+#
+# This problem follows the Binary Tree Path Sum problem. We can follow the same DFS approach. There will be two differences though:
+#
+# Every time we find a root-to-leaf path, we will store it in a list.
+# We will traverse all paths and will not stop processing after finding the first path.
