@@ -49,26 +49,26 @@ def find_paths(root, required_sum):
     return all_paths
 
 
-def find_paths_recursive(currentNode, required_sum, currentPath, allPaths):
-    if currentNode is None:
+def find_paths_recursive(current_node, required_sum, current_path, all_paths):
+    if current_node is None:
         return
 
     # add the current node to the path
-    currentPath.append(currentNode.val)
+    current_path.append(current_node.val)
 
     # if the current node is a leaf and its value is equal to required_sum, save the
     # current path
-    if currentNode.val == required_sum and currentNode.left is None and currentNode.right is None:
-        allPaths.append(list(currentPath))
+    if current_node.val == required_sum and current_node.left is None and current_node.right is None:
+        all_paths.append(list(current_path))
     else:
         # traverse the left sub-tree
-        find_paths_recursive(currentNode.left, required_sum - currentNode.val, currentPath, allPaths)
+        find_paths_recursive(current_node.left, required_sum - current_node.val, current_path, all_paths)
         # traverse the right sub-tree
-        find_paths_recursive(currentNode.right, required_sum - currentNode.val, currentPath, allPaths)
+        find_paths_recursive(current_node.right, required_sum - current_node.val, current_path, all_paths)
 
     # remove the current node from the path to backtrack,
     # we need to remove the current node while we are going up the recursive call stack.
-    del currentPath[-1]
+    del current_path[-1]
 
 
 def main():
@@ -115,3 +115,13 @@ main()
 #
 # Also, from the above discussion, since for each leaf node, in the worst case, we have to copy log(N) nodes to
 # store its path; therefore, the time complexity of our algorithm will also be O(N*logN).
+
+
+# Similar Problems
+#
+# Problem 1: Given a binary tree, return all root-to-leaf paths.
+# Solution: We can follow a similar approach. We just need to remove the “check for the path sum.”
+#
+# Problem 2: Given a binary tree, find the root-to-leaf path with the maximum sum.
+# Solution: We need to find the path with the maximum sum. As we traverse all paths, we can keep track of the path
+# with the maximum sum.
