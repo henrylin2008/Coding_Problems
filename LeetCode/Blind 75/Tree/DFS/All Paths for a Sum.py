@@ -29,7 +29,58 @@
 #
 # Solution
 #
-# This problem follows the Binary Tree Path Sum problem. We can follow the same DFS approach. There will be two differences though:
+# This problem follows the Binary Tree Path Sum problem. We can follow the same DFS approach. There will be two
+# differences though:
 #
 # Every time we find a root-to-leaf path, we will store it in a list.
 # We will traverse all paths and will not stop processing after finding the first path.
+
+
+class TreeNode:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def find_paths(root, required_sum):
+    all_paths = []
+    find_paths_recursive(root, required_sum, [], all_paths)
+    return all_paths
+
+
+def find_paths_recursive(currentNode, required_sum, currentPath, allPaths):
+    if currentNode is None:
+        return
+
+    # add the current node to the path
+    currentPath.append(currentNode.val)
+
+    # if the current node is a leaf and its value is equal to required_sum, save the
+    # current path
+    if currentNode.val == required_sum and currentNode.left is None and currentNode.right is None:
+        allPaths.append(list(currentPath))
+    else:
+        # traverse the left sub-tree
+        find_paths_recursive(currentNode.left, required_sum - currentNode.val, currentPath, allPaths)
+        # traverse the right sub-tree
+        find_paths_recursive(currentNode.right, required_sum - currentNode.val, currentPath, allPaths)
+
+    # remove the current node from the path to backtrack,
+    # we need to remove the current node while we are going up the recursive call stack.
+    del currentPath[-1]
+
+
+def main():
+    root = TreeNode(12)
+    root.left = TreeNode(7)
+    root.right = TreeNode(1)
+    root.left.left = TreeNode(4)
+    root.right.left = TreeNode(10)
+    root.right.right = TreeNode(5)
+    required_sum = 23
+    print("Tree paths with required_sum " + str(required_sum) +
+          ": " + str(find_paths(root, required_sum)))
+
+
+main()
