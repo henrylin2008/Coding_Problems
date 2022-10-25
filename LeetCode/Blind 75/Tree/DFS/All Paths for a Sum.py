@@ -31,9 +31,8 @@
 #
 # This problem follows the Binary Tree Path Sum problem. We can follow the same DFS approach. There will be two
 # differences though:
-#
-# Every time we find a root-to-leaf path, we will store it in a list.
-# We will traverse all paths and will not stop processing after finding the first path.
+#   1. Every time we find a root-to-leaf path, we will store it in a list.
+#   2. We will traverse all paths and will not stop processing after finding the first path.
 
 
 class TreeNode:
