@@ -7,3 +7,14 @@ node.left --> node --> node.right
 Postorder Traversal:
 node.left --> node.right --> node
 
+
+Bottom up DFS:
+1. Base Case
+2. Get Child/recursion return value
+3. Use the child value to find the answer for current problem
+4. (optional) if necessary, additional operation
+5. return answer (to parent's problem)
+
+Bottom up Problems:
+104. Maximum depth of Binary tree
+124. Binary Tree Maximum Path Sum
