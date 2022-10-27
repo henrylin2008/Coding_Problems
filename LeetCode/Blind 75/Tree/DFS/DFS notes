@@ -18,3 +18,22 @@ Bottom up DFS:
 Bottom up Problems:
 104. Maximum depth of Binary tree
 124. Binary Tree Maximum Path Sum
+
+
+Top Down DFS:
+1. Base Case
+2. Use return value from the parent node to calculate
+3. (optional) if necessary, additional operation
+4. pass the return value to the child node and continue recursion (on child nodes)
+
+Top Down problems:
+129. Sum Root to Leaf numbers
+
+
+DFS problems:
+98. Validate Binary Search Tree
+110. Balanced Binary Tree
+113. Path Sum II
+236. Lowest Common Ancestor of a Binary Tree
+450. Delete Node in a BST
+508. Most Frequent subtree sum
