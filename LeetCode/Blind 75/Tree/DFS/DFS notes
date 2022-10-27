@@ -1,0 +1,9 @@
+Preorder Traversal:
+node --> node.left --> node.right
+
+Inorder Traversal:
+node.left --> node --> node.right
+
+Postorder Traversal:
+node.left --> node.right --> node
+
