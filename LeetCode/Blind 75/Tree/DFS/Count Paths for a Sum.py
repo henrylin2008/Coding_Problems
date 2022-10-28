@@ -90,3 +90,20 @@ def main():
 
 
 main()
+
+# Time Complexity
+#
+#
+# The time complexity of the above algorithm is O(N^2) in the worst case, where ‘N’ is the total number of nodes in the
+# tree. This is due to the fact that we traverse each node once, but for every node, we iterate the current path. The
+# current path, in the worst case, can be O(N) (in the case of a skewed tree). But, if the tree is balanced, then
+# the current path will be equal to the height of the tree, i.e., O(logN). So the best case of our algorithm will
+# be O(NlogN).
+#
+# Space Complexity
+#
+# The space complexity of the above algorithm will be O(N). This space will be used to store the recursion stack.
+# The worst case will happen when the given tree is a linked list (i.e., every node has only one child). We also need
+# O(N) space for storing the currentPath in the worst case.
+#
+# Overall space complexity of our algorithm is O(N).
