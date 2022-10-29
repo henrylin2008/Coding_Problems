@@ -107,3 +107,66 @@ main()
 # O(N) space for storing the currentPath in the worst case.
 #
 # Overall space complexity of our algorithm is O(N).
+
+
+# A more efficient solution
+#
+# Can we further improve the solution?
+#
+# One thing we are repeating for each node is traversing the current path and seeing if any sub-path that ends at the
+# current node gives us the required sum.
+#
+# Let’s see if we can improve this part.
+#
+# We can use the Prefix Sum technique to efficiently manage the path sums.
+#
+# Prefix Sum
+#
+# Let’s first understand what Prefix Sum is. For a given array, its Prefix Sum is another array where each element is
+# the commutative sum of the corresponding element in the given array and all its previous elements.
+#       Input Array -> a0 | a1 | a2 | a3 |
+#       Prefix Sums -> a0 | a0+a1 | a0+a1+a2 | a0+a1+a2+a3 |
+#
+# Here is an example:
+#       Input Array -> 1 | 6 | 2 | 5 |
+#       Prefix Sums -> 1 | 7 | 9 | 14 |
+#
+# Now, let’s say we want to find all subarrays of a given array with a target sum.
+#
+# Let’s say our target sum is 7, and we want to find all the subarrays of the array mentioned above.
+#
+# We can clearly see that there are two such subarrays: 1) [1, 6], and 2) [2, 5].
+#
+# How can we utilize the Prefix Sum array to find these two subarrays efficiently?
+#
+# There are two ways Prefix Sum can help us:
+#
+# a) Since each element of the prefix sum array contains the cumulative sum of current and previous elements,
+# therefore, whenever we see our target sum, we have found our targeted subarray. For example, since the second
+# element of the prefix sum array is 7; therefore, our target subarray will be from the start of the array till the
+# second element, i.e., [1, 6]
+#
+# (b) Secondly, the prefix sum array can also help us find our target subarray that is not starting from the first
+# index.
+#
+# If we subtract the target sum from any element of the prefix sum array, the result will also give us our target
+# subarray (if that result is present in the prefix sum array).
+#
+# For example, take the 4th element of the prefix sum array and subtract the target sum from it: 14 – 7 => 7
+#
+# Is this result (7) present in the prefix sum array? Yes, it is the second element. This means the sum from the 3rd
+# element to the current element (i.e., the 4th) is also 7.
+#
+# Hence, our target subarray will be from the 3rd element to the current element, i.e., [2, 5].
+#
+# Now, let’s see how we can use prefix sum for binary trees. Take the following example:
+#           1
+#         /   \
+#       4       6
+#     /       /  \
+#   5        9    2
+#                 |
+#                 5
+#
+# We can consider each path as an array and calculate its prefix sums to find any required sub-paths. In the above
+# tree, the highlighted sub-paths are exactly the same as our previous array example.
