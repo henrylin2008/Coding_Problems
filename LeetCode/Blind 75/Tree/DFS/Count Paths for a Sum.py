@@ -238,3 +238,14 @@ def main():
 
 
 main()
+
+
+# Time Complexity
+#
+# As we are not traversing the current path for each node, the time complexity of the above algorithm will be O(N) in
+# the worst case, where ‘N’ is the total number of nodes in the tree.
+#
+# Space Complexity
+#
+# The space complexity of the above algorithm will be O(N). This space will be used to store the recursion stack,
+# as well as for the prefix sum.
