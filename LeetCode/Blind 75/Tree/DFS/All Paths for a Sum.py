@@ -55,8 +55,7 @@ def find_paths_recursive(current_node, required_sum, current_path, all_paths):
     # add the current node to the path
     current_path.append(current_node.val)
 
-    # if the current node is a leaf and its value is equal to required_sum, save the
-    # current path
+    # if the current node is a leaf and its value is equal to required_sum, save the current path
     if current_node.val == required_sum and current_node.left is None and current_node.right is None:
         all_paths.append(list(current_path))
     else:
@@ -65,8 +64,8 @@ def find_paths_recursive(current_node, required_sum, current_path, all_paths):
         # traverse the right sub-tree
         find_paths_recursive(current_node.right, required_sum - current_node.val, current_path, all_paths)
 
-    # remove the current node from the path to backtrack,
-    # we need to remove the current node while we are going up the recursive call stack.
+    # remove the current node from the path to backtrack, we need to remove the current node while we are going up the
+    # recursive call stack.
     del current_path[-1]
 
 
