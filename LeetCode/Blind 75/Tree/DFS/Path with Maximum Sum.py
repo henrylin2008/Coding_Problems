@@ -27,3 +27,8 @@
 # Output: 31
 # Explanation: The path with maximum sum is: [8, 5, 3, 6, 9]
 #
+# Solution
+#
+# This problem follows the Binary Tree Path Sum pattern and shares the algorithmic logic with Tree Diameter. We can
+# follow the same DFS approach. The only difference will be to ignore the paths with negative sums. Since we need to
+# find the overall maximum sum, we should ignore any path which has an overall negative sum.
