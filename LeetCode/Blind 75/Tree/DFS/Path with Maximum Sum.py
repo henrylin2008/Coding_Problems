@@ -98,3 +98,7 @@ def main():
 
 
 main()
+
+# Time Complexity
+# The time complexity of the above algorithm is O(N), where ‘N’ is the total number of nodes in the tree. This is
+# due to the fact that we traverse each node once.
