@@ -34,7 +34,7 @@
 
 def pair_with_targetsum(arr, target_sum):
     left, right = 0, len(arr) - 1
-    while (left < right):
+    while left < right:
         current_sum = arr[left] + arr[right]
         if current_sum == target_sum:
             return [left, right]
