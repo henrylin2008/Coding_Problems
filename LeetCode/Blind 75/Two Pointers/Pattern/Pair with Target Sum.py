@@ -59,3 +59,13 @@ main()
 #
 # Space Complexity
 # The algorithm runs in constant space O(1).
+
+# An Alternate approach
+#
+# Instead of using a two-pointer or a binary search approach, we can utilize a HashTable to search for the required
+# pair. We can iterate through the array one number at a time. Let’s say during our iteration we are at number ‘X’,
+# so we need to find ‘Y’ such that “X + Y == TargetX+Y==Target”. We will do two things here:
+#   1. Search for ‘Y’ (which is equivalent to “Target−X”) in the HashTable. If it is there, we have found the required
+#      pair.
+#   2. Otherwise, insert “X” in the HashTable, so that we can search it for the later numbers.
+
