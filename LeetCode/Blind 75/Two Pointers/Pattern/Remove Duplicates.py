@@ -27,3 +27,24 @@
 # encounter duplicates. In other words, we will keep one pointer for iterating the array and one pointer for placing
 # the next non-duplicate number. So our algorithm will be to iterate the array and whenever we see a non-duplicate
 # number we move it next to the last non-duplicate number we’ve seen.
+
+def remove_duplicates(arr):
+    # index of the next non-duplicate element
+    next_non_duplicate = 1
+
+    i = 0
+    while (i < len(arr)):
+        if arr[next_non_duplicate - 1] != arr[i]:
+            arr[next_non_duplicate] = arr[i]
+            next_non_duplicate += 1
+        i += 1
+
+    return next_non_duplicate
+
+
+def main():
+    print(remove_duplicates([2, 3, 3, 3, 6, 9, 9]))
+    print(remove_duplicates([2, 2, 2, 11]))
+
+
+main()
