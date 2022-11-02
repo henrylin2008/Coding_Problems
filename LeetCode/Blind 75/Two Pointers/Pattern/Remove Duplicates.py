@@ -54,3 +54,8 @@ main()
 #
 # Space Complexity
 # The algorithm runs in constant space O(1).
+
+
+# Similar Questions
+# Problem 1: Given an unsorted array of numbers and a target ‘key’, remove all instances of ‘key’ in-place and return
+# the new length of the array.
