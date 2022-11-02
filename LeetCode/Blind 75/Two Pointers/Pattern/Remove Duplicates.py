@@ -33,7 +33,7 @@ def remove_duplicates(arr):
     next_non_duplicate = 1
 
     i = 0
-    while (i < len(arr)):
+    while i < len(arr):
         if arr[next_non_duplicate - 1] != arr[i]:
             arr[next_non_duplicate] = arr[i]
             next_non_duplicate += 1
