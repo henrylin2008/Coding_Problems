@@ -42,7 +42,7 @@ def search_triplets(arr):
 
 def search_pair(arr, target_sum, left, triplets):
     right = len(arr) - 1
-    while (left < right):
+    while left < right:
         current_sum = arr[left] + arr[right]
         if current_sum == target_sum:  # found the triplet
             triplets.append([-target_sum, arr[left], arr[right]])
