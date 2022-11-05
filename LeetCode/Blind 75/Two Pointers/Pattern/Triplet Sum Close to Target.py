@@ -77,7 +77,7 @@ main()
 
 # Time Complexity
 #
-# Sorting the array will take O(N* logN)O(N∗logN). Overall, the function will take O(N * logN + N^2), which is
+# Sorting the array will take O(N* logN). Overall, the function will take O(N * logN + N^2), which is
 # asymptotically equivalent to O(N^2).
 #
 # Space Complexity
