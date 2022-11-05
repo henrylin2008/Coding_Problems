@@ -55,7 +55,7 @@ def triplet_sum_close_to_target(arr, target_sum):
             # the second part of the following 'if' is to handle the smallest sum when we have
             # more than one solution
             if abs(target_diff) < abs(smallest_difference) or (abs(target_diff) == abs(smallest_difference) and
-                                                               (target_diff > smallest_difference)):
+                                                               target_diff > smallest_difference):
                 smallest_difference = target_diff  # save the closest and the biggest difference
 
             if target_diff > 0:
@@ -74,3 +74,13 @@ def main():
 
 
 main()
+
+# Time Complexity
+#
+# Sorting the array will take O(N* logN)O(N∗logN). Overall, the function will take O(N * logN + N^2), which is
+# asymptotically equivalent to O(N^2).
+#
+# Space Complexity
+#
+# The above algorithm’s space complexity will be O(N), which is required for sorting.
+
