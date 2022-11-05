@@ -29,3 +29,11 @@
 # the correct answer will be [1, 1, 2] as it has a sum '4' which is less than the sum of the other triplet which is '6'.
 # This is because of the following requirement: 'If there are more than one such triplet, return the sum of the triplet
 # ith the smallest sum.'
+
+# Solution
+#
+# This problem follows the Two Pointers pattern and is quite similar to Triplet Sum to Zero.
+#
+# We can follow a similar approach to iterate through the array, taking one number at a time. At every step,
+# we will save the difference between the triplet and the target number, so that in the end, we can return the
+# triplet with the closest sum.
