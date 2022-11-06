@@ -109,3 +109,20 @@ def main():
 
 
 main()
+
+# Another simpler approach could be to check every triplet of the array with three nested loops and create a list of
+# triplets that meet the required condition.
+#
+# Time Complexity
+#
+# Sorting the array will take O(N * logN)O(N∗logN). The searchPair(), in this case, will take O(N^2); the main while
+# loop will run in O(N) but the nested for loop can also take O(N)O(N) - this will happen when the target sum is
+# bigger than every triplet in the array.
+#
+# So, overall searchTriplets() will take O(N * logN + N^3), which is asymptotically equivalent to O(N^3)
+#
+# Space Complexity
+#
+# Ignoring the space required for the output array, the space complexity of the above algorithm will be O(N)
+# which is required for sorting.
+
