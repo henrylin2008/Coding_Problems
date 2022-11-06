@@ -60,3 +60,13 @@ def main():
 
 
 main()
+
+# Time Complexity
+#
+# Sorting the array will take O(N * logN)O(N∗logN). The searchPair() will take O(N). So, overall searchTriplets()
+# will take O(N * logN + N^2), which is asymptotically equivalent to O(N^2).
+#
+# Space Complexity
+#
+# The space complexity of the above algorithm will be O(N) which is required for sorting if we are not using an
+# in-place sorting algorithm.
