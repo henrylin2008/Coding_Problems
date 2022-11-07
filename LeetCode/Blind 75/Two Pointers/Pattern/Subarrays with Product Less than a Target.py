@@ -16,3 +16,12 @@
 # Input: [8, 2, 6, 5], target=50
 # Output: [8], [2], [8, 2], [6], [2, 6], [5], [6, 5]
 # Explanation: There are seven contiguous subarrays whose product is less than the target.
+
+# Solution
+#
+# This problem follows the Sliding Window and the Two Pointers pattern and shares similarities with Triplets with
+# Smaller Sum with two differences:
+#   1. In this problem, the input array is not sorted.
+#   2. Instead of finding triplets with sum less than a target, we need to find all subarrays having a product less than
+#      the target.
+# The implementation will be quite similar to Triplets with Smaller Sum.
