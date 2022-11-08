@@ -18,3 +18,11 @@
 # Input: [2, 2, 0, 1, 2, 0]
 # Output: [0 0 1 2 2 2 ]
 
+# Solution
+#
+# The brute force solution will be to use an in-place sorting algorithm like Heapsort which will take O(N*logN)O(
+# N∗logN). Can we do better than this? Is it possible to sort the array in one iteration?
+#
+# We can use a Two Pointers approach while iterating through the array. Let’s say the two pointers are called low and
+# high which are pointing to the first and the last element of the array respectively. So while iterating,
+# we will move all 0s before low and all 2s after high so that in the end, all 1s will be between low and high.
