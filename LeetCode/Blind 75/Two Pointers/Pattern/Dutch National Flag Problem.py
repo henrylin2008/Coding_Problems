@@ -57,3 +57,12 @@ def main():
 
 
 main()
+
+#
+# Time Complexity
+#
+# The time complexity of the above algorithm will be O(N) as we are iterating the input array only once.
+#
+# Space Complexity
+#
+# The algorithm runs in constant space O(1).
