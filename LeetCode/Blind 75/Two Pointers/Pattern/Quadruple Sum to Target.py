@@ -15,3 +15,13 @@
 # Input: [2, 0, -1, 1, -2, 2], target=2
 # Output: [-2, 0, 2, 2], [-1, 0, 1, 2]
 # Explanation: Both the quadruplets add up to the target.
+
+# Solution
+#
+# This problem follows the Two Pointers pattern and shares similarities with Triplet Sum to Zero.
+#
+# We can follow a similar approach to iterate through the array, taking one number at a time. At every step during
+# the iteration, we will search for the quadruplets similar to Triplet Sum to Zero whose sum is equal to the given
+# target.
+
+
