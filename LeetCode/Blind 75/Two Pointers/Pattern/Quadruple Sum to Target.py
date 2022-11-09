@@ -65,3 +65,12 @@ def main():
 
 
 main()
+
+# Time Complexity
+#
+# Sorting the array will take O(N∗logN). Overall searchQuadruplets() will take O(N * logN + N^3),
+# which is asymptotically equivalent to O(N^3).
+#
+# Space Complexity
+#
+# The space complexity of the above algorithm will be O(N) which is required for sorting.
