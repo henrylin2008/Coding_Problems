@@ -77,3 +77,12 @@ def main():
 
 
 main()
+
+# Time Complexity
+#
+# The time complexity of the above algorithm will be O(M+N) where ‘M’ and ‘N’ are the lengths of the two input
+# strings respectively.
+#
+# Space Complexity
+#
+# The algorithm runs in constant space O(1).
