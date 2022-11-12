@@ -37,8 +37,51 @@
 # As you can see, sorting the numbers between ‘3’ and ‘-1’ will not sort the whole array. To see this, the following will be our original array after the sorted subarray:
 #     [1, -1, 0, 2, 3, 7, 10]
 # The problem here is that the smallest number of our subarray is ‘-1’ which dictates that we need to include more numbers from the beginning of the array to make the whole array sorted. We will have a similar problem if the maximum of the subarray is bigger than some elements at the end of the array. To sort the whole array we need to include all such elements that are smaller than the biggest element of the subarray. So our final algorithm will look like:
-#   1. From the beginning and end of the array, find the first elements that are out of the sorting order. The two elements will be our candidate subarray. 
+#   1. From the beginning and end of the array, find the first elements that are out of the sorting order. The two elements will be our candidate subarray.
 #   2. Find the maximum and minimum of this subarray.
 #   3. Extend the subarray from beginning to include any number which is bigger than the minimum of the subarray.
 #   4. Similarly, extend the subarray from the end to include any number which is smaller than the maximum of the subarray.
 
+import math
+
+
+def shortest_window_sort(arr):
+    low, high = 0, len(arr) - 1
+    # find the first number out of sorting order from the beginning
+    while (low < len(arr) - 1 and arr[low] <= arr[low + 1]):
+        low += 1
+
+    if low == len(arr) - 1:  # if the array is sorted
+        return 0
+
+    # find the first number out of sorting order from the end
+    while (high > 0 and arr[high] >= arr[high - 1]):
+        high -= 1
+
+    # find the maximum and minimum of the subarray
+    subarray_max = -math.inf
+    subarray_min = math.inf
+    for k in range(low, high+1):
+        subarray_max = max(subarray_max, arr[k])
+        subarray_min = min(subarray_min, arr[k])
+
+    # extend the subarray to include any number which is bigger than the minimum of 
+    # the subarray
+    while (low > 0 and arr[low-1] > subarray_min):
+        low -= 1
+    # extend the subarray to include any number which is smaller than the maximum of 
+    # the subarray
+    while (high < len(arr)-1 and arr[high+1] < subarray_max):
+        high += 1
+
+    return high - low + 1
+
+
+def main():
+    print(shortest_window_sort([1, 2, 5, 3, 7, 10, 9, 12]))
+    print(shortest_window_sort([1, 3, 2, 0, -1, 7, 10]))
+    print(shortest_window_sort([1, 2, 3]))
+    print(shortest_window_sort([3, 2, 1]))
+
+
+main()
