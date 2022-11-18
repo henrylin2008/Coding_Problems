@@ -17,3 +17,13 @@
 # Example 2:
 # Input: 2 -> 4 -> 6 -> 8 -> 10 -> null
 # Output: 2 -> 10 -> 4 -> 8 -> 6 -> null
+
+# Solution
+#
+# This problem shares similarities with Palindrome LinkedList. To rearrange the given LinkedList we will follow the
+# following steps:
+#   1. We can use the Fast & Slow pointers method similar to Middle of the LinkedList to find the middle node of the
+#      LinkedList.
+#   2. Once we have the middle of the LinkedList, we will reverse the second half of the LinkedList.
+#   3. Finally, we’ll iterate through the first half and the reversed second half to produce a LinkedList in the
+#      required order.
