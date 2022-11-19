@@ -88,3 +88,11 @@ def main():
 
 
 main()
+
+# Time Complexity
+# The above algorithm will have a time complexity of O(N^2) where ‘N’ is the number of elements in the array. This
+# complexity is due to the fact that we are iterating all elements of the array and trying to find a cycle for each
+# element.
+#
+# Space Complexity
+# The algorithm runs in constant space O(1).
