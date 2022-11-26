@@ -27,3 +27,19 @@
 # Input: [4, 6, 10], key = -1
 # Output: 0
 # Explanation: The smallest number greater than or equal to '-1' is '4' having index '0'.
+
+# Solution
+#
+# This problem follows the Binary Search pattern. Since Binary Search helps us find a number in a sorted array
+# efficiently, we can use a modified version of the Binary Search to find the ceiling of a number.
+#
+# We can use a similar approach as discussed in Order-agnostic Binary Search. We will try to search for the ‘key’ in
+# the given array. If we find the ‘key’, we return its index as the ceiling. If we can’t find the ‘key’, the next big
+# number will be pointed out by the index start. Consider Example-2 mentioned above:
+#
+#
+# Since we are always adjusting our range to find the ‘key’, when we exit the loop, the start of our range will point
+# to the smallest number greater than the ‘key’ as shown in the above picture.
+#
+# We can add a check in the beginning to see if the ‘key’ is bigger than the biggest number in the input array. If
+# so, we can return ‘-1’.
