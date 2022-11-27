@@ -47,3 +47,28 @@
 # In the end, instead of returning the element pointed out by start, we have to return the letter pointed out by
 # start % array_length. This is needed because of point 2 discussed above. Imagine that the last letter of the array
 # is equal to the ‘key’. In that case, we have to return the first letter of the input array.
+
+
+def search_next_letter(letters, key):
+    n = len(letters)
+
+    start, end = 0, n - 1
+    while start <= end:
+        mid = start + (end - start) // 2
+        if key < letters[mid]:
+            end = mid - 1
+        else:  # key >= letters[mid]:
+            start = mid + 1
+
+    # since the loop is running until 'start <= end', so at the end of the while loop,
+    # 'start == end+1'
+    return letters[start % n]
+
+
+def main():
+    print(search_next_letter(['a', 'c', 'f', 'h'], 'f'))
+    print(search_next_letter(['a', 'c', 'f', 'h'], 'b'))
+    print(search_next_letter(['a', 'c', 'f', 'h'], 'm'))
+
+
+main()
