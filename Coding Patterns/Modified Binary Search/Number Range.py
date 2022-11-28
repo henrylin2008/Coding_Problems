@@ -19,3 +19,18 @@
 # Example 3:
 # Input: [1, 3, 8, 10, 15], key = 12
 # Output: [-1, -1]
+
+# Solution
+#
+# The problem follows the Binary Search pattern. Since Binary Search helps us find a number in a sorted array
+# efficiently, we can use a modified version of the Binary Search to find the first and the last position of a number.
+#
+# We can use a similar approach as discussed in Order-agnostic Binary Search. We will try to search for the ‘key’ in
+# the given array; if the ‘key’ is found (i.e. key == arr[middle]) we have two options:
+#   1. When trying to find the first position of the ‘key’, we can update end = middle - 1 to see if the key is present
+#      before middle.
+#   2. When trying to find the last position of the ‘key’, we can update start = middle + 1 to see if the key is present
+#      after middle.
+#
+# In both cases, we will keep track of the last position where we found the ‘key’. These positions will be the
+# required range.
