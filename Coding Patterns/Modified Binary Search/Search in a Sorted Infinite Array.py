@@ -29,3 +29,16 @@
 # Input: [1, 3, 8, 10, 15], key = 200
 # Output: -1
 # Explanation: The key is not present in the array.
+
+# Solution
+#
+# The problem follows the Binary Search pattern. Since Binary Search helps us find a number in a sorted array
+# efficiently, we can use a modified version of the Binary Search to find the ‘key’ in an infinite sorted array.
+#
+# The only issue with applying binary search in this problem is that we don’t know the bounds of the array. To handle
+# this situation, we will first find the proper bounds of the array where we can perform a binary search.
+#
+# An efficient way to find the proper bounds is to start at the beginning of the array with the bound’s size as ‘1’
+# and exponentially increase the bound’s size (i.e., double it) until we find the bounds that can have the key.
+
+# Once we have searchable bounds we can apply the binary search.
