@@ -100,3 +100,6 @@ main()
 # the array will have maximum ‘N’ numbers. In the second step, we perform the binary search which will take O(logN)O(
 # logN), so the overall time complexity of our algorithm will be O(logN + logN) which is asymptotically
 # equivalent to O(logN).
+
+# Space Complexity
+# The algorithm runs in constant space O(1).
