@@ -23,3 +23,14 @@
 # Input: [4, 6, 10], key = 17
 # Output: 10
 
+# Solution
+#
+# The problem follows the Binary Search pattern. Since Binary Search helps us find a number in a sorted array
+# efficiently, we can use a modified version of the Binary Search to find the number that has the minimum difference
+# with the given ‘key’.
+#
+# We can use a similar approach as discussed in Order-agnostic Binary Search. We will try to search for the ‘key’ in
+# the given array. If we find the ‘key’ we will return it as the minimum difference number. If we can’t find the
+# ‘key’, (at the end of the loop) we can find the differences between the ‘key’ and the numbers pointed out by
+# indices start and end, as these two numbers will be closest to the ‘key’. The number that gives minimum difference
+# will be our required number.
