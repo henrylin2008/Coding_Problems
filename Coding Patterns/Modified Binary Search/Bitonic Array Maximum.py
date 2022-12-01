@@ -23,3 +23,18 @@
 # Example 4:
 # Input: [10, 9, 8]
 # Output: 10
+
+# Solution
+#
+# A bitonic array is a sorted array; the only difference is that its first part is sorted in ascending order and the
+# second part is sorted in descending order. We can use a similar approach as discussed in Order-agnostic Binary
+# Search. Since no two consecutive numbers are same (as the array is monotonically increasing or decreasing),
+# whenever we calculate the middle, we can compare the numbers pointed out by the index middle and middle+1 to find
+# if we are in the ascending or the descending part. So:
+#   1. If arr[middle] > arr[middle + 1], we are in the second (descending) part of the bitonic array. Therefore,
+#      our required number could either be pointed out by middle or will be before middle. This means we will be doing:
+#      end = middle.
+#   2. If arr[middle] < arr[middle + 1], we are in the first (ascending) part of the bitonic array. Therefore,
+#      the required number will be after middle. This means we will be doing: start = middle + 1.
+# We can break when start == end. Due to the two points mentioned above, both start and end will be pointing at the
+# maximum number of the bitonic array.
