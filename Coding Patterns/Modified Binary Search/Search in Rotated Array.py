@@ -98,3 +98,7 @@ main()
 #           Original array:     3   |   3   |   3   |   3   |   7   |
 #  Array after 2 rotations:     3   |   7   |   3   |   3   |   3   |
 #
+# Solution
+# The only problematic scenario is when the numbers at indices start, middle, and end are the same, as in this case,
+# we can’t decide which part of the array is sorted. In such a case, the best we can do is to skip one number from
+# both ends: start = start + 1 & end = end - 1
