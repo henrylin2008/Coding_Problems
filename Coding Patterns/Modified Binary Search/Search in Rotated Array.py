@@ -25,3 +25,23 @@
 #           Original array:     -1   |   2   |   4   |   5   |   7   |   9   |   10   |
 #  Array after 2 rotations:      4   |   5   |   7   |   9   |   10  |  -1   |    2   |
 
+# Solution
+# The problem follows the Binary Search pattern. We can use a similar approach as discussed in Order-agnostic Binary
+# Search and modify it similar to Search Bitonic Array to search for the ‘key’ in the rotated array.
+#
+# After calculating the middle, we can compare the numbers at indices start and middle. This will give us two options:
+#   1. If arr[start] <= arr[middle], the numbers from start to middle are sorted in ascending order.
+#   2. Else, the numbers from middle+1 to end are sorted in ascending order.
+#
+# Once we know which part of the array is sorted, it is easy to adjust our ranges. For example, if option-1 is true,
+# we have two choices:
+#   1. By comparing the ‘key’ with the numbers at index start and middle we can easily find out if the ‘key’ lies
+#      between indices start and middle; if it does, we can skip the second part => end = middle -1.
+#   2. Else, we can skip the first part => start = middle + 1.
+
+# Let’s visually see this with the above-mentioned Example-2:
+#
+#
+# Since there are no duplicates in the given array, it is always easy to skip one part of the array in each
+# iteration. However, if there are duplicates, it is not always possible to know which part is sorted. We will look
+# into this case in the ‘Similar Problems’ section.
