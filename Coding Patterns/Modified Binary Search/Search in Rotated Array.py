@@ -139,3 +139,10 @@ def main():
 
 
 main()
+
+# Time Complexity
+# This algorithm will run most of the times in O(logN) . However, since we only skip two numbers in case of
+# duplicates instead of half of the numbers, the worst case time complexity will become O(N).
+#
+# Space Complexity
+# The algorithm runs in constant space O(1).
