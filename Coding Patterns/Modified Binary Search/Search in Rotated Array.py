@@ -81,3 +81,20 @@ main()
 #
 # Space Complexity
 # The algorithm runs in constant space O(1).
+
+
+# Similar Problems
+# Since we are reducing the search range by half at every step, this means that the time complexity of our algorithm
+# will be O(logN)O(logN) where ‘N’ is the total elements in the given array.
+#
+# Problem 1
+# How do we search in a sorted and rotated array that also has duplicates?
+# The code above will fail in the following example!
+#
+# Example 1:
+# Input: [3, 7, 3, 3, 3], key = 7
+# Output: 1
+# Explanation: '7' is present in the array at index '1'.
+#           Original array:     3   |   3   |   3   |   3   |   7   |
+#  Array after 2 rotations:     3   |   7   |   3   |   3   |   3   |
+#
