@@ -77,6 +77,19 @@ main()
 # will be O(logN) where ‘N’ is the total elements in the given array.
 #
 # Space Complexity
-#
 # The algorithm runs in constant space O(1).
 
+
+# Similar Problems
+#
+# Problem 1
+#
+# How do we find the rotation count of a sorted and rotated array that has duplicates too?
+# The above code will fail on the following example!
+#
+# Example 1:
+# Input: [3, 3, 7, 3]
+# Output: 3
+# Explanation: The array has been rotated 3 times.
+#           Original array:     3   |   3   |   3   |   7   |
+#  Array after 2 rotations:     3   |   3   |   7   |   3   |
