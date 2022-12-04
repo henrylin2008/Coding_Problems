@@ -83,7 +83,6 @@ main()
 # Similar Problems
 #
 # Problem 1
-#
 # How do we find the rotation count of a sorted and rotated array that has duplicates too?
 # The above code will fail on the following example!
 #
@@ -93,3 +92,8 @@ main()
 # Explanation: The array has been rotated 3 times.
 #           Original array:     3   |   3   |   3   |   7   |
 #  Array after 2 rotations:     3   |   3   |   7   |   3   |
+
+# Solution
+#
+# We can follow the same approach as discussed in Search in Rotated Array. The only difference is that before
+# incrementing start or decrementing end, we will check if either of them is the smallest number.
