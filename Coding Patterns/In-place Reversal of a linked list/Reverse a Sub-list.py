@@ -95,3 +95,11 @@ main()
 #
 # Space Complexity
 # We only used constant space, therefore, the space complexity of our algorithm is O(1).
+
+
+# Similar Questions
+#
+# Problem 1: Reverse the first ‘k’ elements of a given LinkedList.
+#
+# Solution: This problem can be easily converted to our parent problem; to reverse the first ‘k’ nodes of the list,
+# we need to pass p=1 and q=k.
