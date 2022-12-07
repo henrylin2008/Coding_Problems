@@ -13,3 +13,9 @@
 #
 # Reversed Sub-list:    head -> 3 -> 2 -> 1 -> 6 -> 5 -> 4 -> 8 -> 7 -> null
 
+# Solution
+#
+# The problem follows the In-place Reversal of a LinkedList pattern and is quite similar to Reverse a Sub-list. The
+# only difference is that we have to reverse all the sub-lists. We can use the same approach, starting with the first
+# sub-list (i.e. p=1, q=k) and keep reversing all the sublists of size ‘k’.
+
