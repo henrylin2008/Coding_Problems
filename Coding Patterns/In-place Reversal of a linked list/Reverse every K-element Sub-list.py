@@ -86,3 +86,11 @@ def main():
 
 
 main()
+
+
+# Time Complexity
+# The time complexity of our algorithm will be O(N) where ‘N’ is the total number of nodes in the LinkedList.
+#
+# Space Complexity
+# We only used constant space, therefore, the space complexity of our algorithm is O(1).
+
