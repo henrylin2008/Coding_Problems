@@ -11,3 +11,9 @@
 # k = 2
 # Original List:        head -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> null
 # Reversed Sub-list:    head -> 2 -> 1 -> 3 -> 4 -> 6 -> 5 -> 7 -> 8 -> null
+
+# Solution
+#
+# The problem follows the In-place Reversal of a LinkedList pattern and is quite similar to Reverse every K-element
+# Sub-list. The only difference is that we have to skip ‘k’ alternating elements. We can follow a similar approach,
+# and in each iteration after reversing ‘k’ elements, we will skip the next ‘k’ elements.
