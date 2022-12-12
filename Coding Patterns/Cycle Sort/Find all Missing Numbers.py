@@ -17,3 +17,14 @@
 # Example 3:
 # Input: [2, 3, 2, 1]
 # Output: 4
+
+# Solution
+#
+# This problem follows the Cyclic Sort pattern and shares similarities with Find the Missing Number with one
+# difference. In this problem, there can be many duplicates whereas in ‘Find the Missing Number’ there were no
+# duplicates and the range was greater than the length of the array.
+#
+# However, we will follow a similar approach though as discussed in Find the Missing Number to place the numbers on
+# their correct indices. Once we are done with the cyclic sort we will iterate the array to find all indices that are
+# missing the correct numbers.
+
