@@ -102,3 +102,6 @@ def main():
 
 
 main()
+
+
+# The time complexity of the above algorithm is O(n) and the space complexity is O(1).
