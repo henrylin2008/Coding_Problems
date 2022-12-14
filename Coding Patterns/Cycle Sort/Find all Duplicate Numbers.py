@@ -44,3 +44,6 @@ def main():
 
 
 main()
+
+# Time Complexity
+# The time complexity of the above algorithm is O(n).
