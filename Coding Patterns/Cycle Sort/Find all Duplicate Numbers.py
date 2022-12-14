@@ -47,3 +47,6 @@ main()
 
 # Time Complexity
 # The time complexity of the above algorithm is O(n).
+
+# Space Complexity
+# Ignoring the space required for storing the duplicates, the algorithm runs in constant space O(1).
