@@ -46,3 +46,11 @@ def main():
 
 
 main()
+
+
+# Time Complexity
+# The time complexity of the above algorithm is O(n).
+#
+# Space Complexity
+# The algorithm runs in constant space O(1).
+
