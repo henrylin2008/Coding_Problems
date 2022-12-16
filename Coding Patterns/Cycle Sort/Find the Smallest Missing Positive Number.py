@@ -22,3 +22,14 @@
 # Example 4:
 # Input: [33, 37, 5]
 # Output: 1
+
+# Solution
+#
+# This problem follows the Cyclic Sort pattern and shares similarities with Find the Missing Number with one big
+# difference. In this problem, the numbers are not bound by any range so we can have any number in the input array.
+#
+# However, we will follow a similar approach though as discussed in Find the Missing Number to place the numbers on
+# their correct indices and ignore all numbers that are out of the range of the array (i.e., all negative numbers and
+# all numbers greater than the length of the array). Once we are done with the cyclic sort we will iterate the array
+# and the first index that does not have the correct number will be the smallest missing positive number!
+
