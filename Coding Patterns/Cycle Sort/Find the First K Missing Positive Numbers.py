@@ -82,3 +82,10 @@ def main():
 
 
 main()
+
+# Time Complexity
+# The time complexity of the above algorithm is O(n + k), as the last two for loops will run for O(n) and
+# O(k) times respectively.
+#
+# Space Complexity
+# The algorithm needs O(k) space to store the extraNumbers.
