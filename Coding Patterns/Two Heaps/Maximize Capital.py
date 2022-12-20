@@ -89,3 +89,11 @@ def main():
 
 
 main()
+
+# Time Complexity
+# Since, at the most, all the projects will be pushed to both the heaps once, the time complexity of our algorithm is
+# O(NlogN + KlogN), where ‘N’ is the total number of projects and ‘K’ is the number of projects we are
+# selecting.
+
+# Space Complexity
+# The space complexity will be O(N) because we will be storing all the projects in the heaps.
