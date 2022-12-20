@@ -28,3 +28,25 @@
 #   2. Next, we will select the second project, which will bring our capital to 3.
 #   3. Next, we will select the fourth project, giving us a profit of 5.
 # After selecting the three projects, our total capital will be 8 (1+2+5).
+
+# Solution
+#
+# While selecting projects we have two constraints:
+#   1. We can select a project only when we have the required capital.
+#   2. There is a maximum limit on how many projects we can select.
+# Since we don’t have any constraint on time, we should choose a project, among the projects for which we have enough
+# capital, which gives us a maximum profit. Following this greedy approach will give us the best solution.
+#
+# While selecting a project, we will do two things:
+#   1. Find all the projects that we can choose with the available capital.
+#   2. From the list of projects in the 1st step, choose the project that gives us a maximum profit.
+#
+# We can follow the Two Heaps approach similar to Find the Median of a Number Stream. Here are the steps of our
+# algorithm:
+#   1. Add all project capitals to a min-heap, so that we can select a project with the smallest capital requirement.
+#   2. Go through the top projects of the min-heap and filter the projects that can be completed within our available
+#      capital. Insert the profits of all these projects into a max-heap, so that we can choose a project with the
+#      maximum profit.
+#   3. Finally, select the top project of the max-heap for investment.
+#   4. Repeat the 2nd and 3rd steps for the required number of projects.
+
