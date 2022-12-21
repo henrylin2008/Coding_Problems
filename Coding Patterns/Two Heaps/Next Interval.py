@@ -88,3 +88,9 @@ def main():
 
 
 main()
+
+# Time Complexity
+# The time complexity of our algorithm will be O(NlogN), where ‘N’ is the total number of intervals.
+#
+# Space Complexity
+# The space complexity will be O(N) because we will be storing all the intervals in the heaps.
