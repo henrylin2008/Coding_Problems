@@ -186,3 +186,62 @@ main()
 # Space Complexity
 # Space complexity of the above algorithm will be O(min(M,N). In the worst case, when the matrix is completely filled
 # with land cells, the size of the queue can grow up to min(M,N).
+
+
+# Code  (BFS with visited matrix)
+# Here is what our DFS algorithm will look like. We will keep a separate boolean matrix to record whether or not each
+# cell has been visited.
+from collections import deque
+
+
+def countIslandsBFS(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    totalIslands = 0
+    visited = [[False for i in range(cols)] for j in range(rows)]
+
+    for i in range(rows):
+        for j in range(cols):
+            # if the cell has not been visited before and is a land
+            if matrix[i][j] == 1 and not visited[i][j]:
+                # we have found an island
+                totalIslands += 1
+                visitIslandBFS(matrix, visited, i, j)
+    return totalIslands
+
+
+def visitIslandBFS(matrix, visited, x,  y):
+    neighbors = deque([(x, y)])
+    while neighbors:
+        row, col = neighbors.popleft()
+
+        if row < 0 or row >= len(matrix) or col < 0 or col >= len(matrix[0]):
+            continue  # continue, if it is not a valid cell
+        if matrix[row][col] == 0 or visited[row][col]:
+            continue  # continue if the cell is water or visited
+
+        visited[row][col] = True # mark the visited array
+
+        # insert all neighboring cells to the queue for BFS
+        neighbors.extend([(row + 1, col)])  # lower cell
+        neighbors.extend([(row - 1, col)])  # upper cell
+        neighbors.extend([(row, col + 1)])  # right cell
+        neighbors.extend([(row, col - 1)])  # left cell
+
+
+def main():
+    print(countIslandsBFS([[0, 1, 1, 1, 0], [0, 0, 0, 1, 1], [
+          0, 1, 1, 1, 0], [0, 1, 1, 0, 0], [0, 0, 0, 0, 0]]))
+    print(countIslandsBFS([[1, 1, 1, 0, 0], [0, 1, 0, 0, 1], [
+          0, 0, 1, 1, 0], [0, 0, 1, 0, 0], [0, 0, 1, 0, 0]]))
+
+
+main()
+
+# Time Complexity
+# Time complexity of the above algorithm will be O(M*N), where ‘M’ is the number of rows and 'N' is the number of
+# columns.
+
+# Space Complexity
+# Because of the visited array and max size of the queue, the space complexity will be O(M*N), where ‘M’ is the
+# number of rows and 'N' is the number of columns of the input matrix.
