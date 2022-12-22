@@ -58,3 +58,26 @@
 #      |  0  |  0  |  1* |  0  |  0  |
 #      -------------------------------
 #      |  0  |  0  |  1*  |  0  |  0  |
+
+# Solution
+#
+# We can traverse the matrix linearly to find islands.
+#
+# Whenever we find a cell with the value '1' (i.e., land), we have found an island. Using that cell as the root node,
+# we will perform a Depth First Search (DFS) or Breadth First Search (BFS) to find all of its connected land cells.
+# During our DFS or BFS traversal, we will find and mark all the horizontally and vertically connected land cells.
+#
+# We need to have a mechanism to mark each land cell to ensure that each land cell is visited only once. To mark a
+# cell visited, we have two options:
+#   1. We can update the given input matrix. Whenever we see a '1', we will make it '0'.
+#   2. A separate boolean matrix can be used to record whether or not each cell has been visited.
+
+# Following is the DFS or BFS traversal of the example-2 mentioned above:
+
+# By following the above algorithm, every time DFS or BFS is triggered, we are sure that we have found an island. We
+# will keep a running count to calculate the total number of islands.
+#
+# Bellow, we will see three solutions based on:
+#   1. DFS
+#   2. BFS
+#   3. BFS with visited matrix
