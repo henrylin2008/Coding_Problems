@@ -82,6 +82,8 @@
 #   2. BFS
 #   3. BFS with visited matrix
 
+# Code  (DFS)
+# Here is what our DFS algorithm will look like. We will update the input matrix to mark cells visited.
 def countIslandsDFS(matrix):
     rows = len(matrix)
     cols = len(matrix[0])
@@ -119,3 +121,12 @@ def main():
 
 
 main()
+
+
+# Time Complexity
+# Time complexity of the above algorithm will be O(M*N), where ‘M’ is the number of rows and 'N' is the number of
+# columns of the input matrix. This is due to the fact that we have to traverse the whole matrix to find the islands.
+
+# Space Complexity
+# DFS recursion stack can go M*N deep when the whole matrix is filled with '1's. Hence, the space complexity will be
+# O(M*N), where ‘M’ is the number of rows and 'N' is the number of columns of the input matrix.
