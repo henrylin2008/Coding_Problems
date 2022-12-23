@@ -36,3 +36,14 @@
 #      -------------------------------
 #      |  0  |  0  |  1* |  0  |  0  |
 #
+# Solution
+#
+# The question follows the Island pattern and is quite similar to Number of Islands problem.
+#
+# We will traverse the matrix linearly to find islands.
+#
+# Whenever we find a cell with the value '1' (i.e., land), we have found an island. Using that cell as the root node,
+# we will perform a Depth First Search (DFS) or Breadth First Search (BFS) to find all of its connected land cells.
+# During our DFS or BFS traversal, we will find and mark all the horizontally and vertically connected land cells.
+#
+# We will keep a variable to remember the max area of any island.
