@@ -47,3 +47,45 @@
 # During our DFS or BFS traversal, we will find and mark all the horizontally and vertically connected land cells.
 #
 # We will keep a variable to remember the max area of any island.
+
+# Code  (DFS)
+#
+# Here is what our DFS algorithm will look like. We will update the input matrix to mark nodes visited.
+def maxAreaIslandDFS(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    biggestIslandArea = 0
+
+    for i in range(rows):
+        for j in range(cols):
+            if matrix[i][j] == 1:  # only if the cell is a land
+                # we have found an island
+                biggestIslandArea = max(
+                    biggestIslandArea, visitIslandDFS(matrix, i, j))
+
+    return biggestIslandArea
+
+
+def visitIslandDFS(matrix,  x,  y):
+    if x < 0 or x >= len(matrix) or y < 0 or y >= len(matrix[0]):
+        return 0  # return, if it is not a valid cell
+    if matrix[x][y] == 0:
+        return 0  # return, if it is a water cell
+
+    matrix[x][y] = 0  # mark the cell visited by making it a water cell
+
+    area = 1 # counting the current cell
+    # recursively visit all neighboring cells (horizontally & vertically)
+    area += visitIslandDFS(matrix, x + 1, y)  # lower cell
+    area += visitIslandDFS(matrix, x - 1, y)  # upper cell
+    area += visitIslandDFS(matrix, x, y + 1)  # right cell
+    area += visitIslandDFS(matrix, x, y - 1)  # left cell
+    return area
+
+
+def main():
+    print(maxAreaIslandDFS([[1, 1, 1, 0, 0], [0, 1, 0, 0, 1], [
+          0, 0, 1, 1, 0], [0, 1, 1, 0, 0], [0, 0, 1, 0, 0]]))
+
+
+main()
