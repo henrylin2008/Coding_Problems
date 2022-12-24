@@ -92,3 +92,37 @@
 #      -------------------------------
 #      |  0  |  0  |  5  |  0  |  0  |
 #      -------------------------------
+
+
+# Code  (DFS)
+#
+# Here is what our DFS algorithm will look like:
+def floodFill(matrix, x, y, newColor):
+    if matrix[x][y] != newColor:
+        fillDFS(matrix, x, y, matrix[x][y], newColor)
+    return matrix
+
+
+def fillDFS(matrix,  x,  y, oldColor, newColor):
+    if x < 0 or x >= len(matrix) or y < 0 or y >= len(matrix[0]):
+        return  # return, if it is not a valid cell
+    if matrix[x][y] != oldColor:
+        return  # return, if it is not the required color
+
+    matrix[x][y] = newColor  # // update the cell to the new color
+
+    # recursively visit all neighboring cells (horizontally & vertically)
+    fillDFS(matrix, x + 1, y, oldColor, newColor)  # lower cell
+    fillDFS(matrix, x - 1, y, oldColor, newColor)  # upper cell
+    fillDFS(matrix, x, y + 1, oldColor, newColor)  # right cell
+    fillDFS(matrix, x, y - 1, oldColor, newColor)  # left cell
+
+
+def main():
+    print(floodFill([[0, 1, 1, 1, 0], [0, 0, 0, 1, 1], [
+          0, 1, 1, 1, 0], [0, 1, 1, 0, 0], [0, 0, 0, 0, 0]], 1, 3, 2))
+    print(floodFill([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [
+          0, 0, 1, 1, 0], [0, 0, 1, 0, 0], [0, 0, 1, 0, 0]], 3, 2, 5))
+
+
+main()
