@@ -126,3 +126,12 @@ def main():
 
 
 main()
+
+
+# Time Complexity
+# Time complexity the above algorithm will be O(M*N), where ‘M’ is the number of rows and 'N' is the number of
+# columns of the input matrix. This is due to the fact that, in the worst case, we might have to fill the whole matrix.
+#
+# Space Complexity
+# DFS recursion stack can go M*N deep when we have to fill the whole matrix. Hence, the space complexity will be O(
+# M*N), where ‘M’ is the number of rows and 'N' is the number of columns of the input matrix.
