@@ -71,3 +71,24 @@
 #      -------------------------------
 #      |  0  |  0  |  5  |  0  |  0  |
 #      -------------------------------
+
+# Solution
+#
+# The question follows the Island pattern and is quite similar to Number of Islands problem.
+#
+# From the given starting cell, we can perform a Depth First Search (DFS) or Breadth First Search (BFS) to find all
+# of its connected cells with the same color. During our DFS or BFS traversal, we will update the cells with the new
+# color.
+#
+# Following is the DFS or BFS traversal of the example-2 mentioned above:
+#      -------------------------------
+#      |  0  |  0  |  0  |  0  |  0  |
+#      -------------------------------
+#      |  0  |  0  |  0  |  0  |  0  |
+#      -------------------------------
+#      |  0  |  0  |  5  |  5  |  0  |
+#      -------------------------------
+#      |  0  |  0  |  5  |  0  |  0  |
+#      -------------------------------
+#      |  0  |  0  |  5  |  0  |  0  |
+#      -------------------------------
